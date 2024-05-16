@@ -1,4 +1,0 @@
-.masonry-container,
-.masonry-container > div {
-  @apply !gap-4 lg:!gap-[30px];
-}

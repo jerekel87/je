@@ -71,7 +71,12 @@ function Header() {
       >
         <nav className="flex flex-col items-center ">
           {navList.map((navItem, i) => (
-            <Link key={i} href={navItem.url} className="font-medium mt-[45px]">
+            <Link
+              key={i}
+              href={navItem.url}
+              onClick={() => setOpen(false)}
+              className="font-medium mt-[45px]"
+            >
               {navItem.name}
             </Link>
           ))}

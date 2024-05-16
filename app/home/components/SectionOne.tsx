@@ -68,7 +68,7 @@ function SectionOne() {
           <p className="leading-none">MY HVAC GUY REVENUE INCREASED BY</p>
           <div className="flex items-center gap-[10px] lg:gap-[15px]">
             <p className="leading-none">218% SINCE REBRANDING</p>
-            <div className="h-[1px] lg:h-[2px] w-2 lg:w-[32px] bg-white/80" />
+            <div className="h-[1px] lg:h-[2px] w-2 lg:w-[32px] bg-white opacity-50" />
             <a
               href="#"
               className="text-[#ffed00] leading-relaxed text-xs lg:text-sm font-medium font-mona-sans"
