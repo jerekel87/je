@@ -14,9 +14,15 @@ function SectionOne() {
             <span className="text-secondary">FUELING </span>
             <span className="text-white">BRANDS.</span>
           </h2>
-          <span className="font-guthen-bloots-personal-use text-secondary text-base lg:text-[36px] right-0 lg:right-[35px] absolute">
-            Since 2005!
-          </span>
+          <div className="w-[70px] h-[20px] lg:w-[120px] lg:h-[40px] right-0 lg:right-[35px] absolute">
+            <Image
+              src="/assets/images/since-2005.webp"
+              alt="Since 2005"
+              fill
+              quality="100"
+              className="object-contain"
+            />
+          </div>
         </div>
         <div className="relative mt-[40px] lg:mt-0 lg:-top-[40px] transform left-1/2 -translate-x-1/2 w-full">
           <Image
@@ -24,7 +30,7 @@ function SectionOne() {
             width="1639"
             height="617"
             alt="Pickup"
-            className="relative w-[85%] transform left-1/2 -translate-x-1/2 z-[1]"
+            className="relative w-[98%] transform left-1/2 -translate-x-1/2 z-[1]"
           />
           <Image
             src="/assets/images/drop-shadow.webp"

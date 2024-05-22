@@ -13,9 +13,14 @@ function SectionFour() {
       </div>
       <div className="container mx-auto">
         <div className="mx-auto max-w-[640px]">
-          <p className="text-[#f00] font-guthen-bloots-personal-use text-base lg:text-[36px] text-center leading-none">
-            Unique brands
-          </p>
+          <div className="relative w-[100px] h-[34px] lg:w-[153px] lg:h-[52px] mx-auto">
+            <Image
+              src="/assets/images/unique-brands@3x.webp"
+              alt="Unique brands"
+              fill
+              className="object-contain"
+            />
+          </div>
           <h2 className="text-[40px] lg:text-[100px] text-center font-portlin leading-[.9] text-balance mt-[12px] lg:mt-[22px]">
             AWESOME PROJECTS
           </h2>

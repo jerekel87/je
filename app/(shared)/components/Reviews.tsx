@@ -25,9 +25,14 @@ function Reviews({
       </div>
       <div className="container px-4 mx-auto">
         <div className="mx-auto max-w-[791px]">
-          <p className="text-[#ffcf25] font-guthen-bloots-personal-use text-base lg:text-[36px] text-center leading-none">
-            your industry peers&apos;
-          </p>
+          <div className="relative w-[100px] h-[25px] lg:w-[200px] lg:h-[50px] mx-auto">
+            <Image
+              src="/assets/images/your-industry-peers@3x.webp"
+              alt="Your industry peers"
+              fill
+              className="object-contain"
+            />
+          </div>
           <h2 className="text-[40px] lg:text-[100px] text-center font-portlin leading-[.9] text-balance mt-[12px] lg:mt-[22px]">
             SUCCESS STORIES
           </h2>
