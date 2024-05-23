@@ -18,9 +18,9 @@ function Header() {
         <div className="flex gap-[27px] items-end">
           <div className="relative size-[80px] lg:size-[120px] shrink-0">
             <Image
-              src="/assets/images/hoffman-heating-cooling-v-2-mascot@3x.webp"
+              src="/assets/images/flasman.png"
               fill
-              alt="hoffman-heating-cooling-v-2-mascot"
+              alt="Flash man"
               className="object-contain"
             />
           </div>

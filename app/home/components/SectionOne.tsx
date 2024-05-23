@@ -30,7 +30,7 @@ function SectionOne() {
             width="1639"
             height="617"
             alt="Pickup"
-            className="relative w-[98%] transform left-1/2 -translate-x-1/2 z-[1]"
+            className="relative w-[98%] lg:w-[90%] transform left-1/2 -translate-x-1/2 z-[1]"
           />
           <Image
             src="/assets/images/drop-shadow.webp"
