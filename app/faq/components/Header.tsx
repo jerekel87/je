@@ -2,15 +2,16 @@ import Image from "next/image";
 
 function Header() {
   return (
-    <header className="bg-[#00be5e] pt-[60px] pb-4 lg:pt-[68px] lg:pb-0 relative">
+    <header className="bg-[#e01120] pt-[60px] pb-4 lg:pt-[68px] lg:pb-0 relative">
       <div className="container relative text-white">
         <h1 className="text-[60px] lg:text-[100px] text-white font-portlin leading-[.9]">
-          AWESOME <span className="text-[#fff500]">BRAND</span> <br /> STUDIES
+          FREQUENTLY <span className="text-[#fff500]">ASKED</span> <br />
+          QUESTIONS
         </h1>
-        <p className="text-white text-[18px] lg:absolute bottom-2 left-[320px] mt-4 lg:mt-0">
-          We are more than just a team. We are a creative family, united by our
-          passion for design and our commitment to helping our clients stand out
-          from the competition.
+        <p className="text-white text-[18px] lg:absolute bottom-2 left-[386px] mt-4 lg:mt-0">
+          Welcome to our Frequently Asked Questions (FAQ) page. Here,
+          you&apos;ll find quick answers to common queries about our services
+          and policies, all conveniently organized for easy navigation.
         </p>
       </div>
       <div className="container mt-[26px]">
@@ -24,8 +25,8 @@ function Header() {
             />
           </div>
           <div className="w-full flex flex-col lg:flex-row lg:items-center lg:gap-[14px]">
-            <p className="text-white text-sm lg:text-[18px] font-bold pt-4 pb-1 lg:py-[32px] border-t border-[#2bd06b]">
-              Copeland Home Services revenue increased by 200% since rebranding
+            <p className="text-white text-sm lg:text-[18px] font-bold pt-4 pb-1 lg:py-[32px] border-t border-[#f4312e]">
+              The Flash Electric revenue increased by 150% since rebranding
             </p>
             <div className="flex items-center gap-[14px]">
               <div className="h-[1px] lg:h-[2px] w-2 lg:w-[32px] bg-white opacity-50" />
@@ -40,7 +41,7 @@ function Header() {
         </div>
       </div>
       <div className="w-1/2 absolute bottom-0 left-1/2 hidden lg:block">
-        <p className="text-sm lg:text-[18px] font-bold py-[32px] border-t border-[#2bd06b]">
+        <p className="text-sm lg:text-[18px] font-bold py-[32px] border-t border-[#f4312e]">
           &nbsp;
         </p>
       </div>
