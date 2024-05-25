@@ -17,9 +17,9 @@ function SectionThree() {
         />
       </div>
       <div className="container mx-auto">
-        <h2 className="text-[40px] lg:text-[100px] font-portlin leading-[0.9] text-balance">
+        <h1 className="text-[40px] lg:text-[100px] font-portlin leading-[0.9] text-balance">
           INFINITE SOLUTION
-        </h2>
+        </h1>
         <p className="text-sm lg:text-lg mt-[30px] lg:mt-[40px] text-muted-foreground max-w-[769px]">
           No contract, pause or cancel anytime with our Infinite Package. Forget
           about employees and freelancers. Pause or cancel anytime!

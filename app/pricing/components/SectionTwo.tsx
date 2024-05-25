@@ -11,11 +11,11 @@ function SectionTwo() {
       <div className="container px-0 lg:px-8 mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-x-0 gap-[40px] lg:gap-[100px]">
         <div className={twMerge("container lg:px-0", data && "lg:hidden")}>
           <div className="relative">
-            <h2 className="text-[40px] lg:text-[100px] font-portlin leading-[0.9] text-balance">
+            <h1 className="text-[40px] lg:text-[100px] font-portlin leading-[0.9] text-balance">
               REVENUE
               <br />
               CALCULATOR
-            </h2>
+            </h1>
             <div className="absolute left-[120px] top-0 lg:left-[298px] lg:top-[24px] w-[80px] h-[34px] lg:w-[172px] lg:h-[42px] mx-auto">
               <Image
                 src="/assets/images/estimates-only@3x.webp"

@@ -9,11 +9,11 @@ function SectionThree() {
       <div className="container mx-auto h-full relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-[120px]">
           <div>
-            <h2 className="text-[40px] lg:text-[100px] font-portlin leading-[0.9] text-balance text-white">
+            <h1 className="text-[40px] lg:text-[100px] font-portlin leading-[0.9] text-balance text-white">
               EFFECTIVE
               <br />
               <span className="text-secondary">BRAND</span> VALUE
-            </h2>
+            </h1>
 
             <p className="text-sm lg:text-lg mt-[30px] lg:mt-[40px] text-white mb-[60px] lg:mb-[124px]">
               In the realm of business, standing out is key. Having a proven

@@ -1,22 +1,14 @@
 import Image from "next/image";
-import { Button } from "./ui/button";
 import Link from "next/link";
+import FooterTopBg from "./FooterTopBg";
+import { Button } from "./ui/button";
 
 function Footer() {
   return (
     <footer className="relative">
       <div className="relative">
         <div className="absolute w-full h-full -z-10">
-          <div className="h-[135px] lg:h-[235px] w-full bg-[#f9f8f3] relative">
-            <div className="absolute w-full h-[27px] lg:h-[37px] -bottom-[6px] z-[2]">
-              <Image
-                src="/assets/images/shape-7-copy-14.svg"
-                fill
-                alt="Transition"
-                className="object-cover"
-              />
-            </div>
-          </div>
+          <FooterTopBg />
           <div className="h-full w-full bg-primary" />
         </div>
         <div className="container px-4 lg:px-[30px] mx-auto lg:max-w-[1500px]">

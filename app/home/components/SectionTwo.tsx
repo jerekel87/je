@@ -93,9 +93,9 @@ function SectionTwo() {
           </div>
         </div>
         <div className="lg:pl-[86px] mt-[40px] lg:mt-0">
-          <h2 className="text-[40px] lg:text-[100px] font-portlin leading-[0.9] text-balance">
+          <h1 className="text-[40px] lg:text-[100px] font-portlin leading-[0.9] text-balance">
             YOUR <span className="text-nowrap">FIVE-STAR</span> CREATIVE PARTNER
-          </h2>
+          </h1>
           <div className="mt-4 lg:mt-[37px]">
             <StarRating
               value={5}

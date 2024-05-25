@@ -33,9 +33,9 @@ function Reviews({
               className="object-contain"
             />
           </div>
-          <h2 className="text-[40px] lg:text-[100px] text-center font-portlin leading-[.9] text-balance mt-[12px] lg:mt-[22px]">
+          <h1 className="text-[40px] lg:text-[100px] text-center font-portlin leading-[.9] text-balance mt-[12px] lg:mt-[22px]">
             SUCCESS STORIES
-          </h2>
+          </h1>
           {subheader}
         </div>
         <div>

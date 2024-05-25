@@ -23,11 +23,11 @@ function SectionOne() {
           </div>
         </div>
         <div>
-          <h2 className="text-[40px] lg:text-[100px] font-portlin leading-[0.9] text-balance">
+          <h1 className="text-[40px] lg:text-[100px] font-portlin leading-[0.9] text-balance">
             UNLOCK YOUR
             <br className="hidden lg:block" /> BRANDS
             <br className="hidden lg:block" /> PERSONALITY.
-          </h2>
+          </h1>
           <p className="text-sm lg:text-lg mt-[30px] lg:mt-[40px]">
             No contract, pause or cancel anytime with our Infinite Package.
             Forget about employees, freelancers and agencies. You can have the

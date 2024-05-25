@@ -6,14 +6,14 @@ function SectionOne() {
     <section className="bg-[#164dcc] relative">
       <div className="container mx-auto lg:max-w-[1920px] h-full relative px-0 lg:px-[2rem]">
         <div className="relative w-max mx-auto">
-          <h2 className="text-[40px] lg:text-[178px] font-portlin leading-none text-center transform -rotate-[5deg] pt-[100px] w-max">
+          <h1 className="text-[40px] lg:text-[178px] font-portlin leading-none text-center transform -rotate-[5deg] pt-[100px] w-max">
             <span className="text-white">IGNITING </span>
             <span className="text-secondary">CREATIVITY</span>
             <span className="text-white">.</span>
             <br />
             <span className="text-secondary">FUELING </span>
             <span className="text-white">BRANDS.</span>
-          </h2>
+          </h1>
           <div className="w-[70px] h-[20px] lg:w-[120px] lg:h-[40px] right-0 lg:right-[35px] absolute">
             <Image
               src="/assets/images/since-2005.webp"

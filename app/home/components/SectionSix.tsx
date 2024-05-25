@@ -15,11 +15,11 @@ function SectionSix() {
       </div>
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-[60px] lg:gap-[100px] items-center">
         <div>
-          <h2 className="text-[40px] lg:text-[100px] font-portlin leading-[0.9] text-balance text-white">
+          <h1 className="text-[40px] lg:text-[100px] font-portlin leading-[0.9] text-balance text-white">
             TRANSFORMING
             <br /> <span className="text-secondary">IDEAS</span> INTO
             <span className="text-secondary"> MASTERPIECES</span>.
-          </h2>
+          </h1>
           <p className="text-sm lg:text-lg mt-[30px] lg:mt-[40px] text-white">
             We are your quintessential five-star creative design agency, fully
             equipped and ready to expertly tackle any project you envision.

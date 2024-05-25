@@ -21,9 +21,9 @@ function SectionFour() {
               className="object-contain"
             />
           </div>
-          <h2 className="text-[40px] lg:text-[100px] text-center font-portlin leading-[.9] text-balance mt-[12px] lg:mt-[22px]">
+          <h1 className="text-[40px] lg:text-[100px] text-center font-portlin leading-[.9] text-balance mt-[12px] lg:mt-[22px]">
             AWESOME PROJECTS
-          </h2>
+          </h1>
           <p className="text-sm lg:text-lg mt-[30px] lg:mt-[40px] mb-[60px] lg:mb-[124px] text-center">
             We are your quintessential five-star creative design agency, fully
             equipped and ready to expertly tackle any project you envision.

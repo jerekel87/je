@@ -14,9 +14,9 @@ function SectionFive() {
       </div>
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
         <div className="text-center lg:text-left">
-          <h2 className="text-[40px] lg:text-[100px] font-portlin leading-[.9]">
+          <h1 className="text-[40px] lg:text-[100px] font-portlin leading-[.9]">
             FORGING FUTURE-READY BRANDS
-          </h2>
+          </h1>
           <p className="text-sm lg:text-[17px] mt-[30px] lg:mt-[40px] lg max-w-[486px] text-pretty">
             Stop customers from treating your business like a commodity because
             you look exactly like everyone else!

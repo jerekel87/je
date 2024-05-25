@@ -135,9 +135,9 @@ function SectionFour() {
   return (
     <section className="bg-primary  py-[70px] lg:py-[140px]">
       <div className="container mx-auto h-full relative">
-        <h2 className="text-[40px] lg:text-[100px] font-portlin leading-[0.9] text-balance text-white">
+        <h1 className="text-[40px] lg:text-[100px] font-portlin leading-[0.9] text-balance text-white">
           <span className="text-secondary">FIVE-STAR</span> SOLUTIONS
-        </h2>
+        </h1>
 
         <p className="text-sm max-w-[546px] lg:text-lg mt-[30px] lg:mt-[40px] text-[#a7a7bc] mb-[60px] lg:mb-[124px]">
           Here you can find many of the solutions we offer that are included in
