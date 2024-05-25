@@ -9,7 +9,7 @@ const Star = (
 function StarRating({ value, text }: { value: number; text?: ReactNode }) {
   const customStyles = {
     itemShapes: Star,
-    activeBoxColor: "#facc15",
+    activeBoxColor: "#FFCD00",
     inactiveBoxColor: "#C7C7C7",
     inactiveFillColor: "white",
     activeFillColor: "white",
