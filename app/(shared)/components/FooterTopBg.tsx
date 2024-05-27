@@ -6,7 +6,8 @@ import { usePathname } from "next/navigation";
 function FooterTopBg() {
   const pathname = usePathname();
   const isFAQPage = pathname.includes("faq");
-  const topBgColor = isFAQPage ? "#fff" : "#f9f8f3";
+  const isArticlesPage = pathname.includes("articles");
+  const topBgColor = isFAQPage || isArticlesPage ? "#fff" : "#f9f8f3";
   return (
     <div
       className="h-[135px] lg:h-[235px] w-full relative"

@@ -63,7 +63,9 @@ function Header() {
           <HeaderRating />
         </div>
 
-        <Button variant="outline">GET STARTED</Button>
+        <Button variant="outline" className="lg:h-[60px]">
+          GET STARTED
+        </Button>
       </div>
       <div
         style={{ height: isOpen ? "calc(100% - 74px)" : "0" }}
