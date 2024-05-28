@@ -68,9 +68,7 @@ export default function RootLayout({
       <body
         className={`${MonaSans.variable} ${Portlin.variable} ${GuthenBlootsPersonalUse.variable} font-mona-sans`}
       >
-        <Header />
         {children}
-        <Footer />
       </body>
     </html>
   );
