@@ -3,8 +3,10 @@ import Image from "next/image";
 import ReviewsMasonry from "./ReviewsMasonry";
 import { Button } from "./ui/button";
 import { twMerge } from "tailwind-merge";
+import { getReviews } from "@/sanity/query/review";
+import { unstable_noStore } from "next/cache";
 
-function Reviews({
+async function Reviews({
   subheader,
   footerText,
   footerButton,
@@ -13,6 +15,8 @@ function Reviews({
   footerText?: ReactNode;
   footerButton?: ReactNode;
 }) {
+  unstable_noStore();
+  const reviews = await getReviews({ limit: 9 });
   return (
     <section className="relative pt-[70px] lg:pt-[140px] pb-[124px] bg-[#f9f8f3]">
       <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">
@@ -39,13 +43,10 @@ function Reviews({
           {subheader}
         </div>
         <div>
-          <ReviewsMasonry />
+          <ReviewsMasonry reviews={reviews} />
         </div>
         <div className="mx-auto max-w-[791px] text-center">
           {footerText}
-          {/* <Button variant="outline" className="mt-[30px] lg:mt-[40px]">
-            ALL STORIES
-          </Button> */}
           {footerButton}
         </div>
       </div>

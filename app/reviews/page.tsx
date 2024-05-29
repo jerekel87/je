@@ -1,11 +1,11 @@
 import Header from "./components/Header";
-import Reviews from "./components/Reviews";
+import SectionOne from "./components/SectionOne";
 
 function ReviewsPage() {
   return (
     <main>
       <Header />
-      <Reviews />
+      <SectionOne />
     </main>
   );
 }

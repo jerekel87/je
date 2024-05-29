@@ -6,6 +6,7 @@ import SectionFour from "./components/SectionFour";
 import SectionFive from "./components/SectionFive";
 import SectionSix from "./components/SectionSix";
 import Reviews from "../(shared)/components/Reviews";
+import Link from "next/link";
 
 function HomePage() {
   return (
@@ -38,7 +39,11 @@ function HomePage() {
             </p>
           </Reviews.FooterText>
         }
-        footerButton={<Reviews.FooterButton>ALL STORIES</Reviews.FooterButton>}
+        footerButton={
+          <Link href="/reviews">
+            <Reviews.FooterButton>ALL STORIES</Reviews.FooterButton>
+          </Link>
+        }
       />
     </main>
   );

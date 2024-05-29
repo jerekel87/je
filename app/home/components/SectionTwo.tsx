@@ -59,7 +59,7 @@ function SectionTwo() {
               height="42"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 stroke="#ADADAD"
                 stroke-width="2"
                 fill="#0D539A"
