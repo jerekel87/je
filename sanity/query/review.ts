@@ -17,8 +17,7 @@ export async function getReviews({
   limit = 9,
 } = {}): Promise<
   (Review & {
-    avatarUrl: string;
-    reviewPlatformLogoUrl: string;
+    reviewPlatformLogo: any;
     reviewPlatformName: string;
   })[]
 > {
@@ -29,8 +28,9 @@ export async function getReviews({
     rating,
     reviewText,
     reviewDate,
-    "avatarUrl": avatar.asset->url,
-    "reviewPlatformLogoUrl": reviewPlatform->logo.asset->url
+    avatar,
+    "reviewPlatformLogo": reviewPlatform->logo
+    "reviewPlatformName": reviewPlatform->name
   }`;
   if (platformId) {
     query = `*[_type == "review" && reviewPlatform._ref == $platformId && _id > $lastId] | order(_id) [0...$limit]{
@@ -40,8 +40,9 @@ export async function getReviews({
         rating,
         reviewText,
         reviewDate,
-        "avatarUrl": avatar.asset->url,
-        "reviewPlatformLogoUrl": reviewPlatform->logo.asset->url
+        avatar,
+        "reviewPlatformLogo": reviewPlatform->logo
+        "reviewPlatformName": reviewPlatform->name
       }`;
   }
   return client.fetch(query, { lastId, limit, platformId });

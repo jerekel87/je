@@ -1,12 +1,18 @@
+import { getProjects } from "@/sanity/query/project";
 import Reviews from "../(shared)/components/Reviews";
 import Header from "./components/Header";
 import Projects from "./components/Projects";
+import { unstable_noStore as noStore } from "next/cache";
 
-function ProjectsPage() {
+export const PROJECTS_LIMIT = 2;
+
+async function ProjectsPage() {
+  noStore();
+  const projects = await getProjects({ limit: PROJECTS_LIMIT });
   return (
     <main>
       <Header />
-      <Projects />
+      <Projects initialProjects={projects} />
       <Reviews
         subheader={
           <Reviews.Subheader>

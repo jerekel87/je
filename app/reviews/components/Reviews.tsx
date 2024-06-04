@@ -21,8 +21,7 @@ function Reviews({
   initialReviews,
 }: {
   initialReviews: (Review & {
-    avatarUrl: string;
-    reviewPlatformLogoUrl: string;
+    reviewPlatformLogo: string;
     reviewPlatformName: string;
   })[];
 }) {

@@ -1,6 +1,11 @@
+import { urlForImage } from "@/sanity/lib/image";
+import { getProjects } from "@/sanity/query/project";
+import { unstable_noStore as noStore } from "next/cache";
 import Image from "next/image";
 
-function SectionFour() {
+async function SectionFour() {
+  noStore();
+  const projects = await getProjects({ limit: 5 });
   return (
     <section className="relative pt-[70px] lg:pt-[140px]">
       <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">
@@ -31,51 +36,20 @@ function SectionFour() {
         </div>
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-5">
-        <div className="relative w-full pb-[85.5%] bg-gray-400">
-          <Image
-            src="/assets/images/proj2.svg"
-            fill
-            alt="Project"
-            className="object-contain"
-            quality={100}
-          />
-        </div>
-        <div className="relative w-full pb-[85.5%] bg-gray-400">
-          <Image
-            src="/assets/images/proj3.svg"
-            fill
-            alt="Project"
-            className="object-contain"
-            quality={100}
-          />
-        </div>
-        <div className="relative w-full pb-[85.5%] bg-gray-400">
-          <Image
-            src="/assets/images/proj4.svg"
-            fill
-            alt="Project"
-            className="object-contain"
-            quality={100}
-          />
-        </div>
-        <div className="relative w-full pb-[85.5%] bg-gray-400">
-          <Image
-            src="/assets/images/proj5.svg"
-            fill
-            alt="Project"
-            className="object-contain"
-            quality={100}
-          />
-        </div>
-        <div className="relative w-full pb-[85.5%] bg-gray-400 col-span-2 lg:col-span-1">
-          <Image
-            src="/assets/images/proj1.svg"
-            fill
-            alt="Project"
-            className="object-contain"
-            quality={100}
-          />
-        </div>
+        {projects.map((project) => (
+          <div
+            key={project._id}
+            className="relative w-full pb-[85.5%] bg-gray-400 last:col-span-2 lg:last:col-span-1"
+          >
+            <Image
+              src={urlForImage(project.mainImage as any)}
+              fill
+              alt={project.title || ""}
+              className="object-contain"
+              quality={100}
+            />
+          </div>
+        ))}
       </div>
     </section>
   );

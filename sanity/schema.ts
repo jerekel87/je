@@ -4,7 +4,8 @@ import project from "./schemaTypes/project";
 import industry from "./schemaTypes/industry";
 import review from "./schemaTypes/review";
 import reviewPlatform from "./schemaTypes/reviewPlatform";
+import article from "./schemaTypes/article";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [project, industry, review, reviewPlatform, blockContent],
+  types: [project, industry, review, reviewPlatform, article, blockContent],
 };

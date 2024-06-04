@@ -13,6 +13,7 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "reviewerName",
@@ -22,7 +23,7 @@ export default defineType({
         Rule.required()
           .min(2)
           .max(50)
-          .warning("Name should be between 2 and 50 characters"),
+          .error("Name should be between 2 and 50 characters"),
     }),
     defineField({
       name: "reviewerInfo",
@@ -32,7 +33,7 @@ export default defineType({
         Rule.required()
           .min(2)
           .max(50)
-          .warning("Info should be between 2 and 50 characters"),
+          .error("Info should be between 2 and 50 characters"),
     }),
     defineField({
       name: "rating",
@@ -57,7 +58,7 @@ export default defineType({
         Rule.required()
           .min(10)
           .max(1000)
-          .warning("Review should be between 10 and 1000 characters"),
+          .error("Review should be between 10 and 1000 characters"),
     }),
     defineField({
       name: "reviewDate",
@@ -70,6 +71,7 @@ export default defineType({
       title: "Review Platform",
       type: "reference",
       to: { type: "reviewPlatform" },
+      validation: (Rule) => Rule.required(),
     }),
   ],
 });

@@ -16,7 +16,7 @@ function Aside() {
       </div>
       <div className="border-t border-input pt-[30px] mt-[40px]">
         <h2 className="font-portlin text-[30px]">CATEGORIES</h2>
-        <ul className="flex flex-col gap-4 text-muted-forground text-sm lg:text-base mt-4 lg:mt-[28px]">
+        <ul className="flex flex-col gap-4 text-muted-foreground text-sm lg:text-base mt-4 lg:mt-[28px]">
           <li>Interviews</li>
           <li>Interviews</li>
           <li>Interviews</li>
@@ -24,7 +24,7 @@ function Aside() {
       </div>
       <div className="border-t border-input pt-[30px] mt-[40px]">
         <h2 className="font-portlin text-[30px]">POPULAR HASHTAGS</h2>
-        <ul className="flex flex-col gap-4 text-muted-forground text-sm lg:text-base mt-4 lg:mt-[28px]">
+        <ul className="flex flex-col gap-4 text-muted-foreground text-sm lg:text-base mt-4 lg:mt-[28px]">
           <li>#brandidentity</li>
           <li>#logodesign</li>
           <li>#logodesigner</li>

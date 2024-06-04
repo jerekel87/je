@@ -1,30 +1,36 @@
 "use server";
 
-import { Project } from "@/sanity.types";
+import { Industry, Project } from "@/sanity.types";
 import { client } from "../lib/client";
 
 export async function getProjects({
   industryId = "",
   lastId = "",
   limit = 9,
-} = {}): Promise<
-  (Project & {
-    mainImageUrl: string;
-  })[]
-> {
+} = {}): Promise<Project[]> {
   let query = `*[_type == "project" && _id > $lastId] | order(_id) [0...$limit]{
     _id,
     title,
     slug,
-    "mainImageUrl": mainImage.asset->url
+    mainImage
   }`;
   if (industryId) {
     query = `*[_type == "project" && industry._ref == $industryId && _id > $lastId] | order(_id) [0...$limit]{
       _id,
       title,
       slug,
-      "mainImageUrl": mainImage.asset->url
+      mainImage
       }`;
   }
   return client.fetch(query, { lastId, limit, industryId });
+}
+
+export async function getProjectsIndustries(): Promise<Industry[]> {
+  let query = `*[_type == "industry"]{
+      _id,
+      title,
+      description
+    }`;
+
+  return client.fetch(query);
 }

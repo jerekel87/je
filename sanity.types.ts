@@ -99,6 +99,28 @@ export type BlockContent = Array<{
   _key: string;
 }>;
 
+export type Article = {
+  _id: string;
+  _type: "article";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  slug?: Slug;
+  mainImage?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  body?: BlockContent;
+};
+
 export type Review = {
   _id: string;
   _type: "review";
@@ -114,7 +136,6 @@ export type Review = {
     };
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
-    alt?: string;
     _type: "image";
   };
   reviewerName?: string;
@@ -146,7 +167,6 @@ export type ReviewPlatform = {
     };
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
-    alt?: string;
     _type: "image";
   };
 };
@@ -168,7 +188,6 @@ export type Project = {
     };
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
-    alt?: string;
     _type: "image";
   };
   body?: BlockContent;

@@ -2,6 +2,7 @@
 
 import ReviewCard from "@/app/(shared)/components/ReviewCard";
 import { Review } from "@/sanity.types";
+import { urlForImage } from "@/sanity/lib/image";
 
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
@@ -9,8 +10,7 @@ function ReviewsMasonry({
   reviews,
 }: {
   reviews: (Review & {
-    avatarUrl: string;
-    reviewPlatformLogoUrl: string;
+    reviewPlatformLogo: any;
     reviewPlatformName: string;
   })[];
 }) {
@@ -20,12 +20,12 @@ function ReviewsMasonry({
         {reviews.map((review) => (
           <ReviewCard
             key={review._id}
-            avatar={review.avatarUrl}
+            avatar={urlForImage(review.avatar as any)}
             reviewerName={review.reviewerName || ""}
             reviewerInfo={review.reviewerInfo || ""}
             rating={review.rating || 5}
             text={review.reviewText}
-            platformLogoUrl={review.reviewPlatformLogoUrl}
+            platformLogoUrl={urlForImage(review.reviewPlatformLogo)}
             platformName={review.reviewPlatformName}
           />
         ))}

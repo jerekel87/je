@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/app/(shared)/components/ui/button";
 import {
   Select,
@@ -10,8 +12,55 @@ import {
 } from "@/app/(shared)/components/ui/select";
 import Image from "next/image";
 import { FaBuilding } from "react-icons/fa6";
+import IndustrySelector from "./IndustrySelector";
+import { useState } from "react";
+import { Industry, Project } from "@/sanity.types";
+import { PROJECTS_LIMIT } from "../page";
+import { getProjects } from "@/sanity/query/project";
+import { cn } from "@/app/(shared)/lib/utils";
+import { LoaderCircle } from "lucide-react";
+import { urlForImage } from "@/sanity/lib/image";
 
-function Projects() {
+function Projects({ initialProjects }: { initialProjects: Project[] }) {
+  const [projects, setProjects] = useState(initialProjects);
+  const initialLastId =
+    initialProjects.length >= PROJECTS_LIMIT
+      ? initialProjects[initialProjects.length - 1]._id
+      : "";
+  const [lastId, setLastId] = useState(initialLastId);
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
+  const [isLoadingProjects, setIsLoadingProjects] = useState(false);
+
+  const loadMore = async () => {
+    setIsLoadingMore(true);
+    try {
+      const projectsRes = await getProjects({ lastId });
+      setProjects([...projects, ...projectsRes]);
+      if (projectsRes.length > 0) {
+        setLastId(projectsRes[projectsRes.length - 1]._id);
+      } else {
+        setLastId("");
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoadingMore(false);
+    }
+  };
+
+  const handleIndustryChange = async (value: string) => {
+    setIsLoadingProjects(true);
+    try {
+      const projectsRes = await getProjects({
+        industryId: value,
+      });
+      setProjects(projectsRes);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoadingProjects(false);
+    }
+  };
   return (
     <section className="relative py-[40px] lg:py-[72px]">
       <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">
@@ -28,17 +77,7 @@ function Projects() {
             RECENT PROJECTS
           </h1>
           <div className="flex flex-col lg:flex-row gap-2 lg:gap-[30px]">
-            <Select>
-              <SelectTrigger className="w-full lg:w-[282px]">
-                <div className="flex items-center gap-[12px]">
-                  <FaBuilding />
-                  <SelectValue placeholder="Choose industry" />
-                </div>
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="apple">Apple</SelectItem>
-              </SelectContent>
-            </Select>
+            <IndustrySelector onChange={handleIndustryChange} />
             <Select>
               <SelectTrigger className="w-full lg:w-[282px]">
                 <SelectValue placeholder="Most recent" />
@@ -51,58 +90,39 @@ function Projects() {
         </div>
       </div>
       <div className="container px-0 lg:px-[30px]">
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-1 lg:gap-[30px] mt-[30px]">
-          <div className="relative w-full pb-[85.5%] bg-gray-400 lg:rounded-[8px] overflow-hidden">
-            <Image
-              src="/assets/images/proj2.svg"
-              fill
-              alt="Project"
-              className="object-contain"
-              quality={100}
-            />
+        {isLoadingProjects ? (
+          <LoaderCircle className="animate-spin" />
+        ) : (
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-1 lg:gap-[30px] mt-[30px]">
+            {projects.map((project) => (
+              <div
+                key={project._id}
+                className="relative w-full pb-[85.5%] bg-gray-400 lg:rounded-[8px] overflow-hidden"
+              >
+                <Image
+                  src={urlForImage(project.mainImage as any)}
+                  fill
+                  alt={project.title || ""}
+                  className="object-contain"
+                  quality={100}
+                />
+              </div>
+            ))}
           </div>
-          <div className="relative w-full pb-[85.5%] bg-gray-400 lg:rounded-[8px] overflow-hidden">
-            <Image
-              src="/assets/images/proj3.svg"
-              fill
-              alt="Project"
-              className="object-contain"
-              quality={100}
-            />
+        )}
+
+        {lastId && (
+          <div className="flex justify-center mt-[40px] lg:mt-[60px]">
+            <Button
+              variant="outline"
+              className={cn("mx-auto", isLoadingMore && "!border-none")}
+              onClick={loadMore}
+              disabled={isLoadingMore}
+            >
+              {isLoadingMore ? "Loading..." : "LOAD MORE"}
+            </Button>
           </div>
-          <div className="relative w-full pb-[85.5%] bg-gray-400 lg:rounded-[8px] overflow-hidden">
-            <Image
-              src="/assets/images/proj4.svg"
-              fill
-              alt="Project"
-              className="object-contain"
-              quality={100}
-            />
-          </div>
-          <div className="relative w-full pb-[85.5%] bg-gray-400 lg:rounded-[8px] overflow-hidden">
-            <Image
-              src="/assets/images/proj5.svg"
-              fill
-              alt="Project"
-              className="object-contain"
-              quality={100}
-            />
-          </div>
-          <div className="relative w-full pb-[85.5%] bg-gray-400 lg:rounded-[8px] overflow-hidden">
-            <Image
-              src="/assets/images/proj1.svg"
-              fill
-              alt="Project"
-              className="object-contain"
-              quality={100}
-            />
-          </div>
-        </div>
-        <div className="flex justify-center mt-[40px] lg:mt-[60px]">
-          <Button variant="outline" className="mx-auto">
-            LOAD MORE
-          </Button>
-        </div>
+        )}
       </div>
     </section>
   );
