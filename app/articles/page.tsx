@@ -8,8 +8,6 @@ import MainHeader from "../(shared)/components/Header";
 import Header from "./components/Header";
 import { unstable_noStore as noStore } from "next/cache";
 
-export const ARTICLES_LIMIT = 9;
-
 async function ArticlesPage({
   searchParams,
 }: {
@@ -18,7 +16,7 @@ async function ArticlesPage({
   const categorySlug = searchParams.category;
   noStore();
   const articles = await getArticles({
-    limit: ARTICLES_LIMIT,
+    limit: 9,
     categorySlug,
   });
 

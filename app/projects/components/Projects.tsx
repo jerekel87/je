@@ -12,7 +12,6 @@ import Image from "next/image";
 import IndustrySelector from "./IndustrySelector";
 import { useState } from "react";
 import { Project } from "@/sanity.types";
-import { PROJECTS_LIMIT } from "../page";
 import { getProjects } from "@/sanity/query/project";
 import { cn } from "@/app/(shared)/lib/utils";
 import { LoaderCircle } from "lucide-react";
@@ -21,7 +20,7 @@ import { urlForImage } from "@/sanity/lib/image";
 function Projects({ initialProjects }: { initialProjects: Project[] }) {
   const [projects, setProjects] = useState(initialProjects);
   const initialLastId =
-    initialProjects.length >= PROJECTS_LIMIT
+    initialProjects.length >= 2
       ? initialProjects[initialProjects.length - 1]._id
       : "";
   const [lastId, setLastId] = useState(initialLastId);

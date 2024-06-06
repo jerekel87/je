@@ -7,8 +7,6 @@ import SectionFour from "./components/SectionFour";
 import Header from "@/app/(shared)/components/Header";
 import Footer from "@/app/(shared)/components/Footer";
 
-export const ARTICLES_LIMIT = 9;
-
 async function ArticlePage({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const article = await getArticle({ slug });

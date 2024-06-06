@@ -4,11 +4,9 @@ import Header from "./components/Header";
 import Projects from "./components/Projects";
 import { unstable_noStore as noStore } from "next/cache";
 
-export const PROJECTS_LIMIT = 2;
-
 async function ProjectsPage() {
   noStore();
-  const projects = await getProjects({ limit: PROJECTS_LIMIT });
+  const projects = await getProjects({ limit: 2 });
 
   return (
     <main>

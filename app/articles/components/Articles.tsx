@@ -1,11 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import PortableText from "react-portable-text";
 import { Button } from "@/app/(shared)/components/ui/button";
 import { Article } from "@/sanity.types";
-import { useState } from "react";
-import { ARTICLES_LIMIT } from "../page";
 import { getArticles } from "@/sanity/query/article";
 import { urlForImage } from "@/sanity/lib/image";
 import { cn } from "@/app/(shared)/lib/utils";
@@ -14,7 +13,7 @@ import Link from "next/link";
 function Articles({ initialArticles }: { initialArticles: Article[] }) {
   const [articles, setArticles] = useState(initialArticles);
   const initialLastId =
-    initialArticles.length >= ARTICLES_LIMIT
+    initialArticles.length >= 9
       ? initialArticles[initialArticles.length - 1]._id
       : "";
   const [lastId, setLastId] = useState(initialLastId);
