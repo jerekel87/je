@@ -7,22 +7,22 @@ const MonaSans = localFont({
   variable: "--font-mona-sans",
   src: [
     {
-      path: "./(shared)/fonts/Mona-Sans-Regular.ttf",
+      path: "./(shared)/fonts/mona-sans-regular-font.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./(shared)/fonts/Mona-Sans-Medium.ttf",
+      path: "./(shared)/fonts/mona-sans-medium-font.ttf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "./(shared)/fonts/Mona-Sans-Semibold.ttf",
+      path: "./(shared)/fonts/mona-sans-semibold-font.ttf",
       weight: "600",
       style: "normal",
     },
     {
-      path: "./(shared)/fonts/Mona-Sans-Bold.ttf",
+      path: "./(shared)/fonts/mona-sans-bold-font.ttf",
       weight: "700",
       style: "normal",
     },
@@ -33,7 +33,7 @@ const GuthenBlootsPersonalUse = localFont({
   variable: "--font-guthen-bloots-personal-use",
   src: [
     {
-      path: "./(shared)/fonts/Guthen_Bloots_Personal_Use.ttf",
+      path: "./(shared)/fonts/guthen-bloots-personal-use.ttf",
       weight: "400",
       style: "normal",
     },
@@ -44,7 +44,7 @@ const Portlin = localFont({
   variable: "--font-portlin",
   src: [
     {
-      path: "./(shared)/fonts/Portlin-Normal.woff2",
+      path: "./(shared)/fonts/portlin-normal-font.woff2",
       weight: "400",
       style: "normal",
     },
