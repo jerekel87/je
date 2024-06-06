@@ -8,6 +8,7 @@ import { useState } from "react";
 import { ARTICLES_LIMIT } from "../page";
 import { getArticles } from "@/sanity/query/article";
 import { urlForImage } from "@/sanity/lib/image";
+import { cn } from "@/app/(shared)/lib/utils";
 import Link from "next/link";
 
 function Articles({ initialArticles }: { initialArticles: Article[] }) {
@@ -18,7 +19,6 @@ function Articles({ initialArticles }: { initialArticles: Article[] }) {
       : "";
   const [lastId, setLastId] = useState(initialLastId);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
-  const [isLoadingProjects, setIsLoadingProjects] = useState(false);
 
   const loadMore = async () => {
     setIsLoadingMore(true);
@@ -36,10 +36,12 @@ function Articles({ initialArticles }: { initialArticles: Article[] }) {
       setIsLoadingMore(false);
     }
   };
+
   const firstArticle = articles[0];
+
   return (
     <section className="max-w-[790px]">
-      {firstArticle && (
+      {firstArticle ? (
         <article className="border-b border-muted pb-[45px]">
           <header>
             <h1 className="text-[40px] lg:text-[60px] font-portlin leading-[.9]">
@@ -60,6 +62,10 @@ function Articles({ initialArticles }: { initialArticles: Article[] }) {
             captivate, motivate, and delight.
           </p>
         </article>
+      ) : (
+        <p className="text-[40px] lg:text-[60px] font-portlin leading-[.9]">
+          No results found.
+        </p>
       )}
       {articles.slice(1).map((article) => (
         <Link
@@ -71,7 +77,7 @@ function Articles({ initialArticles }: { initialArticles: Article[] }) {
             <div className="w-full">
               <div className="w-full pb-[75%] relative rounded-[8px] overflow-hidden">
                 <Image
-                  src={urlForImage(firstArticle.mainImage as any)}
+                  src={urlForImage(article.mainImage as any)}
                   alt={article.title || ""}
                   fill
                   className="object-contain"
@@ -93,9 +99,18 @@ function Articles({ initialArticles }: { initialArticles: Article[] }) {
         </Link>
       ))}
 
-      <div className="flex justify-center mt-[46px]">
-        <Button variant="outline">SHOW MORE</Button>
-      </div>
+      {lastId && (
+        <div className="flex justify-center mt-[40px] lg:mt-[60px]">
+          <Button
+            variant="outline"
+            className={cn("mx-auto", isLoadingMore && "!border-none")}
+            onClick={loadMore}
+            disabled={isLoadingMore}
+          >
+            {isLoadingMore ? "Loading..." : "SHOW MORE"}
+          </Button>
+        </div>
+      )}
     </section>
   );
 }

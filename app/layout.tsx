@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Oswald } from "next/font/google";
+import ProjectModal from "./(shared)/components/ProjectModal";
 import "./globals.css";
-import Header from "./(shared)/components/Header";
-import Footer from "./(shared)/components/Footer";
 
 const MonaSans = localFont({
   variable: "--font-mona-sans",
@@ -69,6 +67,7 @@ export default function RootLayout({
         className={`${MonaSans.variable} ${Portlin.variable} ${GuthenBlootsPersonalUse.variable} font-mona-sans`}
       >
         {children}
+        <ProjectModal />
       </body>
     </html>
   );

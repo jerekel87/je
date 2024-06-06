@@ -29,7 +29,7 @@ export async function getReviews({
     reviewText,
     reviewDate,
     avatar,
-    "reviewPlatformLogo": reviewPlatform->logo
+    "reviewPlatformLogo": reviewPlatform->logo,
     "reviewPlatformName": reviewPlatform->name
   }`;
   if (platformId) {
@@ -41,7 +41,7 @@ export async function getReviews({
         reviewText,
         reviewDate,
         avatar,
-        "reviewPlatformLogo": reviewPlatform->logo
+        "reviewPlatformLogo": reviewPlatform->logo,
         "reviewPlatformName": reviewPlatform->name
       }`;
   }

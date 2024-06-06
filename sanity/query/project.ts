@@ -25,6 +25,16 @@ export async function getProjects({
   return client.fetch(query, { lastId, limit, industryId });
 }
 
+export async function getProject({ slug }: { slug: string }): Promise<Project> {
+  let query = `*[_type == "project" && _id == $slug][0]{
+    _id,
+    title,
+    slug,
+    mainImage
+  }`;
+  return client.fetch(query, { slug });
+}
+
 export async function getProjectsIndustries(): Promise<Industry[]> {
   let query = `*[_type == "industry"]{
       _id,

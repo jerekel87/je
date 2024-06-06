@@ -4,7 +4,7 @@ import ReviewsMasonry from "./ReviewsMasonry";
 import { Button } from "./ui/button";
 import { twMerge } from "tailwind-merge";
 import { getReviews } from "@/sanity/query/review";
-import { unstable_noStore } from "next/cache";
+import { unstable_noStore as noStore } from "next/cache";
 
 async function Reviews({
   subheader,
@@ -15,7 +15,7 @@ async function Reviews({
   footerText?: ReactNode;
   footerButton?: ReactNode;
 }) {
-  unstable_noStore();
+  noStore();
   const reviews = await getReviews({ limit: 9 });
   return (
     <section className="relative pt-[70px] lg:pt-[140px] pb-[124px] bg-[#f9f8f3]">

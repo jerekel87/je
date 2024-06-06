@@ -6,11 +6,22 @@ import { getArticles } from "@/sanity/query/article";
 import Footer from "../(shared)/components/Footer";
 import MainHeader from "../(shared)/components/Header";
 import Header from "./components/Header";
+import { unstable_noStore as noStore } from "next/cache";
 
 export const ARTICLES_LIMIT = 9;
 
-async function ArticlesPage() {
-  const articles = await getArticles({ limit: ARTICLES_LIMIT });
+async function ArticlesPage({
+  searchParams,
+}: {
+  searchParams: { category: string };
+}) {
+  const categorySlug = searchParams.category;
+  noStore();
+  const articles = await getArticles({
+    limit: ARTICLES_LIMIT,
+    categorySlug,
+  });
+
   return (
     <>
       <MainHeader />

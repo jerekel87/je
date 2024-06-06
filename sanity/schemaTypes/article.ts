@@ -36,5 +36,12 @@ export default defineType({
       type: "blockContent",
       validation: (Rule) => Rule.required(),
     }),
+    defineField({
+      name: "category",
+      title: "Category",
+      type: "reference",
+      to: { type: "articleCategory" },
+      validation: (Rule) => Rule.required(),
+    }),
   ],
 });

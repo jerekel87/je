@@ -36,20 +36,23 @@ async function SectionFour() {
         </div>
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-5">
-        {projects.map((project) => (
-          <div
-            key={project._id}
-            className="relative w-full pb-[85.5%] bg-gray-400 last:col-span-2 lg:last:col-span-1"
-          >
-            <Image
-              src={urlForImage(project.mainImage as any)}
-              fill
-              alt={project.title || ""}
-              className="object-contain"
-              quality={100}
-            />
-          </div>
-        ))}
+        {projects.map((project) => {
+          const src = urlForImage(project.mainImage as any);
+          return (
+            <div
+              key={project._id}
+              className="relative w-full pb-[85.5%] bg-gray-400 last:col-span-2 lg:last:col-span-1"
+            >
+              <Image
+                src={src}
+                fill
+                alt={project.title || ""}
+                className="object-contain"
+                quality={100}
+              />
+            </div>
+          );
+        })}
       </div>
     </section>
   );

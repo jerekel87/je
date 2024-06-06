@@ -75,8 +75,8 @@ export type BlockContent = Array<{
     _type: "span";
     _key: string;
   }>;
-  style?: "normal" | "h1" | "h2" | "h3" | "h4" | "blockquote";
-  listItem?: "bullet";
+  style?: "normal";
+  listItem?: never;
   markDefs?: Array<{
     href?: string;
     _type: "link";
@@ -84,18 +84,6 @@ export type BlockContent = Array<{
   }>;
   level?: number;
   _type: "block";
-  _key: string;
-} | {
-  asset?: {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-  };
-  hotspot?: SanityImageHotspot;
-  crop?: SanityImageCrop;
-  alt?: string;
-  _type: "image";
   _key: string;
 }>;
 
@@ -119,6 +107,23 @@ export type Article = {
     _type: "image";
   };
   body?: BlockContent;
+  category?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "articleCategory";
+  };
+};
+
+export type ArticleCategory = {
+  _id: string;
+  _type: "articleCategory";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  slug?: Slug;
+  description?: string;
 };
 
 export type Review = {

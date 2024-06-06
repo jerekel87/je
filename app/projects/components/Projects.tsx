@@ -4,17 +4,14 @@ import { Button } from "@/app/(shared)/components/ui/button";
 import {
   Select,
   SelectContent,
-  SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/app/(shared)/components/ui/select";
 import Image from "next/image";
-import { FaBuilding } from "react-icons/fa6";
 import IndustrySelector from "./IndustrySelector";
 import { useState } from "react";
-import { Industry, Project } from "@/sanity.types";
+import { Project } from "@/sanity.types";
 import { PROJECTS_LIMIT } from "../page";
 import { getProjects } from "@/sanity/query/project";
 import { cn } from "@/app/(shared)/lib/utils";
@@ -94,20 +91,24 @@ function Projects({ initialProjects }: { initialProjects: Project[] }) {
           <LoaderCircle className="animate-spin" />
         ) : (
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-1 lg:gap-[30px] mt-[30px]">
-            {projects.map((project) => (
-              <div
-                key={project._id}
-                className="relative w-full pb-[85.5%] bg-gray-400 lg:rounded-[8px] overflow-hidden"
-              >
-                <Image
-                  src={urlForImage(project.mainImage as any)}
-                  fill
-                  alt={project.title || ""}
-                  className="object-contain"
-                  quality={100}
-                />
-              </div>
-            ))}
+            {projects.map((project) => {
+              const src = urlForImage(project.mainImage as any);
+              return (
+                <div
+                  key={project._id}
+                  className="relative w-full pb-[85.5%] bg-gray-400 lg:rounded-[8px] overflow-hidden"
+                >
+                  <Image
+                    loader={() => src}
+                    src={src}
+                    fill
+                    alt={project.title || ""}
+                    className="object-contain"
+                    quality={100}
+                  />
+                </div>
+              );
+            })}
           </div>
         )}
 
