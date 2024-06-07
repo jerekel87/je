@@ -24,7 +24,7 @@ function SectionOne() {
             />
           </div>
         </div>
-        <div className="relative w-[110px] mt-[40px] lg:mt-0 lg:-top-[40px] transform left-1/2 -translate-x-1/2 lg:w-full">
+        <div className="relative w-[110%] mt-[40px] lg:mt-0 lg:-top-[40px] transform left-1/2 -translate-x-1/2 lg:w-full">
           <Image
             src="/assets/images/pickup.webp"
             width="1639"
