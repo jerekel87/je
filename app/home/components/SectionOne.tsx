@@ -24,20 +24,20 @@ function SectionOne() {
             />
           </div>
         </div>
-        <div className="relative mt-[40px] lg:mt-0 lg:-top-[40px] transform left-1/2 -translate-x-1/2 w-full">
+        <div className="relative w-[110px] mt-[40px] lg:mt-0 lg:-top-[40px] transform left-1/2 -translate-x-1/2 lg:w-full">
           <Image
             src="/assets/images/pickup.webp"
             width="1639"
             height="617"
             alt="Pickup"
-            className="relative w-[98%] lg:w-[90%] transform left-1/2 -translate-x-1/2 z-[1]"
+            className="relative w-[86%] transform left-1/2 -translate-x-1/2 z-[1]"
           />
           <Image
             src="/assets/images/drop-shadow.webp"
             width="1920"
             height="247"
             alt="Pickup drop shadow"
-            className="absolute -bottom-[16%]"
+            className="absolute -bottom-[15.7%]"
           />
         </div>
 
