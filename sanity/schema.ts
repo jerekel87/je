@@ -9,7 +9,7 @@ import articleCategory from "./schemaTypes/articleCategory";
 import { singletonTypes } from "@/sanity.config";
 import homePage from "./schemaTypes/homePage";
 
-export const schema: { types: SchemaTypeDefinition[] } = {
+export const schema: { types: SchemaTypeDefinition[]; templates: any } = {
   types: [
     project,
     industry,
@@ -21,6 +21,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     homePage,
   ],
   // Filter out singleton types from the global “New document” menu options
-  templates: (templates) =>
+  templates: (templates: any[]) =>
     templates.filter(({ schemaType }) => !singletonTypes.has(schemaType)),
 };
