@@ -6,6 +6,8 @@ import review from "./schemaTypes/review";
 import reviewPlatform from "./schemaTypes/reviewPlatform";
 import article from "./schemaTypes/article";
 import articleCategory from "./schemaTypes/articleCategory";
+import { singletonTypes } from "@/sanity.config";
+import homePage from "./schemaTypes/homePage";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -16,5 +18,9 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     article,
     articleCategory,
     blockContent,
+    homePage,
   ],
+  // Filter out singleton types from the global “New document” menu options
+  templates: (templates) =>
+    templates.filter(({ schemaType }) => !singletonTypes.has(schemaType)),
 };
