@@ -26,7 +26,7 @@ export async function getProjects({
 }
 
 export async function getProject({ slug }: { slug: string }): Promise<Project> {
-  let query = `*[_type == "project" && _id == $slug][0]{
+  let query = `*[_type == "project" && slug.current == $slug][0]{
     _id,
     title,
     slug,
