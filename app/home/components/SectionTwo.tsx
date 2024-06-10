@@ -14,15 +14,17 @@ function SectionTwo() {
       </div>
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-[60%,40%]">
         <div>
-          <div className="w-full h-0 pb-[75.8%] relative">
-            <iframe
-              className="w-full h-full rounded lg:rounded-[10px] absolute top-0 left-0"
-              src="https://www.youtube.com/embed/BpuC_iyq0l8?si=OlMMryosVIVaaC-Q"
-              title="Igniting Creativity. Fueling Brands."
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            />
+          <div className="w-full h-0 pb-[75.8%] relative rounded lg:rounded-[10px] bg-black">
+            <div className="w-full pb-[56.5%] absolute top-1/2 -translate-y-1/2">
+              <iframe
+                className="w-full h-full absolute top-0 left-0"
+                src="https://www.youtube.com/embed/BpuC_iyq0l8?si=OlMMryosVIVaaC-Q"
+                title="Igniting Creativity. Fueling Brands."
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
           </div>
           <div className="mt-[40px] lg:mt-[47px] flex flex-col lg:flex-row lg:items-center gap-[20px] lg:gap-[40px]">
             <div className="flex gap-[18px] items-center">
