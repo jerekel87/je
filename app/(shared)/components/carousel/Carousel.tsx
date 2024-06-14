@@ -40,7 +40,7 @@ function Carousel({ images }: { images: any[] }) {
       </Swiper>
 
       <Swiper
-        onSwiper={setThumbsSwiper}
+        onSwiper={setThumbsSwiper as any}
         loop={true}
         freeMode={true}
         // watchSlidesProgress={true}
