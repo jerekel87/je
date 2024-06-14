@@ -7,7 +7,10 @@ function SectionTwo() {
   const data = true;
 
   return (
-    <section className="relative py-[70px] lg:py-[140px] bg-[#fff500]">
+    <section
+      id="revenueCalculator"
+      className="relative py-[70px] lg:py-[140px] bg-[#fff500]"
+    >
       <div className="container px-0 lg:px-8 mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-x-0 gap-[40px] lg:gap-[100px]">
         <div className={twMerge("container lg:px-0", data && "lg:hidden")}>
           <div className="relative">

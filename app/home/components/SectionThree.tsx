@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import SectionThreeItem from "./SectionThreeItem";
 import { Button } from "@/app/(shared)/components/ui/button";
+import Link from "next/link";
 
 function SectionThree() {
   return (
@@ -74,9 +75,11 @@ function SectionThree() {
           power of professional branding!
         </p>
         <div className="flex justify-center mt-[30px]">
-          <Button variant="secondary" className="mx-auto">
-            CALCULATE IT
-          </Button>
+          <Link href="/pricing#revenueCalculator">
+            <Button variant="secondary" className="mx-auto">
+              CALCULATE IT
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
