@@ -28,7 +28,7 @@ function ProjectModal({
     <Dialog open={true}>
       <DialogContent
         hideCloseButton
-        className="max-w-full overflow-y-scroll max-h-screen bg-transparent pt-[54px] pb-0 border-none px-0 !rounded-none"
+        className="max-w-full overflow-y-scroll max-h-full bg-transparent pt-[54px] pb-0 border-none px-0 !rounded-none"
       >
         <ModalCloseButton />
 

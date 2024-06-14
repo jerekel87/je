@@ -16,9 +16,6 @@ function Carousel({ images }: { images: any[] }) {
   return (
     <div>
       <Swiper
-        style={{
-          "--swiper-navigation-sides-offset": "40px",
-        }}
         loop={true}
         spaceBetween={10}
         navigation={true}

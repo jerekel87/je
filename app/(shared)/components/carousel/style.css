@@ -17,3 +17,9 @@
 .swiper-button-prev {
   @apply hidden lg:flex size-[60px];
 }
+.swiper-button-prev {
+  left: 40px;
+}
+.swiper-button-next {
+  right: 40px;
+}
