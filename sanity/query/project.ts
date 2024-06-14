@@ -1,6 +1,6 @@
 "use server";
 
-import { Industry, Project } from "@/sanity.types";
+import { Industry, Project, Review } from "@/sanity.types";
 import { client } from "../lib/client";
 
 export async function getProjects({
@@ -25,12 +25,39 @@ export async function getProjects({
   return client.fetch(query, { lastId, limit, industryId });
 }
 
-export async function getProject({ slug }: { slug: string }): Promise<Project> {
+export async function getProject({ slug }: { slug: string }): Promise<
+  Project & {
+    industry: { title: string };
+    reviews: (Review & {
+      reviewPlatformLogo: any;
+      reviewPlatformName: any;
+    })[];
+  }
+> {
   let query = `*[_type == "project" && slug.current == $slug][0]{
     _id,
     title,
     slug,
-    mainImage
+    descriptionOne,
+    mainImage,
+    descriptionTwo,
+    sliderImages,
+    secondaryImage,
+    industry-> {
+      title,
+      slug
+    },
+    "reviews": reviews[]->{
+      _id,
+      reviewerName,
+      reviewerInfo,
+      rating,
+      reviewText,
+      reviewDate,
+      avatar,
+      "reviewPlatformLogo": reviewPlatform->logo,
+      "reviewPlatformName": reviewPlatform->name
+    }
   }`;
   return client.fetch(query, { slug });
 }

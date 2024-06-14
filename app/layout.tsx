@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { Toaster } from "./(shared)/components/ui/sonner";
 import localFont from "next/font/local";
-import ProjectModal from "./(shared)/components/ProjectModal";
+import FakePurchase from "./(shared)/components/fake-purchase/FakePurchase";
 import "./globals.css";
 
 const MonaSans = localFont({
@@ -67,7 +68,15 @@ export default function RootLayout({
         className={`${MonaSans.variable} ${Portlin.variable} ${GuthenBlootsPersonalUse.variable} font-mona-sans`}
       >
         {children}
-        {/* <ProjectModal /> */}
+
+        <div className="hidden lg:block">
+          <FakePurchase />
+        </div>
+
+        <Toaster
+          toastOptions={{ className: "w-max right-0" }}
+          visibleToasts={1}
+        />
       </body>
     </html>
   );

@@ -5,8 +5,8 @@ function BlockA({ title }: { title: string }) {
   return (
     <div>
       <div className="relative flex justify-center">
-        <div className="border-[1px] border-muted absolute top-1/2 w-full z-[-1]" />
-        <p className="bg-white px-4 lg:px-8 w-max font-portlin text-xl lg:text-[40px]">
+        <div className="border-[1px] border-muted absolute top-1/2 w-full" />
+        <p className="bg-white px-4 lg:px-8 w-max font-portlin text-xl lg:text-[40px] z-[1]">
           {title}
         </p>
       </div>

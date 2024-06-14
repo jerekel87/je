@@ -1,10 +1,10 @@
 import Image from "next/image";
-import Link from "next/link";
 import { RiFacebookFill, RiInstagramFill, RiYoutubeFill } from "react-icons/ri";
+import "../style.css";
 
 function SectionOne() {
   return (
-    <section className="bg-[#164dcc] relative">
+    <section className="bg-[#164dcc] relative overflow-hidden static-background">
       <div className="hidden z-[1] lg:flex items-center gap-[32px] top-1/2 rotate-90 w-max -right-[134px] absolute">
         <span className="text-white font-portlin text-[28px]">CONNECT</span>
         <span className="w-[58px] h-[2px] bg-white" />
@@ -68,22 +68,6 @@ function SectionOne() {
             className="absolute -bottom-[15.7%]"
           />
         </div>
-
-        <Link href="/pricing">
-          <div className="hidden rounded-[8px] p-[20px] lg:flex gap-[14px] bg-white w-max absolute bottom-[2%]">
-            <div className="rounded-full bg-secondary flex items-center justify-center size-[50px] font-bold">
-              RS
-            </div>
-            <div>
-              <p className="text-sm font-bold">Robert Son</p>
-              <p className="text-xs ">
-                Purchased{" "}
-                <span className="underline font-bold">VIP Package</span>
-              </p>
-              <p className="text-[10px] text-muted-foreground">2 hours ago</p>
-            </div>
-          </div>
-        </Link>
 
         <div className="text-lg mt-[40px] lg:mt-0 lg:text-[41px] text-white font-portlin w-max mx-auto">
           <p className="leading-none">MY HVAC GUY REVENUE INCREASED BY</p>

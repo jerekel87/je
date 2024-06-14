@@ -1,0 +1,12 @@
+.static-background::after {
+  content: "";
+  position: absolute;
+  top: -500px;
+  right: -500px;
+  bottom: -500px;
+  left: -500px;
+  background: transparent
+    url(https://www.dropbox.com/s/h7ab1c82ctzy83n/noise.png?raw=1) 0 0;
+  background-size: 320px 320px;
+  opacity: 0.06;
+}

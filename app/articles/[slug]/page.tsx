@@ -1,11 +1,9 @@
 import { getArticle } from "@/sanity/query/article";
-import PortableText from "react-portable-text";
 import SectionOne from "./components/SectionOne";
 import SectionTwo from "./components/SectionTwo";
 import SectionThree from "./components/SectionThree";
 import SectionFour from "./components/SectionFour";
 import Header from "@/app/(shared)/components/Header";
-import Footer from "@/app/(shared)/components/Footer";
 
 async function ArticlePage({ params }: { params: { slug: string } }) {
   const { slug } = params;
