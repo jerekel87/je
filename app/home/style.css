@@ -1,12 +1,34 @@
 .static-background::after {
   content: "";
   position: absolute;
-  top: -500px;
-  right: -500px;
-  bottom: -500px;
-  left: -500px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: transparent
     url(https://www.dropbox.com/s/h7ab1c82ctzy83n/noise.png?raw=1) 0 0;
   background-size: 320px 320px;
-  opacity: 0.06;
+  opacity: 0.1;
+}
+
+.striped-background {
+  width: 100%;
+  background-image: repeating-linear-gradient(
+    to right,
+    transparent 0px,
+    transparent 133px,
+    rgba(36, 36, 52, 0.5) 133px,
+    rgba(36, 36, 52, 0.5) 134px
+  );
+}
+@media only screen and (max-width: 1023px) {
+  .striped-background {
+    background-image: repeating-linear-gradient(
+      to right,
+      transparent 0px,
+      transparent 80px,
+      rgba(36, 36, 52, 0.5) 80px,
+      rgba(36, 36, 52, 0.5) 81px
+    );
+  }
 }
