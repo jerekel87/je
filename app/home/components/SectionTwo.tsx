@@ -30,19 +30,19 @@ function SectionTwo() {
             <div className="flex gap-[18px] items-center">
               <Image
                 src="/assets/images/217450@3x.webp"
-                height="48"
-                width="48"
+                height="49"
+                width="49"
                 alt="Better Business Bureau Accredited"
                 className="shrink-0 object-contain"
                 quality={100}
               />
 
               <div>
-                <p className="font-portlin lg:text-[24.3px] text-[#005e88] leading-[.8] whitespace-nowrap">
+                <p className="font-portlin lg:text-[28px] text-[#005e88] leading-[.8] whitespace-nowrap">
                   BETTER BUSINESS BUREAU
                 </p>
                 <div className="flex items-end gap-[10px] lg:gap-[15px] mt-[6px]">
-                  <p className="font-portlin lg:text-[24.3px] text-[#005e88] leading-[.8]">
+                  <p className="font-portlin lg:text-[28px] text-[#005e88] leading-[.8]">
                     ACCREDITED
                   </p>
                   <div className="h-[1px] lg:h-[2px] w-2 lg:w-[32px] bg-gray-400 self-center mt-1" />
@@ -72,15 +72,15 @@ function SectionTwo() {
             <div className="flex gap-[18px] items-center">
               <Image
                 src="/assets/images/layer-3@3x.webp"
-                height="48"
-                width="48"
+                height="49"
+                width="49"
                 alt="NH Registered"
                 className="shrink-0 object-contain"
                 quality={100}
               />
 
               <div>
-                <p className="font-portlin lg:text-[24.3px] leading-[.8]">
+                <p className="font-portlin lg:text-[28px] leading-[.8]">
                   NH REGISTERED
                 </p>
                 <div className="flex items-end gap-[10px] lg:gap-[15px] mt-[8px] lg:mt-[10px]">
