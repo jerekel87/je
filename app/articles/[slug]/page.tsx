@@ -4,6 +4,7 @@ import SectionTwo from "./components/SectionTwo";
 import SectionThree from "./components/SectionThree";
 import SectionFour from "./components/SectionFour";
 import Header from "@/app/(shared)/components/Header";
+import FakePurchase from "@/app/(shared)/components/fake-purchase/FakePurchase";
 
 async function ArticlePage({ params }: { params: { slug: string } }) {
   const { slug } = params;
@@ -18,6 +19,9 @@ async function ArticlePage({ params }: { params: { slug: string } }) {
         <SectionThree article={article} />
         <SectionFour article={article} />
       </main>
+      <div className="hidden lg:block">
+        <FakePurchase />
+      </div>
     </>
   );
 }

@@ -1,5 +1,6 @@
 import Footer from "../(shared)/components/Footer";
 import Header from "../(shared)/components/Header";
+import FakePurchase from "../(shared)/components/fake-purchase/FakePurchase";
 
 export default function FAQLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -7,6 +8,9 @@ export default function FAQLayout({ children }: { children: React.ReactNode }) {
       <Header />
       {children}
       <Footer />
+      <div className="hidden lg:block">
+        <FakePurchase />
+      </div>
     </>
   );
 }

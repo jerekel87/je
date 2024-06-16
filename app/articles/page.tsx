@@ -7,6 +7,7 @@ import Footer from "../(shared)/components/Footer";
 import MainHeader from "../(shared)/components/Header";
 import Header from "./components/Header";
 import { unstable_noStore as noStore } from "next/cache";
+import FakePurchase from "../(shared)/components/fake-purchase/FakePurchase";
 
 async function ArticlesPage({
   searchParams,
@@ -41,6 +42,9 @@ async function ArticlesPage({
         </div>
       </main>
       <Footer />
+      <div className="hidden lg:block">
+        <FakePurchase />
+      </div>
     </>
   );
 }

@@ -1,3 +1,5 @@
+import FakePurchase from "../(shared)/components/fake-purchase/FakePurchase";
+
 export default function ProjectsLayout({
   children,
   modal,
@@ -9,6 +11,9 @@ export default function ProjectsLayout({
     <>
       {modal}
       {children}
+      <div className="hidden lg:block">
+        <FakePurchase />
+      </div>
     </>
   );
 }
