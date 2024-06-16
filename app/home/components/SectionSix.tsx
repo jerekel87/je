@@ -1,8 +1,10 @@
-import StarRating from "@/app/(shared)/components/StarRating";
-import { Button } from "@/app/(shared)/components/ui/button";
 import Image from "next/image";
+import SketchConcept from "./SketchConcept";
+import { Button } from "@/app/(shared)/components/ui/button";
+import { HomePage } from "@/sanity.types";
+import { urlForImage } from "@/sanity/lib/image";
 
-function SectionSix() {
+async function SectionSix({ homePageData }: { homePageData: HomePage }) {
   return (
     <section className="relative py-[70px] lg:py-[140px] bg-primary">
       <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">
@@ -31,14 +33,10 @@ function SectionSix() {
             100% original designs, everytime!
           </p>
         </div>
-        <div className="w-full pb-[100%] bg-white rounded lg:rounded-[10px] overflow-hidden relative">
-          <Image
-            src="/assets/images/sketch-concept.png"
-            fill
-            alt="Sketch concept"
-            className="object-contain"
-          />
-        </div>
+        <SketchConcept
+          before={urlForImage(homePageData.sketchBefore as any)}
+          after={urlForImage(homePageData.sketchAfter as any)}
+        />
       </div>
     </section>
   );

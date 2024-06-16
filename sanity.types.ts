@@ -74,7 +74,28 @@ export type HomePage = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  title?: string;
+  sketchBefore?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  sketchAfter?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
 };
 
 export type BlockContent = Array<{
@@ -253,6 +274,7 @@ export type Industry = {
   _updatedAt: string;
   _rev: string;
   title?: string;
+  percentageIncrease?: number;
   description?: string;
 };
 

@@ -21,6 +21,7 @@
     rgba(36, 36, 52, 0.5) 134px
   );
 }
+
 @media only screen and (max-width: 1023px) {
   .striped-background {
     background-image: repeating-linear-gradient(

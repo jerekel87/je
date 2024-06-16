@@ -7,8 +7,10 @@ import SectionFive from "./components/SectionFive";
 import SectionSix from "./components/SectionSix";
 import Reviews from "../(shared)/components/Reviews";
 import Link from "next/link";
+import { getHomePageData } from "@/sanity/query/homePage";
 
-function HomePage() {
+async function HomePage() {
+  const homePageData = await getHomePageData();
   return (
     <main>
       <SectionOne />
@@ -16,7 +18,7 @@ function HomePage() {
       <SectionThree />
       <SectionFour />
       <SectionFive />
-      <SectionSix />
+      <SectionSix homePageData={homePageData} />
       <Reviews
         subheader={
           <Reviews.Subheader>
