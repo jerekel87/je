@@ -6,7 +6,7 @@ import { urlForImage } from "@/sanity/lib/image";
 
 async function SectionSix({ homePageData }: { homePageData: HomePage }) {
   return (
-    <section className="relative py-[70px] lg:py-[140px] bg-primary">
+    <section className="relative py-[70px] lg:py-[140px] bg-primary static-background">
       <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">
         <Image
           src="/assets/images/shape-7-copy-11.svg"
