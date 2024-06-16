@@ -1,4 +1,4 @@
-.static-background::after {
+.static-background::before {
   content: "";
   position: absolute;
   top: 0;
