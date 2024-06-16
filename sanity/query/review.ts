@@ -21,7 +21,7 @@ export async function getReviews({
     reviewPlatformName: string;
   })[]
 > {
-  let query = `*[_type == "review" && _id > $lastId] | order(_id) [0...$limit]{
+  let query = `*[_type == "review" && _id > $lastId] | order(_createdAt desc) [0...$limit]{
     _id,
     reviewerName,
     reviewerInfo,
@@ -33,7 +33,7 @@ export async function getReviews({
     "reviewPlatformName": reviewPlatform->name
   }`;
   if (platformId) {
-    query = `*[_type == "review" && reviewPlatform._ref == $platformId && _id > $lastId] | order(_id) [0...$limit]{
+    query = `*[_type == "review" && reviewPlatform._ref == $platformId && _id > $lastId] | order(_createdAt desc) [0...$limit]{
         _id,
         reviewerName,
         reviewerInfo,

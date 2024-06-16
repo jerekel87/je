@@ -7,7 +7,7 @@ import ProjectItem from "./ProjectItem";
 
 async function SectionFour() {
   noStore();
-  const projects = await getProjects({ limit: 5 });
+  const projects = await getProjects({ limit: 6 });
   return (
     <section className="relative pt-[70px] lg:pt-[140px]">
       <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">
@@ -37,7 +37,7 @@ async function SectionFour() {
           </p>
         </div>
       </div>
-      <div className="grid grid-cols-2 lg:grid-cols-5">
+      <div className="grid grid-cols-2 lg:grid-cols-6">
         {projects.map((project) => (
           <ProjectItem key={project._id} project={project} />
         ))}

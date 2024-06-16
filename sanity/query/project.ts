@@ -8,14 +8,14 @@ export async function getProjects({
   lastId = "",
   limit = 9,
 } = {}): Promise<Project[]> {
-  let query = `*[_type == "project" && _id > $lastId] | order(_id) [0...$limit]{
+  let query = `*[_type == "project" && _id > $lastId] | order(_createdAt desc) [0...$limit]{
     _id,
     title,
     slug,
     mainImage
   }`;
   if (industryId) {
-    query = `*[_type == "project" && industry._ref == $industryId && _id > $lastId] | order(_id) [0...$limit]{
+    query = `*[_type == "project" && industry._ref == $industryId && _id > $lastId] | order(_createdAt desc) [0...$limit]{
       _id,
       title,
       slug,
