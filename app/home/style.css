@@ -5,10 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: transparent
-    url(https://www.dropbox.com/s/h7ab1c82ctzy83n/noise.png?raw=1) 0 0;
-  background-size: 320px 320px;
-  opacity: 0.06;
+  background: transparent url("/assets/images/static-effect.png") 0 0;
 }
 
 .striped-background {

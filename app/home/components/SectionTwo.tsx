@@ -112,7 +112,7 @@ function SectionTwo() {
           </p>
         </div>
       </div>
-      <div className="absolute w-full h-[27px] lg:h-[37px] -bottom-[6px]">
+      <div className="absolute w-full h-[27px] lg:h-[37px] -bottom-[6px] z-[1]">
         <Image
           src="/assets/images/shape-7-copy-8.svg"
           fill
