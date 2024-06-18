@@ -36,3 +36,35 @@ export function generateAvatarInitials(name: string): string {
 
   return initials;
 }
+
+export function calculateRevenue({
+  currentAnnualRevenue,
+  goalAnnualRevenue,
+  brandingStatus,
+  percentageIncrease,
+  costOfBranding,
+}: {
+  currentAnnualRevenue: number;
+  goalAnnualRevenue: number;
+  percentageIncrease: number;
+  brandingStatus: string;
+  costOfBranding: number;
+}) {
+  const percentageIncreaseDecimal = percentageIncrease / 100;
+  const newAnnualRevenue =
+    currentAnnualRevenue * (1 + percentageIncreaseDecimal);
+  const newPercentageIncrease =
+    ((newAnnualRevenue - currentAnnualRevenue) / currentAnnualRevenue) * 100;
+  const addedRevenue = newAnnualRevenue - currentAnnualRevenue;
+  const roi = Math.floor(
+    ((addedRevenue - costOfBranding) / costOfBranding) * 100
+  );
+  return {
+    roi,
+    newAnnualRevenue,
+    addedRevenue,
+    percentageIncrease,
+    goalAnnualRevenue,
+    brandingStatus,
+  };
+}

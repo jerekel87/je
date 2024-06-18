@@ -66,8 +66,20 @@ export async function getProjectsIndustries(): Promise<Industry[]> {
   let query = `*[_type == "industry"]{
       _id,
       title,
+      percentageIncrease,
       description
     }`;
 
   return client.fetch(query);
+}
+
+export async function getProjectsIndustry(id: string): Promise<Industry> {
+  let query = `*[_type == "industry" && _id == $id][0]{
+      _id,
+      title,
+      description,
+      percentageIncrease
+    }`;
+
+  return client.fetch(query, { id });
 }

@@ -1,18 +1,22 @@
+"use client";
+
 import Image from "next/image";
 import { HiCheckCircle } from "react-icons/hi";
 import RevenueCalculator from "./RevenueCalculator";
 import { twMerge } from "tailwind-merge";
+import { useCalculationStore } from "../useCalculationStore";
 
 function SectionTwo() {
-  const data = true;
-
+  const { calculation } = useCalculationStore();
   return (
     <section
       id="revenueCalculator"
       className="relative py-[70px] lg:py-[140px] bg-[#fff500]"
     >
       <div className="container px-0 lg:px-8 mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-x-0 gap-[40px] lg:gap-[100px]">
-        <div className={twMerge("container lg:px-0", data && "lg:hidden")}>
+        <div
+          className={twMerge("container lg:px-0", calculation && "lg:hidden")}
+        >
           <div className="relative">
             <h1 className="text-[40px] lg:text-[100px] font-portlin leading-[0.9] text-balance">
               REVENUE
@@ -55,13 +59,13 @@ function SectionTwo() {
         <div
           className={twMerge(
             "px-2 flex lg:pl-0 lg:relative items-center justify-end",
-            data && "col-span-2"
+            calculation && "col-span-2"
           )}
         >
           <div
             className={twMerge(
               "w-full lg:max-w-[475px] relative",
-              data && "lg:max-w-full"
+              calculation && "lg:max-w-full"
             )}
           >
             <RevenueCalculator />
