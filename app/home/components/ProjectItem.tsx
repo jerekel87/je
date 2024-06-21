@@ -15,7 +15,7 @@ function ProjectItem({ project }: { project: Project }) {
     <Link
       href={`/projects/${project.slug?.current}`}
       key={project._id}
-      className="relative w-full pb-[85.5%] bg-muted"
+      className="relative w-full pb-[85.5%] bg-muted inline-block"
     >
       <Image
         src={src}
