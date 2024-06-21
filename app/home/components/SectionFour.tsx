@@ -38,6 +38,7 @@ async function SectionFour() {
           </p>
         </div>
       </div>
+
       <div className="-bottom-[8px] relative">
         <ProjectMarquee projects={projects} />
       </div>
