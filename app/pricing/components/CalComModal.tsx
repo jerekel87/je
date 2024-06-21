@@ -5,6 +5,7 @@ export default function CalComModal() {
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({});
+
       cal("ui", {
         styles: { branding: { brandColor: "#000000" } },
         hideEventTypeDetails: false,
@@ -15,7 +16,7 @@ export default function CalComModal() {
   return (
     <button
       data-cal-namespace=""
-      data-cal-link="jay-philip-camillo-1p3val/secret"
+      data-cal-link="jeremy-ellsworth-uwa6in/design-consultation"
       data-cal-config='{"layout":"month_view"}'
       className="font-bold border-b border-primary inline-block leading-none"
     >
@@ -23,3 +24,31 @@ export default function CalComModal() {
     </button>
   );
 }
+
+// import { getCalApi } from "@calcom/embed-react";
+
+// import { useEffect } from "react";
+
+// export default function MyApp() {
+
+// useEffect(()=>{
+
+//   (async function () {
+
+//   const cal = await getCalApi({});
+
+//   cal("ui", {"styles":{"branding":{"brandColor":"#000000"}},"hideEventTypeDetails":false,"layout":"month_view"});
+
+//   })();
+
+// }, [])
+
+// return <button data-cal-namespace=""
+
+//   data-cal-link="jeremy-ellsworth-uwa6in/design-consultation"
+
+//   data-cal-config='{"layout":"month_view"}'
+
+//   >Click me</button>;
+
+// };
