@@ -30,7 +30,7 @@ async function HomePage() {
         }
         footerText={
           <Reviews.FooterText>
-            <p className="text-sm lg:text-lg mt-[30px] lg:mt-[40px] text-[#53545c]">
+            <p className="text-sm lg:text-lg mt-[30px] lg:mt-[60px] text-[#53545c]">
               With over{" "}
               <strong className="text-foreground">
                 1,500+ 5/5 star reviews

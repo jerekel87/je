@@ -28,7 +28,7 @@ async function Reviews({
         />
       </div>
       <div className="container px-4 mx-auto">
-        <div className="mx-auto max-w-[791px]">
+        <div className="mx-auto max-w-[800px]">
           <div className="relative w-[100px] h-[25px] lg:w-[200px] lg:h-[50px] mx-auto">
             <Image
               src="/assets/images/your-industry-peers@3x.webp"
