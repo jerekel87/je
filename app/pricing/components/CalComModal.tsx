@@ -1,7 +1,7 @@
-import { useEffect } from "react";
+import { ComponentProps, useEffect } from "react";
 import { getCalApi } from "@calcom/embed-react";
 
-export default function CalComModal() {
+export default function CalComModal({ className }: ComponentProps<"button">) {
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({});
@@ -18,7 +18,7 @@ export default function CalComModal() {
       data-cal-namespace=""
       data-cal-link="jeremy-ellsworth-uwa6in/design-consultation"
       data-cal-config='{"layout":"month_view"}'
-      className="font-bold border-b border-primary inline-block leading-none"
+      className={className}
     >
       Schedule a call
     </button>

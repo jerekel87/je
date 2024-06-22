@@ -78,7 +78,9 @@ function RevenueCalculator() {
   const renderRecommendation = (random0or1: 0 | 1) => {
     const recommendation = {
       0: <InfinitePackageLink />,
-      1: <CalComModal />,
+      1: (
+        <CalComModal className="font-bold border-b border-primary inline-block leading-none" />
+      ),
     };
 
     return recommendation[random0or1];
