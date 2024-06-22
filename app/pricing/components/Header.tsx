@@ -16,7 +16,7 @@ function Header() {
       </div>
       <div className="container mt-[26px]">
         <div className="flex gap-[27px] items-end">
-          <div className="relative size-[80px] lg:size-[120px] shrink-0">
+          <div className="relative size-[80px] lg:size-[120px] shrink-0 top-[20px] lg:top-[12px]">
             <Image
               src="/assets/images/vector-smart-object@3x.webp"
               fill
@@ -25,7 +25,7 @@ function Header() {
             />
           </div>
           <div className="w-full flex flex-col lg:flex-row lg:items-center lg:gap-[14px]">
-            <p className="text-white text-sm lg:text-[18px] font-bold pt-4 pb-1 lg:py-[32px] border-t border-[#2bd06b]">
+            <p className="text-white text-sm lg:text-[18px] font-bold pt-4 pb-1 lg:py-[32px] border-t border-[#3D5FFF]">
               Hoffman Heating and Cooling revenue increased by 225% since
               rebranding
             </p>
@@ -42,7 +42,7 @@ function Header() {
         </div>
       </div>
       <div className="w-[50%] absolute bottom-0 left-1/2 hidden lg:block">
-        <p className="text-sm lg:text-[18px] font-bold py-[32px] border-t border-[#2bd06b]">
+        <p className="text-sm lg:text-[18px] font-bold py-[32px] border-t border-[#3D5FFF]">
           &nbsp;
         </p>
       </div>

@@ -3,8 +3,8 @@ import Image from "next/image";
 
 function SectionFive() {
   return (
-    <section className="relative py-[70px] lg:py-[140px] bg-secondary">
-      <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">
+    <section className="relative py-[70px] lg:py-[98px] bg-secondary">
+      <div className="absolute w-full h-[27px] lg:h-[37px] -top-[8px] z-[1]">
         <Image
           src="/assets/images/shape-7-copy-10.svg"
           fill

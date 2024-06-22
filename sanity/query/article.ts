@@ -8,7 +8,7 @@ export async function getArticles({
   lastId = "",
   limit = 9,
 } = {}): Promise<Article[]> {
-  let query = `*[_type == "article" && _id > $lastId] | order(_id) [0...$limit]{
+  let query = `*[_type == "article" && _id > $lastId] | order(_createdAt desc) [0...$limit]{
     _id,
     title,
     slug,
@@ -16,7 +16,7 @@ export async function getArticles({
     body
   }`;
   if (categorySlug) {
-    query = `*[_type == "article" && category->slug.current == $categorySlug && _id > $lastId] | order(_id) [0...$limit]{
+    query = `*[_type == "article" && category->slug.current == $categorySlug && _id > $lastId] | order(_createdAt desc) [0...$limit]{
       _id,
       title,
       slug,

@@ -16,6 +16,7 @@ import { getProjects } from "@/sanity/query/project";
 import { cn } from "@/app/(shared)/lib/utils";
 import { LoaderCircle } from "lucide-react";
 import { urlForImage } from "@/sanity/lib/image";
+import Link from "next/link";
 
 function Projects({ initialProjects }: { initialProjects: Project[] }) {
   const [projects, setProjects] = useState(initialProjects);
@@ -93,7 +94,8 @@ function Projects({ initialProjects }: { initialProjects: Project[] }) {
             {projects.map((project) => {
               const src = urlForImage(project.mainImage as any);
               return (
-                <div
+                <Link
+                  href={`/projects/${project.slug?.current}`}
                   key={project._id}
                   className="relative w-full pb-[85.5%] bg-gray-400 lg:rounded-[8px] overflow-hidden"
                 >
@@ -105,7 +107,7 @@ function Projects({ initialProjects }: { initialProjects: Project[] }) {
                     className="object-contain"
                     quality={100}
                   />
-                </div>
+                </Link>
               );
             })}
           </div>

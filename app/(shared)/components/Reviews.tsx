@@ -69,11 +69,11 @@ function Subheader({ children }: ComponentProps<"p">) {
     </p>
   );
 }
-function FooterText({ children }: ComponentProps<"p">) {
+function FooterText({ children }: ComponentProps<"div">) {
   return (
-    <p className="text-sm lg:text-lg mt-[30px] lg:mt-[40px] text-[#53545c]">
+    <div className="text-sm lg:text-lg mt-[30px] lg:mt-[40px] text-[#53545c]">
       {children}
-    </p>
+    </div>
   );
 }
 function FooterButton({

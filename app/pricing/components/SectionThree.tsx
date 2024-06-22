@@ -7,7 +7,7 @@ import { IoLogoYoutube } from "react-icons/io5";
 
 function SectionThree() {
   return (
-    <section className="relative py-[70px] lg:py-[140px]">
+    <section id="package" className="relative py-[70px] lg:py-[140px]">
       <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">
         <Image
           src="/assets/images/shape-7-copy-7.svg"

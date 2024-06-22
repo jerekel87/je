@@ -22,6 +22,11 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "descriptionOne",
+      title: "Description One",
+      type: "blockContent",
+    }),
+    defineField({
       name: "mainImage",
       title: "Main image",
       type: "image",
@@ -31,9 +36,44 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: "body",
-      title: "Body",
+      name: "descriptionTwo",
+      title: "Description two",
       type: "blockContent",
+    }),
+    defineField({
+      name: "sliderImages",
+      title: "Slider images",
+      type: "array",
+      of: [
+        {
+          type: "image",
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: "alt",
+              type: "string",
+              title: "Alternative Text",
+            },
+          ],
+        },
+      ],
+    }),
+    defineField({
+      name: "secondaryImage",
+      title: "Secondary image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative Text",
+        },
+      ],
     }),
     defineField({
       name: "industry",

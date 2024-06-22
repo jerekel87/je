@@ -43,9 +43,14 @@ function Articles({ initialArticles }: { initialArticles: Article[] }) {
       {firstArticle ? (
         <article className="border-b border-muted pb-[45px]">
           <header>
-            <h1 className="text-[40px] lg:text-[60px] font-portlin leading-[.9]">
-              {firstArticle.title}
-            </h1>
+            <Link
+              href={`/articles/${firstArticle.slug?.current}`}
+              className="hover:underline"
+            >
+              <h1 className="text-[40px] lg:text-[60px] font-portlin leading-[.92]">
+                {firstArticle.title}
+              </h1>
+            </Link>
           </header>
           <div className="w-full pb-[75%] relative mt-[40px] rounded-[8px] overflow-hidden">
             <Image
@@ -67,35 +72,37 @@ function Articles({ initialArticles }: { initialArticles: Article[] }) {
         </p>
       )}
       {articles.slice(1).map((article) => (
-        <Link
-          href={`/articles/${article.slug?.current}`}
+        <article
           key={article._id}
-          className="cursor-pointer"
+          className="grid grid-cols-[1fr,2fr] lg:items-center gap-[10px] lg:gap-[38px] mt-4 lg:mt-[40px] border-b border-muted pb-4 lg:pb-[40px]"
         >
-          <article className="grid grid-cols-[1fr,2fr] lg:items-center gap-[10px] lg:gap-[38px] mt-4 lg:mt-[40px] border-b border-muted pb-4 lg:pb-[40px]">
-            <div className="w-full">
-              <div className="w-full pb-[75%] relative rounded-[8px] overflow-hidden">
-                <Image
-                  src={urlForImage(article.mainImage as any)}
-                  alt={article.title || ""}
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </div>
-            <div>
-              <header>
-                <h2 className="text-base lg:text-[40px] font-portlin leading-none line-clamp-2">
-                  {article.title}
-                </h2>
-              </header>
-              <PortableText
-                className="leading-[1.6] text-xs lg:text-sm mt-[10px] lg:mt-[26px] text-muted-foreground line-clamp-2"
-                content={article.body as any}
+          <div className="w-full">
+            <div className="w-full pb-[75%] relative rounded-[8px] overflow-hidden">
+              <Image
+                src={urlForImage(article.mainImage as any)}
+                alt={article.title || ""}
+                fill
+                className="object-contain"
               />
             </div>
-          </article>
-        </Link>
+          </div>
+          <div>
+            <header>
+              <Link
+                href={`/articles/${article.slug?.current}`}
+                className="hover:underline"
+              >
+                <h2 className="text-base lg:text-[40px] font-portlin leading-[1.06] line-clamp-2">
+                  {article.title}
+                </h2>
+              </Link>
+            </header>
+            <PortableText
+              className="leading-[1.6] text-xs lg:text-sm mt-[10px] lg:mt-[26px] text-muted-foreground line-clamp-2"
+              content={article.body as any}
+            />
+          </div>
+        </article>
       ))}
 
       {lastId && (

@@ -15,7 +15,7 @@ function Header() {
       </div>
       <div className="container mt-[26px]">
         <div className="flex gap-[27px] items-end">
-          <div className="relative size-[80px] lg:size-[120px] shrink-0">
+          <div className="relative size-[80px] lg:size-[120px] shrink-0 top-[20px] lg:top-[4px]">
             <Image
               src="/assets/images/HVAC-guy.webp"
               fill

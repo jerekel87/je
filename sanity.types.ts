@@ -68,6 +68,36 @@ export type Geopoint = {
   alt?: number;
 };
 
+export type HomePage = {
+  _id: string;
+  _type: "homePage";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  sketchBefore?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  sketchAfter?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+};
+
 export type BlockContent = Array<{
   children?: Array<{
     marks?: Array<string>;
@@ -184,6 +214,7 @@ export type Project = {
   _rev: string;
   title?: string;
   slug?: Slug;
+  descriptionOne?: BlockContent;
   mainImage?: {
     asset?: {
       _ref: string;
@@ -195,7 +226,32 @@ export type Project = {
     crop?: SanityImageCrop;
     _type: "image";
   };
-  body?: BlockContent;
+  descriptionTwo?: BlockContent;
+  sliderImages?: Array<{
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    _key: string;
+  }>;
+  secondaryImage?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  };
   industry?: {
     _ref: string;
     _type: "reference";
@@ -218,6 +274,7 @@ export type Industry = {
   _updatedAt: string;
   _rev: string;
   title?: string;
+  percentageIncrease?: number;
   description?: string;
 };
 

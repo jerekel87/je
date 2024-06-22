@@ -14,38 +14,41 @@ function SectionTwo() {
       </div>
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-[60%,40%]">
         <div>
-          <div className="w-full h-0 pb-[75.8%] relative">
-            <iframe
-              className="w-full h-full rounded lg:rounded-[10px] absolute top-0 left-0"
-              src="https://www.youtube.com/embed/NpEaa2P7qZI?si=8Dc3pjtkxOqg4XSZ"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            />
+          <div className="w-full h-0 pb-[75.8%] relative rounded lg:rounded-[10px] bg-black">
+            <div className="w-full pb-[56.4%] absolute top-1/2 -translate-y-1/2">
+              <iframe
+                className="w-full h-full absolute top-0 left-0"
+                src="https://www.youtube.com/embed/BpuC_iyq0l8?si=OlMMryosVIVaaC-Q"
+                title="Igniting Creativity. Fueling Brands."
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
           </div>
           <div className="mt-[40px] lg:mt-[47px] flex flex-col lg:flex-row lg:items-center gap-[20px] lg:gap-[40px]">
-            <div className="flex gap-[18px]">
+            <div className="flex gap-[18px] items-center">
               <Image
                 src="/assets/images/217450@3x.webp"
-                height="39"
-                width="39"
+                height="49"
+                width="49"
                 alt="Better Business Bureau Accredited"
                 className="shrink-0 object-contain"
+                quality={100}
               />
 
               <div>
-                <p className="font-portlin text-sm lg:text-[24px] text-[#005e88] leading-none font-bold whitespace-nowrap">
+                <p className="font-portlin lg:text-[28px] text-[#005e88] leading-[.8] whitespace-nowrap">
                   BETTER BUSINESS BUREAU
                 </p>
-                <div className="flex items-center gap-[10px] lg:gap-[15px]">
-                  <p className="font-portlin text-sm lg:text-[24px] text-[#005e88] leading-none font-bold">
+                <div className="flex items-end gap-[10px] lg:gap-[15px] mt-[6px]">
+                  <p className="font-portlin lg:text-[28px] text-[#005e88] leading-[.8]">
                     ACCREDITED
                   </p>
-                  <div className="h-[1px] lg:h-[2px] w-2 lg:w-[32px] bg-gray-400" />
+                  <div className="h-[1px] lg:h-[2px] w-2 lg:w-[32px] bg-gray-400 self-center mt-1" />
                   <a
                     href="#"
-                    className="leading-relaxed text-xs lg:text-sm font-medium font-mona-sans whitespace-nowrap"
+                    className="leading-none lg:leading-none text-xs lg:text-sm font-medium font-mona-sans whitespace-nowrap"
                   >
                     Visit website
                   </a>
@@ -61,29 +64,30 @@ function SectionTwo() {
               <path
                 fillRule="evenodd"
                 stroke="#ADADAD"
-                stroke-width="2"
+                strokeWidth="2"
                 fill="#0D539A"
                 d="m2 1.1 82 82.899"
               />
             </svg>
-            <div className="flex gap-[18px]">
+            <div className="flex gap-[18px] items-center">
               <Image
                 src="/assets/images/layer-3@3x.webp"
-                height="39"
-                width="39"
-                alt="Better Business Bureau Accredited"
+                height="49"
+                width="49"
+                alt="NH Registered"
                 className="shrink-0 object-contain"
+                quality={100}
               />
 
               <div>
-                <p className="font-portlin text-sm lg:text-[24px] leading-tight font-bold">
+                <p className="font-portlin lg:text-[28px] leading-[.8]">
                   NH REGISTERED
                 </p>
-                <div className="flex items-center gap-[10px] lg:gap-[15px]">
-                  <div className="h-[1px] lg:h-[2px] w-2 lg:w-[32px] bg-gray-400" />
+                <div className="flex items-end gap-[10px] lg:gap-[15px] mt-[8px] lg:mt-[10px]">
+                  <div className="h-[1px] lg:h-[2px] w-2 lg:w-[32px] self-center bg-gray-400" />
                   <a
                     href="#"
-                    className="leading-relaxed text-xs lg:text-sm font-medium font-mona-sans"
+                    className="leading-none lg:leading-none text-xs lg:text-sm font-medium font-mona-sans"
                   >
                     Visit website
                   </a>
@@ -108,7 +112,7 @@ function SectionTwo() {
           </p>
         </div>
       </div>
-      <div className="absolute w-full h-[27px] lg:h-[37px] -bottom-[6px]">
+      <div className="absolute w-full h-[27px] lg:h-[37px] -bottom-[6px] z-[1]">
         <Image
           src="/assets/images/shape-7-copy-8.svg"
           fill

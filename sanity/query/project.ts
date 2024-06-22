@@ -1,6 +1,6 @@
 "use server";
 
-import { Industry, Project } from "@/sanity.types";
+import { Industry, Project, Review } from "@/sanity.types";
 import { client } from "../lib/client";
 
 export async function getProjects({
@@ -8,14 +8,14 @@ export async function getProjects({
   lastId = "",
   limit = 9,
 } = {}): Promise<Project[]> {
-  let query = `*[_type == "project" && _id > $lastId] | order(_id) [0...$limit]{
+  let query = `*[_type == "project" && _id > $lastId] | order(_createdAt desc) [0...$limit]{
     _id,
     title,
     slug,
     mainImage
   }`;
   if (industryId) {
-    query = `*[_type == "project" && industry._ref == $industryId && _id > $lastId] | order(_id) [0...$limit]{
+    query = `*[_type == "project" && industry._ref == $industryId && _id > $lastId] | order(_createdAt desc) [0...$limit]{
       _id,
       title,
       slug,
@@ -25,12 +25,39 @@ export async function getProjects({
   return client.fetch(query, { lastId, limit, industryId });
 }
 
-export async function getProject({ slug }: { slug: string }): Promise<Project> {
-  let query = `*[_type == "project" && _id == $slug][0]{
+export async function getProject({ slug }: { slug: string }): Promise<
+  Project & {
+    industry: { title: string };
+    reviews: (Review & {
+      reviewPlatformLogo: any;
+      reviewPlatformName: any;
+    })[];
+  }
+> {
+  let query = `*[_type == "project" && slug.current == $slug][0]{
     _id,
     title,
     slug,
-    mainImage
+    descriptionOne,
+    mainImage,
+    descriptionTwo,
+    sliderImages,
+    secondaryImage,
+    industry-> {
+      title,
+      slug
+    },
+    "reviews": reviews[]->{
+      _id,
+      reviewerName,
+      reviewerInfo,
+      rating,
+      reviewText,
+      reviewDate,
+      avatar,
+      "reviewPlatformLogo": reviewPlatform->logo,
+      "reviewPlatformName": reviewPlatform->name
+    }
   }`;
   return client.fetch(query, { slug });
 }
@@ -39,8 +66,20 @@ export async function getProjectsIndustries(): Promise<Industry[]> {
   let query = `*[_type == "industry"]{
       _id,
       title,
+      percentageIncrease,
       description
     }`;
 
   return client.fetch(query);
+}
+
+export async function getProjectsIndustry(id: string): Promise<Industry> {
+  let query = `*[_type == "industry" && _id == $id][0]{
+      _id,
+      title,
+      description,
+      percentageIncrease
+    }`;
+
+  return client.fetch(query, { id });
 }

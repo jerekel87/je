@@ -2,12 +2,13 @@ import Image from "next/image";
 import React from "react";
 import SectionThreeItem from "./SectionThreeItem";
 import { Button } from "@/app/(shared)/components/ui/button";
+import Link from "next/link";
 
 function SectionThree() {
   return (
-    <section className="bg-primary  py-[70px] lg:py-[140px]">
-      <div className="container mx-auto h-full relative">
-        <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-[120px]">
+    <section className="bg-[#141423]  py-[70px] lg:py-[140px] striped-background static-background relative">
+      <div className="container mx-auto h-full relative z-[1]">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-[120px]">
           <div>
             <h1 className="text-[40px] lg:text-[100px] font-portlin leading-[0.9] text-balance text-white">
               EFFECTIVE
@@ -74,9 +75,11 @@ function SectionThree() {
           power of professional branding!
         </p>
         <div className="flex justify-center mt-[30px]">
-          <Button variant="secondary" className="mx-auto">
-            CALCULATE IT
-          </Button>
+          <Link href="/pricing#revenueCalculator">
+            <Button variant="secondary" className="mx-auto">
+              CALCULATE IT
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
