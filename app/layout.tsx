@@ -82,6 +82,7 @@ export default function RootLayout({
           closeOnClick={false}
           hideProgressBar={true}
           closeButton={false}
+          limit={1}
           style={{
             padding: 0,
             // @ts-ignore
