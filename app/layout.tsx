@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Toaster } from "./(shared)/components/ui/sonner";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Slide, ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const MonaSans = localFont({
   variable: "--font-mona-sans",
@@ -71,6 +73,22 @@ export default function RootLayout({
         <Toaster
           toastOptions={{ className: "w-max right-0" }}
           visibleToasts={1}
+        />
+        <ToastContainer
+          position="bottom-left"
+          transition={Slide}
+          autoClose={10000}
+          pauseOnHover
+          closeOnClick={false}
+          hideProgressBar={true}
+          closeButton={false}
+          style={{
+            padding: 0,
+            // @ts-ignore
+            "--toastify-toast-width": "max-content",
+            "--toastify-toast-bottom": "30px",
+            "--toastify-toast-left": "30px",
+          }}
         />
       </body>
     </html>

@@ -36,7 +36,7 @@ function FakePurchasePopUp() {
   return (
     <Link
       href="/pricing"
-      className="lg:min-w-[262px] z-[100] w-[90%] left-1/2 -translate-x-1/2 lg:translate-x-0 lg:w-max shadow-sm  border-[1px] border-input rounded-[8px] p-[20px] flex gap-[14px] bg-white fixed bottom-4 lg:bottom-[30px] lg:left-[30px]"
+      className="text-primary lg:min-w-[262px] w-[90%] lg:w-max shadow-sm  border-[1px] border-input rounded-[8px] p-[20px] flex gap-[14px] bg-white "
     >
       <div className="rounded-full bg-secondary flex items-center justify-center size-[50px] font-bold">
         {generateAvatarInitials(fakeName)}

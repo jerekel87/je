@@ -79,3 +79,12 @@
 .masonry-container > div {
   @apply !gap-4 lg:!gap-[30px];
 }
+
+/* React toastify custom style */
+.Toastify__toast {
+  @apply !p-0 !mb-0;
+}
+.Toastify__toast-body {
+  @apply !p-0;
+}
+/*  */
