@@ -48,8 +48,10 @@ function RevenueCalculator() {
       const revenue = calculateRevenue({
         brandingStatus: data.brandingStatus,
         costOfBranding: 9_728,
-        currentAnnualRevenue: Number(data.currentAnnualRevenue),
-        goalAnnualRevenue: Number(data.goalAnnualRevenue),
+        currentAnnualRevenue: Number(
+          data.currentAnnualRevenue.replace(/,/g, "")
+        ),
+        goalAnnualRevenue: Number(data.goalAnnualRevenue.replace(/,/g, "")),
         percentageIncrease: Number(percentageIncrease),
       });
       setCalculation(revenue);
@@ -74,6 +76,16 @@ function RevenueCalculator() {
       👇
     </span>
   );
+
+  const formatNumberWithCommas = (value: string) => {
+    // Remove all non-digit characters
+    let formattedValue = value.replace(/\D/g, "");
+
+    // Add commas to the number
+    formattedValue = formattedValue.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    return formattedValue;
+  };
 
   const renderRecommendation = (random0or1: 0 | 1) => {
     const recommendation = {
@@ -151,18 +163,28 @@ function RevenueCalculator() {
           </div>
 
           <div>
-            <Input
-              required={false}
-              {...register("currentAnnualRevenue", {
-                required: "This field is required.",
-              })}
-              type="number"
-              placeholder="Current Annual Revenue"
-              leftSlot={
-                watch("currentAnnualRevenue") ? (
-                  <Input.LeftSlot>$</Input.LeftSlot>
-                ) : null
-              }
+            <Controller
+              name="currentAnnualRevenue"
+              control={control}
+              defaultValue=""
+              rules={{ required: "This field is required." }}
+              render={({ field }) => (
+                <Input
+                  required={false}
+                  id="currentAnnualRevenue"
+                  type="text"
+                  placeholder="Current Annual Revenue"
+                  {...field}
+                  onChange={(e) =>
+                    field.onChange(formatNumberWithCommas(e.target.value))
+                  }
+                  leftSlot={
+                    watch("currentAnnualRevenue") ? (
+                      <Input.LeftSlot>$</Input.LeftSlot>
+                    ) : null
+                  }
+                />
+              )}
             />
             {errors.currentAnnualRevenue && (
               <p className="text-destructive mt-1 ml-1 font-medium text-sm">
@@ -171,23 +193,38 @@ function RevenueCalculator() {
             )}
           </div>
           <div>
-            <Input
-              required={false}
-              {...register("goalAnnualRevenue", {
+            <Controller
+              name="goalAnnualRevenue"
+              control={control}
+              defaultValue=""
+              rules={{
                 validate: (value) => {
                   if (!value) return "This field is required.";
-                  if (Number(value) < Number(getValues().currentAnnualRevenue))
+                  if (
+                    Number(value.replace(/,/g, "")) <
+                    Number(getValues().currentAnnualRevenue.replace(/,/g, ""))
+                  )
                     return "Must be greater than current annual income.";
                   return true;
                 },
-              })}
-              type="number"
-              placeholder="Annual Revenue Goal"
-              leftSlot={
-                watch("goalAnnualRevenue") ? (
-                  <Input.LeftSlot>$</Input.LeftSlot>
-                ) : null
-              }
+              }}
+              render={({ field }) => (
+                <Input
+                  required={false}
+                  id="goalAnnualRevenue"
+                  type="text"
+                  placeholder="Annual Revenue Goal"
+                  {...field}
+                  onChange={(e) =>
+                    field.onChange(formatNumberWithCommas(e.target.value))
+                  }
+                  leftSlot={
+                    watch("goalAnnualRevenue") ? (
+                      <Input.LeftSlot>$</Input.LeftSlot>
+                    ) : null
+                  }
+                />
+              )}
             />
             {errors.goalAnnualRevenue && (
               <p className="text-destructive mt-1 ml-1 font-medium text-sm">
