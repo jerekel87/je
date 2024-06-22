@@ -67,7 +67,7 @@ function FakePurchasePopUp() {
   return (
     <div
       onClick={() => handleClick(randomNum)}
-      className="text-primary lg:min-w-[262px] w-[90%] lg:w-max shadow-sm  border-[1px] border-input rounded-[8px] p-[20px] flex gap-[14px] bg-white "
+      className="cursor-pointer text-primary lg:min-w-[262px] w-[90%] lg:w-max shadow-sm  border-[1px] border-input rounded-[8px] p-[20px] flex gap-[14px] bg-white "
     >
       <div className="rounded-full bg-secondary flex items-center justify-center size-[50px] font-bold">
         {generateAvatarInitials(fakeName)}
