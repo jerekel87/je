@@ -63,7 +63,7 @@ export async function getProject({ slug }: { slug: string }): Promise<
 }
 
 export async function getProjectsIndustries(): Promise<Industry[]> {
-  let query = `*[_type == "industry"]{
+  let query = `*[_type == "industry"] | order(title asc){
       _id,
       title,
       percentageIncrease,
