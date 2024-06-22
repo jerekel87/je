@@ -26,7 +26,10 @@ async function SectionSix({ homePageData }: { homePageData: HomePage }) {
             We are your quintessential five-star creative design agency, fully
             equipped and ready to expertly tackle any project you envision.
           </p>
-          <Button variant="secondary" className="mt-[30px] lg:mt-[40px]">
+          <Button
+            variant="secondary"
+            className="mt-[30px] lg:mt-[40px] lg:px-[58px]"
+          >
             GET STARTED
           </Button>
           <p className="text-[#a7a7bc] mt-3 lg:mt-[14px] text-xs lg:text-sm">

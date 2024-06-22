@@ -76,7 +76,7 @@ function SectionThree() {
         </p>
         <div className="flex justify-center mt-[30px]">
           <Link href="/pricing#revenueCalculator">
-            <Button variant="secondary" className="mx-auto">
+            <Button variant="secondary" className="mx-auto lg:px-[58px]">
               CALCULATE IT
             </Button>
           </Link>
