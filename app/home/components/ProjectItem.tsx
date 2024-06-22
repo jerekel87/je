@@ -6,6 +6,7 @@ import { urlForImage } from "@/sanity/lib/image";
 import { Project } from "@/sanity.types";
 import Image from "next/image";
 import Link from "next/link";
+import { AspectRatio } from "@/app/(shared)/components/ui/aspect-ratio";
 
 function ProjectItem({ project }: { project: Project }) {
   const pathname = usePathname();
