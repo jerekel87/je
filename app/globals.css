@@ -81,6 +81,9 @@
 }
 
 /* React toastify custom style */
+.Toastify {
+  @apply hidden lg:block;
+}
 .Toastify__toast {
   @apply !p-0 !mb-0;
 }
