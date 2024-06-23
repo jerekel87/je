@@ -18,8 +18,8 @@ import { getProjectsIndustry } from "@/sanity/query/project";
 import { useCalculationStore } from "../useCalculationStore";
 import { Loader } from "lucide-react";
 import Link from "next/link";
-import CalComModal from "./CalComModal";
 import "../style.css";
+import CalComModal from "@/app/(shared)/components/CalComModal";
 
 type Inputs = {
   industry: string;
@@ -91,7 +91,9 @@ function RevenueCalculator() {
     const recommendation = {
       0: <InfinitePackageLink />,
       1: (
-        <CalComModal className="font-bold border-b border-primary inline-block leading-none" />
+        <CalComModal.Trigger className="font-bold border-b border-primary inline-block leading-none">
+          Schedule a call
+        </CalComModal.Trigger>
       ),
     };
 

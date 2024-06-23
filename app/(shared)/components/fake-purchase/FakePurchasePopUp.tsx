@@ -10,7 +10,7 @@ import Link from "next/link";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
 import { useRouter } from "next/navigation";
-import CalComModal from "@/app/pricing/components/CalComModal";
+import CalComModal from "../CalComModal";
 
 TimeAgo.addDefaultLocale(en);
 
@@ -40,7 +40,9 @@ function FakePurchasePopUp() {
 
       case 2:
         return (
-          <CalComModal className="text-xs leading-none underline font-bold" />
+          <CalComModal.Trigger className="text-xs leading-none underline font-bold">
+            Schedule a call
+          </CalComModal.Trigger>
         );
 
       default:
