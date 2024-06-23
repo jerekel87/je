@@ -7,21 +7,24 @@ import ProjectItem from "./ProjectItem";
 
 function ProjectMarquee({ projects }: { projects: Project[] }) {
   return (
-    <Marquee
-      loop={0}
-      pauseOnClick
-      pauseOnHover
-      autoFill
-      className="max-w-[2560px] mx-auto"
-    >
-      <div className="w-screen max-w-[2560px] flex">
+    <div>
+      <Marquee
+        loop={0}
+        pauseOnClick
+        pauseOnHover
+        autoFill
+        className="max-w-[2560px] mx-auto"
+      >
         {projects.map((project) => (
-          <div key={project._id} className="w-1/2 md:w-1/4 lg:w-1/6 shrink-0">
+          <div
+            key={project._id}
+            className="w-[200px] md:w-[350px] xl:w-[400px] shrink-0"
+          >
             <ProjectItem key={project._id} project={project} />
           </div>
         ))}
-      </div>
-    </Marquee>
+      </Marquee>
+    </div>
   );
 }
 

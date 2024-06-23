@@ -9,6 +9,7 @@ import ProjectMarquee from "./ProjectMarquee";
 async function SectionFour() {
   noStore();
   const projects = await getProjects({ limit: 7 });
+
   return (
     <section className="relative pt-[70px] lg:pt-[140px]">
       <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">
