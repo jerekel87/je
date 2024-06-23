@@ -38,12 +38,12 @@ async function ReviewsData() {
         </p>
         <div>
           <StarRating value={5} text={<StarRating.Text>5/5</StarRating.Text>} />
-          <p className="leading-none pb-1 mt-[10px] lg:mt-[12px] text-xs lg:text-sm font-medium text-muted-foreground">
+          <p className="leading-none lg:leading-none pb-1 mt-[10px] lg:mt-[12px] text-xs lg:text-sm font-medium text-muted-foreground">
             Customer Satisfaction
           </p>
         </div>
       </div>
-      <div className="flex flex-col gap-4 lg:gap-[25px] mt-[40px]">
+      <div className="flex flex-col gap-4 lg:gap-[24px] mt-[40px]">
         {renderBars()}
       </div>
       <div className="flex items-center gap-[28px] mt-[40px]">
@@ -90,14 +90,16 @@ function Bar({
 }) {
   return (
     <div className="flex items-center gap-[18px]">
-      <span className="text-sm lg:text-base font-bold whitespace-nowrap">
+      <span className="text-sm lg:text-base font-bold whitespace-nowrap leading-none lg:leading-none">
         {rating} Star
       </span>
       <Progress
         value={percentage}
         className="w-full lg:w-[306px] h-[11px] rounded-[2px] bg-[#e8e7e6]"
       />
-      <span className="text-sm lg:text-base font-medium">({count})</span>
+      <span className="text-sm leading-none lg:leading-none lg:text-base font-medium">
+        ({count})
+      </span>
     </div>
   );
 }
