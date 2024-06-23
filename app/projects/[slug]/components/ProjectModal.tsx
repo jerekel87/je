@@ -36,9 +36,7 @@ function ProjectModal({
           <div className="hidden lg:block sticky z-[1] top-0 max-w-[900px] mx-auto">
             <div className="absolute -right-[100px] top-[50svh] -translate-y-1/2 flex flex-col gap-[24px]">
               <div className="flex flex-col items-center">
-                <ShareModal
-                  url={`https://jedesigns.com/projects/${project.slug?.current}`}
-                />
+                <ShareModal pathname={`projects/${project.slug?.current}`} />
                 <p className="mt-[10px] text-sm font-bold">Share</p>
               </div>
 
