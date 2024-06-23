@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import Hamburger from "hamburger-react";
 import HeaderRating from "./HeaderRating";
+import CalComModal from "./CalComModal";
 
 const navList = [
   {
@@ -63,9 +64,11 @@ function Header() {
           <HeaderRating />
         </div>
 
-        <Button variant="outline" className="lg:h-[60px]">
-          GET STARTED
-        </Button>
+        <CalComModal.Trigger>
+          <Button variant="outline" className="lg:h-[60px]">
+            GET STARTED
+          </Button>
+        </CalComModal.Trigger>
       </div>
       <div
         style={{ height: isOpen ? "calc(100% - 74px)" : "0" }}

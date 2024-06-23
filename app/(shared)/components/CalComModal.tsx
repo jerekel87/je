@@ -4,6 +4,7 @@ import { ComponentProps, useEffect } from "react";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { Dialog, DialogContent } from "@/app/(shared)/components/ui/dialog";
 import useCalComStore from "../store/useCalComStore";
+import { cn } from "../lib/utils";
 
 export default function CalComModal() {
   const { isOpen, close } = useCalComStore();
@@ -51,9 +52,9 @@ export default function CalComModal() {
 function Trigger({ children, className }: ComponentProps<"button">) {
   const { open } = useCalComStore();
   return (
-    <button onClick={open} className={className}>
+    <div onClick={open} className={cn("cursor-pointer", className)}>
       {children}
-    </button>
+    </div>
   );
 }
 
