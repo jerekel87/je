@@ -28,7 +28,7 @@ async function ArticlePage({ params }: { params: { slug: string } }) {
         <SectionOne article={article} />
         <SectionTwo article={article} />
         <SectionThree article={article} />
-        <SectionFour article={article} />
+        <SectionFour />
       </main>
       <div className="hidden lg:block">
         <FakePurchase />

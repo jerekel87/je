@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import CalComModal from "./CalComModal";
 import { Button } from "./ui/button";
 
 function BlockA({ title }: { title: string }) {
@@ -24,7 +27,9 @@ function BlockA({ title }: { title: string }) {
         <p className="text-xs lg:text-sm text-center text-muted-foreground mt-1 leading-none">
           We are your quintessential five-star creative design agency
         </p>
-        <Button className="mt-[37px]">REQUEST A QUOTE</Button>
+        <CalComModal.Trigger>
+          <Button className="mt-[37px]">REQUEST A QUOTE</Button>
+        </CalComModal.Trigger>
       </div>
     </div>
   );

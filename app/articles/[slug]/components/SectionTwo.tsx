@@ -1,5 +1,9 @@
+"use client";
+
+import CalComModal from "@/app/(shared)/components/CalComModal";
 import { Button } from "@/app/(shared)/components/ui/button";
 import { Article } from "@/sanity.types";
+import Link from "next/link";
 
 function SectionTwo({ article }: { article: Article }) {
   return (
@@ -15,10 +19,14 @@ function SectionTwo({ article }: { article: Article }) {
         in real time.
       </p>
       <div className="grid grid-cols-2 lg:flex items-center gap-[27px] mt-[34px] lg:mt-[44px]">
-        <Button className="w-full lg:w-max">CHOOSE A PACKAGE</Button>
-        <Button variant="outline" className="w-full lg:w-max">
-          REQUEST A QUOTE
-        </Button>
+        <Link href="/pricing#package">
+          <Button className="w-full lg:w-max">CHOOSE A PACKAGE</Button>
+        </Link>
+        <CalComModal.Trigger>
+          <Button variant="outline" className="w-full lg:w-max">
+            REQUEST A QUOTE
+          </Button>
+        </CalComModal.Trigger>
       </div>
     </section>
   );
