@@ -4,6 +4,7 @@ import Image from "next/image";
 import ShowMoreText from "react-show-more-text";
 import { Card } from "./ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { generateAvatarInitials } from "../lib/utils";
 
 function ReviewCard({
   avatar,
@@ -27,7 +28,9 @@ function ReviewCard({
       <div className="flex gap-2 lg:gap-[18px] items-center">
         <Avatar className="size-[40px] lg:size-[60px]">
           <AvatarImage src={avatar} alt={reviewerName} />
-          <AvatarFallback>JE</AvatarFallback>
+          <AvatarFallback>
+            {generateAvatarInitials(reviewerName)}
+          </AvatarFallback>
         </Avatar>
         <div>
           <div className="flex gap-1 lg:gap-[6px] items-center">
