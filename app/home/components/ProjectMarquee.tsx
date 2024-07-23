@@ -8,13 +8,7 @@ import ProjectItem from "./ProjectItem";
 function ProjectMarquee({ projects }: { projects: Project[] }) {
   return (
     <div>
-      <Marquee
-        loop={0}
-        pauseOnClick
-        pauseOnHover
-        autoFill
-        className="max-w-[2560px] mx-auto"
-      >
+      <Marquee loop={0} pauseOnClick pauseOnHover autoFill>
         {projects.map((project) => (
           <div
             key={project._id}
