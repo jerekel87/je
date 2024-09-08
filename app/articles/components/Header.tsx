@@ -50,9 +50,7 @@ function Header() {
         </div>
       </div>
       <div className="w-[75%] absolute bottom-0 left-[25%] hidden lg:block">
-        <p className="text-sm lg:text-[18px] font-bold py-[32px] border-t border-[#2463A7]">
-          &nbsp;
-        </p>
+        <p className="text-sm lg:text-[18px] font-bold py-[32px]">&nbsp;</p>
       </div>
     </header>
   );

@@ -23,8 +23,8 @@ function Header() {
               className="object-contain"
             />
           </div>
-          <div className="w-full flex flex-col lg:flex-row lg:items-center lg:gap-[14px]">
-            <p className="text-white text-sm lg:text-[18px] font-bold pt-4 pb-1 lg:py-[32px] border-t border-[#2bd06b]">
+          <div className="w-full flex flex-col lg:flex-row lg:items-center lg:gap-[14px] border-t border-[#2bd06b]">
+            <p className="text-white text-sm lg:text-[18px] font-bold pt-4 pb-1 lg:py-[32px]">
               Copeland Home Services revenue increased by 200% since rebranding
             </p>
             <div className="flex items-center gap-[14px]">
@@ -38,11 +38,6 @@ function Header() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="w-1/2 absolute bottom-0 left-1/2 hidden lg:block">
-        <p className="text-sm lg:text-[18px] font-bold py-[32px] border-t border-[#2bd06b]">
-          &nbsp;
-        </p>
       </div>
     </header>
   );

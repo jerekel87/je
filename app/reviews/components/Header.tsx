@@ -24,8 +24,8 @@ function Header() {
               className="object-contain"
             />
           </div>
-          <div className="w-full flex flex-col lg:flex-row lg:items-center lg:gap-[14px]">
-            <p className="text-primary text-sm lg:text-[18px] font-bold pt-4 pb-1 lg:py-[32px] border-t border-[#EDC500]">
+          <div className="w-full flex flex-col lg:flex-row lg:items-center lg:gap-[14px] border-t border-[#EDC500]">
+            <p className="text-primary text-sm lg:text-[18px] font-bold pt-4 pb-1 lg:py-[32px]">
               Trinity Junk Removal Inc revenue increased by 186% since
               rebranding
             </p>
@@ -40,11 +40,6 @@ function Header() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="w-1/2 absolute bottom-0 left-1/2 hidden lg:block">
-        <p className="text-sm lg:text-[18px] font-bold py-[32px] border-t border-[#EDC500]">
-          &nbsp;
-        </p>
       </div>
     </header>
   );
