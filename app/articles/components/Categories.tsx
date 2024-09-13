@@ -6,8 +6,8 @@ async function Categories() {
 
   return (
     <div className="border-t border-input pt-[30px] mt-[40px]">
-      <h2 className="font-portlin text-[30px]">CATEGORIES</h2>
-      <ul className="flex flex-col gap-4 text-muted-foreground text-sm lg:text-base mt-4 lg:mt-[28px]">
+      <h2 className="font-portlin text-[30px] leading-none">CATEGORIES</h2>
+      <ul className="flex flex-col gap-3 text-muted-foreground text-sm lg:text-base mt-4 lg:mt-[28px]">
         {categories.map((category) => (
           <Link
             href={`/articles?category=${category.slug?.current}`}

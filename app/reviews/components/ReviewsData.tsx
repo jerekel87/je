@@ -1,7 +1,6 @@
 import StarRating from "@/app/(shared)/components/StarRating";
 import Image from "next/image";
 import { Progress } from "@/app/(shared)/components/ui/progress";
-import { unstable_noStore as noStore } from "next/cache";
 import { getReviewsCountByRating } from "@/sanity/query/review";
 
 type RatingValue = "1" | "2" | "3" | "4" | "5";
@@ -9,8 +8,9 @@ type RatingValue = "1" | "2" | "3" | "4" | "5";
 const percentage = (count: number, totalCount: number) =>
   (count * 100) / totalCount;
 
+export const revalidate = 60;
+
 async function ReviewsData() {
-  noStore();
   const reviewRatingCount = await getReviewsCountByRating();
 
   const total = Object.values(reviewRatingCount).reduce(

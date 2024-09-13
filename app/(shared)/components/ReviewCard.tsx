@@ -24,7 +24,7 @@ function ReviewCard({
   platformName: string;
 }) {
   return (
-    <Card className="p-4 lg:p-[35px] rounded lg:rounded-[10px] shadow-none border-[#f0efed]">
+    <Card className="p-4 lg:p-[35px] rounded lg:rounded-[10px] shadow-none border-[#f0efed] h-max">
       <div className="flex gap-2 lg:gap-[18px] items-center">
         <Avatar className="size-[40px] lg:size-[60px]">
           <AvatarImage src={avatar} alt={reviewerName} />

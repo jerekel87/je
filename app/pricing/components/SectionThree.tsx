@@ -1,13 +1,9 @@
-import StarRating from "@/app/(shared)/components/StarRating";
-import { Button } from "@/app/(shared)/components/ui/button";
+import ProjectItem from "@/app/home/components/ProjectItem";
 import Image from "next/image";
-import { FaYoutube } from "react-icons/fa6";
-import { HiCheckCircle } from "react-icons/hi2";
-import { IoLogoYoutube } from "react-icons/io5";
 
-function SectionThree() {
+function SectionThree({ projects }: { projects: any[] }) {
   return (
-    <section id="package" className="relative py-[70px] lg:py-[140px]">
+    <section id="package" className="relative pt-[70px] lg:pt-[140px]">
       <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">
         <Image
           src="/assets/images/shape-7-copy-7.svg"
@@ -16,16 +12,33 @@ function SectionThree() {
           className="object-cover"
         />
       </div>
-      <div className="container mx-auto">
-        <h1 className="text-[40px] lg:text-[100px] font-portlin leading-[0.9] text-balance">
-          INFINITE SOLUTION
+      <div className="container px-0 lg:px-3 mx-auto">
+        <h1 className="px-3 text-[50px] lg:text-[100px] font-portlin leading-[0.9] text-balance">
+          FEATURED PROJECTS
         </h1>
-        <p className="text-sm lg:text-lg mt-[30px] lg:mt-[40px] text-muted-foreground max-w-[769px]">
-          No contract, pause or cancel anytime with our Infinite Package. Forget
-          about employees and freelancers. Pause or cancel anytime!
+        <p className="px-3 text-xs leading-normal lg:text-lg mt-[30px] lg:mt-[40px] text-muted-foreground">
+          Dive into our world of vibrant, tailor-made designs. From wizards to
+          warriors, trees to tanks, we transform ideas into unforgettable visual
+          identities.
+          <br />
+          <strong>Ready to stand out in your industry?</strong> Let&apos;s
+          create your next game-changing logo!
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 pt-[60px] lg:gap-[35px]">
+        {projects && (
+          <div className="grid grid-cols-2 lg:grid-cols-3 lg:gap-[30px] mt-[30px] lg:mt-[54px]">
+            {projects.map((project, i) => (
+              <div
+                key={i}
+                className="flex lg:rounded-[8px] lg:overflow-hidden last:hidden lg:last:flex"
+              >
+                <ProjectItem key={i} project={project} />
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* <div className="grid grid-cols-1 lg:grid-cols-3 pt-[60px] lg:gap-[35px]">
           <div className="pt-[40px] relative">
             <div className="bg-[#f5f5f5] rounded-[15px] w-full h-full relative">
               <div className="invisible rounded-[15px] w-full flex flex-col items-center px-[70px] py-[45px]">
@@ -225,16 +238,16 @@ function SectionThree() {
           <div className="flex justify-center mt-[48px]">
             <Button variant="outline">SCHEDULE CALL</Button>
           </div>
-        </div>
+        </div> */}
       </div>
-      <div className="absolute w-full h-[27px] lg:h-[37px] -bottom-[6px]">
+      {/* <div className="absolute w-full h-[27px] lg:h-[37px] -bottom-[6px]">
         <Image
           src="/assets/images/shape-7-copy-8.svg"
           fill
           alt="Transition"
           className="object-cover"
         />
-      </div>
+      </div> */}
     </section>
   );
 }

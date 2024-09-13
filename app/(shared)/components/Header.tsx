@@ -8,21 +8,25 @@ import Hamburger from "hamburger-react";
 import HeaderRating from "./HeaderRating";
 import CalComModal from "./CalComModal";
 
-const navList = [
+export const navList = [
+  {
+    name: "Home",
+    url: "/home",
+  },
   {
     name: "Projects",
     url: "/projects",
   },
   {
     name: "Solutions",
-    url: "/solutions",
+    url: "/home#solutions",
   },
   {
-    name: "Pricing",
+    name: "Brand Package",
     url: "/pricing",
   },
   {
-    name: "Reviews",
+    name: "Stories",
     url: "/reviews",
   },
   {
@@ -34,7 +38,7 @@ const navList = [
 function Header() {
   const [isOpen, setOpen] = useState(false);
   return (
-    <header>
+    <header className="hidden lg:block">
       <div className="flex items-center container mx-auto lg:py-[17px] py-3 px-4">
         <div className="lg:hidden mr-4">
           <Hamburger toggled={isOpen} toggle={setOpen} color="#141424" />
@@ -52,7 +56,7 @@ function Header() {
 
         <nav className="lg:flex gap-[45px] hidden">
           {navList.map((navItem, i) => (
-            <Link key={i} href={navItem.url} className="font-medium">
+            <Link key={i} href={navItem.url} className="font-semibold">
               {navItem.name}
             </Link>
           ))}

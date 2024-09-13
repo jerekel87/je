@@ -7,15 +7,31 @@ export async function getProjects({
   industryId = "",
   lastId = "",
   limit = 9,
+  sortBy = "Most Recent",
 } = {}): Promise<Project[]> {
-  let query = `*[_type == "project" && _id > $lastId] | order(_createdAt desc) [0...$limit]{
+  let sortByValue = "desc";
+
+  switch (sortBy) {
+    case "Most Recent":
+      sortByValue = "desc";
+      break;
+    case "Oldest First":
+      sortByValue = "asc";
+      break;
+
+    default:
+      sortByValue = "desc";
+      break;
+  }
+
+  let query = `*[_type == "project" && _id > $lastId] | order(_createdAt ${sortByValue}) [0...$limit]{
     _id,
     title,
     slug,
     mainImage
   }`;
   if (industryId) {
-    query = `*[_type == "project" && industry._ref == $industryId && _id > $lastId] | order(_createdAt desc) [0...$limit]{
+    query = `*[_type == "project" && industry._ref == $industryId && _id > $lastId] | order(_createdAt ${sortByValue}) [0...$limit]{
       _id,
       title,
       slug,
@@ -35,19 +51,9 @@ export async function getProject({ slug }: { slug: string }): Promise<
   }
 > {
   let query = `*[_type == "project" && slug.current == $slug][0]{
-    _id,
-    title,
-    slug,
-    descriptionOne,
-    mainImage,
-    descriptionTwo,
-    sliderImages,
-    secondaryImage,
-    industry-> {
-      title,
-      slug
-    },
-    "reviews": reviews[]->{
+    ...,
+    industry->,
+    reviews[]->{
       _id,
       reviewerName,
       reviewerInfo,

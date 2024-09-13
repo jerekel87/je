@@ -5,6 +5,7 @@ import "./globals.css";
 import { Slide, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CalComModal from "./(shared)/components/CalComModal";
+import NavbarMobile from "./(shared)/components/NavbarMobile";
 
 const MonaSans = localFont({
   variable: "--font-mona-sans",
@@ -93,6 +94,7 @@ export default function RootLayout({
           }}
         />
         <CalComModal />
+        <NavbarMobile />
       </body>
     </html>
   );

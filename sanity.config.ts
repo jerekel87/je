@@ -39,13 +39,46 @@ export default defineConfig({
             S.documentTypeListItem("articleCategory").title(
               "Article Categories"
             ),
+            S.documentTypeListItem("faq").title("FAQs"),
             // Our singleton type has a list item with a custom child
-            S.listItem().title("Home Page").id("homePage").child(
+            S.listItem().title("Home Page Setting").id("homePage").child(
               // Instead of rendering a list of documents, we render a single
               // document, specifying the `documentId` manually to ensure
               // that we're editing the single instance of the document
               S.document().schemaType("homePage").documentId("homePage")
             ),
+            S.listItem()
+              .title("Projects Page Setting")
+              .id("projectsPage")
+              .child(
+                S.document()
+                  .schemaType("projectsPage")
+                  .documentId("projectsPage")
+              ),
+            S.listItem()
+              .title("Articles Page Setting")
+              .id("articlesPage")
+              .child(
+                S.document()
+                  .schemaType("articlesPage")
+                  .documentId("articlesPage")
+              ),
+            S.listItem()
+              .title("Reviews Page Setting")
+              .id("reviewsPage")
+              .child(
+                S.document().schemaType("reviewsPage").documentId("reviewsPage")
+              ),
+            S.listItem()
+              .title("Pricing Page Setting")
+              .id("pricingPage")
+              .child(
+                S.document().schemaType("pricingPage").documentId("pricingPage")
+              ),
+            S.listItem()
+              .title("FAQ Page Setting")
+              .id("faqPage")
+              .child(S.document().schemaType("faqPage").documentId("faqPage")),
           ]),
     }),
     // Vision is a tool that lets you query your content with GROQ in the studio

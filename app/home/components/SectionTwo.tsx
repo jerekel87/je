@@ -1,9 +1,12 @@
-import StarRating from "@/app/(shared)/components/StarRating";
+"use client";
+
 import Image from "next/image";
+import CalComModal from "@/app/(shared)/components/CalComModal";
+import { Button } from "@/app/(shared)/components/ui/button";
 
 function SectionTwo() {
   return (
-    <section className="relative py-[70px] lg:py-[140px]">
+    <section className="relative py-6 lg:py-[140px] pb-0 lg:pb-0">
       <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">
         <Image
           src="/assets/images/shape-7-copy-7.svg"
@@ -12,9 +15,9 @@ function SectionTwo() {
           className="object-cover"
         />
       </div>
-      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-[60%,40%]">
+      <div className="container px-3 lg:px-[32px] mx-auto grid grid-cols-1 lg:grid-cols-[60%,40%]">
         <div>
-          <div className="w-full h-0 pb-[75.8%] relative rounded lg:rounded-[10px] bg-black">
+          <div className="w-full h-0 pb-[75.8%] relative rounded-[8px] lg:rounded-[10px] bg-black">
             <div className="w-full pb-[56.4%] absolute top-1/2 -translate-y-1/2">
               <iframe
                 className="w-full h-full absolute top-0 left-0"
@@ -26,7 +29,7 @@ function SectionTwo() {
               />
             </div>
           </div>
-          <div className="mt-[40px] lg:mt-[47px] flex flex-col lg:flex-row lg:items-center gap-[20px] lg:gap-[40px]">
+          {/* <div className="mt-[40px] lg:mt-[47px] flex flex-col lg:flex-row lg:items-center gap-[20px] lg:gap-[40px]">
             <div className="flex gap-[18px] items-center">
               <Image
                 src="/assets/images/217450@3x.webp"
@@ -94,32 +97,41 @@ function SectionTwo() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
-        <div className="lg:pl-[86px] mt-[40px] lg:mt-0">
-          <h1 className="text-[40px] lg:text-[100px] font-portlin leading-[0.9] text-balance">
-            YOUR <span className="text-nowrap">FIVE-STAR</span> CREATIVE PARTNER
+        <div className="lg:pl-[86px] mt-[28px] lg:mt-0">
+          <h1 className="text-[50px] lg:text-[100px] font-portlin leading-[0.9] text-balance">
+            INNOVATING BEYOND BOUNDARIES
           </h1>
-          <div className="mt-4 lg:mt-[37px]">
+          {/* <div className="mt-4 lg:mt-[37px]">
             <StarRating
               value={5}
               text={<StarRating.Text>5/5</StarRating.Text>}
             />
-          </div>
-          <p className="text-sm lg:text-lg mt-[31px]">
-            We are your quintessential five-star creative design agency, fully
-            equipped and ready to expertly tackle any project you envision.
+          </div> */}
+          <p className="text-sm lg:text-lg mt-[24px] lg:mt-[31px]">
+            Watch as we transform brands with cutting-edge design, bringing bold
+            ideas to life. See why we&apos;re the top choice for standout visual
+            branding in today&apos;s market.
           </p>
+          <CalComModal.Trigger>
+            <Button
+              className="mt-[25px] lg:mt-[40px] lg:px-[48px] min-w-[225px] w-full lg:w-auto"
+              variant="secondary"
+            >
+              GET A QUOTE
+            </Button>
+          </CalComModal.Trigger>
         </div>
       </div>
-      <div className="absolute w-full h-[27px] lg:h-[37px] -bottom-[6px] z-[1]">
+      {/* <div className="absolute w-full h-[27px] lg:h-[37px] -bottom-[6px] z-[1]">
         <Image
           src="/assets/images/shape-7-copy-8.svg"
           fill
           alt="Transition"
           className="object-cover"
         />
-      </div>
+      </div> */}
     </section>
   );
 }

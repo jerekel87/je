@@ -33,7 +33,7 @@ function ProjectModal({
       >
         <div className="h-svh w-full overflow-y-scroll">
           {/* Floating buttons  */}
-          <div className="hidden lg:block sticky z-[1] top-0 max-w-[900px] mx-auto">
+          {/* <div className="hidden lg:block sticky z-[1] top-0 max-w-[900px] mx-auto">
             <div className="absolute -right-[100px] top-[50svh] -translate-y-1/2 flex flex-col gap-[24px]">
               <div className="flex flex-col items-center">
                 <ShareModal pathname={`projects/${project.slug?.current}`} />
@@ -54,7 +54,7 @@ function ProjectModal({
                 <p className="mt-[10px] text-sm font-bold">Quote</p>
               </div>
             </div>
-          </div>
+          </div> */}
           {/*  */}
 
           <div className="pt-[54px] pb-0 h-full relative w-full">
@@ -81,41 +81,69 @@ function ProjectModal({
                   <h1 className="text-[40px] lg:text-[80px] leading-[.8] font-portlin mt-[24px]">
                     {project.title}
                   </h1>
-                  {project.descriptionOne && (
+                  {project.body && (
                     <PortableText
                       className="mt-[30px] text-base lg:text-lg text-muted-foreground [&_a]:underline [&_a]:text-blue-500"
-                      content={project.descriptionOne as any}
+                      content={project.body as any}
                     />
                   )}
                 </div>
-                <Image
-                  src={urlForImage(project.mainImage as any)}
-                  width="900"
-                  height="900"
-                  alt={project.title || ""}
-                  className="lg:rounded-[15px] mt-[54px]"
-                />
-                {project.descriptionTwo?.length && (
+
+                <div className="px-3 relative">
+                  <div className="hidden lg:flex absolute -right-[100px] top-[50px] z-[1] flex-col gap-[24px]">
+                    <div className="flex flex-col items-center">
+                      <ShareModal
+                        pathname={`projects/${project.slug?.current}`}
+                      />
+                      <p className="mt-[10px] text-sm font-bold">Share</p>
+                    </div>
+
+                    <div className="flex flex-col items-center">
+                      <CalComModal.Trigger>
+                        <div className="flex bg-primary items-center justify-center size-[70px] border-[1px] rounded-full border-muted">
+                          <Image
+                            src="/assets/images/telephone-stroke-rounded.svg"
+                            height="22"
+                            width="22"
+                            alt="telephone-stroke-rounded"
+                          />
+                        </div>
+                      </CalComModal.Trigger>
+                      <p className="mt-[10px] text-sm font-bold">Quote</p>
+                    </div>
+                  </div>
+
+                  <Image
+                    src={urlForImage(project.mainImage as any)}
+                    width="900"
+                    height="900"
+                    alt={project.title || ""}
+                    className="rounded-[8px] lg:rounded-[10px] mt-6 lg:mt-[54px]"
+                  />
+                </div>
+                {project.secondaryBody?.length && (
                   <div className="px-4 lg:px-[54px] mt-[72px]">
                     <PortableText
                       className="text-base lg:text-lg text-muted-foreground [&_a]:underline [&_a]:text-blue-500"
-                      content={project.descriptionTwo as any}
+                      content={project.secondaryBody as any}
                     />
                   </div>
                 )}
                 {project.sliderImages && (
-                  <div className="mt-[70px]">
+                  <div className="mt-[50px] lg:mt-[70px]">
                     <Carousel images={project.sliderImages as any} />
                   </div>
                 )}
                 {project.secondaryImage && (
-                  <Image
-                    src={urlForImage(project.secondaryImage as any)}
-                    width="900"
-                    height="900"
-                    alt={project.secondaryImage?.alt || ""}
-                    className="lg:rounded-[15px] mt-[60px]"
-                  />
+                  <div className="px-3">
+                    <Image
+                      src={urlForImage(project.secondaryImage as any)}
+                      width="900"
+                      height="900"
+                      alt={project.secondaryImage?.alt || ""}
+                      className="rounded-[8px] lg:rounded-[10px] mt-[50px] lg:mt-[60px]"
+                    />
+                  </div>
                 )}
               </div>
 

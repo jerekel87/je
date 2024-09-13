@@ -1,3 +1,6 @@
+"use client";
+
+import CalComModal from "@/app/(shared)/components/CalComModal";
 import { Button } from "@/app/(shared)/components/ui/button";
 import Image from "next/image";
 
@@ -22,9 +25,11 @@ function SectionFive() {
             you look exactly like everyone else!
           </p>
         </div>
-        <Button className="mt-[30px] lg:mt-[0] lg:px-[48px] min-w-[225px]">
-          GET A QUOTE!
-        </Button>
+        <CalComModal.Trigger>
+          <Button className="mt-[30px] lg:mt-[0] lg:px-[48px] min-w-[225px]">
+            GET A QUOTE!
+          </Button>
+        </CalComModal.Trigger>
       </div>
     </section>
   );

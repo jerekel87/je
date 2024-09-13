@@ -4,17 +4,19 @@ import Projects from "./components/Projects";
 import Footer from "../(shared)/components/Footer";
 import MainHeader from "../(shared)/components/Header";
 import { getProjects } from "@/sanity/query/project";
-import { unstable_noStore as noStore } from "next/cache";
+import { getProjectsPageSetting } from "@/sanity/query/projectsPage";
+
+export const revalidate = 60;
 
 async function ProjectsPage() {
-  noStore();
-  const projects = await getProjects({ limit: 2 });
+  const projects = await getProjects();
+  const projectsPageSetting = await getProjectsPageSetting();
 
   return (
     <>
       <MainHeader />
       <main>
-        <Header />
+        <Header articleLink={projectsPageSetting?.articleLink || ""} />
         <Projects initialProjects={projects} />
         <Reviews
           subheader={

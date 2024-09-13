@@ -15,13 +15,29 @@ export async function getReviews({
   platformId = "",
   lastId = "",
   limit = 9,
+  sortBy = "Most Recent",
 } = {}): Promise<
   (Review & {
     reviewPlatformLogo: any;
     reviewPlatformName: string;
   })[]
 > {
-  let query = `*[_type == "review" && _id > $lastId] | order(_createdAt desc) [0...$limit]{
+  let sortByValue = "desc";
+
+  switch (sortBy) {
+    case "Most Recent":
+      sortByValue = "desc";
+      break;
+    case "Oldest First":
+      sortByValue = "asc";
+      break;
+
+    default:
+      sortByValue = "desc";
+      break;
+  }
+
+  let query = `*[_type == "review" && _id > $lastId] | order(_createdAt ${sortByValue}) [0...$limit]{
     _id,
     reviewerName,
     reviewerInfo,
@@ -33,7 +49,7 @@ export async function getReviews({
     "reviewPlatformName": reviewPlatform->name
   }`;
   if (platformId) {
-    query = `*[_type == "review" && reviewPlatform._ref == $platformId && _id > $lastId] | order(_createdAt desc) [0...$limit]{
+    query = `*[_type == "review" && reviewPlatform._ref == $platformId && _id > $lastId] | order(_createdAt ${sortByValue}) [0...$limit]{
         _id,
         reviewerName,
         reviewerInfo,

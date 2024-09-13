@@ -1,11 +1,14 @@
 import Header from "./components/Header";
 import SectionOne from "./components/SectionOne";
+import { getFaqPageSetting } from "@/sanity/query/faqPage";
 
-function FAQPage() {
+async function FAQPage() {
+  const faqPageSetting = await getFaqPageSetting();
+
   return (
     <main>
-      <Header />
-      <SectionOne />
+      <Header articleLink={faqPageSetting?.articleLink || ""} />
+      <SectionOne faqCategories={faqPageSetting.faqCategories as any[]} />
     </main>
   );
 }

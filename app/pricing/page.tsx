@@ -1,19 +1,29 @@
-import Reviews from "../(shared)/components/Reviews";
 import Header from "./components/Header";
 import SectionFour from "./components/SectionFour";
 import SectionOne from "./components/SectionOne";
 import SectionThree from "./components/SectionThree";
 import SectionTwo from "./components/SectionTwo";
+import FeaturedStories from "../(shared)/components/FeaturedStories";
+import SectionFive from "./components/SectionFive";
+import { getPricingPageSetting } from "@/sanity/query/pricingPage";
 
-function PricingPage() {
+export const revalidate = 60;
+
+async function PricingPage() {
+  const pricingPageSetting = await getPricingPageSetting();
+
   return (
     <main>
-      <Header />
+      <Header articleLink={pricingPageSetting?.articleLink || ""} />
       <SectionOne />
-      <SectionTwo />
-      <SectionThree />
+      <SectionTwo sketchConcept={pricingPageSetting.sketchConcept} />
+      <SectionThree projects={pricingPageSetting.projects as any[]} />
+      <FeaturedStories
+        featuredStories={pricingPageSetting.featuredStories as any[]}
+      />
       <SectionFour />
-      <Reviews
+      <SectionFive packages={pricingPageSetting.packages as any[]} />
+      {/* <Reviews
         subheader={
           <Reviews.Subheader>
             Don&apos;t take our word for it, we let our customers do the talking
@@ -22,7 +32,7 @@ function PricingPage() {
           </Reviews.Subheader>
         }
         footerButton={<Reviews.FooterButton>MORE STORIES</Reviews.FooterButton>}
-      />
+      /> */}
     </main>
   );
 }

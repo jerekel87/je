@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-import PortableText from "react-portable-text";
 import { Button } from "@/app/(shared)/components/ui/button";
 import { Article } from "@/sanity.types";
 import { getArticles } from "@/sanity/query/article";
 import { urlForImage } from "@/sanity/lib/image";
 import { cn } from "@/app/(shared)/lib/utils";
+import Image from "next/image";
+import PortableText from "react-portable-text";
 import Link from "next/link";
 
 function Articles({ initialArticles }: { initialArticles: Article[] }) {
@@ -60,15 +60,15 @@ function Articles({ initialArticles }: { initialArticles: Article[] }) {
               className="object-contain"
             />
           </div>
-          <p className="text-base text-muted-foreground lg:text-lg mt-4 lg:mt-[40px]">
+          <p className="text-xs leading-normal text-muted-foreground lg:text-lg mt-4 lg:mt-[40px]">
             Gone are the days of aesthetics trumping experience. Today, web
             design is all about crafting immersive experiences that connect,
             captivate, motivate, and delight.
           </p>
         </article>
       ) : (
-        <p className="text-[40px] lg:text-[60px] font-portlin leading-[.9]">
-          No results found.
+        <p className="px-3 lg:px-0 text-xs lg:text-lg font-medium">
+          NO RESULTS FOUND
         </p>
       )}
       {articles.slice(1).map((article) => (
@@ -92,13 +92,13 @@ function Articles({ initialArticles }: { initialArticles: Article[] }) {
                 href={`/articles/${article.slug?.current}`}
                 className="hover:underline"
               >
-                <h2 className="text-base lg:text-[40px] font-portlin leading-[1.06] line-clamp-2">
+                <h2 className="text-lg lg:text-[40px] font-portlin leading-[1.06] line-clamp-2">
                   {article.title}
                 </h2>
               </Link>
             </header>
             <PortableText
-              className="leading-[1.6] text-xs lg:text-sm mt-[10px] lg:mt-[26px] text-muted-foreground line-clamp-2"
+              className="text-xs lg:text-lg leading-normal mt-[10px] lg:mt-[26px] text-muted-foreground line-clamp-2"
               content={article.body as any}
             />
           </div>

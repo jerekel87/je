@@ -22,7 +22,9 @@ function IndustrySelector({
   );
   return (
     <Select onValueChange={onChange}>
-      <SelectTrigger className={cn("w-full lg:w-[282px]", className)}>
+      <SelectTrigger
+        className={cn("w-full lg:w-[282px] text-[#53545c]", className)}
+      >
         <SelectValue placeholder="Choose industry" />
       </SelectTrigger>
       <SelectContent>
@@ -33,7 +35,11 @@ function IndustrySelector({
         )}
         {data &&
           data.map((projectIndustry) => (
-            <SelectItem key={projectIndustry._id} value={projectIndustry._id}>
+            <SelectItem
+              key={projectIndustry._id}
+              value={projectIndustry._id}
+              className="p-3 pl-6 text-sm lg:text-lg w-[calc(100vw-40px)] lg:w-auto"
+            >
               {projectIndustry.title}
             </SelectItem>
           ))}
