@@ -7,7 +7,7 @@ function Header({ articleLink }: { articleLink: string }) {
         <h1 className="text-[50px] lg:text-[100px] text-white font-portlin leading-[.9]">
           AWESOME <span className="text-[#fff500]">BRAND</span> <br /> STUDIES
         </h1>
-        <p className="text-white text-xs lg:text-lg leading-normal lg:absolute bottom-2 left-[320px] mt-6 lg:mt-0">
+        <p className="text-white text-sm lg:text-lg leading-normal lg:absolute bottom-2 left-[320px] mt-6 lg:mt-0">
           We are more than just a team. We are a creative family, united by our
           passion for design and our commitment to helping our clients stand out
           from the competition.

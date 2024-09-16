@@ -133,7 +133,7 @@ function SectionTwo({ sketchConcept }: { sketchConcept: any }) {
             <br />
             <span className="text-secondary"> VECTOR</span> LOGO!
           </h1>
-          <p className="text-xs leading-normal lg:text-lg mt-[30px] lg:mt-[50px] text-white">
+          <p className="text-sm leading-normal lg:text-lg mt-[30px] lg:mt-[50px] text-white">
             Slide the black vertical bar left and right to witness the amazing
             transformation from initial sketch concept to vibrant, fully
             vectorized logo.

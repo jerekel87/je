@@ -33,7 +33,7 @@ async function Faqs({ faqCategory }: { faqCategory: any }) {
                 {faq.answer && (
                   <PortableText
                     content={faq.answer}
-                    className="text-xs lg:text-lg leading-normal [&_*_a]:underline"
+                    className="text-sm lg:text-lg leading-normal [&_*_a]:underline"
                   />
                 )}
               </AccordionContent>

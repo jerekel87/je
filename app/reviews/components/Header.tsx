@@ -8,7 +8,7 @@ function Header({ articleLink }: { articleLink: string }) {
           INDUSTRY PEERS&apos; <br />
           STORIES
         </h1>
-        <p className="text-primary text-xs lg:text-lg leading-normal lg:absolute bottom-2 left-[320px] mt-4 lg:mt-0">
+        <p className="text-primary text-sm lg:text-lg leading-normal lg:absolute bottom-2 left-[320px] mt-4 lg:mt-0">
           Discover firsthand accounts of our customers experience with our
           services, offering insights and reassurances about what to expect when
           you choose us.

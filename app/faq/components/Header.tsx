@@ -8,7 +8,7 @@ function Header({ articleLink }: { articleLink: string }) {
           FREQUENTLY <span className="text-[#fff500]">ASKED</span> <br />
           QUESTIONS
         </h1>
-        <p className="text-white text-xs lg:text-lg leading-normal lg:absolute bottom-2 left-[386px] mt-4 lg:mt-0">
+        <p className="text-white text-sm lg:text-lg leading-normal lg:absolute bottom-2 left-[386px] mt-4 lg:mt-0">
           Welcome to our Frequently Asked Questions (FAQ) page. Here,
           you&apos;ll find quick answers to common queries about our services
           and policies, all conveniently organized for easy navigation.

@@ -8,7 +8,7 @@ function Header({ articleLink }: { articleLink: string }) {
           CREATIVE BRAND <br />
           <span className="text-[#fff500]">PACKAGE</span>
         </h1>
-        <p className="text-white leading-normal bottom-2 text-xs lg:text-lg lg:absolute left-[320px] mt-6 lg:mt-0 max-w-[676px]">
+        <p className="text-white leading-normal bottom-2 text-sm lg:text-lg lg:absolute left-[320px] mt-6 lg:mt-0 max-w-[676px]">
           Remember, good work isn&apos;t cheap and cheap work isn&apos;t good.
           Here at JE Designs, we want to remind you of that when considering
           your brands value.

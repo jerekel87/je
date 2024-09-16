@@ -16,7 +16,7 @@ function SectionThree({ projects }: { projects: any[] }) {
         <h1 className="px-3 text-[50px] lg:text-[100px] font-portlin leading-[0.9] text-balance">
           FEATURED PROJECTS
         </h1>
-        <p className="px-3 text-xs leading-normal lg:text-lg mt-[30px] lg:mt-[40px] text-muted-foreground">
+        <p className="px-3 text-sm leading-normal lg:text-lg mt-[30px] lg:mt-[40px] text-muted-foreground">
           Dive into our world of vibrant, tailor-made designs. From wizards to
           warriors, trees to tanks, we transform ideas into unforgettable visual
           identities.

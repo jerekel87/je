@@ -9,7 +9,7 @@ function SectionOne({ article }: { article: Article }) {
         {article.title}
       </h1>
       <PortableText
-        className="lg:px-[58px] mt-6 lg:mt-[40px] text-muted-foreground text-xs lg:text-lg leading-normal [&_a]:underline [&_a]:text-blue-500"
+        className="lg:px-[58px] mt-6 lg:mt-[40px] text-muted-foreground text-sm lg:text-lg leading-normal [&_a]:underline [&_a]:text-blue-500"
         content={article.body as any}
       />
       <SectionOneMedia article={article} />

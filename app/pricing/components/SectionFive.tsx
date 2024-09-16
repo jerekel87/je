@@ -62,7 +62,7 @@ function SectionFive({ packages }: { packages: any[] }) {
                         mask: `url(${pckg.iconUrl}) no-repeat center / contain`,
                       }}
                     />
-                    <p className="text-xs lg:text-[18.5px] font-medium leading-[1.19]">
+                    <p className="text-sm lg:text-[18.5px] font-medium leading-[1.19]">
                       {pckg.name}
                     </p>
                   </div>
@@ -88,7 +88,7 @@ function SectionFive({ packages }: { packages: any[] }) {
                     (pckgItem: string, i: number) => (
                       <li
                         key={i}
-                        className="flex items-center font-medium text-xs lg:text-lg"
+                        className="flex items-center font-medium text-sm leading-tight lg:text-lg"
                       >
                         <HiCheckCircle className="size-[14px] lg:size-[20px] mr-[10px] lg:mr-[20px] shrink-0" />
                         <p>{pckgItem}</p>
@@ -131,7 +131,7 @@ function SectionFive({ packages }: { packages: any[] }) {
             BRAND SOLUTION
           </h1>
         </div>
-        <p className="text-xs leading-normal lg:text-lg mt-4 lg:mt-[25px] text-[#53545c] max-w-[480px] text-center mx-auto">
+        <p className="text-sm leading-normal lg:text-lg mt-4 lg:mt-[25px] text-[#53545c] max-w-[480px] text-center mx-auto">
           Interested in a tailored package designed specifically to your
           business?{" "}
           <strong className="text-primary">

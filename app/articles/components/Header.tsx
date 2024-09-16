@@ -7,7 +7,7 @@ function Header() {
         <h1 className="text-[50px] lg:text-[100px] text-white font-portlin leading-[.9]">
           CURRATED <span className="text-[#fff500]">BRAND</span> <br /> ARTICLES
         </h1>
-        <p className="text-white text-xs lg:text-lg leading-normal lg:absolute bottom-2 left-[358px] mt-4 lg:mt-0">
+        <p className="text-white text-sm lg:text-lg leading-normal lg:absolute bottom-2 left-[358px] mt-4 lg:mt-0">
           Our designers and developers create logos and produce professional,
           consistent print and digital collateral that show the world our
           clients are the real deal.

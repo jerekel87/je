@@ -60,11 +60,10 @@ function Articles({ initialArticles }: { initialArticles: Article[] }) {
               className="object-contain"
             />
           </div>
-          <p className="text-xs leading-normal text-muted-foreground lg:text-lg mt-4 lg:mt-[40px]">
-            Gone are the days of aesthetics trumping experience. Today, web
-            design is all about crafting immersive experiences that connect,
-            captivate, motivate, and delight.
-          </p>
+          <PortableText
+            content={firstArticle.body as any}
+            className="text-sm leading-normal text-muted-foreground lg:text-lg mt-4 lg:mt-[40px]"
+          />
         </article>
       ) : (
         <p className="px-3 lg:px-0 text-xs lg:text-lg font-medium">
@@ -98,7 +97,7 @@ function Articles({ initialArticles }: { initialArticles: Article[] }) {
               </Link>
             </header>
             <PortableText
-              className="text-xs lg:text-lg leading-normal mt-[10px] lg:mt-[26px] text-muted-foreground line-clamp-2"
+              className="text-sm lg:text-lg leading-normal mt-[10px] lg:mt-[26px] text-muted-foreground line-clamp-2"
               content={article.body as any}
             />
           </div>

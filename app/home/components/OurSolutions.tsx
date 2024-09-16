@@ -89,7 +89,7 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
                 {solution.description && (
                   <PortableText
                     content={solution.description}
-                    className="hidden lg:block text-lg pl-[116px] pr-[90px] line-clamp-2 font-medium w-[70%] [&_*_a]:underline"
+                    className="hidden lg:block text-sm leading-normal lg:text-lg pl-[116px] pr-[90px] line-clamp-2 font-medium w-[70%] [&_*_a]:underline"
                   />
                 )}
               </AccordionTrigger>
@@ -97,7 +97,7 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
                 {solution.description && (
                   <PortableText
                     content={solution.description}
-                    className="lg:hidden text-sm leading-normal [&_*_a]:underline"
+                    className="lg:hidden text-sm lg:text-lg leading-normal [&_*_a]:underline"
                   />
                 )}
                 {solution.images && (
@@ -147,7 +147,7 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
                   {solution.content && (
                     <PortableText
                       content={solution.content}
-                      className="text-xs lg:text-lg leading-[1.58]"
+                      className="text-sm leading-normal lg:text-lg"
                     />
                   )}
                   {solution.button?.isCalCom ? (

@@ -152,7 +152,7 @@ function SectionFour() {
             <br className="hidden lg:block" />
             <span className="text-secondary"> PERSONALITY!</span>
           </h1>
-          <p className="text-xs leading-normal lg:text-lg mt-[30px] lg:mt-[40px] text-[#a7a7bc]">
+          <p className="text-sm leading-normal lg:text-lg mt-[30px] lg:mt-[40px] text-[#a7a7bc]">
             Imagine your brand coming to life with a character as unique as your
             business! Our talented team is ready create an unforgettable mascots
             that resonate with your audience - whether you&apos;re aiming for
