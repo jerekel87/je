@@ -135,7 +135,7 @@ function Footer() {
           <FooterTopBg />
           <div className="h-full w-full bg-primary" />
         </div>
-        <div className="container px-2 lg:px-[30px] mx-auto lg:max-w-[1500px]">
+        <div className="container px-2 lg:px-[30px] mx-auto lg:max-w-[1354px]">
           <div
             className="grid grid-cols-1 lg:grid-cols-2 rounded-[10px] lg:left-0 lg:right-auto left-4 right-4 bg-[#fff500]"
             // style={{
@@ -165,16 +165,18 @@ function Footer() {
                 <br className="hidden lg:block" /> BOOSTS REVENUE
                 <br className="hidden lg:block" /> FOR TOMORROW
               </h3>
-              <p className="text-sm leading-normal lg:text-lg mt-[22px] lg:mt-[39px]">
+              <p className="text-sm leading-normal lg:text-lg mt-[22px] lg:mt-[38px] max-w-[470px]">
                 <strong>We champion your success.</strong> Expect unyielding
                 support, fearless strategy, and victorious branding!
               </p>
               <div className="hidden lg:flex mt-8 lg:mt-[63px] gap-4 lg:gap-[27px] flex-row">
                 <Link href="/articles">
-                  <Button>BUSINESS TIPS</Button>
+                  <Button className="lgmin-w-[210px]">BUSINESS TIPS</Button>
                 </Link>
                 <CalComModal.Trigger>
-                  <Button variant="outline">GET A QUOTE</Button>
+                  <Button variant="outline" className="lg:min-w-[210px]">
+                    GET A QUOTE
+                  </Button>
                 </CalComModal.Trigger>
               </div>
             </div>
