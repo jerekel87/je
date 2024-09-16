@@ -26,7 +26,7 @@ function SectionThree({ projects }: { projects: any[] }) {
         </p>
 
         {projects && (
-          <div className="px-3 grid grid-cols-2 lg:grid-cols-3 gap-[15px] lg:gap-[30px] mt-[30px] lg:mt-[54px]">
+          <div className="px-3 grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-[30px] mt-[30px] lg:mt-[54px]">
             {projects.map((project, i) => (
               <div
                 key={i}

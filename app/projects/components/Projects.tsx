@@ -101,7 +101,7 @@ function Projects({ initialProjects }: { initialProjects: Project[] }) {
             <LoaderCircle className="animate-spin" />
           </div>
         ) : (
-          <div className="px-3 grid grid-cols-2 lg:grid-cols-3 gap-[15px] lg:gap-[30px] mt-[30px]">
+          <div className="px-3 grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-[30px] mt-[30px]">
             {projects && projects.length ? (
               projects.map((project) => {
                 const src = urlForImage(project.mainImage as any);
