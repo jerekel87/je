@@ -120,6 +120,7 @@ export default function NavbarMobile() {
                 fill
                 alt="je logo"
                 className="absolute top-0 object-contain"
+                quality={100}
               />
             </div>
           </Link>
