@@ -35,8 +35,8 @@ function SectionFive({ packages }: { packages: any[] }) {
           across every touchpoint.
         </p>
         {/* Card */}
-        <div className="flex flex-col lg:flex-row rounded-[10px] bg-[#141423] p-[30px] lg:p-[50px] text-white mt-[30px] lg:mt-[75px] gap-[52px] justify-between">
-          <div className="lg:max-w-[54%]">
+        <div className="flex flex-col lg:flex-row rounded-[10px] bg-[#141423] p-[30px] lg:pr-[40px] lg:p-[50px] text-white mt-[30px] lg:mt-[75px] gap-[52px] justify-between">
+          <div className="lg:max-w-[64%]">
             <h2 className="text-[45px] lg:text-[65px] font-portlin leading-none">
               COMPLETE BRAND PACKAGE
             </h2>
@@ -77,8 +77,8 @@ function SectionFive({ packages }: { packages: any[] }) {
           </div>
 
           {/* Package Details */}
-          <div className="relative w-full max-w-[500px] h-full">
-            <div className="lg:min-h-[900px] flex flex-col justify-between z-10 lg:-translate-y-[170px] lg:left-0 lg:absolute w-full h-min rounded-[10px] bg-secondary text-primary p-4 lg:p-[30px] max-w-[500px]">
+          <div className="relative w-full max-w-[400px] h-full">
+            <div className="lg:min-h-[884px] flex flex-col justify-between z-10 lg:-translate-y-[170px] lg:left-0 lg:absolute w-full h-min rounded-[10px] bg-secondary text-primary p-4 lg:p-[30px] max-w-[400px]">
               <div className="p-4 pb-0 lg:p-[26px] lg:pb-0">
                 <h3 className="text-[50px] lg:text-[80px]  font-portlin uppercase leading-[.9] lg:leading-[70px]">
                   {selectedPckg.name}
