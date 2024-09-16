@@ -37,7 +37,7 @@ function SectionThreeItem({
           {title}
         </h3>
       </div>
-      <p className="text-xs lg:text-lg mt-[25px] text-[#a7a7bc] max-w-[480px]">
+      <p className="text-sm lg:text-lg leading-normal mt-[25px] text-[#a7a7bc] max-w-[480px]">
         {description}
       </p>
     </div>
@@ -90,7 +90,7 @@ function SectionThree() {
               BRANDS POTENTIAL
             </h1>
 
-            <p className="text-xs lg:text-lg leading-[19px] mt-[24px] lg:mt-[40px] text-[#ffffff66] mb-0 lg:mb-[124px]">
+            <p className="text-sm lg:text-lg leading-normal mt-[24px] lg:mt-[40px] text-[#ffffff66] mb-0 lg:mb-[124px]">
               Our designs don&apos;t just catch eyes—they capture market share,
               driving substantial growth for our clients. See how our creative
               strategies turned these businesses into industry leaders.
@@ -188,7 +188,7 @@ function SectionThree() {
             TAKE ACTION!
           </h1>
         </div>
-        <p className="text-sm lg:text-lg mt-4 lg:mt-[25px] text-[#a7a7bc] max-w-[480px] text-center mx-auto">
+        <p className="text-sm lg:text-lg leading-normal mt-4 lg:mt-[25px] text-[#a7a7bc] max-w-[480px] text-center mx-auto">
           Let&apos;s see how much additional revenue you could earn through the
           power of professional branding!
         </p>

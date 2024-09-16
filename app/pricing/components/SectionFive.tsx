@@ -29,7 +29,7 @@ function SectionFive({ packages }: { packages: any[] }) {
         <h1 className="text-[50px] lg:text-[100px] font-portlin leading-[0.9] text-balance max-w-[620px]">
           IGNITE YOUR BRANDS POTENTIAL!
         </h1>
-        <p className="text-xs leading-normal lg:text-lg mt-[30px] lg:mt-[42px] text-muted-foreground max-w-[640px]">
+        <p className="text-sm leading-normal lg:text-lg mt-[30px] lg:mt-[42px] text-muted-foreground max-w-[640px]">
           Elevate your business with our all-in-one branding solution. From
           concept to implementation, we&apos;ll bring your unique vision to life
           across every touchpoint.

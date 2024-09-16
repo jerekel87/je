@@ -70,7 +70,7 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
             OUR SOLUTIONS
           </h1>
 
-          <p className="text-xs lg:text-lg leading-[19px] mt-[25px] lg:mt-[40px] mb-0 lg:mb-[124px] max-w-[452px]">
+          <p className="text-sm lg:text-lg leading-normal mt-[25px] lg:mt-[40px] mb-0 lg:mb-[124px] max-w-[452px]">
             We are your full-stack, five-star creative design agency ready to
             tackle any job you have for us.
           </p>
@@ -97,7 +97,7 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
                 {solution.description && (
                   <PortableText
                     content={solution.description}
-                    className="lg:hidden text-xs leading-[1.58] [&_*_a]:underline"
+                    className="lg:hidden text-sm leading-normal [&_*_a]:underline"
                   />
                 )}
                 {solution.images && (

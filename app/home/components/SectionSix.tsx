@@ -24,7 +24,7 @@ function SectionSix({ sketchConcept }: { sketchConcept: any }) {
             <br /> <span className="text-secondary">IDEAS</span> INTO <br />
             <span className="text-secondary"> REALITY!</span>
           </h1>
-          <p className="text-xs lg:text-lg mt-[30px] lg:mt-[40px] text-white">
+          <p className="text-sm leading-normal lg:text-lg mt-[30px] lg:mt-[40px] text-white">
             The sketch phase is the first of three steps. Here is where we will
             come up with a unique concept based on the details we’ve discussed.
           </p>

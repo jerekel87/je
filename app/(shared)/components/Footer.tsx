@@ -165,7 +165,7 @@ function Footer() {
                 <br className="hidden lg:block" /> BOOSTS REVENUE
                 <br className="hidden lg:block" /> FOR TOMORROW
               </h3>
-              <p className="text-xs leading-normal lg:text-lg mt-[22px] lg:mt-[39px]">
+              <p className="text-sm leading-normal lg:text-lg mt-[22px] lg:mt-[39px]">
                 <strong>We champion your success.</strong> Expect unyielding
                 support, fearless strategy, and victorious branding!
               </p>
@@ -260,8 +260,8 @@ function Footer() {
               collapsible
               className="w-full mt-[40px] lg:hidden"
             >
-              <AccordionItem value="main" className="border-white">
-                <AccordionTrigger className="text-white text-[30px] border-t border-b-0 font-normal py-[24px] px-0 leading-none !no-underline lg:text-[50px]">
+              <AccordionItem value="main" className="border-[#252534]">
+                <AccordionTrigger className="text-white border-[#252534] text-[30px] border-t border-b-0 font-normal py-[24px] px-0 leading-none !no-underline lg:text-[50px]">
                   <span className="font-portlin leading-none whitespace-nowrap w-[30%]">
                     MAIN MENU
                   </span>
@@ -270,8 +270,8 @@ function Footer() {
                   <MainList />
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="social" className="border-white">
-                <AccordionTrigger className="text-white text-[30px] border-t border-b-0 font-normal py-[24px] px-0 leading-none !no-underline lg:text-[50px]">
+              <AccordionItem value="social" className="border-[#252534]">
+                <AccordionTrigger className="text-white border-[#252534] text-[30px] border-t border-b-0 font-normal py-[24px] px-0 leading-none !no-underline lg:text-[50px]">
                   <span className="font-portlin leading-none whitespace-nowrap w-[30%]">
                     SOCIAL MEDIA
                   </span>
@@ -280,8 +280,8 @@ function Footer() {
                   <SocialList />
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="contact" className="border-white">
-                <AccordionTrigger className="text-white text-[30px] border-t border-b-0 font-normal py-[24px] px-0 leading-none !no-underline lg:text-[50px]">
+              <AccordionItem value="contact" className="border-[#252534]">
+                <AccordionTrigger className="text-white border-[#252534] text-[30px] border-t border-b-0 font-normal py-[24px] px-0 leading-none !no-underline lg:text-[50px]">
                   <span className="font-portlin leading-none whitespace-nowrap w-[30%]">
                     CONTACT
                   </span>

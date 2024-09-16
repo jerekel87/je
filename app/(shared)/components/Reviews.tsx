@@ -63,7 +63,7 @@ async function Reviews({
 
 function Subheader({ children }: ComponentProps<"p">) {
   return (
-    <p className="text-xs lg:text-lg mt-[24px] lg:mt-[40px] mb-[40px] lg:mb-[70px] text-center text-[#53545c] leading-[1.6]">
+    <p className="text-sm leading-normal lg:text-lg mt-[24px] lg:mt-[40px] mb-[40px] lg:mb-[70px] text-center text-[#53545c]">
       {children}
     </p>
   );

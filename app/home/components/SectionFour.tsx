@@ -28,7 +28,7 @@ async function SectionFour({ projects }: { projects: any[] }) {
           <h1 className="text-[50px] lg:text-[100px] text-center font-portlin leading-[.9] text-balance mt-[12px] lg:mt-[22px]">
             AWESOME PROJECTS
           </h1>
-          <p className="text-sm lg:text-lg mt-[30px] lg:mt-[40px] mb-[60px] lg:mb-[124px] text-center leading-[1.58]">
+          <p className="text-sm leading-normal lg:text-lg mt-[30px] lg:mt-[40px] mb-[60px] lg:mb-[124px] text-center">
             Jeremy Ellsworth Designs LLC is a full-service design agency
             catering to businesses and individuals, with a focus on delivering
             high-quality, professional design solutions.
