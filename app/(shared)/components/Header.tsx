@@ -55,11 +55,13 @@ function Header() {
         </Link>
 
         <nav className="lg:flex gap-[45px] hidden">
-          {navList.map((navItem, i) => (
-            <Link key={i} href={navItem.url} className="font-semibold">
-              {navItem.name}
-            </Link>
-          ))}
+          {navList
+            .filter((i) => i.url !== "/home")
+            .map((navItem, i) => (
+              <Link key={i} href={navItem.url} className="font-semibold">
+                {navItem.name}
+              </Link>
+            ))}
         </nav>
 
         <div className="grow" />
