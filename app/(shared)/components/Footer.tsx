@@ -262,7 +262,10 @@ function Footer() {
               collapsible
               className="w-full mt-[40px] lg:hidden"
             >
-              <AccordionItem value="main" className="border-[#252534]">
+              <AccordionItem
+                value="main"
+                className="border-[#252534] border-b-0"
+              >
                 <AccordionTrigger className="text-white border-[#252534] text-[30px] border-t border-b-0 font-normal py-[24px] px-0 leading-none !no-underline lg:text-[50px]">
                   <span className="font-portlin leading-none whitespace-nowrap w-[30%]">
                     MAIN MENU
@@ -272,7 +275,10 @@ function Footer() {
                   <MainList />
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="social" className="border-[#252534]">
+              <AccordionItem
+                value="social"
+                className="border-[#252534] border-b-0"
+              >
                 <AccordionTrigger className="text-white border-[#252534] text-[30px] border-t border-b-0 font-normal py-[24px] px-0 leading-none !no-underline lg:text-[50px]">
                   <span className="font-portlin leading-none whitespace-nowrap w-[30%]">
                     SOCIAL MEDIA
