@@ -57,7 +57,7 @@ function ReviewCard({
           </p>
         </div>
       </div>
-      <div className="py-[30px] text-sm lg:text-[17px] leading-[1.65]">
+      <div className="py-[30px] text-sm lg:text-[17px] leading-normal lg:leading-[1.65]">
         <ShowMoreText
           lines={2}
           more="More"
