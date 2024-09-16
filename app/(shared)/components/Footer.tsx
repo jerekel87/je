@@ -293,7 +293,7 @@ function Footer() {
             </Accordion>
           </div>
         </div>
-        <div className="border-t border-[#252534] mt-[30px] lg:mt-[88px]">
+        <div className="lg:border-t lg:border-[#252534] lg:mt-[88px]">
           <div className="container text-[#666770] text-xs flex flex-col lg:flex-row text-center lg:text-left justify-between py-[40px]">
             <span>
               © 2004-2024 Jeremy Ellsworth Designs LLC
