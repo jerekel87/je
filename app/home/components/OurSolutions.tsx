@@ -70,7 +70,7 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
             OUR SOLUTIONS
           </h1>
 
-          <p className="text-sm lg:text-lg leading-normal mt-[25px] lg:mt-[40px] mb-0 lg:mb-[124px] max-w-[452px]">
+          <p className="text-sm lg:text-lg leading-normal mt-[25px] lg:mt-[40px] mb-0 lg:mb-[70px] max-w-[452px]">
             We are your full-stack, five-star creative design agency ready to
             tackle any job you have for us.
           </p>
@@ -109,7 +109,7 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
                       onBeforeInit={(swiper) => {
                         swiperRef.current = swiper;
                       }}
-                      className="mt-[40px] w-full"
+                      className="w-full"
                     >
                       {solution.images.map((image: any, i: number) => (
                         <SwiperSlide key={i}>
