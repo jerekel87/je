@@ -46,7 +46,7 @@ function Header() {
         <Link href="/home">
           <div className="relative size-[50px] lg:size-[65px] mr-[45px]">
             <Image
-              src="/assets/images/je-logo.svg"
+              src="/assets/images/je-logo.png"
               fill
               alt="je logo"
               className="absolute top-0 object-contain"

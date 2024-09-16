@@ -10,6 +10,8 @@ import FeaturedStories from "../(shared)/components/FeaturedStories";
 import OurSolutions from "./components/OurSolutions";
 import { getHomePageSetting } from "@/sanity/query/homePage";
 
+export const revalidate = 60;
+
 async function HomePage() {
   const homePageSetting = await getHomePageSetting();
   return (

@@ -190,7 +190,7 @@ function Footer() {
             <div className="lg:pr-[203px]">
               <div className="relative size-[56px] lg:size-[65px] mx-auto lg:mx-0 ">
                 <Image
-                  src="/assets/images/je-logo.svg"
+                  src="/assets/images/je-logo.png"
                   fill
                   alt="je logo"
                   className="absolute top-0 object-contain"

@@ -116,7 +116,7 @@ export default function NavbarMobile() {
           <Link href="/home" className="mr-[11px]">
             <div className="relative size-[45px]">
               <Image
-                src="/assets/images/je-logo.svg"
+                src="/assets/images/je-logo.png"
                 fill
                 alt="je logo"
                 className="absolute top-0 object-contain"

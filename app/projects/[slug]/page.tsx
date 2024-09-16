@@ -2,6 +2,8 @@ import React from "react";
 import ProjectModal from "./components/ProjectModal";
 import { getProject } from "@/sanity/query/project";
 
+export const revalidate = 60;
+
 async function Project({ params }: { params: { slug: string } }) {
   const { slug } = params;
 
