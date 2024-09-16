@@ -8,7 +8,7 @@ import Hamburger from "hamburger-react";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { useState } from "react";
-import { useWindowScroll, useWindowSize } from "@uidotdev/usehooks";
+import { useWindowScroll } from "@uidotdev/usehooks";
 import { cn } from "../lib/utils";
 import { navList } from "./Header";
 import { usePathname } from "next/navigation";
@@ -16,7 +16,6 @@ import { usePathname } from "next/navigation";
 export default function NavbarMobile() {
   const [isOpen, setOpen] = useState(false);
   const [{ y }] = useWindowScroll();
-  const size = useWindowSize();
 
   const windowMaxScroll =
     typeof window !== "undefined"
@@ -28,7 +27,6 @@ export default function NavbarMobile() {
   if (typeof window === "undefined") hideNavbar = false;
 
   const pathname = usePathname();
-  const navMaxHeight = (size.height || 0) - 250;
 
   const handleNavItemClick = () => {
     setOpen(false);
@@ -39,24 +37,21 @@ export default function NavbarMobile() {
       style={{ display: hideNavbar ? "none" : "block" }}
       className={cn("fixed bottom-4 px-4 w-full z-50")}
     >
-      <Card className="lg:hidden rounded-[10px] shadow-lg overflow-hidden">
+      <Card className="lg:hidden rounded-[10px] border-none overflow-hidden shadow-[0px_9.5px_6.5px_0_rgba(0,0,0,0.2)]">
         <div
           className={cn(
             "transition-all overflow-hidden max-h-0",
             isOpen && "max-h-[1000px]"
           )}
         >
-          <nav
-            className="flex flex-col gap-[1px] bg-[#efefef] overflow-auto"
-            style={{ maxHeight: navMaxHeight }}
-          >
+          <nav className="flex flex-col gap-[1px] bg-[#efefef] overflow-auto h-[60dvh]">
             {navList.map((navItem, i) => (
               <Link
                 key={i}
                 onClick={handleNavItemClick}
                 href={navItem.url}
                 className={cn(
-                  "text-[#adadad] bg-white text-[30px] font-portlin p-6",
+                  "text-[#adadad] bg-white text-[30px] font-portlin px-6 h-full flex items-center",
                   pathname.includes(navItem.url) && "text-primary"
                 )}
               >
