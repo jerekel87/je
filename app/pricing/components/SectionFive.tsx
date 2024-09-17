@@ -104,7 +104,7 @@ function SectionFive({ packages }: { packages: any[] }) {
                 </p>
                 <CalComModal.Trigger className="w-full">
                   <Button
-                    className="bg-white mt-[20px] lg:mt-[36px] w-full"
+                    className="bg-white mt-[20px] lg:mt-[36px] w-full hover:bg-secondary"
                     variant="outline"
                   >
                     ORDER NOW
