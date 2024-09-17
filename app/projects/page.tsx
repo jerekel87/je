@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Projects from "./components/Projects";
 import Footer from "../(shared)/components/Footer";
 import MainHeader from "../(shared)/components/Header";
+import Link from "next/link";
 import { getProjects } from "@/sanity/query/project";
 import { getProjectsPageSetting } from "@/sanity/query/projectsPage";
 
@@ -27,7 +28,9 @@ async function ProjectsPage() {
             </Reviews.Subheader>
           }
           footerButton={
-            <Reviews.FooterButton>MORE STORIES</Reviews.FooterButton>
+            <Link href="/reviews" className="inline-block">
+              <Reviews.FooterButton>MORE STORIES</Reviews.FooterButton>
+            </Link>
           }
         />
       </main>
