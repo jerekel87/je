@@ -143,7 +143,7 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
                 {solution.images && (
                   <SolutionImagesMobile images={solution.images} />
                 )}
-                <div className="lg:flex lg:gap-[122px] lg:justify-between lg:items-center  lg:mt-[66px]">
+                <div className="lg:flex lg:gap-[122px] lg:justify-between lg:items-center  lg:mt-[52px]">
                   {solution.content && (
                     <PortableText
                       content={solution.content}
