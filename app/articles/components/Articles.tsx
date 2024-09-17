@@ -52,14 +52,19 @@ function Articles({ initialArticles }: { initialArticles: Article[] }) {
               </h1>
             </Link>
           </header>
-          <div className="w-full pb-[75%] relative mt-[40px] rounded-[8px] overflow-hidden">
-            <Image
-              src={urlForImage(firstArticle.mainImage as any)}
-              alt={firstArticle.title || ""}
-              fill
-              className="object-contain"
-            />
-          </div>
+          <Link
+            href={`/articles/${firstArticle.slug?.current}`}
+            className="hover:underline block"
+          >
+            <div className="w-full pb-[75%] relative mt-[40px] rounded-[8px] overflow-hidden">
+              <Image
+                src={urlForImage(firstArticle.mainImage as any)}
+                alt={firstArticle.title || ""}
+                fill
+                className="object-contain"
+              />
+            </div>
+          </Link>
           <PortableText
             content={firstArticle.body as any}
             className="text-sm leading-normal text-muted-foreground lg:text-lg mt-4 lg:mt-[40px]"
@@ -75,7 +80,10 @@ function Articles({ initialArticles }: { initialArticles: Article[] }) {
           key={article._id}
           className="grid grid-cols-[1fr,2fr] lg:items-center gap-[10px] lg:gap-[38px] mt-4 lg:mt-[40px] border-b border-muted pb-4 lg:pb-[40px]"
         >
-          <div className="w-full">
+          <Link
+            href={`/articles/${article.slug?.current}`}
+            className="hover:underline block w-full"
+          >
             <div className="w-full pb-[75%] relative rounded-[8px] overflow-hidden">
               <Image
                 src={urlForImage(article.mainImage as any)}
@@ -84,7 +92,8 @@ function Articles({ initialArticles }: { initialArticles: Article[] }) {
                 className="object-contain"
               />
             </div>
-          </div>
+          </Link>
+
           <div>
             <header>
               <Link
