@@ -12,21 +12,19 @@ function SectionThree({ projects }: { projects: any[] }) {
           className="object-cover"
         />
       </div>
-      <div className="container px-0 lg:px-3 mx-auto">
-        <h1 className="px-3 text-[50px] lg:text-[100px] font-portlin leading-[0.9] text-balance">
+      <div className="container px-3 mx-auto">
+        <h1 className="text-[50px] lg:text-[100px] font-portlin leading-[0.9] text-balance">
           FEATURED PROJECTS
         </h1>
-        <p className="px-3 text-sm leading-normal lg:text-lg mt-[30px] lg:mt-[40px] text-muted-foreground">
+        <p className="text-sm leading-normal lg:text-lg mt-[30px] lg:mt-[40px]">
           Dive into our world of vibrant, tailor-made designs. From wizards to
           warriors, trees to tanks, we transform ideas into unforgettable visual
-          identities.
-          <br />
-          <strong>Ready to stand out in your industry?</strong> Let&apos;s
-          create your next game-changing logo!
+          identities. <strong>Ready to stand out in your industry?</strong>{" "}
+          Let&apos;s create your next game-changing logo!
         </p>
 
         {projects && (
-          <div className="px-3 grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-[30px] mt-[30px] lg:mt-[54px]">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-[30px] mt-[30px] lg:mt-[54px]">
             {projects.map((project, i) => (
               <div
                 key={i}

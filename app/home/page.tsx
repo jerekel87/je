@@ -36,19 +36,17 @@ async function HomePage() {
         }
         footerText={
           <Reviews.FooterText>
-            <p className="text-sm lg:text-lg mt-[30px] lg:mt-[60px] text-[#53545c]">
+            <p className="max-w-[344px]">
               With over{" "}
               <strong className="text-foreground">
                 1,800+ 5/5 star reviews
               </strong>{" "}
-              across Facebook,
-              <br className="hidden lg:block" />
-              Google Business page
+              across Facebook, Google Business page
             </p>
           </Reviews.FooterText>
         }
         footerButton={
-          <Link href="/reviews">
+          <Link href="/reviews" className="inline-block">
             <Reviews.FooterButton>ALL STORIES</Reviews.FooterButton>
           </Link>
         }

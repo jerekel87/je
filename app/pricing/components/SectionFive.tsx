@@ -35,7 +35,7 @@ function SectionFive({ packages }: { packages: any[] }) {
           across every touchpoint.
         </p>
         {/* Card */}
-        <div className="flex flex-col lg:flex-row rounded-[10px] bg-[#141423] p-[30px] lg:pr-[40px] lg:p-[50px] text-white mt-[30px] lg:mt-[75px] gap-[52px] justify-between">
+        <div className="flex flex-col lg:flex-row rounded-[10px] bg-[#141423] p-[30px] lg:pr-[40px] lg:p-[50px] text-white mt-[30px] lg:mt-[75px] gap-[50px] justify-between">
           <div className="lg:max-w-[64%]">
             <h2 className="text-[45px] lg:text-[65px] font-portlin leading-none">
               COMPLETE BRAND PACKAGE
@@ -55,7 +55,7 @@ function SectionFive({ packages }: { packages: any[] }) {
                   >
                     <span
                       className={cn(
-                        "size-[43px] bg-white group-hover:bg-primary shrink-0",
+                        "size-[43px] bg-white group-hover:bg-primary shrink-0 mt-3",
                         selectedPckg.name === pckg.name && "bg-primary"
                       )}
                       style={{
@@ -83,7 +83,7 @@ function SectionFive({ packages }: { packages: any[] }) {
                 <h3 className="text-[50px] lg:text-[80px]  font-portlin uppercase leading-[.9] lg:leading-[70px]">
                   {selectedPckg.name}
                 </h3>
-                <ul className="flex flex-col gap-2 mt-[30px] lg:mt-[40px]">
+                <ul className="flex flex-col gap-[6px] mt-[30px] lg:mt-[40px]">
                   {selectedPckg.packageItems?.map(
                     (pckgItem: string, i: number) => (
                       <li
