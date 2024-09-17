@@ -5,6 +5,7 @@ import SketchConcept from "./SketchConcept";
 import { Button } from "@/app/(shared)/components/ui/button";
 import { urlForImage } from "@/sanity/lib/image";
 import CalComModal from "@/app/(shared)/components/CalComModal";
+import Link from "next/link";
 
 function SectionSix({ sketchConcept }: { sketchConcept: any }) {
   return (
@@ -28,14 +29,15 @@ function SectionSix({ sketchConcept }: { sketchConcept: any }) {
             The sketch phase is the first of three steps. Here is where we will
             come up with a unique concept based on the details we’ve discussed.
           </p>
-          <CalComModal.Trigger>
+          <Link href="/pricing" className="inline-block">
             <Button
               variant="secondary"
               className="mt-[30px] lg:mt-[40px] lg:px-[58px] w-full lg:w-auto"
             >
               BRAND PACKAGE
             </Button>
-          </CalComModal.Trigger>
+          </Link>
+
           <p className="text-[#a7a7bc] mt-3 lg:mt-[14px] text-center lg:text-left text-xs lg:text-sm">
             100% original designs, everytime!
           </p>
