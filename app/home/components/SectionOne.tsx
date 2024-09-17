@@ -45,7 +45,7 @@ function SectionOne({ articleLink }: { articleLink: string }) {
               <br className="lg:hidden" />
               <span className="text-white">BRANDS.</span>
             </h1>
-            <div className="hidden lg:absolute w-[70px] h-[20px] xl:w-[120px] xl:h-[40px] right-0 lg:right-[35px]">
+            <div className="hidden lg:block lg:absolute w-[70px] h-[20px] xl:w-[120px] xl:h-[40px] right-0 lg:right-[35px]">
               <Image
                 src="/assets/images/since-2005.webp"
                 alt="Since 2005"
@@ -55,7 +55,7 @@ function SectionOne({ articleLink }: { articleLink: string }) {
               />
             </div>
           </div>
-          <div className="relative w-[212%] -mt-[8px] lg:mt-0 lg:-top-[27px] transform left-[45.5%] -translate-x-1/2 lg:w-full">
+          <div className="relative w-[212%] -mt-[8px] lg:mt-0 lg:-top-[27px] transform left-[50%] -translate-x-1/2 lg:w-full">
             <Image
               src="/assets/images/pickup.webp"
               width="1639"
