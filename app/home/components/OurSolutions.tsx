@@ -55,7 +55,10 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
   const swiperRef = useRef<any>();
 
   return (
-    <section id="solutions" className="relative pt-[53px] lg:pt-[140px]">
+    <section
+      id="solutions"
+      className="relative pt-[53px] pb-[63px] lg:pt-[140px] lg:pb-[113px]"
+    >
       <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">
         <Image
           src="/assets/images/shape-7-copy-7.svg"
@@ -80,7 +83,7 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
             <AccordionItem
               key={i}
               value={String(i)}
-              className="border-[#efefef] data-[state=closed]:[&_*_button]:text-[#adadad]"
+              className="border-[#efefef] border-b-0 last:border-b data-[state=closed]:[&_*_button]:text-[#adadad]"
             >
               <AccordionTrigger className="text-[30px] border-t border-b-0 font-normal py-[24px] px-0 leading-none !no-underline lg:text-[50px]">
                 <span className="font-portlin leading-none whitespace-nowrap w-[30%]">
@@ -173,14 +176,14 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
           ))}
         </Accordion>
       </div>
-      <div className="absolute w-full h-[27px] lg:h-[37px] -bottom-[6px] z-[1]">
+      {/* <div className="absolute w-full h-[27px] lg:h-[37px] -bottom-[6px] z-[1]">
         <Image
           src="/assets/images/shape-7-copy-8.svg"
           fill
           alt="Transition"
           className="object-cover"
         />
-      </div>
+      </div> */}
     </section>
   );
 }
