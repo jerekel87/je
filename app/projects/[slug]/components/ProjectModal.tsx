@@ -31,7 +31,7 @@ function ProjectModal({
         hideCloseButton
         className="max-w-full h-svh  max-h-full bg-transparent border-none p-0 !rounded-none"
       >
-        <div className="h-svh w-full overflow-y-scroll">
+        <div className="h-dvh w-full overflow-y-scroll">
           {/* Floating buttons  */}
           {/* <div className="hidden lg:block sticky z-[1] top-0 max-w-[900px] mx-auto">
             <div className="absolute -right-[100px] top-[50svh] -translate-y-1/2 flex flex-col gap-[24px]">
