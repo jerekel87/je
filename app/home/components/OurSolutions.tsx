@@ -85,14 +85,14 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
               value={String(i)}
               className="border-[#efefef] border-b-0 last:border-b data-[state=closed]:[&_*_button]:text-[#adadad]"
             >
-              <AccordionTrigger className="text-[30px] border-t border-b-0 font-normal py-[24px] px-0 leading-none !no-underline lg:text-[50px]">
+              <AccordionTrigger className="text-[30px] lg:h-[149px] border-t border-b-0 font-normal py-[24px] px-0 lg:!pl-0 leading-none !no-underline lg:text-[50px]">
                 <span className="font-portlin leading-none whitespace-nowrap w-[30%]">
                   {solution.name}
                 </span>
                 {solution.description && (
                   <PortableText
                     content={solution.description}
-                    className="hidden lg:block text-sm leading-normal lg:text-lg pl-[116px] pr-[90px] line-clamp-2 font-medium w-[70%] [&_*_a]:underline"
+                    className="hidden lg:block text-sm leading-normal lg:text-lg pl-[116px] pr-[90px] line-clamp-2 w-[70%] [&_*_a]:underline"
                   />
                 )}
               </AccordionTrigger>
