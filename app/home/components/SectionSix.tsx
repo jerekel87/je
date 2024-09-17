@@ -29,7 +29,7 @@ function SectionSix({ sketchConcept }: { sketchConcept: any }) {
             The sketch phase is the first of three steps. Here is where we will
             come up with a unique concept based on the details we’ve discussed.
           </p>
-          <Link href="/pricing" className="inline-block">
+          <Link href="/pricing" className="block">
             <Button
               variant="secondary"
               className="mt-[30px] lg:mt-[40px] lg:px-[58px] w-full lg:w-auto"
