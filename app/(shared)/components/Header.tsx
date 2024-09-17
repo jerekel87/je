@@ -38,66 +38,69 @@ export const navList = [
 function Header() {
   const [isOpen, setOpen] = useState(false);
   return (
-    <header className="hidden lg:block">
-      <div className="flex items-center container mx-auto lg:py-[17px] py-3 px-4">
-        <div className="lg:hidden mr-4">
-          <Hamburger toggled={isOpen} toggle={setOpen} color="#141424" />
-        </div>
-        <Link href="/home">
-          <div className="relative size-[50px] lg:size-[65px] mr-[45px]">
-            <Image
-              src="/assets/images/je-logo.png"
-              fill
-              alt="je logo"
-              className="absolute top-0 object-contain"
-            />
+    <>
+      <header className="hidden lg:block fixed top-0 z-10 bg-white w-full">
+        <div className="flex items-center container mx-auto lg:py-[17px] py-3 px-4">
+          <div className="lg:hidden mr-4">
+            <Hamburger toggled={isOpen} toggle={setOpen} color="#141424" />
           </div>
-        </Link>
+          <Link href="/home">
+            <div className="relative size-[50px] lg:size-[65px] mr-[45px]">
+              <Image
+                src="/assets/images/je-logo.png"
+                fill
+                alt="je logo"
+                className="absolute top-0 object-contain"
+              />
+            </div>
+          </Link>
 
-        <nav className="lg:flex gap-[45px] hidden">
-          {navList
-            .filter((i) => i.url !== "/home")
-            .map((navItem, i) => (
-              <Link key={i} href={navItem.url} className="font-semibold">
+          <nav className="lg:flex gap-[45px] hidden">
+            {navList
+              .filter((i) => i.url !== "/home")
+              .map((navItem, i) => (
+                <Link key={i} href={navItem.url} className="font-semibold">
+                  {navItem.name}
+                </Link>
+              ))}
+          </nav>
+
+          <div className="grow" />
+
+          <div className="mr-[32px] hidden lg:block">
+            <HeaderRating />
+          </div>
+
+          <CalComModal.Trigger>
+            <Button variant="outline" className="lg:h-[60px]">
+              GET STARTED
+            </Button>
+          </CalComModal.Trigger>
+        </div>
+        <div
+          style={{ height: isOpen ? "calc(100% - 74px)" : "0" }}
+          className="shadow-sm lg:shadow-none overflow-hidden w-full absolute z-10 transition-all duration-500 ease-in-out bg-white"
+        >
+          <nav className="flex flex-col items-center ">
+            {navList.map((navItem, i) => (
+              <Link
+                key={i}
+                href={navItem.url}
+                onClick={() => setOpen(false)}
+                className="font-medium mt-[45px]"
+              >
                 {navItem.name}
               </Link>
             ))}
-        </nav>
+          </nav>
 
-        <div className="grow" />
-
-        <div className="mr-[32px] hidden lg:block">
-          <HeaderRating />
+          <div className="flex justify-center mt-20">
+            <HeaderRating />
+          </div>
         </div>
-
-        <CalComModal.Trigger>
-          <Button variant="outline" className="lg:h-[60px]">
-            GET STARTED
-          </Button>
-        </CalComModal.Trigger>
-      </div>
-      <div
-        style={{ height: isOpen ? "calc(100% - 74px)" : "0" }}
-        className="shadow-sm lg:shadow-none overflow-hidden w-full absolute z-10 transition-all duration-500 ease-in-out bg-white"
-      >
-        <nav className="flex flex-col items-center ">
-          {navList.map((navItem, i) => (
-            <Link
-              key={i}
-              href={navItem.url}
-              onClick={() => setOpen(false)}
-              className="font-medium mt-[45px]"
-            >
-              {navItem.name}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="flex justify-center mt-20">
-          <HeaderRating />
-        </div>
-      </div>
-    </header>
+      </header>
+      <div className="hidden lg:block h-[100px] w-full" />
+    </>
   );
 }
 
