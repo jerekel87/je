@@ -21,10 +21,10 @@ export default defineType({
       name: "featuredStories",
       title: "Featured Stories",
     },
-    {
-      name: "packages",
-      title: "Packages",
-    },
+    // {
+    //   name: "packages",
+    //   title: "Packages",
+    // },
   ],
   fields: [
     defineField({
@@ -78,42 +78,42 @@ export default defineType({
       validation: (Rule) => Rule.max(3),
       group: "featuredStories",
     }),
-    defineField({
-      name: "packages",
-      title: "Packages",
-      type: "array",
-      of: [
-        defineField({
-          type: "object",
-          title: "Package",
-          name: "package",
-          fields: [
-            defineField({
-              name: "name",
-              title: "Name",
-              type: "string",
-            }),
-            defineField({
-              name: "icon",
-              title: "Icon",
-              type: "image",
-            }),
-            defineField({
-              name: "packageItems",
-              title: "Package Items",
-              type: "array",
-              of: [
-                defineField({
-                  name: "packageItem",
-                  title: "Package Item",
-                  type: "string",
-                }),
-              ],
-            }),
-          ],
-        }),
-      ],
-      group: "packages",
-    }),
+    // defineField({
+    //   name: "packages",
+    //   title: "Packages",
+    //   type: "array",
+    //   of: [
+    //     defineField({
+    //       type: "object",
+    //       title: "Package",
+    //       name: "package",
+    //       fields: [
+    //         defineField({
+    //           name: "name",
+    //           title: "Name",
+    //           type: "string",
+    //         }),
+    //         defineField({
+    //           name: "icon",
+    //           title: "Icon",
+    //           type: "image",
+    //         }),
+    //         defineField({
+    //           name: "packageItems",
+    //           title: "Package Items",
+    //           type: "array",
+    //           of: [
+    //             defineField({
+    //               name: "packageItem",
+    //               title: "Package Item",
+    //               type: "string",
+    //             }),
+    //           ],
+    //         }),
+    //       ],
+    //     }),
+    //   ],
+    //   group: "packages",
+    // }),
   ],
 });

@@ -22,7 +22,7 @@ async function PricingPage() {
         featuredStories={pricingPageSetting.featuredStories as any[]}
       />
       <SectionFour />
-      <SectionFive packages={pricingPageSetting.packages as any[]} />
+      <SectionFive />
       {/* <Reviews
         subheader={
           <Reviews.Subheader>
