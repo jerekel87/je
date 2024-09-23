@@ -283,21 +283,23 @@ function SectionFive() {
                         : "text-primary"
                     )}
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      width="21"
-                      height="21"
-                      color="currentColor"
-                      fill="none"
-                      className="absolute left-[14%]"
-                    >
-                      <path
-                        d="M15.313 8.5H19a.75.75 0 0 1 .53 1.28L6.616 22.5 9.039 13H5a.75.75 0 0 1-.684-1.058L9.015 1.5h10.273l-3.975 7z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                    Shock
+                    <span className="relative">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        width="21"
+                        height="21"
+                        color="currentColor"
+                        fill="none"
+                        className="absolute -left-[24px]"
+                      >
+                        <path
+                          d="M15.313 8.5H19a.75.75 0 0 1 .53 1.28L6.616 22.5 9.039 13H5a.75.75 0 0 1-.684-1.058L9.015 1.5h10.273l-3.975 7z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                      Shock
+                    </span>
                   </span>
                 </div>
                 {/* <button
