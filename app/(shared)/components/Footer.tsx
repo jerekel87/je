@@ -159,17 +159,17 @@ function Footer() {
                 </CalComModal.Trigger>
               </div>
             </div>
-            <div className="p-[26px] pt-[35px] lg:p-[100px] lg:pl-[0]">
+            <div className="p-[26px] pt-[35px] lg:p-[86px] lg:pb-[100px] lg:pl-[0]">
               <h3 className="font-portlin text-[50px] xl:text-[100px] leading-[.9]">
                 SOLUTIONS THAT
                 <br className="hidden lg:block" /> BOOSTS REVENUE
                 <br className="hidden lg:block" /> FOR TOMORROW
               </h3>
-              <p className="text-sm leading-normal lg:text-lg mt-[22px] lg:mt-[38px] max-w-[470px]">
+              <p className="text-sm leading-normal lg:text-lg mt-[22px] lg:mt-[28px] max-w-[470px]">
                 <strong>We champion your success.</strong> Expect unyielding
                 support, fearless strategy, and victorious branding!
               </p>
-              <div className="hidden lg:flex mt-8 lg:mt-[63px] gap-4 lg:gap-[27px] flex-row">
+              <div className="hidden lg:flex mt-8 lg:mt-[58px] gap-4 lg:gap-[27px] flex-row">
                 <Link href="/articles">
                   <Button className="lgmin-w-[210px]">BUSINESS TIPS</Button>
                 </Link>
