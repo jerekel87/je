@@ -135,7 +135,7 @@ function Footer() {
           <FooterTopBg />
           <div className="h-full w-full bg-primary" />
         </div>
-        <div className="container px-2 lg:px-[30px] mx-auto lg:max-w-[1354px]">
+        <div className="container px-2 lg:px-[30px] mx-auto lg:max-w-[1414px]">
           <div
             className="grid grid-cols-1 lg:grid-cols-2 rounded-[10px] lg:left-0 lg:right-auto left-4 right-4 bg-[#fff500]"
             // style={{
