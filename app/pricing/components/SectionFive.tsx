@@ -188,7 +188,7 @@ function SectionFive() {
         />
       </div>
       <div className="container px-3 mx-auto">
-        <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.5px] leading-[0.9] text-balance max-w-[620px]">
+        <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.5px] leading-[0.9] text-balance max-w-[630px]">
           IGNITE YOUR BRANDS POTENTIAL!
         </h1>
         <p className="text-sm leading-normal lg:text-lg mt-[30px] lg:mt-[42px] text-muted-foreground max-w-[702px]">
