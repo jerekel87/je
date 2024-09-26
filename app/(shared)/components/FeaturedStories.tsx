@@ -17,7 +17,8 @@ function FeaturedStories({
   })[];
 }) {
   return (
-    <section className="relative py-[53px] lg:py-[140px]">
+    <section className="relative py-[53px] lg:py-[140px] lg:pb-[80px]">
+      <div className="w-full h-[690px] bg-[linear-gradient(transparent,#f7f5ef)] absolute z-[-1] bottom-0" />
       <div className="container px-4 mx-auto  overflow-hidden">
         <div className="relative h-[92px] lg:h-[250px] w-full">
           <Image
@@ -85,7 +86,7 @@ function FeaturedStories({
       </div>
       <div className="absolute w-full h-[27px] lg:h-[37px] -bottom-[6px] z-[1]">
         <Image
-          src="/assets/images/shape-7-copy-8.svg"
+          src="/assets/images/shape-7-copy-14.svg"
           fill
           alt="Transition"
           className="object-cover"
