@@ -7,7 +7,7 @@ function SectionOne({ articleLink }: { articleLink: string }) {
     <section className="bg-[#164dcc] relative overflow-hidden static-background">
       <div className="z-[1] relative">
         <div className="hidden z-[1] lg:flex items-center gap-[32px] top-1/2 rotate-90 w-max -right-[134px] absolute">
-          <span className="text-white font-portlin tracking-[0.4px] text-[28px]">
+          <span className="text-white font-portlin tracking-[0.5px] text-[28px]">
             CONNECT
           </span>
           <span className="w-[58px] h-[2px] bg-white" />
@@ -37,7 +37,7 @@ function SectionOne({ articleLink }: { articleLink: string }) {
         </div>
         <div className="container mx-auto lg:max-w-[1920px] h-full relative px-0 lg:px-[2rem]">
           <div className="relative w-max mx-auto">
-            <h1 className="text-[78.8px] md:text-[108px] xl:text-[178px] font-portlin tracking-[0.4px] leading-[.84] text-center transform -rotate-[5deg] pt-[30px] lg:pt-[74px] w-max">
+            <h1 className="text-[78.8px] md:text-[108px] xl:text-[178px] font-portlin tracking-[0.5px] leading-[.84] text-center transform -rotate-[5deg] pt-[30px] lg:pt-[74px] w-max">
               <span className="text-white">IGNITING </span>
               <br className="lg:hidden" />
               <span className="text-secondary">CREATIVITY</span>
@@ -74,7 +74,7 @@ function SectionOne({ articleLink }: { articleLink: string }) {
             />
           </div>
 
-          <div className="text-xl lg:text-[41px] text-white font-portlin tracking-[0.4px] w-max mx-auto">
+          <div className="text-xl lg:text-[41px] text-white font-portlin tracking-[0.5px] w-max mx-auto">
             <p className="leading-none">MY HVAC GUY REVENUE INCREASED BY</p>
             <div className="flex items-center gap-[10px] lg:gap-[15px]">
               <p className="leading-none">218% SINCE REBRANDING</p>

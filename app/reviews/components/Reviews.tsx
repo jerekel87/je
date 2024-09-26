@@ -91,7 +91,7 @@ function Reviews({
   return (
     <>
       <div className="px-4 lg:px-0 flex justify-between flex-col lg:flex-row gap-4 mt-[80px] pt-[48px] border-t border-[#e8e7e6]">
-        <h1 className="text-[40px] lg:text-[60px] font-portlin tracking-[0.4px]">
+        <h1 className="text-[40px] lg:text-[60px] font-portlin tracking-[0.5px]">
           SUCCESS STORIES
         </h1>
         <div className="flex flex-col lg:flex-row gap-2 lg:gap-[30px]">

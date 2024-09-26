@@ -69,7 +69,7 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
       </div>
       <div className="container px-4 mx-auto">
         <div>
-          <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.4px] leading-[0.9] text-balance">
+          <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.5px] leading-[0.9] text-balance">
             OUR SOLUTIONS
           </h1>
 
@@ -86,7 +86,7 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
               className="border-[#efefef] border-b-0 last:border-b data-[state=closed]:[&_*_button]:text-[#adadad]"
             >
               <AccordionTrigger className="text-[30px] lg:h-[149px] border-t border-b-0 font-normal py-[24px] px-0 lg:!pl-0 leading-none !no-underline lg:text-[50px]">
-                <span className="font-portlin tracking-[0.4px] leading-none whitespace-nowrap w-[30%]">
+                <span className="font-portlin tracking-[0.5px] leading-none whitespace-nowrap w-[30%]">
                   {solution.name}
                 </span>
                 {solution.description && (

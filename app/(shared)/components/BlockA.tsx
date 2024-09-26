@@ -9,7 +9,7 @@ function BlockA({ title }: { title: string }) {
     <div>
       <div className="relative flex justify-center">
         <div className="border-[1px] border-muted absolute top-1/2 w-full" />
-        <p className="bg-white px-4 lg:px-8 w-max font-portlin tracking-[0.4px] text-xl lg:text-[40px] z-[1]">
+        <p className="bg-white px-4 lg:px-8 w-max font-portlin tracking-[0.5px] text-xl lg:text-[40px] z-[1]">
           {title}
         </p>
       </div>

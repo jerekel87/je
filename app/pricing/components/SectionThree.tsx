@@ -13,7 +13,7 @@ function SectionThree({ projects }: { projects: any[] }) {
         />
       </div>
       <div className="container px-3 mx-auto">
-        <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.4px] leading-[0.9] text-balance">
+        <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.5px] leading-[0.9] text-balance">
           FEATURED PROJECTS
         </h1>
         <p className="text-sm leading-normal lg:text-lg mt-[30px] lg:mt-[40px]">
@@ -40,49 +40,49 @@ function SectionThree({ projects }: { projects: any[] }) {
           <div className="pt-[40px] relative">
             <div className="bg-[#f5f5f5] rounded-[15px] w-full h-full relative">
               <div className="invisible rounded-[15px] w-full flex flex-col items-center px-[70px] py-[45px]">
-                <span className="text-[74px] font-portlin tracking-[0.4px] leading-[.9] text-white">
+                <span className="text-[74px] font-portlin tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin tracking-[0.4px] leading-[.9] text-white">
+                <span className="text-[74px] font-portlin tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin tracking-[0.4px] leading-[.9] text-white">
+                <span className="text-[74px] font-portlin tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin tracking-[0.4px] leading-[.9] text-white">
+                <span className="text-[74px] font-portlin tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin tracking-[0.4px] leading-[.9] text-white">
+                <span className="text-[74px] font-portlin tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin tracking-[0.4px] leading-[.9] text-white">
+                <span className="text-[74px] font-portlin tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin tracking-[0.4px] leading-[.9] text-white">
+                <span className="text-[74px] font-portlin tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
               </div>
               <div className="rounded-t-[15px] bg-gradient-to-b from-[#ff0000] h-[50%] w-full absolute top-0 left-0" />
               <div className="absolute rounded-[15px] top-0 left-0 z-[2] w-full flex flex-col items-center px-[70px] py-[45px]">
-                <span className="text-[74px] font-portlin tracking-[0.4px] leading-[.9] text-white">
+                <span className="text-[74px] font-portlin tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin tracking-[0.4px] leading-[.9] text-white">
+                <span className="text-[74px] font-portlin tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin tracking-[0.4px] leading-[.9] text-white">
+                <span className="text-[74px] font-portlin tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin tracking-[0.4px] leading-[.9] text-white">
+                <span className="text-[74px] font-portlin tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin tracking-[0.4px] leading-[.9] text-white">
+                <span className="text-[74px] font-portlin tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin tracking-[0.4px] leading-[.9] text-white">
+                <span className="text-[74px] font-portlin tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin tracking-[0.4px] leading-[.9] text-white">
+                <span className="text-[74px] font-portlin tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
               </div>
@@ -122,7 +122,7 @@ function SectionThree({ projects }: { projects: any[] }) {
                 <p className="rounded-full font-bold border px-4 py-1 border-[#fff500] text-white mt-[23px]">
                   Infinite Package
                 </p>
-                <span className="leading-[.9] mt-[46px] text-white text-[100px] font-portlin tracking-[0.4px] -rotate-[5deg]">
+                <span className="leading-[.9] mt-[46px] text-white text-[100px] font-portlin tracking-[0.5px] -rotate-[5deg]">
                   $9728
                 </span>
                 <span className="text-secondary -rotate-[5deg] mt-[10px] font-medium">
@@ -138,7 +138,7 @@ function SectionThree({ projects }: { projects: any[] }) {
               <div className="relative w-full h-full p-4">
                 <div className="lg:pr-[50px] lg:absolute h-full">
                   <div className="group z-1 relative has-[:checked]:h-max overflow-hidden lg:-translate-y-[35px] lg:ml-0 bg-secondary rounded-[15px] lg:h-[115%] p-6 lg:py-[66px] lg:px-[62px]">
-                    <h2 className="text-[40px] lg:text-[80px] leading-[.88] font-portlin tracking-[0.4px]">
+                    <h2 className="text-[40px] lg:text-[80px] leading-[.88] font-portlin tracking-[0.5px]">
                       INFINITE BRAND PACKAGE
                     </h2>
                     <ul className="flex max-h-[250px] group-has-[:checked]:max-h-full peer lg:max-h-full flex-col pb-[40px] gap-2 lg:gap-3 mt-[40px] lg:mt-[47px] text-xs lg:text-base font-medium">
@@ -226,7 +226,7 @@ function SectionThree({ projects }: { projects: any[] }) {
               className="object-contain"
             />
           </div>
-          <h2 className="text-[40px] lg:text-[100px] text-center font-portlin tracking-[0.4px] leading-[.9] text-balance mt-[12px] lg:mt-[22px]">
+          <h2 className="text-[40px] lg:text-[100px] text-center font-portlin tracking-[0.5px] leading-[.9] text-balance mt-[12px] lg:mt-[22px]">
             BRAND SOLUTION
           </h2>
           <p className="mx-auto text-center text-sm lg:text-lg mt-[30px] lg:mt-[40px] text-muted-foreground max-w-[460px]">

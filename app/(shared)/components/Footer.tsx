@@ -160,7 +160,7 @@ function Footer() {
               </div>
             </div>
             <div className="p-[26px] pt-[35px] lg:p-[86px] lg:pb-[100px] lg:pl-[0]">
-              <h3 className="font-portlin tracking-[0.4px] text-[50px] xl:text-[100px] leading-[.9]">
+              <h3 className="font-portlin tracking-[0.5px] text-[50px] xl:text-[100px] leading-[.9]">
                 SOLUTIONS THAT
                 <br className="hidden lg:block" /> BOOSTS REVENUE
                 <br className="hidden lg:block" /> FOR TOMORROW
@@ -212,7 +212,7 @@ function Footer() {
                     className="shrink-0 object-contain"
                   />
 
-                  <p className="text-white font-portlin tracking-[0.4px] text-sm lg:text-[17px] leading-[1.09] font-medium whitespace-nowrap">
+                  <p className="text-white font-portlin tracking-[0.5px] text-sm lg:text-[17px] leading-[1.09] font-medium whitespace-nowrap">
                     BETTER BUSINESS BUREAU
                     <br />
                     ACCREDITED
@@ -228,7 +228,7 @@ function Footer() {
                     className="shrink-0 object-contain"
                   />
 
-                  <p className="text-white text-center  lg:text-left font-portlin tracking-[0.4px] text-sm lg:text-[17px] leading-[1.09] font-medium">
+                  <p className="text-white text-center  lg:text-left font-portlin tracking-[0.5px] text-sm lg:text-[17px] leading-[1.09] font-medium">
                     NEW HAMPSHIRE
                     <br /> REGISTERED
                     <span className="lg:hidden">LLC BUSINESS</span>
@@ -238,19 +238,19 @@ function Footer() {
             </div>
             <div className="hidden lg:grid grid-cols-3 mt-10 lg:mt-0">
               <div>
-                <h2 className="text-white font-portlin tracking-[0.4px] text-lg lg:text-[30px]">
+                <h2 className="text-white font-portlin tracking-[0.5px] text-lg lg:text-[30px]">
                   MAIN
                 </h2>
                 <MainList />
               </div>
               <div>
-                <h2 className="text-white font-portlin tracking-[0.4px] text-lg lg:text-[30px]">
+                <h2 className="text-white font-portlin tracking-[0.5px] text-lg lg:text-[30px]">
                   SOCIAL
                 </h2>
                 <SocialList />
               </div>
               <div>
-                <h2 className="text-white font-portlin tracking-[0.4px] text-lg lg:text-[30px]">
+                <h2 className="text-white font-portlin tracking-[0.5px] text-lg lg:text-[30px]">
                   CONTACT
                 </h2>
                 <ContactList />
@@ -267,7 +267,7 @@ function Footer() {
                 className="border-[#252534] border-b-0"
               >
                 <AccordionTrigger className="text-white border-[#252534] text-[30px] border-t border-b-0 font-normal py-[24px] px-0 leading-none !no-underline lg:text-[50px]">
-                  <span className="font-portlin tracking-[0.4px] leading-none whitespace-nowrap w-[30%]">
+                  <span className="font-portlin tracking-[0.5px] leading-none whitespace-nowrap w-[30%]">
                     MAIN MENU
                   </span>
                 </AccordionTrigger>
@@ -280,7 +280,7 @@ function Footer() {
                 className="border-[#252534] border-b-0"
               >
                 <AccordionTrigger className="text-white border-[#252534] text-[30px] border-t border-b-0 font-normal py-[24px] px-0 leading-none !no-underline lg:text-[50px]">
-                  <span className="font-portlin tracking-[0.4px] leading-none whitespace-nowrap w-[30%]">
+                  <span className="font-portlin tracking-[0.5px] leading-none whitespace-nowrap w-[30%]">
                     SOCIAL MEDIA
                   </span>
                 </AccordionTrigger>
@@ -290,7 +290,7 @@ function Footer() {
               </AccordionItem>
               <AccordionItem value="contact" className="border-[#252534]">
                 <AccordionTrigger className="text-white border-[#252534] text-[30px] border-t border-b-0 font-normal py-[24px] px-0 leading-none !no-underline lg:text-[50px]">
-                  <span className="font-portlin tracking-[0.4px] leading-none whitespace-nowrap w-[30%]">
+                  <span className="font-portlin tracking-[0.5px] leading-none whitespace-nowrap w-[30%]">
                     CONTACT
                   </span>
                 </AccordionTrigger>

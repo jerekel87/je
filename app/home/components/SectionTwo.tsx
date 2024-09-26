@@ -41,11 +41,11 @@ function SectionTwo() {
               />
 
               <div>
-                <p className="font-portlin tracking-[0.4px] lg:text-[28px] text-[#005e88] leading-[.8] whitespace-nowrap">
+                <p className="font-portlin tracking-[0.5px] lg:text-[28px] text-[#005e88] leading-[.8] whitespace-nowrap">
                   BETTER BUSINESS BUREAU
                 </p>
                 <div className="flex items-end gap-[10px] lg:gap-[15px] mt-[6px]">
-                  <p className="font-portlin tracking-[0.4px] lg:text-[28px] text-[#005e88] leading-[.8]">
+                  <p className="font-portlin tracking-[0.5px] lg:text-[28px] text-[#005e88] leading-[.8]">
                     ACCREDITED
                   </p>
                   <div className="h-[1px] lg:h-[2px] w-2 lg:w-[32px] bg-gray-400 self-center mt-1" />
@@ -83,7 +83,7 @@ function SectionTwo() {
               />
 
               <div>
-                <p className="font-portlin tracking-[0.4px] lg:text-[28px] leading-[.8]">
+                <p className="font-portlin tracking-[0.5px] lg:text-[28px] leading-[.8]">
                   NH REGISTERED
                 </p>
                 <div className="flex items-end gap-[10px] lg:gap-[15px] mt-[8px] lg:mt-[10px]">
@@ -100,7 +100,7 @@ function SectionTwo() {
           </div> */}
         </div>
         <div className="lg:pl-[86px] mt-[28px] lg:mt-0">
-          <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.4px] leading-[0.9] text-balance">
+          <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.5px] leading-[0.9] text-balance">
             INNOVATING BEYOND BOUNDARIES
           </h1>
           {/* <div className="mt-4 lg:mt-[37px]">

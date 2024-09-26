@@ -146,7 +146,7 @@ function SectionFour() {
           </div>
         </div>
         <div>
-          <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.4px] leading-[0.9] text-balance text-white">
+          <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.5px] leading-[0.9] text-balance text-white">
             UNLOCK YOUR
             <br className="hidden lg:block" /> BRANDS
             <br className="hidden lg:block" />

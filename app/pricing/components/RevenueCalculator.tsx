@@ -111,10 +111,10 @@ function RevenueCalculator() {
       >
         {calculation && (
           <div className="rounded-[8px] bg-[#f9f8f3] px-4 py-5 lg:p-[74px] grow">
-            <h1 className="font-portlin tracking-[0.4px] text-xl lg:text-[40px] leading-none">
+            <h1 className="font-portlin tracking-[0.5px] text-xl lg:text-[40px] leading-none">
               ESTIMATED NEW ANNUAL REVENUE
             </h1>
-            <span className="font-portlin tracking-[0.4px] text-6xl lg:text-[120px] leading-[.5] mt-[30px] lg:mt-[42px] inline-block ">
+            <span className="font-portlin tracking-[0.5px] text-6xl lg:text-[120px] leading-[.5] mt-[30px] lg:mt-[42px] inline-block ">
               ${calculation.newAnnualRevenue.toLocaleString()}
             </span>
             <ul className="text-xs lg:text-lg mt-[30px] lg:mt-[40px] flex flex-col gap-2">

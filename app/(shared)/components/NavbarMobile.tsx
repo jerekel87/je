@@ -51,7 +51,7 @@ export default function NavbarMobile() {
                 onClick={handleNavItemClick}
                 href={navItem.url}
                 className={cn(
-                  "text-[#adadad] bg-white text-[30px] font-portlin tracking-[0.4px] px-6 h-full flex items-center",
+                  "text-[#adadad] bg-white text-[30px] font-portlin tracking-[0.5px] px-6 h-full flex items-center",
                   pathname.includes(navItem.url) && "text-primary"
                 )}
               >

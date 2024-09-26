@@ -33,7 +33,7 @@ function SectionThreeItem({
         <span className="whitespace-nowrap self-start p-1 lg:p-[8px] text-sm lg:text-[19px] font-bold leading-none rounded-[5px] bg-secondary inline-block">
           ▲ {percentage}%
         </span>
-        <h3 className="text-white text-2xl lg:text-[35px] font-portlin tracking-[0.4px] leading-[.9]">
+        <h3 className="text-white text-2xl lg:text-[35px] font-portlin tracking-[0.5px] leading-[.9]">
           {title}
         </h3>
       </div>
@@ -65,7 +65,7 @@ function SectionThreeItemEmpty() {
         </div>
       </div>
       <div className="flex gap-[15px] mt-[28px] lg:mt-[38px] max-w-[480px]">
-        <h3 className="text-white text-2xl lg:text-[35px] font-portlin tracking-[0.4px] leading-[.9]">
+        <h3 className="text-white text-2xl lg:text-[35px] font-portlin tracking-[0.5px] leading-[.9]">
           YOUR COMPANY HERE
         </h3>
       </div>
@@ -84,7 +84,7 @@ function SectionThree() {
       <div className="container px-3 mx-auto h-full relative z-[1]">
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-[120px]">
           <div>
-            <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.4px] leading-[0.9] text-balance text-white">
+            <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.5px] leading-[0.9] text-balance text-white">
               IGNITE YOUR
               <br />
               BRANDS POTENTIAL
@@ -184,7 +184,7 @@ function SectionThree() {
               className="object-contain"
             />
           </div>
-          <h1 className="text-[50px] lg:text-[100px] text-center text-white font-portlin tracking-[0.4px] leading-[.9] text-balance mt-[10px] lg:mt-[22px]">
+          <h1 className="text-[50px] lg:text-[100px] text-center text-white font-portlin tracking-[0.5px] leading-[.9] text-balance mt-[10px] lg:mt-[22px]">
             TAKE ACTION!
           </h1>
         </div>

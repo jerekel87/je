@@ -47,7 +47,7 @@ function Articles({ initialArticles }: { initialArticles: Article[] }) {
               href={`/articles/${firstArticle.slug?.current}`}
               className="hover:underline"
             >
-              <h1 className="text-[40px] lg:text-[60px] font-portlin tracking-[0.4px] leading-[.92]">
+              <h1 className="text-[40px] lg:text-[60px] font-portlin tracking-[0.5px] leading-[.92]">
                 {firstArticle.title}
               </h1>
             </Link>
@@ -100,7 +100,7 @@ function Articles({ initialArticles }: { initialArticles: Article[] }) {
                 href={`/articles/${article.slug?.current}`}
                 className="hover:underline"
               >
-                <h2 className="text-lg lg:text-[40px] font-portlin tracking-[0.4px] leading-[1.06] line-clamp-2">
+                <h2 className="text-lg lg:text-[40px] font-portlin tracking-[0.5px] leading-[1.06] line-clamp-2">
                   {article.title}
                 </h2>
               </Link>
