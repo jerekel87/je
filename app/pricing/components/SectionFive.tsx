@@ -191,7 +191,7 @@ function SectionFive() {
         <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.4px] leading-[0.9] text-balance max-w-[620px]">
           IGNITE YOUR BRANDS POTENTIAL!
         </h1>
-        <p className="text-sm leading-normal lg:text-lg mt-[30px] lg:mt-[42px] text-muted-foreground max-w-[640px]">
+        <p className="text-sm leading-normal lg:text-lg mt-[30px] lg:mt-[42px] text-muted-foreground max-w-[702px]">
           Replace your unreliable freelancer for one flat monthly fee, with an
           infinite everything membership that is sure to get you everything you
           need!
