@@ -409,7 +409,7 @@ function SectionFive() {
               className="object-contain"
             />
           </div>
-          <h1 className="text-[50px] lg:text-[100px] text-center font-portlin tracking-[0.5px] leading-[.9] text-balance mt-[10px] lg:mt-[22px]">
+          <h1 className="text-[50px] lg:text-[100px] text-center font-portlin tracking-[0.5px] leading-[.9] text-balance mt-[10px] lg:mt-[4px]">
             BRAND SOLUTION
           </h1>
         </div>

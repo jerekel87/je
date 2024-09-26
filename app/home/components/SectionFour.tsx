@@ -16,7 +16,7 @@ async function SectionFour({ projects }: { projects: any[] }) {
         />
       </div> */}
       <div className="container mx-auto">
-        <div className="mx-auto max-w-[640px]">
+        <div className="mx-auto max-w-[642px]">
           <div className="relative w-[100px] h-[34px] lg:w-[153px] lg:h-[52px] mx-auto">
             <Image
               src="/assets/images/unique-brands@3x.webp"
