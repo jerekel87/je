@@ -89,16 +89,16 @@ function SectionOne() {
             </div>
           </div>
         </div>
-        <div className="lg:pl-[86px] mt-[28px] lg:mt-0 flex flex-col justify-center">
+        <div className="lg:pl-[80px] mt-[28px] lg:mt-0 flex flex-col justify-center">
           <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.5px] leading-[0.9] text-balance">
             100% UNIQUE DESIGNS, EVERY TIME!
           </h1>
           <p className="text-sm leading-normal lg:text-lg mt-[24px] lg:mt-[31px] lg:max-w-[398px]">
             Watch as we s bring the &quot;
-            <strong className="underline">Get Da Munchies</strong>&quot; logo to
-            life! This video showcases our creative process from initial sketch
-            to polished vector artwork. See firsthand how we craft unique, eye-
-            catching logos for every client.
+            <strong className="underline font-semibold">Get Da Munchies</strong>
+            &quot; logo to life! This video showcases our creative process from
+            initial sketch to polished vector artwork. See firsthand how we
+            craft unique, eye- catching logos for every client.
           </p>
         </div>
       </div>
