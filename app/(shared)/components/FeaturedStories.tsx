@@ -28,7 +28,7 @@ function FeaturedStories({
             className="object-contain"
           />
           <div className="absolute w-full h-full flex flex-col justify-center items-center">
-            <div className="relative w-[100px] h-[25px] lg:w-[200px] lg:h-[50px] mx-auto">
+            <div className="relative w-[100px] h-[25px] lg:w-[239px] lg:h-[52px] mx-auto">
               <Image
                 src="/assets/images/experience-the-same@3x.webp"
                 alt="Your industry peers"
@@ -36,7 +36,7 @@ function FeaturedStories({
                 className="object-contain"
               />
             </div>
-            <h1 className="text-[50px] lg:text-[100px] text-center font-portlin tracking-[0.5px] leading-[.9] text-balance lg:mt-[4px]">
+            <h1 className="text-[50px] lg:text-[100px] text-center font-portlin tracking-[0.5px] leading-[.9] text-balance lg:mt-[4px] pb-[28px]">
               FEATURED STORIES
             </h1>
           </div>
