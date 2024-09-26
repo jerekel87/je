@@ -33,7 +33,7 @@ async function ReviewsData() {
   return (
     <div>
       <div className="flex gap-[22px] items-end">
-        <p className="text-[60px] lg:text-[80px] font-portlin leading-none">
+        <p className="text-[60px] lg:text-[80px] font-portlin tracking-[0.4px] leading-none">
           {total}
         </p>
         <div>

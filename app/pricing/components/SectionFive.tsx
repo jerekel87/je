@@ -188,7 +188,7 @@ function SectionFive() {
         />
       </div>
       <div className="container px-3 mx-auto">
-        <h1 className="text-[50px] lg:text-[100px] font-portlin leading-[0.9] text-balance max-w-[620px]">
+        <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.4px] leading-[0.9] text-balance max-w-[620px]">
           IGNITE YOUR BRANDS POTENTIAL!
         </h1>
         <p className="text-sm leading-normal lg:text-lg mt-[30px] lg:mt-[42px] text-muted-foreground max-w-[640px]">
@@ -200,7 +200,7 @@ function SectionFive() {
         <div className="bg-primary lg:bg-white flex flex-col lg:flex-row rounded-[8px] text-white mt-[30px] lg:mt-[60px] lg:gap-[30px] justify-between">
           {/* Card */}
           <div className="relative lg:max-w-[810px] lg:bg-[#141423] p-6 lg:py-[48px] lg:px-[40px] rounded-[15px]">
-            <h2 className="text-[45px] lg:text-[79.8px] font-portlin leading-[.88]">
+            <h2 className="text-[45px] lg:text-[79.8px] font-portlin tracking-[0.4px] leading-[.88]">
               INFINITE EVERYTHING MEMBERSHIP
             </h2>
 
@@ -213,7 +213,7 @@ function SectionFive() {
                       {service.icon}
                     </span>
 
-                    <p className="text-lg lg:text-[26.3px] font-portlin leading-[1.07]">
+                    <p className="text-lg lg:text-[26.3px] font-portlin tracking-[0.4px] leading-[1.07]">
                       {service.name}
                     </p>
                   </div>
@@ -317,14 +317,14 @@ function SectionFive() {
               </div>
               {/* Price */}
               <div className="mt-6 lg:mt-[34px] relative flex items-end gap-1">
-                <span className="text-[70px] lg:text-[80px] leading-none font-portlin">
+                <span className="text-[70px] lg:text-[80px] leading-none font-portlin tracking-[0.4px]">
                   $4995
                 </span>
                 <div className="relative bottom-1 flex items-end gap-1 h-max">
-                  <span className="text-[23px] leading-[1.4] font-portlin">
+                  <span className="text-[23px] leading-[1.4] font-portlin tracking-[0.4px]">
                     /
                   </span>
-                  <span className="text-[34px] leading-none font-portlin">
+                  <span className="text-[34px] leading-none font-portlin tracking-[0.4px]">
                     m
                   </span>
                 </div>
@@ -362,7 +362,7 @@ function SectionFive() {
                 </CalComModal.Trigger>
               </div>
               {/* <div className="p-4 pb-0 lg:p-[26px] lg:pb-0">
-                <h3 className="text-[50px] lg:text-[80px]  font-portlin uppercase leading-[.9] lg:leading-[70px]">
+                <h3 className="text-[50px] lg:text-[80px]  font-portlin tracking-[0.4px] uppercase leading-[.9] lg:leading-[70px]">
                   {selectedPckg.name}
                 </h3>
                 <ul className="flex flex-col gap-[6px] mt-[30px] lg:mt-[40px]">
@@ -381,7 +381,7 @@ function SectionFive() {
               </div>
 
               <div className="rounded-[10px] mt-[30px] lg:mt-[46px] p-4 lg:p-[30px] bg-primary flex flex-col items-center">
-                <p className="text-[50px] lg:text-[80px] font-portlin text-white leading-none">
+                <p className="text-[50px] lg:text-[80px] font-portlin tracking-[0.4px] text-white leading-none">
                   $9728
                 </p>
                 <CalComModal.Trigger className="w-full">
@@ -409,7 +409,7 @@ function SectionFive() {
               className="object-contain"
             />
           </div>
-          <h1 className="text-[50px] lg:text-[100px] text-center font-portlin leading-[.9] text-balance mt-[10px] lg:mt-[22px]">
+          <h1 className="text-[50px] lg:text-[100px] text-center font-portlin tracking-[0.4px] leading-[.9] text-balance mt-[10px] lg:mt-[22px]">
             BRAND SOLUTION
           </h1>
         </div>
@@ -472,7 +472,7 @@ export default SectionFive;
 //         />
 //       </div>
 //       <div className="container px-3 mx-auto">
-//         <h1 className="text-[50px] lg:text-[100px] font-portlin leading-[0.9] text-balance max-w-[620px]">
+//         <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.4px] leading-[0.9] text-balance max-w-[620px]">
 //           IGNITE YOUR BRANDS POTENTIAL!
 //         </h1>
 //         <p className="text-sm leading-normal lg:text-lg mt-[30px] lg:mt-[42px] text-muted-foreground max-w-[640px]">
@@ -483,7 +483,7 @@ export default SectionFive;
 //         {/* Card */}
 //         <div className="flex flex-col lg:flex-row rounded-[10px] bg-[#141423] p-[30px] lg:pr-[40px] lg:p-[50px] text-white mt-[30px] lg:mt-[75px] gap-[50px] justify-between">
 //           <div className="lg:max-w-[64%]">
-//             <h2 className="text-[45px] lg:text-[65px] font-portlin leading-none">
+//             <h2 className="text-[45px] lg:text-[65px] font-portlin tracking-[0.4px] leading-none">
 //               COMPLETE BRAND PACKAGE
 //             </h2>
 
@@ -526,7 +526,7 @@ export default SectionFive;
 //           <div className="relative w-full max-w-[400px] h-full">
 //             <div className="lg:min-h-[884px] flex flex-col justify-between z-10 lg:-translate-y-[170px] lg:left-0 lg:absolute w-full h-min rounded-[10px] bg-secondary text-primary p-4 lg:p-[30px] max-w-[400px]">
 //               <div className="p-4 pb-0 lg:p-[26px] lg:pb-0">
-//                 <h3 className="text-[50px] lg:text-[80px]  font-portlin uppercase leading-[.9] lg:leading-[70px]">
+//                 <h3 className="text-[50px] lg:text-[80px]  font-portlin tracking-[0.4px] uppercase leading-[.9] lg:leading-[70px]">
 //                   {selectedPckg.name}
 //                 </h3>
 //                 <ul className="flex flex-col gap-[6px] mt-[30px] lg:mt-[40px]">
@@ -545,7 +545,7 @@ export default SectionFive;
 //               </div>
 
 //               <div className="rounded-[10px] mt-[30px] lg:mt-[46px] p-4 lg:p-[30px] bg-primary flex flex-col items-center">
-//                 <p className="text-[50px] lg:text-[80px] font-portlin text-white leading-none">
+//                 <p className="text-[50px] lg:text-[80px] font-portlin tracking-[0.4px] text-white leading-none">
 //                   $9728
 //                 </p>
 //                 <CalComModal.Trigger className="w-full">
@@ -573,7 +573,7 @@ export default SectionFive;
 //               className="object-contain"
 //             />
 //           </div>
-//           <h1 className="text-[50px] lg:text-[100px] text-center font-portlin leading-[.9] text-balance mt-[10px] lg:mt-[22px]">
+//           <h1 className="text-[50px] lg:text-[100px] text-center font-portlin tracking-[0.4px] leading-[.9] text-balance mt-[10px] lg:mt-[22px]">
 //             BRAND SOLUTION
 //           </h1>
 //         </div>

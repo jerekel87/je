@@ -35,7 +35,7 @@ function FeaturedStories({
                 className="object-contain"
               />
             </div>
-            <h1 className="text-[50px] lg:text-[100px] text-center font-portlin leading-[.9] text-balance lg:mt-[22px]">
+            <h1 className="text-[50px] lg:text-[100px] text-center font-portlin tracking-[0.4px] leading-[.9] text-balance lg:mt-[22px]">
               FEATURED STORIES
             </h1>
           </div>

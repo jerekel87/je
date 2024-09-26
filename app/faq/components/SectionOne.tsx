@@ -23,7 +23,7 @@ async function SectionOne({ faqCategories }: { faqCategories: any[] }) {
               className="object-contain"
             />
           </div>
-          <h1 className="text-[40px] lg:text-[100px] text-center font-portlin leading-[.9] text-balance mt-[12px] lg:mt-[22px]">
+          <h1 className="text-[40px] lg:text-[100px] text-center font-portlin tracking-[0.4px] leading-[.9] text-balance mt-[12px] lg:mt-[22px]">
             WE GOT ANSWERS
           </h1>
           <p className="text-xs lg:text-lg leading-normal mt-4 lg:mt-[40px] mb-[60px] lg:mb-[70px] text-center text-[#53545c]">

@@ -23,7 +23,7 @@
 //           </div>
 //         </div>
 //         <div>
-//           <h1 className="text-[40px] lg:text-[100px] font-portlin leading-[0.9] text-balance">
+//           <h1 className="text-[40px] lg:text-[100px] font-portlin tracking-[0.4px] leading-[0.9] text-balance">
 //             UNLOCK YOUR
 //             <br className="hidden lg:block" /> BRANDS
 //             <br className="hidden lg:block" /> PERSONALITY.
@@ -90,7 +90,7 @@ function SectionOne() {
           </div>
         </div>
         <div className="lg:pl-[86px] mt-[28px] lg:mt-0 flex flex-col justify-center">
-          <h1 className="text-[50px] lg:text-[100px] font-portlin leading-[0.9] text-balance">
+          <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.4px] leading-[0.9] text-balance">
             100% UNIQUE DESIGNS, EVERY TIME!
           </h1>
           <p className="text-sm leading-normal lg:text-lg mt-[24px] lg:mt-[31px] lg:max-w-[398px]">

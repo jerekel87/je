@@ -10,7 +10,7 @@ function SectionTwo({ article }: { article: Article }) {
   return (
     <section className="lg:px-[58px] mt-[50px] lg:mt-[65px]">
       {article.block?.title && (
-        <h2 className="font-portlin text-[30px] lg:text-[60px] leading-[.9]">
+        <h2 className="font-portlin tracking-[0.4px] text-[30px] lg:text-[60px] leading-[.9]">
           {article.block.title}
         </h2>
       )}

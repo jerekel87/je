@@ -4,7 +4,7 @@ function Header() {
   return (
     <header className="bg-[#00508f] pt-[50px] pb-4 lg:pt-[68px] lg:pb-0 relative">
       <div className="container px-3 relative text-white">
-        <h1 className="text-[50px] lg:text-[100px] text-white font-portlin leading-[.9]">
+        <h1 className="text-[50px] lg:text-[100px] text-white font-portlin tracking-[0.4px] leading-[.9]">
           CURRATED <span className="text-[#fff500]">BRAND</span> <br /> ARTICLES
         </h1>
         <p className="text-white text-sm lg:text-lg leading-normal lg:absolute bottom-2 left-[358px] mt-4 lg:mt-0">

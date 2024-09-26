@@ -15,7 +15,7 @@ async function Faqs({ faqCategory }: { faqCategory: any }) {
   return (
     <div className="flex flex-col lg:flex-row gap-[30px] lg:gap-[100px]">
       <div className="lg:max-w-[172px]">
-        <h2 className="font-portlin text-[30px] lg:text-[40px] leading-none">
+        <h2 className="font-portlin tracking-[0.4px] text-[30px] lg:text-[40px] leading-none">
           {faqCategory.title}
         </h2>
         <p className="mt-3 lg:mt-[18px] text-xs lg:text-sm text-muted-foreground">

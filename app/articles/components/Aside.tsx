@@ -17,7 +17,7 @@ function Aside() {
       </div>
       <Categories />
       <div className="border-t border-input pt-[30px] mt-[40px]">
-        <h2 className="font-portlin text-[30px] leading-none">
+        <h2 className="font-portlin tracking-[0.4px] text-[30px] leading-none">
           POPULAR HASHTAGS
         </h2>
         <ul className="flex flex-col gap-3 text-muted-foreground text-sm lg:text-base mt-4 lg:mt-[28px]">

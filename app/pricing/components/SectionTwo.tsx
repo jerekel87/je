@@ -18,7 +18,7 @@
 //           className={twMerge("container lg:px-0", calculation && "lg:hidden")}
 //         >
 //           <div className="relative">
-//             <h1 className="text-[40px] lg:text-[100px] font-portlin leading-[0.9] text-balance">
+//             <h1 className="text-[40px] lg:text-[100px] font-portlin tracking-[0.4px] leading-[0.9] text-balance">
 //               REVENUE
 //               <br />
 //               CALCULATOR
@@ -127,7 +127,7 @@ function SectionTwo({ sketchConcept }: { sketchConcept: any }) {
       </div>
       <div className="container px-3 mx-auto relative z-[1] grid grid-cols-1 lg:grid-cols-2 gap-[38px] lg:gap-[100px] items-center">
         <div className="max-w-[470px] row-start-2 lg:row-start-auto">
-          <h1 className="text-[50px] lg:text-[100px] font-portlin leading-[0.9] text-balance text-white">
+          <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.4px] leading-[0.9] text-balance text-white">
             FROM <span className="text-secondary">SKETCH</span>
             <br /> TO FULL COLOR
             <br />

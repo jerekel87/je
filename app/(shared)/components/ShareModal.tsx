@@ -40,7 +40,7 @@ function ShareModal({ pathname }: { pathname: string }) {
         overlayClass="bg-transparent"
         hideCloseButton
       >
-        <p className="text-4xl lg:text-[40px] font-portlin">
+        <p className="text-4xl lg:text-[40px] font-portlin tracking-[0.4px]">
           SHARE THIS PROJECT
         </p>
         <div className="flex mt-[24px] gap-[10px]">
