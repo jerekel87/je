@@ -72,7 +72,7 @@ function Header() {
           </div>
 
           <CalComModal.Trigger>
-            <Button variant="outline" className="lg:h-[60px]">
+            <Button variant="outline" className="lg:h-[60px] lg:text-[26px]">
               GET A QUOTE
             </Button>
           </CalComModal.Trigger>
