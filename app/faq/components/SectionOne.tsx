@@ -2,7 +2,6 @@ import Image from "next/image";
 import Faqs from "./Faqs";
 
 async function SectionOne({ faqCategories }: { faqCategories: any[] }) {
-  console.log(faqCategories);
   return (
     <section className="relative py-[50px] lg:py-[100px]">
       <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">

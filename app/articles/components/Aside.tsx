@@ -3,7 +3,7 @@ import Categories from "./Categories";
 
 function Aside() {
   return (
-    <aside className="lg:max-w-[300px]">
+    <aside className="lg:max-w-[300px] hidden lg:block">
       <div className="p-[40px] bg-secondary rounded-[8px] flex flex-col items-center">
         <h2 className="leading-none text-[20px] font-bold">
           Articles to Your Inbox

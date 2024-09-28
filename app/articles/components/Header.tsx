@@ -2,20 +2,20 @@ import Image from "next/image";
 
 function Header() {
   return (
-    <header className="bg-[#00508f] pt-[50px] pb-4 lg:pt-[68px] lg:pb-0 relative">
-      <div className="container px-3 relative text-white">
-        <h1 className="text-[50px] lg:text-[100px] text-white font-portlin tracking-[0.5px] leading-[.9]">
+    <header className="bg-[#00508f] pt-[30px] pb-4 lg:pt-[68px] lg:pb-0 relative">
+      <div className="container relative text-white">
+        <h1 className="text-[60px] lg:text-[100px] text-white font-portlin tracking-[0.5px] leading-[.9]">
           CURRATED <span className="text-[#fff500]">BRAND</span> <br /> ARTICLES
         </h1>
-        <p className="text-white text-sm lg:text-lg leading-normal lg:absolute bottom-2 left-[358px] mt-4 lg:mt-0">
+        <p className="hidden lg:block text-white text-sm lg:text-lg leading-normal lg:absolute bottom-2 left-[358px] mt-4 lg:mt-0">
           Our designers and developers create logos and produce professional,
           consistent print and digital collateral that show the world our
           clients are the real deal.
         </p>
       </div>
-      <div className="container mt-[26px]">
-        <div className="flex gap-[27px] items-end">
-          <div className="relative size-[80px] lg:size-[120px] shrink-0 top-[20px] lg:top-[4px]">
+      <div className="container mt-[10px] lg:mt-[26px]">
+        <div className="flex lg:gap-[27px] items-end">
+          <div className="relative size-[100px] lg:size-[120px] shrink-0 -left-[8px] lg:left-0 top-[15px] lg:top-[4px]">
             <Image
               src="/assets/images/HVAC-guy.webp"
               fill
