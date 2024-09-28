@@ -2,21 +2,21 @@ import Image from "next/image";
 
 function Header({ articleLink }: { articleLink: string }) {
   return (
-    <header className="bg-[#004eed] pt-[50px] pb-4 lg:pt-[68px] lg:pb-0 relative">
-      <div className="container px-3 relative text-white">
-        <h1 className="text-[50px] lg:text-[100px] text-white font-portlin tracking-[0.5px] leading-[.9]">
+    <header className="bg-[#004eed] pt-[30px] pb-4 lg:pt-[68px] lg:pb-0 relative">
+      <div className="container relative text-white">
+        <h1 className="text-[60px] lg:text-[100px] text-white font-portlin tracking-[0.5px] leading-[.9]">
           CREATIVE BRAND <br />
           <span className="text-[#fff500]">PACKAGE</span>
         </h1>
-        <p className="text-white leading-normal bottom-2 text-sm lg:text-lg lg:absolute left-[320px] mt-6 lg:mt-0 max-w-[676px]">
+        <p className="hidden lg:block text-white leading-normal bottom-2 text-sm lg:text-lg lg:absolute left-[320px] mt-6 lg:mt-0 max-w-[676px]">
           Remember, good work isn&apos;t cheap and cheap work isn&apos;t good.
           Here at JE Designs, we want to remind you of that when considering
           your brands value.
         </p>
       </div>
-      <div className="container px-3 mt-[26px]">
-        <div className="flex gap-[27px] items-end">
-          <div className="relative size-[80px] lg:size-[120px] shrink-0 top-[20px] lg:top-[12px]">
+      <div className="container mt-[10px] lg:mt-[26px]">
+        <div className="flex gap-4 lg:gap-[27px] items-end">
+          <div className="relative size-[100px] lg:size-[120px] shrink-0 top-[18px] lg:top-[12px]">
             <Image
               src="/assets/images/vector-smart-object@3x.webp"
               fill
