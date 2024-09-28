@@ -32,13 +32,13 @@ async function ReviewsData() {
   };
   return (
     <div>
-      <div className="flex gap-[22px] items-end">
+      <div className="flex gap-4 lg:gap-[22px] items-end">
         <p className="text-[60px] lg:text-[80px] font-portlin tracking-[0.5px] leading-none">
           {total}
         </p>
         <div>
           <StarRating value={5} text={<StarRating.Text>5/5</StarRating.Text>} />
-          <p className="leading-none lg:leading-none pb-1 mt-[10px] lg:mt-[12px] text-xs lg:text-sm font-medium text-muted-foreground">
+          <p className="leading-none lg:leading-none pb-1 mt-[8px] lg:mt-[12px] text-xs lg:text-sm font-medium text-muted-foreground">
             Customer Satisfaction
           </p>
         </div>
