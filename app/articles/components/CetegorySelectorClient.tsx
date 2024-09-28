@@ -22,7 +22,7 @@ function CategorySelectorClient({
   const searchParams = useSearchParams();
 
   const handleCategoryChange = (category: string) => {
-    router.push(`/articles?category=${category}`);
+    router.replace(`/articles?category=${category}`);
   };
 
   return (
