@@ -25,9 +25,15 @@ function IndustrySelector({
       <SelectTrigger
         className={cn("w-full lg:w-[282px] text-[#53545c]", className)}
       >
-        <SelectValue placeholder="Choose industry" />
+        <SelectValue placeholder="Industry" />
       </SelectTrigger>
-      <SelectContent>
+      <SelectContent
+        ref={(ref) =>
+          // temporary workaround from https://github.com/shadcn-ui/ui/issues/1220
+          ref?.addEventListener("touchend", (e) => e.preventDefault())
+        }
+        className="max-h-[300px]"
+      >
         {isLoading && (
           <SelectItem value="loading" className="px-5">
             <Loader className="animate-spin size-4 text-muted-foreground" />
@@ -38,7 +44,7 @@ function IndustrySelector({
             <SelectItem
               key={projectIndustry._id}
               value={projectIndustry._id}
-              className="p-3 pl-6 text-sm lg:text-lg w-[calc(100vw-40px)] lg:w-auto"
+              className="p-3 text-sm lg:text-lg w-[calc(100vw-40px)] lg:w-auto"
             >
               {projectIndustry.title}
             </SelectItem>

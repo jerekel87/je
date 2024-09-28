@@ -75,7 +75,7 @@ function Projects({ initialProjects }: { initialProjects: Project[] }) {
     }
   };
   return (
-    <section className="relative py-[40px] lg:py-[72px]">
+    <section className="relative py-[30px] lg:py-[72px]">
       <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">
         <Image
           src="/assets/images/shape-7-copy-7.svg"
@@ -84,9 +84,9 @@ function Projects({ initialProjects }: { initialProjects: Project[] }) {
           className="object-cover"
         />
       </div>
-      <div className="container px-3 lg:px-[30px]">
+      <div className="container px-4 lg:px-[30px]">
         <div className="flex flex-col gap-4 lg:flex-row justify-between lg:items-center">
-          <h1 className="font-portlin tracking-[0.5px] text-3xl lg:text-[60px]">
+          <h1 className="font-portlin leading-none tracking-[0.5px] text-3xl lg:text-[60px]">
             RECENT PROJECTS
           </h1>
           <div className="flex flex-col lg:flex-row gap-2 lg:gap-[30px]">

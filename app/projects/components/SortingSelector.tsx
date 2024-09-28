@@ -13,8 +13,18 @@ function SortingSelector({ onChange }: { onChange: (value: string) => void }) {
         <SelectValue placeholder="Most recent" />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value="Most Recent">Most Recent</SelectItem>
-        <SelectItem value="Oldest First">Oldest First</SelectItem>
+        <SelectItem
+          className="p-3 text-sm lg:text-lg w-[calc(100vw-40px)] lg:w-auto"
+          value="Most Recent"
+        >
+          Most Recent
+        </SelectItem>
+        <SelectItem
+          className="p-3 text-sm lg:text-lg w-[calc(100vw-40px)] lg:w-auto"
+          value="Oldest First"
+        >
+          Oldest First
+        </SelectItem>
         {/* <SelectItem value="Alphabetical (A-Z)">Alphabetical (A-Z)</SelectItem>
         <SelectItem value="Alphabetical (Z-A)">Alphabetical (Z-A)</SelectItem> */}
       </SelectContent>
