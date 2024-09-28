@@ -11,6 +11,7 @@ import Image from "next/image";
 import Link from "next/link";
 import useSWRInfinite from "swr/infinite";
 import PortableText from "react-portable-text";
+import { ARTICLES_LIMIT } from "../page";
 
 function Articles({
   initialArticles,
@@ -48,14 +49,18 @@ function Articles({
   const { data, isLoading, isValidating, size, setSize } = useSWRInfinite(
     getKey,
     ([url, lastCreatedAt]) => {
-      return getArticles({ categorySlug, lastCreatedAt, limit: 2 });
+      return getArticles({
+        categorySlug,
+        lastCreatedAt,
+        limit: ARTICLES_LIMIT,
+      });
     },
     {
       fallbackData: [initialArticles],
     }
   );
 
-  const hasMore = data?.[data?.length - 1]?.length !== 0;
+  const hasMore = data && data[data.length - 1]?.length >= ARTICLES_LIMIT;
 
   const loadMore = async () => {
     setSize(size + 1);
