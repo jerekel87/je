@@ -6,12 +6,12 @@ import { Article } from "@/sanity.types";
 import { getArticles } from "@/sanity/query/article";
 import { urlForImage } from "@/sanity/lib/image";
 import { usePathname, useSearchParams } from "next/navigation";
-import { Loader2 } from "lucide-react";
+import { Loader } from "lucide-react";
+import { ARTICLES_LIMIT } from "../page";
 import Image from "next/image";
 import Link from "next/link";
 import useSWRInfinite from "swr/infinite";
 import PortableText from "react-portable-text";
-import { ARTICLES_LIMIT } from "../page";
 
 function Articles({
   initialArticles,
@@ -74,6 +74,7 @@ function Articles({
           NO RESULTS FOUND
         </p>
       )}
+
       {data?.map((articles: any[], i: number) => {
         return articles.map((article, ii) => {
           if (i === 0 && ii === 0)
@@ -150,16 +151,17 @@ function Articles({
           );
         });
       })}
+
       {isLoading && (
-        <div className="flex justify-center mt-[40px] lg:mt-[60px]">
-          <Loader2 className="size-4 animate-spin text-muted-foreground" />
+        <div className="flex justify-center mt-[40px] lg:mt-0 lg:px-3">
+          <Loader className="size-4 lg:size-8 animate-spin text-muted-foreground" />
         </div>
       )}
 
       {hasMore && !isLoading && (
         <div className="flex justify-center mt-[40px] lg:mt-[60px]">
           {isValidating ? (
-            <Loader2 className="size-4 animate-spin text-muted-foreground" />
+            <Loader className="size-4 animate-spin text-muted-foreground" />
           ) : (
             <Button variant="outline" className="mx-auto" onClick={loadMore}>
               SHOW MORE
