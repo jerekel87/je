@@ -18,6 +18,31 @@ async function ReviewsData() {
     0
   );
 
+  function calculateAverageRating(ratings: { [key: string]: number }): number {
+    let totalRatings = 0;
+    let totalUsers = 0;
+
+    // Loop through each rating and its count
+    for (const rating in ratings) {
+      const count = ratings[rating];
+      const numericRating = Number(rating);
+
+      // Sum up total rating values
+      totalRatings += numericRating * count;
+
+      // Sum up total users who submitted ratings
+      totalUsers += count;
+    }
+
+    // Avoid division by zero
+    const average = totalUsers === 0 ? 0 : totalRatings / totalUsers;
+
+    // Round off the average rating to the nearest whole number
+    return Math.round(average);
+  }
+
+  const averageRating = calculateAverageRating(reviewRatingCount);
+
   const renderBars = () => {
     return Object.keys(reviewRatingCount)
       .sort((a, b) => Number(b) - Number(a))
@@ -37,7 +62,10 @@ async function ReviewsData() {
           {total}
         </p>
         <div>
-          <StarRating value={5} text={<StarRating.Text>5/5</StarRating.Text>} />
+          <StarRating
+            value={averageRating}
+            text={<StarRating.Text>{averageRating}/5</StarRating.Text>}
+          />
           <p className="leading-none lg:leading-none pb-1 mt-[8px] lg:mt-[12px] text-xs lg:text-sm font-medium text-muted-foreground">
             Customer Satisfaction
           </p>
