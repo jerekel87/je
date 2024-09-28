@@ -25,7 +25,7 @@ async function SectionOne({ faqCategories }: { faqCategories: any[] }) {
           <h1 className="text-[40px] lg:text-[100px] text-center font-portlin tracking-[0.5px] leading-[.9] text-balance mt-[12px] lg:mt-[22px]">
             WE GOT ANSWERS
           </h1>
-          <p className="text-xs lg:text-lg leading-normal mt-4 lg:mt-[40px] mb-[60px] lg:mb-[70px] text-center text-[#53545c]">
+          <p className="text-sm lg:text-lg leading-normal mt-4 lg:mt-[40px] mb-[60px] lg:mb-[70px] text-center text-[#53545c]">
             Your logo and branding can either hold you back or allow you to
             scale your company as far as you want.
           </p>

@@ -2,21 +2,21 @@ import Image from "next/image";
 
 function Header({ articleLink }: { articleLink: string }) {
   return (
-    <header className="bg-[#e01120] pt-[50px] pb-4 lg:pt-[68px] lg:pb-0 relative">
-      <div className="container px-3 relative text-white">
-        <h1 className="text-[50px] lg:text-[100px] text-white font-portlin tracking-[0.5px] leading-[.9]">
+    <header className="bg-[#e01120] pt-[30px] pb-4 lg:pt-[68px] lg:pb-0 relative">
+      <div className="container relative text-white">
+        <h1 className="text-[60px] lg:text-[100px] text-white font-portlin tracking-[0.5px] leading-[.9]">
           FREQUENTLY <span className="text-[#fff500]">ASKED</span> <br />
           QUESTIONS
         </h1>
-        <p className="text-white text-sm lg:text-lg leading-normal lg:absolute bottom-2 left-[386px] mt-4 lg:mt-0">
+        <p className="hidden lg:block text-white text-sm lg:text-lg leading-normal lg:absolute bottom-2 left-[386px] mt-4 lg:mt-0">
           Welcome to our Frequently Asked Questions (FAQ) page. Here,
           you&apos;ll find quick answers to common queries about our services
           and policies, all conveniently organized for easy navigation.
         </p>
       </div>
-      <div className="container px-3 mt-[26px]">
-        <div className="flex gap-[27px] items-end">
-          <div className="relative size-[80px] lg:size-[120px] shrink-0 top-[20px] lg:top-[10px]">
+      <div className="container mt-[10px] lg:mt-[26px]">
+        <div className="flex gap-4 lg:gap-[27px] items-end">
+          <div className="relative size-[100px] lg:size-[120px] shrink-0 top-[18px] lg:top-[10px]">
             <Image
               src="/assets/images/flasman.png"
               fill

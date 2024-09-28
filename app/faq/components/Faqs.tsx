@@ -18,7 +18,7 @@ async function Faqs({ faqCategory }: { faqCategory: any }) {
         <h2 className="font-portlin tracking-[0.5px] text-[30px] lg:text-[40px] leading-none">
           {faqCategory.title}
         </h2>
-        <p className="mt-3 lg:mt-[18px] text-xs lg:text-sm text-muted-foreground">
+        <p className="mt-3 lg:mt-[18px] text-sm lg:text-sm text-muted-foreground">
           {faqCategory.description}
         </p>
       </div>
@@ -26,14 +26,14 @@ async function Faqs({ faqCategory }: { faqCategory: any }) {
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq) => (
             <AccordionItem key={faq._id} value={faq._id}>
-              <AccordionTrigger className="text-xs lg:text-lg !no-underline">
+              <AccordionTrigger className="text-sm lg:text-lg !no-underline">
                 {faq.question}
               </AccordionTrigger>
               <AccordionContent className="p-3 lg:p-0">
                 {faq.answer && (
                   <PortableText
                     content={faq.answer}
-                    className="text-sm lg:text-lg leading-normal [&_*_a]:underline"
+                    className="pt-1 lg:pt-8 text-sm lg:text-lg leading-normal [&_*_a]:underline"
                   />
                 )}
               </AccordionContent>
