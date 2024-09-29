@@ -59,7 +59,7 @@ function Header() {
             {navList
               .filter((i) => i.url !== "/home")
               .map((navItem, i) => (
-                <Link key={i} href={navItem.url} className="font-semibold">
+                <Link key={i} href={navItem.url} className="font-medium">
                   {navItem.name}
                 </Link>
               ))}
