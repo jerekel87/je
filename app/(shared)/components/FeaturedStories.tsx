@@ -25,7 +25,7 @@ function FeaturedStories({
             src="/assets/images/excellence.png"
             alt="Excellence"
             fill
-            className="object-contain sm:transform-none scale-[1.6] -translate-y-[14px]"
+            className="object-contain sm:transform-none scale-[1.6] -translate-y-[4px]"
           />
           <div className="absolute w-full h-full flex flex-col justify-center items-center">
             <div className="relative w-[100px] h-[25px] lg:w-[239px] lg:h-[52px] mx-auto">
@@ -36,7 +36,7 @@ function FeaturedStories({
                 className="object-contain"
               />
             </div>
-            <h1 className="text-[50px] lg:text-[100px] text-center font-portlin tracking-[0.5px] leading-[.9] text-balance lg:mt-[4px] pb-[28px]">
+            <h1 className="text-[50px] lg:text-[100px] text-center font-portlin tracking-[0.5px] leading-[.9] text-balance lg:mt-[4px]">
               FEATURED STORIES
             </h1>
           </div>
