@@ -20,12 +20,12 @@ function FeaturedStories({
     <section className="relative py-[53px] lg:py-[140px] lg:pb-[80px]">
       <div className="w-full h-[690px] bg-[linear-gradient(transparent,#f7f5ef)] absolute z-[-1] bottom-0" />
       <div className="container px-3 mx-auto overflow-hidden lg:overflow-visible">
-        <div className="relative h-[92px] lg:h-[250px] w-full">
+        <div className="relative h-[138px] lg:h-[250px] w-full">
           <Image
-            src="/assets/images/excellence.webp"
+            src="/assets/images/excellence.png"
             alt="Excellence"
             fill
-            className="object-contain"
+            className="object-contain sm:transform-none scale-[1.6] -translate-y-[14px]"
           />
           <div className="absolute w-full h-full flex flex-col justify-center items-center">
             <div className="relative w-[100px] h-[25px] lg:w-[239px] lg:h-[52px] mx-auto">
@@ -59,7 +59,7 @@ function FeaturedStories({
           loop
           spaceBetween={16}
           slidesPerView={1.2}
-          className="lg:rounded-[15px] mt-[40px] lg:!hidden !overflow-visible"
+          className="lg:rounded-[15px] lg:!hidden !overflow-visible"
         >
           {featuredStories.map((review, i) => (
             <SwiperSlide key={i}>
