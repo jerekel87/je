@@ -29,11 +29,23 @@ function SectionThreeItem({
           className="object-cover rounded-sm lg:rounded-[8px] absolute"
         />
       </div>
-      <div className="flex gap-[15px] mt-[28px] lg:mt-[38px] max-w-[480px]">
-        <span className="whitespace-nowrap self-start p-1 lg:p-[8px] text-sm lg:text-[19px] font-bold leading-none rounded-[5px] bg-secondary inline-block">
-          ▲ {percentage}%
-        </span>
-        <h3 className="text-white text-2xl lg:text-[35px] font-portlin tracking-[0.5px] leading-[.9]">
+      <div className="flex items-end gap-[10px] lg:gap-[15px] mt-[28px] lg:mt-[38px] max-w-[480px]">
+        <div className="flex items-center gap-1 h-[18px] lg:h-[30px] whitespace-nowrap self-start p-1 lg:p-[8px] text-xs lg:text-lg lg:leading-none font-bold leading-none rounded-[2px] lg:rounded-[5px] bg-secondary">
+          <svg
+            className="w-[6px] h-[5px] lg:w-[11px] lg:h-[10px]"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 23 20"
+            preserveAspectRatio="xMidYMid meet"
+          >
+            <path
+              fill-rule="evenodd"
+              fill="#141423"
+              d="M11.5.313 23 20.312H0L11.5.313z"
+            />
+          </svg>
+          <span className="leading-none">{percentage}%</span>
+        </div>
+        <h3 className="text-white text-[22px] lg:text-[35px] -translate-y-[2px] font-portlin tracking-[0.5px] leading-[.9]">
           {title}
         </h3>
       </div>
@@ -85,9 +97,9 @@ function SectionThree() {
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-[120px]">
           <div>
             <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.5px] leading-[0.9] text-balance text-white">
-              IGNITE YOUR
+              IGNITE <span className="text-secondary">YOUR</span>
               <br />
-              BRANDS POTENTIAL
+              <span className="text-secondary">BRANDS</span> POTENTIAL
             </h1>
 
             <p className="text-sm lg:text-lg leading-normal mt-[24px] lg:mt-[40px] text-[#ffffff66] mb-0 lg:mb-[124px]">
@@ -104,7 +116,14 @@ function SectionThree() {
               customer base."
                 percentage="225"
               />
-              <SectionThreeItemEmpty />
+              <SectionThreeItem
+                imageUrl="/assets/images/layer-6@3x.webp"
+                title="BIG SPRINT BUILDERS, CO."
+                description="Take your company to new heights, imagine the endless
+                possibilities or missed opportunities because you’re
+                lacking proper branding for your business."
+                percentage="180"
+              />
             </div>
           </div>
           <div className="mt-0 lg:mt-[272px] hidden lg:block">
@@ -162,7 +181,16 @@ function SectionThree() {
             />
           </SwiperSlide>
           <SwiperSlide>
-            <SectionThreeItemEmpty />
+            <SwiperSlide>
+              <SectionThreeItem
+                imageUrl="/assets/images/layer-6@3x.webp"
+                title="BIG SPRINT BUILDERS, CO."
+                description="Take your company to new heights, imagine the endless
+                possibilities or missed opportunities because you’re
+                lacking proper branding for your business."
+                percentage="180"
+              />
+            </SwiperSlide>
           </SwiperSlide>
         </Swiper>
 

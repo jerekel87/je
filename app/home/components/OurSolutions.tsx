@@ -122,7 +122,7 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
                               height="132"
                               width="160"
                               alt={solution.name}
-                              className="lg:rounded-[15px] absolute w-full h-full object-cover"
+                              className="lg:rounded-[8px] absolute w-full h-full object-cover"
                               quality={100}
                             />
                           </div>

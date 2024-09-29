@@ -17,10 +17,12 @@ async function HomePage() {
   return (
     <main>
       <SectionOne articleLink={homePageSetting?.articleLink || ""} />
-      <SectionTwo />
-      <FeaturedStories
-        featuredStories={homePageSetting.featuredStories as any[]}
-      />
+      <div className="relative static-background">
+        <SectionTwo />
+        <FeaturedStories
+          featuredStories={homePageSetting.featuredStories as any[]}
+        />
+      </div>
       <SectionThree />
       <OurSolutions ourSolutions={homePageSetting.ourSolutions as any[]} />
       <SectionFour projects={homePageSetting.projects as any[]} />

@@ -74,3 +74,25 @@
   @apply -right-[28px];
 }
 /* End */
+
+/* Start | Beyond text background */
+.beyond-bg::before {
+  content: "";
+  display: inline-block;
+  background-image: url("/assets/images/beyond-bg.webp"); /* Add the image */
+  background-size: cover; /* or contain based on your needs */
+  background-repeat: no-repeat;
+  width: 275px;
+  height: 112px;
+  position: absolute;
+  z-index: -1;
+  left: -16px;
+  top: -6px;
+  transform: rotate(4deg);
+}
+@media only screen and (max-width: 1023px) {
+  .beyond-bg::before {
+    display: none;
+  }
+}
+/* End */

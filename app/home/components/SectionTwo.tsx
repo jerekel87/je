@@ -1,8 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import CalComModal from "@/app/(shared)/components/CalComModal";
-import { Button } from "@/app/(shared)/components/ui/button";
 
 function SectionTwo() {
   return (
@@ -99,9 +95,13 @@ function SectionTwo() {
             </div>
           </div> */}
         </div>
-        <div className="lg:pl-[86px] mt-[28px] lg:mt-0">
+        <div className="lg:pl-[86px] mt-[28px] lg:mt-0 flex flex-col justify-center">
           <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.5px] leading-[0.9] text-balance">
-            INNOVATING BEYOND BOUNDARIES
+            INNOVATING{" "}
+            <span className="relative inline-block beyond-bg lg:-rotate-[3deg]">
+              BEYOND
+            </span>{" "}
+            BOUNDARIES
           </h1>
           {/* <div className="mt-4 lg:mt-[37px]">
             <StarRating
@@ -114,14 +114,14 @@ function SectionTwo() {
             ideas to life. See why we&apos;re the top choice for standout visual
             branding in today&apos;s market.
           </p>
-          <CalComModal.Trigger>
+          {/* <CalComModal.Trigger>
             <Button
               className="mt-[25px] lg:mt-[40px] lg:px-[48px] min-w-[225px] w-full lg:w-auto"
               variant="secondary"
             >
               GET A QUOTE
             </Button>
-          </CalComModal.Trigger>
+          </CalComModal.Trigger> */}
         </div>
       </div>
       {/* <div className="absolute w-full h-[27px] lg:h-[37px] -bottom-[6px] z-[1]">

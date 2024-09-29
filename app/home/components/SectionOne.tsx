@@ -47,7 +47,7 @@ function SectionOne({ articleLink }: { articleLink: string }) {
               <br className="lg:hidden" />
               <span className="text-white">BRANDS.</span>
             </h1>
-            <div className="hidden lg:block lg:absolute w-[70px] h-[20px] xl:w-[120px] xl:h-[40px] right-0 lg:right-[35px]">
+            <div className="hidden lg:block lg:absolute w-[70px] h-[20px] xl:w-[165px] xl:h-[35px] right-0 lg:right-[24px]">
               <Image
                 src="/assets/images/since-2005.webp"
                 alt="Since 2005"
