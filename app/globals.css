@@ -92,7 +92,7 @@
 }
 /*  */
 
-/* Start | Statif effect background */
+/* Start | Static effect background */
 .static-background::before {
   content: "";
   position: absolute;

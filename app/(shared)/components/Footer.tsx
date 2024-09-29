@@ -173,7 +173,7 @@ function Footer() {
                 </CalComModal.Trigger>
               </div>
             </div>
-            <div className="p-[26px] pt-[35px] lg:p-[86px] lg:pb-[100px] lg:pl-[0]">
+            <div className="relative z-[1] p-[26px] pt-[35px] lg:p-[86px] lg:pb-[100px] lg:pl-[0]">
               <h3 className="font-portlin tracking-[0.5px] text-[50px] xl:text-[100px] leading-[.9]">
                 SOLUTIONS THAT
                 <br className="hidden lg:block" />{" "}
