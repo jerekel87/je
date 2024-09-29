@@ -150,16 +150,11 @@
   background-image: url("/assets/images/boosts-bg.webp"); /* Add the image */
   background-size: cover; /* or contain based on your needs */
   background-repeat: no-repeat;
-  width: 264px;
-  height: 95px;
   position: absolute;
   z-index: -1;
-  left: -10px;
-  top: 4px;
-}
-@media only screen and (max-width: 1023px) {
-  .boosts-bg::before {
-    display: none;
-  }
+  width: 110%;
+  height: 106%;
+  left: -5%;
+  top: 3%;
 }
 /* End */

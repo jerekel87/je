@@ -97,8 +97,7 @@ function SectionOne() {
             Watch as we s bring the &quot;
             <strong className="underline font-semibold">Get Da Munchies</strong>
             &quot; logo to life! This video showcases our creative process from
-            initial sketch to polished vector artwork. See firsthand how we
-            craft unique, eye- catching logos for every client.
+            initial sketch to polished vector artwork.
           </p>
         </div>
       </div>

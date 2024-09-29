@@ -14,7 +14,7 @@ import {
 
 function Footer() {
   const MainList = () => (
-    <ul className="lg:mt-[38px] flex flex-col gap-4 lg:gap-[26px]">
+    <ul className="lg:mt-[38px] flex flex-col gap-4 lg:gap-[20px]">
       <li>
         <Link
           className="text-[#7e7f88] text-sm text-center lg:text-left inline-block w-full lg:text-base"
@@ -67,7 +67,7 @@ function Footer() {
   );
 
   const SocialList = () => (
-    <ul className="lg:mt-[38px] flex flex-col gap-4 lg:gap-[26px]">
+    <ul className="lg:mt-[38px] flex flex-col gap-4 lg:gap-[20px]">
       <li>
         <a
           className="text-[#7e7f88] text-sm text-center lg:text-left inline-block w-full lg:text-base"
@@ -112,7 +112,7 @@ function Footer() {
   );
 
   const ContactList = () => (
-    <ul className="lg:mt-[38px] flex flex-col gap-4 lg:gap-[26px]">
+    <ul className="lg:mt-[38px] flex flex-col gap-4 lg:gap-[20px]">
       <li>
         <CalComModal.Trigger>
           <a
@@ -122,14 +122,22 @@ function Footer() {
             Schedule a call
           </a>
         </CalComModal.Trigger>
-        <address className="mt-[26px] leading-[1.56] text-[#7e7f88] text-sm text-center lg:text-left inline-block w-full lg:text-base">
+        <address className="mt-[26px] lg:mt-[20px] leading-[1.56] text-[#7e7f88] text-sm text-center lg:text-left inline-block w-full lg:text-base">
           PO Box 7643 Belmont, NH USA
         </address>
       </li>
     </ul>
   );
   return (
-    <footer className="relative">
+    <footer className="relative static-background">
+      <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 sm:size-[800px] xl:size-[908px] mx-auto top-[122px]">
+        <Image
+          src="/assets/images/footer-circular.webp"
+          fill
+          alt="Circular effect"
+          className="object-contain"
+        />
+      </div>
       <div className="relative">
         <div className="absolute w-full h-full -z-10">
           <FooterTopBg />
@@ -137,7 +145,7 @@ function Footer() {
         </div>
         <div className="container px-2 lg:px-[30px] mx-auto lg:max-w-[1414px]">
           <div
-            className="relative grid grid-cols-1 lg:grid-cols-2 rounded-[10px] lg:left-0 lg:right-auto left-4 right-4 bg-[#fff500] static-background"
+            className="relative grid grid-cols-1 lg:grid-cols-2 rounded-[10px] lg:left-0 lg:right-auto bg-[#fff500] static-background"
             // style={{
             //   backgroundImage:
             //     "linear-gradient(to bottom right, #fff500, #fff)",
@@ -312,7 +320,7 @@ function Footer() {
           </div>
         </div>
         <div className="lg:border-t lg:border-[#252534] lg:mt-[88px]">
-          <div className="container text-[#666770] text-xs flex flex-col lg:flex-row text-center lg:text-left justify-between py-[40px]">
+          <div className="container px-3 text-[#666770] text-xs flex flex-col lg:flex-row text-center lg:text-left justify-between py-[40px]">
             <span>
               © 2004-2024 Jeremy Ellsworth Designs LLC
               <br className="lg:hidden" /> All Rights Reserved
