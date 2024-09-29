@@ -1,78 +1,112 @@
 "use client";
 
-import { useState } from "react";
-import { cn } from "@/app/(shared)/lib/utils";
 import { Button } from "@/app/(shared)/components/ui/button";
 import { Project } from "@/sanity.types";
 import { getProjects } from "@/sanity/query/project";
-import { LoaderCircle } from "lucide-react";
+import { Loader } from "lucide-react";
 import { urlForImage } from "@/sanity/lib/image";
+import { usePathname, useSearchParams } from "next/navigation";
+import { PROJECTS_LIMIT } from "../page";
+import { ReactNode } from "react";
 import Link from "next/link";
-import SortingSelector from "./SortingSelector";
 import Image from "next/image";
-import IndustrySelector from "./IndustrySelector";
+import useSWRInfinite from "swr/infinite";
+import SortingSelector from "./SortingSelector";
 
-function Projects({ initialProjects }: { initialProjects: Project[] }) {
-  const [projects, setProjects] = useState(initialProjects);
-  const initialLastId =
-    initialProjects.length >= 2
-      ? initialProjects[initialProjects.length - 1]._id
-      : "";
-  const [lastId, setLastId] = useState(initialLastId);
-  const [isLoadingMore, setIsLoadingMore] = useState(false);
-  const [isLoadingProjects, setIsLoadingProjects] = useState(false);
-  const [filter, setFilter] = useState({
-    sortBy: "Most Recent",
-    industryId: "",
-  });
+function Projects({
+  initialProjects,
+  industrySelector,
+}: {
+  initialProjects: Project[];
+  industrySelector: ReactNode;
+}) {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const industrySlug = searchParams.get("industry") || undefined;
+  const sortBy = searchParams.get("sortBy") || undefined;
+
+  const getKey = (pageIndex: number, previousPageData: any) => {
+    // reached the end
+    if (previousPageData && previousPageData.length === 0) return null;
+
+    // first page, we don't have `previousPageData`
+    if (pageIndex === 0)
+      return [
+        `${pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ""}`,
+      ];
+
+    // add the cursor to the API endpoint
+    const lastCreatedAt =
+      previousPageData.length >= 1
+        ? previousPageData[previousPageData.length - 1]._createdAt
+        : "";
+
+    return [
+      `${pathname}?lastCreatedAt=${lastCreatedAt}&${searchParams.toString() ? `${searchParams.toString()}` : ""}`,
+      lastCreatedAt,
+    ];
+  };
+  const { data, isLoading, isValidating, size, setSize } = useSWRInfinite(
+    getKey,
+    ([url, lastCreatedAt]) => {
+      return getProjects({
+        industrySlug,
+        sortBy,
+        lastCreatedAt,
+        limit: PROJECTS_LIMIT,
+      });
+    },
+    {
+      fallbackData: [initialProjects],
+    }
+  );
+
+  const hasMore = data && data[data.length - 1]?.length >= PROJECTS_LIMIT;
 
   const loadMore = async () => {
-    setIsLoadingMore(true);
-    try {
-      const projectsRes = await getProjects({ ...filter, lastId });
-      setProjects([...projects, ...projectsRes]);
-      if (projectsRes.length > 0) {
-        setLastId(projectsRes[projectsRes.length - 1]._id);
-      } else {
-        setLastId("");
-      }
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setIsLoadingMore(false);
-    }
+    setSize(size + 1);
   };
 
-  const handleIndustryChange = async (value: string) => {
-    setIsLoadingProjects(true);
-    setFilter((prevState) => ({ ...prevState, industryId: value }));
-    try {
-      const projectsRes = await getProjects({
-        industryId: value,
-        sortBy: filter.sortBy,
-      });
-      setProjects(projectsRes);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setIsLoadingProjects(false);
-    }
-  };
+  const render = () => {
+    if (isLoading)
+      return (
+        <div className="flex justify-center lg:justify-start mt-[60px] lg:mt-[100px]">
+          <Loader className="size-4 lg:size-8 animate-spin text-muted-foreground" />
+        </div>
+      );
+    if (data?.[0]?.length === 0)
+      return (
+        <p className="text-sm lg:text-lg text-center lg:text-left text-muted-foreground mt-[60px] lg:mt-[100px]">
+          NO RESULTS FOUND
+        </p>
+      );
 
-  const handleOrderChange = async (value: string) => {
-    setIsLoadingProjects(true);
-    setFilter((prevState) => ({ ...prevState, sortBy: value }));
-    try {
-      const projectsRes = await getProjects({
-        sortBy: value,
-        industryId: filter.industryId,
-      });
-      setProjects(projectsRes);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setIsLoadingProjects(false);
-    }
+    return (
+      <div className="px-3 lg:px-0 grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-[30px] mt-[30px]">
+        {data?.map((projects: any[], i: number) =>
+          projects.map((project) => {
+            const src = urlForImage(project.mainImage as any);
+            return (
+              <Link
+                href={`/projects/${project.slug?.current}`}
+                key={project._id}
+                className="relative w-full pb-[85.5%] bg-gray-400 rounded-[5px] lg:rounded-[8px] overflow-hidden"
+              >
+                <Image
+                  loader={() => src}
+                  src={src}
+                  fill
+                  alt={project.title || ""}
+                  className="object-contain"
+                  quality={100}
+                />
+              </Link>
+            );
+          })
+        )}
+      </div>
+    );
   };
   return (
     <section className="relative pt-[26px] pb-[30px] lg:py-[72px]">
@@ -90,56 +124,23 @@ function Projects({ initialProjects }: { initialProjects: Project[] }) {
             RECENT PROJECTS
           </h1>
           <div className="flex flex-col lg:flex-row gap-2 lg:gap-[30px]">
-            <IndustrySelector onChange={handleIndustryChange} />
-            <SortingSelector onChange={handleOrderChange} />
+            {industrySelector}
+            <SortingSelector />
           </div>
         </div>
       </div>
       <div className="container px-0 lg:px-[30px]">
-        {isLoadingProjects ? (
-          <div className="container px-3 py-[100px] flex justify-center">
-            <LoaderCircle className="animate-spin" />
-          </div>
-        ) : (
-          <div className="px-3 grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-[30px] mt-[30px]">
-            {projects && projects.length ? (
-              projects.map((project) => {
-                const src = urlForImage(project.mainImage as any);
-                return (
-                  <Link
-                    href={`/projects/${project.slug?.current}`}
-                    key={project._id}
-                    className="relative w-full pb-[85.5%] bg-gray-400 rounded-[5px] lg:rounded-[8px] overflow-hidden"
-                  >
-                    <Image
-                      loader={() => src}
-                      src={src}
-                      fill
-                      alt={project.title || ""}
-                      className="object-contain"
-                      quality={100}
-                    />
-                  </Link>
-                );
-              })
-            ) : (
-              <p className="px-3 lg:px-0 text-xs lg:text-lg font-medium">
-                NO RESULTS FOUND
-              </p>
-            )}
-          </div>
-        )}
+        {render()}
 
-        {projects && projects.length >= 9 && lastId && (
+        {hasMore && !isLoading && (
           <div className="flex justify-center mt-[40px] lg:mt-[60px]">
-            <Button
-              variant="outline"
-              className={cn("mx-auto", isLoadingMore && "!border-none")}
-              onClick={loadMore}
-              disabled={isLoadingMore}
-            >
-              {isLoadingMore ? "Loading..." : "LOAD MORE"}
-            </Button>
+            {isValidating ? (
+              <Loader className="size-4 animate-spin text-muted-foreground" />
+            ) : (
+              <Button variant="outline" className="mx-auto" onClick={loadMore}>
+                SHOW MORE
+              </Button>
+            )}
           </div>
         )}
       </div>

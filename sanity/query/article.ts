@@ -8,12 +8,12 @@ export async function getArticles({
   lastCreatedAt = "",
   limit = 9,
 } = {}): Promise<Article[]> {
-  let query = `*[_type == "article" ${lastCreatedAt ? "&& _createdAt < $lastCreatedAt" : ""}] | order(_createdAt desc) [0...$limit]{
+  let query = `*[_type == "article" ${lastCreatedAt ? "&& _createdAt <= $lastCreatedAt" : ""}] | order(_createdAt desc) [0...$limit]{
      ...,
       category->
   }`;
   if (categorySlug && categorySlug !== "all") {
-    query = `*[_type == "article" && category->slug.current == $categorySlug ${lastCreatedAt ? "&& _createdAt < $lastCreatedAt" : ""}] | order(_createdAt desc) [0...$limit]{
+    query = `*[_type == "article" && category->slug.current == $categorySlug ${lastCreatedAt ? "&& _createdAt <= $lastCreatedAt" : ""}] | order(_createdAt desc) [0...$limit]{
       ...,
       category->
       }`;

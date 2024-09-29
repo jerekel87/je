@@ -76,7 +76,7 @@ function Articles({
       )}
 
       {data?.map((articles: any[], i: number) => {
-        return articles.map((article, ii) => {
+        return articles?.map((article, ii) => {
           if (i === 0 && ii === 0)
             return (
               <article

@@ -4,13 +4,28 @@ import Projects from "./components/Projects";
 import Footer from "../(shared)/components/Footer";
 import MainHeader from "../(shared)/components/Header";
 import Link from "next/link";
+import IndustrySelector from "./components/IndustrySelector";
 import { getProjects } from "@/sanity/query/project";
 import { getProjectsPageSetting } from "@/sanity/query/projectsPage";
 
 export const revalidate = 60;
 
-async function ProjectsPage() {
-  const projects = await getProjects();
+export const PROJECTS_LIMIT = 9;
+
+async function ProjectsPage({
+  searchParams,
+}: {
+  searchParams: { industry: string; sortBy: string };
+}) {
+  const industrySlug = searchParams.industry;
+  const sortBy = searchParams.sortBy;
+
+  const projects = await getProjects({
+    limit: PROJECTS_LIMIT,
+    industrySlug,
+    sortBy,
+  });
+
   const projectsPageSetting = await getProjectsPageSetting();
 
   return (
@@ -18,7 +33,10 @@ async function ProjectsPage() {
       <MainHeader />
       <main>
         <Header articleLink={projectsPageSetting?.articleLink || ""} />
-        <Projects initialProjects={projects} />
+        <Projects
+          initialProjects={projects}
+          industrySelector={<IndustrySelector />}
+        />
         <Reviews
           subheader={
             <Reviews.Subheader>

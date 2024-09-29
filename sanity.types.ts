@@ -186,23 +186,6 @@ export type PricingPage = {
     _key: string;
     [internalGroqTypeReferenceTo]?: "review";
   }>;
-  packages?: Array<{
-    name?: string;
-    icon?: {
-      asset?: {
-        _ref: string;
-        _type: "reference";
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-      };
-      hotspot?: SanityImageHotspot;
-      crop?: SanityImageCrop;
-      _type: "image";
-    };
-    packageItems?: Array<string>;
-    _type: "package";
-    _key: string;
-  }>;
 };
 
 export type ArticlesPage = {
@@ -621,6 +604,7 @@ export type Industry = {
   _updatedAt: string;
   _rev: string;
   title?: string;
+  slug?: Slug;
   percentageIncrease?: number;
   description?: string;
 };

@@ -4,41 +4,34 @@ import { Industry, Project, Review } from "@/sanity.types";
 import { client } from "../lib/client";
 
 export async function getProjects({
-  industryId = "",
-  lastId = "",
+  industrySlug = "",
+  lastCreatedAt = "",
   limit = 9,
   sortBy = "Most Recent",
 } = {}): Promise<Project[]> {
   let sortByValue = "desc";
+  let operator = "<";
 
   switch (sortBy) {
     case "Most Recent":
       sortByValue = "desc";
+      operator = "<";
       break;
     case "Oldest First":
       sortByValue = "asc";
-      break;
-
-    default:
-      sortByValue = "desc";
+      operator = ">";
       break;
   }
 
-  let query = `*[_type == "project" && _id > $lastId] | order(_createdAt ${sortByValue}) [0...$limit]{
-    _id,
-    title,
-    slug,
-    mainImage
+  let query = `*[_type == "project" ${lastCreatedAt ? `&& _createdAt ${operator} $lastCreatedAt` : ""}] | order(_createdAt ${sortByValue}) [0...$limit]{
+    ...
   }`;
-  if (industryId) {
-    query = `*[_type == "project" && industry._ref == $industryId && _id > $lastId] | order(_createdAt ${sortByValue}) [0...$limit]{
-      _id,
-      title,
-      slug,
-      mainImage
+  if (industrySlug && industrySlug !== "all") {
+    query = `*[_type == "project" && industry->slug.current == $industrySlug ${lastCreatedAt ? `&& _createdAt ${operator} $lastCreatedAt` : ""}] | order(_createdAt ${sortByValue}) [0...$limit]{
+        ...
       }`;
   }
-  return client.fetch(query, { lastId, limit, industryId });
+  return client.fetch(query, { lastCreatedAt, limit, industrySlug });
 }
 
 export async function getProject({ slug }: { slug: string }): Promise<
@@ -70,10 +63,7 @@ export async function getProject({ slug }: { slug: string }): Promise<
 
 export async function getProjectsIndustries(): Promise<Industry[]> {
   let query = `*[_type == "industry"] | order(title asc){
-      _id,
-      title,
-      percentageIncrease,
-      description
+      ...
     }`;
 
   return client.fetch(query);
