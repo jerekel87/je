@@ -59,7 +59,7 @@ function ReviewCard({
       </div>
       <div className="py-[30px] text-sm lg:text-[17px] leading-normal lg:leading-[1.65]">
         <ShowMoreText
-          lines={3}
+          lines={4}
           more="More"
           less="Less"
           anchorClass="underline cursor-pointer"
