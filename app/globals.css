@@ -101,7 +101,7 @@
   width: 100%;
   height: 100%;
   background: transparent url("/assets/images/static-effect.png") 0 0;
-  opacity: 0.3;
+  opacity: 0.8;
 }
 .lg-static-background::before {
   content: "";

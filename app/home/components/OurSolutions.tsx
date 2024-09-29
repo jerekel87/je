@@ -57,7 +57,7 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
   return (
     <section
       id="solutions"
-      className="relative pt-[53px] pb-[63px] lg:pt-[140px] lg:pb-[113px]"
+      className="relative pt-[53px] pb-[63px] lg:pt-[140px] lg:pb-[113px] static-background"
     >
       <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">
         <Image
@@ -67,7 +67,7 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
           className="object-cover"
         />
       </div>
-      <div className="container px-4 mx-auto">
+      <div className="container px-4 mx-auto relative z-[1]">
         <div>
           <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.5px] leading-[0.9] text-balance">
             OUR SOLUTIONS
