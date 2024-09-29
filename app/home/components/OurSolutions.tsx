@@ -130,7 +130,7 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
                       ))}
                     </Swiper>
                     {solution.images && solution.images.length > 4 && (
-                      <div className="absolute top-1/2 w-full">
+                      <div className="our-solution-nav absolute top-1/2 w-full">
                         <button
                           className="swiper-button-prev"
                           onClick={() => swiperRef.current?.slidePrev()}
