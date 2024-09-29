@@ -10,8 +10,6 @@ import CategorySelector from "./components/CategorySelector";
 
 export const revalidate = 60;
 
-export const ARTICLES_LIMIT = 10;
-
 async function ArticlesPage({
   searchParams,
 }: {
@@ -20,7 +18,7 @@ async function ArticlesPage({
   const categorySlug = searchParams.category;
   const articles = await getArticles({
     categorySlug,
-    limit: ARTICLES_LIMIT,
+    limit: 10,
   });
 
   return (

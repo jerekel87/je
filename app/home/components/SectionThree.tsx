@@ -221,7 +221,7 @@ function SectionThree() {
           power of professional branding!
         </p>
         <div className="flex justify-center mt-[30px]">
-          <Link href="/pricing#revenueCalculator" className="w-full lg:w-auto">
+          <Link href="/pricing" className="w-full lg:w-auto">
             <Button
               variant="secondary"
               className="mx-auto lg:px-[58px] w-full lg:w-auto"

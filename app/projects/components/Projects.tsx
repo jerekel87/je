@@ -6,7 +6,6 @@ import { getProjects } from "@/sanity/query/project";
 import { Loader } from "lucide-react";
 import { urlForImage } from "@/sanity/lib/image";
 import { usePathname, useSearchParams } from "next/navigation";
-import { PROJECTS_LIMIT } from "../page";
 import { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -47,6 +46,9 @@ function Projects({
       lastCreatedAt,
     ];
   };
+
+  const PROJECTS_LIMIT = 9;
+
   const { data, isLoading, isValidating, size, setSize } = useSWRInfinite(
     getKey,
     ([url, lastCreatedAt]) => {

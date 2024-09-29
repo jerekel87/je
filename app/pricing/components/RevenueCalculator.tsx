@@ -149,14 +149,14 @@ function RevenueCalculator() {
         )}
         <div className="w-full lg:max-w-[415px] rounded lg:rounded-[10px] flex flex-col gap-4 lg:gap-[20px]">
           <div>
-            <Controller
+            {/* <Controller
               name="industry"
               control={control}
               rules={{ required: "This field is required." }}
               render={({ field: { onChange } }) => (
                 <IndustrySelector onChange={onChange} className="lg:w-full" />
               )}
-            />
+            /> */}
             {errors.industry && (
               <p className="text-destructive mt-1 ml-1 font-medium text-sm">
                 {errors.industry.message}

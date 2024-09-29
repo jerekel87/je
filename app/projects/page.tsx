@@ -10,8 +10,6 @@ import { getProjectsPageSetting } from "@/sanity/query/projectsPage";
 
 export const revalidate = 60;
 
-export const PROJECTS_LIMIT = 9;
-
 async function ProjectsPage({
   searchParams,
 }: {
@@ -21,7 +19,7 @@ async function ProjectsPage({
   const sortBy = searchParams.sortBy;
 
   const projects = await getProjects({
-    limit: PROJECTS_LIMIT,
+    limit: 9,
     industrySlug,
     sortBy,
   });

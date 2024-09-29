@@ -7,7 +7,6 @@ import { getArticles } from "@/sanity/query/article";
 import { urlForImage } from "@/sanity/lib/image";
 import { usePathname, useSearchParams } from "next/navigation";
 import { Loader } from "lucide-react";
-import { ARTICLES_LIMIT } from "../page";
 import Image from "next/image";
 import Link from "next/link";
 import useSWRInfinite from "swr/infinite";
@@ -46,6 +45,9 @@ function Articles({
       lastCreatedAt,
     ];
   };
+
+  const ARTICLES_LIMIT = 10;
+
   const { data, isLoading, isValidating, size, setSize } = useSWRInfinite(
     getKey,
     ([url, lastCreatedAt]) => {
