@@ -12,7 +12,7 @@ function FooterTopBg() {
     isFAQPage || isArticlesPage || isPricingPage ? "#fff" : "#f9f8f3";
   return (
     <div
-      className="h-[135px] lg:h-[235px] w-full relative"
+      className="h-[135px] lg:h-[235px] w-full relative static-background"
       style={{ backgroundColor: topBgColor }}
     >
       <div className="absolute w-full h-[27px] lg:h-[37px] -bottom-[6px] z-[2]">

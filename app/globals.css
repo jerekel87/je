@@ -91,3 +91,75 @@
   @apply !p-0;
 }
 /*  */
+
+/* Start | Statif effect background */
+.static-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent url("/assets/images/static-effect.png") 0 0;
+  opacity: 0.3;
+}
+.lg-static-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent url("/assets/images/static-effect.png") 0 0;
+  opacity: 0.3;
+}
+@media only screen and (max-width: 1023px) {
+  .lg-static-background::before {
+    display: none;
+  }
+}
+
+.striped-background {
+  width: 100%;
+  background-image: repeating-linear-gradient(
+    to right,
+    transparent 0px,
+    transparent 133px,
+    rgba(36, 36, 52, 0.5) 133px,
+    rgba(36, 36, 52, 0.5) 134px
+  );
+}
+
+@media only screen and (max-width: 1023px) {
+  .striped-background {
+    background-image: repeating-linear-gradient(
+      to right,
+      transparent 0px,
+      transparent 80px,
+      rgba(36, 36, 52, 0.5) 80px,
+      rgba(36, 36, 52, 0.5) 81px
+    );
+  }
+}
+/* End */
+
+/* Start | Beyond text background */
+.boosts-bg::before {
+  content: "";
+  display: inline-block;
+  background-image: url("/assets/images/boosts-bg.webp"); /* Add the image */
+  background-size: cover; /* or contain based on your needs */
+  background-repeat: no-repeat;
+  width: 264px;
+  height: 95px;
+  position: absolute;
+  z-index: -1;
+  left: -10px;
+  top: 4px;
+}
+@media only screen and (max-width: 1023px) {
+  .boosts-bg::before {
+    display: none;
+  }
+}
+/* End */

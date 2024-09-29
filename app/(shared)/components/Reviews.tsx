@@ -17,7 +17,7 @@ async function Reviews({
 }) {
   const reviews = await getReviews({ limit: 9 });
   return (
-    <section className="relative pt-[70px] lg:pt-[140px] pb-[60px] lg:pb-[124px] bg-[#f9f8f3]">
+    <section className="relative pt-[70px] lg:pt-[140px] pb-[60px] lg:pb-[124px] bg-[#f9f8f3] static-background">
       <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">
         <Image
           src="/assets/images/shape-7-copy-12.svg"

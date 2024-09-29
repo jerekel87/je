@@ -137,18 +137,24 @@ function Footer() {
         </div>
         <div className="container px-2 lg:px-[30px] mx-auto lg:max-w-[1414px]">
           <div
-            className="grid grid-cols-1 lg:grid-cols-2 rounded-[10px] lg:left-0 lg:right-auto left-4 right-4 bg-[#fff500]"
+            className="relative grid grid-cols-1 lg:grid-cols-2 rounded-[10px] lg:left-0 lg:right-auto left-4 right-4 bg-[#fff500] static-background"
             // style={{
             //   backgroundImage:
             //     "linear-gradient(to bottom right, #fff500, #fff)",
             // }}
           >
-            <div className="relative transform row-start-2 lg:row-start-auto lg:scale-[1.09] lg:origin-bottom-left rounded-bl-[10px] w-full pb-[100%] lg:pb-0 lg:top-0 overflow-hidden">
+            <div className="relative transform row-start-2 lg:row-start-auto rounded-l-[10px] w-full pb-[100%] lg:pb-0 lg:top-0 overflow-hidden">
               <Image
                 src="/assets/images/layer-20@3x.webp"
                 fill
                 alt="Rocket"
-                className="object-cover lg:rounded-bl-[10px]"
+                className="object-cover lg:rounded-bl-[10px] lg:hidden"
+              />
+              <Image
+                src="/assets/images/layer-7@2x.webp"
+                fill
+                alt="Jeremy"
+                className="hidden lg:block object-cover lg:rounded-bl-[10px]"
               />
               <div className="absolute w-full bottom-0 p-[28px] lg:hidden mt-8 lg:mt-[63px] gap-4 lg:gap-[27px] grid grid-cols-2">
                 <Button>BUSINESS TIPS</Button>
@@ -162,7 +168,11 @@ function Footer() {
             <div className="p-[26px] pt-[35px] lg:p-[86px] lg:pb-[100px] lg:pl-[0]">
               <h3 className="font-portlin tracking-[0.5px] text-[50px] xl:text-[100px] leading-[.9]">
                 SOLUTIONS THAT
-                <br className="hidden lg:block" /> BOOSTS REVENUE
+                <br className="hidden lg:block" />{" "}
+                <span className="relative inline-block boosts-bg text-white z-[1]">
+                  BOOSTS
+                </span>{" "}
+                REVENUE
                 <br className="hidden lg:block" /> FOR TOMORROW
               </h3>
               <p className="text-sm leading-normal lg:text-lg mt-[22px] lg:mt-[28px] max-w-[470px]">
