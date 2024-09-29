@@ -36,15 +36,15 @@ async function SectionFour({ projects }: { projects: any[] }) {
         </div>
       </div>
 
-      <div className="hidden lg:block -bottom-[8px] relative">
+      <div className="-bottom-[8px] relative">
         <ProjectMarquee projects={projects} />
       </div>
 
-      <div className="lg:hidden grid grid-cols-2">
+      {/* <div className="lg:hidden grid grid-cols-2">
         {projects.slice(0, 4).map((project, i) => (
           <ProjectItem key={i} project={project} />
         ))}
-      </div>
+      </div> */}
     </section>
   );
 }
