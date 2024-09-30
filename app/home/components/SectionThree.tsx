@@ -38,7 +38,7 @@ function SectionThreeItem({
             preserveAspectRatio="xMidYMid meet"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               fill="#141423"
               d="M11.5.313 23 20.312H0L11.5.313z"
             />

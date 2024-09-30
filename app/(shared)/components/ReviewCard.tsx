@@ -1,7 +1,12 @@
-import { ReactNode } from "react";
+import { ReactNode, useRef } from "react";
 import StarRating from "./StarRating";
 import Image from "next/image";
 import ShowMoreText from "react-show-more-text";
+import {
+  ShowMore,
+  ShowMoreRef,
+  ShowMoreToggleLinesFn,
+} from "@re-dev/react-truncate";
 import { Card } from "./ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { generateAvatarInitials } from "../lib/utils";
@@ -31,6 +36,13 @@ function ReviewCard({
   platformName: string;
   images?: any[];
 }) {
+  // The Toggle method will be passed back through `useImperativeHandle`
+  const ref = useRef<ShowMoreRef>(null);
+
+  // Custom buttons can be expanded and collapsed through this method
+  const toggleLines: ShowMoreToggleLinesFn = (e) => {
+    ref.current?.toggleLines(e);
+  };
   return (
     <Card className="p-4 lg:p-[35px] rounded lg:rounded-[10px] shadow-[9.7px_10.1px_35px_0_rgba(0,0,0,0.08)] border-none h-max">
       <div className="flex gap-2 lg:gap-[18px] items-center">
@@ -66,7 +78,7 @@ function ReviewCard({
         </div>
       </div>
       <div className="py-[30px] text-sm lg:text-[17px] leading-normal lg:leading-[1.65]">
-        <ShowMoreText
+        {/* <ShowMoreText
           lines={4}
           more="More"
           less="Less"
@@ -74,7 +86,24 @@ function ReviewCard({
           truncatedEndingComponent={"... "}
         >
           {text}
-        </ShowMoreText>
+        </ShowMoreText> */}
+        <ShowMore
+          ref={ref}
+          lines={4}
+          more={
+            <button onClick={toggleLines}>
+              ... <span className="underline">More</span>
+            </button>
+          }
+          less={
+            <button onClick={toggleLines} className="underline">
+              {" "}
+              Less
+            </button>
+          }
+        >
+          {text}
+        </ShowMore>
 
         {images && images?.length > 0 && (
           <Swiper
