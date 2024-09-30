@@ -13,6 +13,8 @@ import { generateAvatarInitials } from "../lib/utils";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { urlForImage } from "@/sanity/lib/image";
 import { Mousewheel } from "swiper/modules";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/scrollbar";
@@ -115,15 +117,17 @@ function ReviewCard({
           >
             {images?.map((image, i) => (
               <SwiperSlide key={i}>
-                <div className="relative pb-[100%] border border-[#f0efed]">
-                  <Image
-                    src={urlForImage(image)}
-                    fill
-                    alt={platformName}
-                    className="object-contain"
-                    quality="100"
-                  />
-                </div>
+                <Zoom>
+                  <div className="relative pb-[100%] border border-[#f0efed]">
+                    <Image
+                      src={urlForImage(image)}
+                      fill
+                      alt={platformName}
+                      className="object-contain"
+                      quality="100"
+                    />
+                  </div>
+                </Zoom>
               </SwiperSlide>
             ))}
           </Swiper>
