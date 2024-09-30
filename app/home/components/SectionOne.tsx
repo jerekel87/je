@@ -59,6 +59,13 @@ function SectionOne({ articleLink }: { articleLink: string }) {
           </div>
           <div className="relative w-[212%] mt-0 lg:-top-[6px] transform left-[50%] -translate-x-1/2 lg:w-full">
             <Image
+              src="/assets/images/truck-lightblue-2.png"
+              width="2816"
+              height="1447"
+              alt="background"
+              className="absolute w-[75.3%] -left-[3%] -top-[6%]"
+            />
+            <Image
               src="/assets/images/pickup-2.webp"
               width="1639"
               height="617"
