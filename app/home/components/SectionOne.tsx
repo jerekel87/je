@@ -63,18 +63,18 @@ function SectionOne({ articleLink }: { articleLink: string }) {
               width="1639"
               height="617"
               alt="Pickup"
-              className="relative w-[60.6%] lg:w-[77.6%] transform left-1/2 -translate-x-1/2 z-[1]"
+              className="relative w-[75.3%] transform left-1/2 -translate-x-1/2 z-[1]"
             />
             <Image
               src="/assets/images/pickup-dropshadow-2.webp"
               width="1920"
               height="247"
               alt="Pickup drop shadow"
-              className="absolute -bottom-[20.7%] left-[1%]"
+              className="absolute -bottom-[20%] left-[2.8%] w-[94.8%]"
             />
           </div>
 
-          <div className="relative top-[10px] lg:-top-[36px] text-xl lg:text-[41px] text-white font-portlin tracking-[0.5px] w-max mx-auto">
+          <div className="relative -top-[12px] lg:-top-[36px] text-xl lg:text-[41px] text-white font-portlin tracking-[0.5px] w-max mx-auto">
             <p className="leading-none">MY HVAC GUY REVENUE INCREASED BY</p>
             <div className="flex items-center gap-[10px] lg:gap-[15px]">
               <p className="leading-none">218% SINCE REBRANDING</p>
@@ -97,7 +97,7 @@ function SectionOne({ articleLink }: { articleLink: string }) {
           </div>
         </div>
       </div>
-      <div className="h-[34px] lg:hidden" />
+      <div className="h-[20px] lg:hidden" />
     </section>
   );
 }
