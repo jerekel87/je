@@ -34,7 +34,7 @@ function SolutionImagesMobile({ images }: { images: any[] }) {
               src={urlForImage(image)}
               fill
               alt="Solution image"
-              className="rounded-[5px] w-full h-full object-cover"
+              className="rounded-[6px] w-full h-full object-cover"
               quality={100}
             />
           </li>
@@ -116,7 +116,7 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
                     >
                       {solution.images.map((image: any, i: number) => (
                         <SwiperSlide key={i}>
-                          <div className="relative pb-[82.5%] rounded-[5px]">
+                          <div className="relative pb-[82.5%] rounded-[6px]">
                             <Image
                               src={urlForImage(image)}
                               height="132"

@@ -59,7 +59,7 @@ function SketchConcept({ before, after }: { before: string; after: string }) {
       ref={sketchContainerRef}
       onMouseMove={handleMouseMove}
       onTouchMove={handleTouchMove}
-      className="w-full pb-[100%] bg-transparent rounded lg:rounded-[10px] overflow-hidden relative"
+      className="w-full pb-[100%] bg-transparent rounded-[6px] lg:rounded-[10px] overflow-hidden relative"
     >
       <Image
         src={before}

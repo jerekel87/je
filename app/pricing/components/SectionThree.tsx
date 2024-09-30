@@ -28,7 +28,7 @@ function SectionThree({ projects }: { projects: any[] }) {
             {projects.map((project, i) => (
               <div
                 key={i}
-                className="flex overflow-hidden rounded-[5px] lg:rounded-[8px] last:hidden lg:last:flex"
+                className="flex overflow-hidden rounded-[6px] lg:rounded-[8px] last:hidden lg:last:flex"
               >
                 <ProjectItem key={i} project={project} />
               </div>

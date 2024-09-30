@@ -13,7 +13,7 @@ function SectionTwo() {
       </div>
       <div className="container px-3 mx-auto grid grid-cols-1 lg:grid-cols-[60%,40%]">
         <div>
-          <div className="w-full h-0 pb-[75.8%] relative rounded-[8px] lg:rounded-[10px] bg-black">
+          <div className="w-full h-0 pb-[75.8%] relative rounded-[6px] lg:rounded-[10px] bg-black">
             <div className="w-full pb-[56.4%] absolute top-1/2 -translate-y-1/2">
               <iframe
                 className="w-full h-full absolute top-0 left-0"

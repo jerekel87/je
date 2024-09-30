@@ -26,7 +26,7 @@ function SectionThreeItem({
           src={imageUrl}
           fill
           alt={`${percentage}% revenue increase`}
-          className="object-cover rounded-sm lg:rounded-[8px] absolute"
+          className="object-cover rounded-[6px] lg:rounded-[8px] absolute"
         />
       </div>
       <div className="flex items-end gap-[10px] lg:gap-[15px] mt-[28px] lg:mt-[38px] max-w-[480px]">

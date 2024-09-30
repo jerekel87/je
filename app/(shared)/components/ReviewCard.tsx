@@ -44,7 +44,7 @@ function ReviewCard({
     ref.current?.toggleLines(e);
   };
   return (
-    <Card className="p-4 lg:p-[35px] rounded lg:rounded-[10px] shadow-[9.7px_10.1px_35px_0_rgba(0,0,0,0.08)] border-none h-max">
+    <Card className="p-4 lg:p-[35px] rounded-[6px] lg:rounded-[10px] shadow-[9.7px_10.1px_35px_0_rgba(0,0,0,0.08)] border-none h-max">
       <div className="flex gap-2 lg:gap-[18px] items-center">
         <Avatar className="size-[40px] lg:size-[60px]">
           <AvatarImage src={avatar} alt={reviewerName} />

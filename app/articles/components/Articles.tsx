@@ -99,7 +99,7 @@ function Articles({
                   href={`/articles/${article.slug?.current}`}
                   className="hover:underline block"
                 >
-                  <div className="w-full pb-[75%] relative mt-8 lg:mt-[40px] rounded-[8px] overflow-hidden">
+                  <div className="w-full pb-[75%] relative mt-8 lg:mt-[40px] rounded-[6px] lg:rounded-[8px] overflow-hidden">
                     <Image
                       src={urlForImage(article.mainImage as any)}
                       alt={article.title || ""}
@@ -123,7 +123,7 @@ function Articles({
                 href={`/articles/${article.slug?.current}`}
                 className="block w-full"
               >
-                <div className="w-full pb-[75%] relative rounded-[8px] overflow-hidden">
+                <div className="w-full pb-[75%] relative rounded-[6px] lg:rounded-[8px] overflow-hidden">
                   <Image
                     src={urlForImage(article.mainImage as any)}
                     alt={article.title || ""}

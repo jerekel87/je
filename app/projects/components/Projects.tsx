@@ -93,7 +93,7 @@ function Projects({
               <Link
                 href={`/projects/${project.slug?.current}`}
                 key={project._id}
-                className="relative w-full pb-[85.5%] bg-gray-400 rounded-[5px] lg:rounded-[8px] overflow-hidden"
+                className="relative w-full pb-[85.5%] bg-gray-400 rounded-[6px] lg:rounded-[8px] overflow-hidden"
               >
                 <Image
                   loader={() => src}

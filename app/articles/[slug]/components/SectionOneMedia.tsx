@@ -15,7 +15,7 @@ function SectionOneMedia({ article }: { article: Article }) {
       </div>
 
       <div className="w-full h-0 pb-[75.8%] relative">
-        <div className="w-full h-0 pb-[75.8%] relative rounded-[8px] lg:rounded-[10px] bg-black overflow-hidden">
+        <div className="w-full h-0 pb-[75.8%] relative rounded-[6px] lg:rounded-[10px] bg-black overflow-hidden">
           {article.mainVideoLink ? (
             <div className="w-full pb-[56.4%] absolute top-1/2 -translate-y-1/2">
               <ReactPlayer

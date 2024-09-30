@@ -199,7 +199,7 @@ function SectionFive() {
 
         <div className="bg-primary lg:bg-white flex flex-col lg:flex-row rounded-[8px] text-white mt-[30px] lg:mt-[60px] lg:gap-[30px] justify-between">
           {/* Card */}
-          <div className="relative lg:max-w-[810px] lg:bg-[#141423] p-6 lg:py-[48px] lg:px-[40px] rounded-[15px]">
+          <div className="relative lg:max-w-[810px] lg:bg-[#141423] p-6 lg:py-[48px] lg:px-[40px] rounded-[6px] lg:rounded-[15px]">
             <h2 className="text-[45px] lg:text-[79.8px] font-portlin tracking-[0.5px] leading-[.88]">
               INFINITE EVERYTHING MEMBERSHIP
             </h2>
@@ -208,7 +208,7 @@ function SectionFive() {
             <ul className="grid grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-[20px] mt-[30px] lg:mt-[55px]">
               {services.map((service) => (
                 <li key={service.name} className="pb-[82.6%] relative">
-                  <div className="rounded-[8px] bg-[#262635] w-full h-full absolute p-3 lg:p-[27px] flex flex-col justify-between gap-1">
+                  <div className="rounded-[6px] lg:rounded-[8px] bg-[#262635] w-full h-full absolute p-3 lg:p-[27px] flex flex-col justify-between gap-1">
                     <span className="text-secondary -rotate-[6deg] size-8 lg:size-[38px] mt-2 lg:mt-5">
                       {service.icon}
                     </span>
@@ -251,7 +251,7 @@ function SectionFive() {
 
           {/* Package Details */}
           <div className="relative w-full mt-1 lg:max-w-[360px] h-full px-6 lg:px-0 pb-[30px] lg-pb-0">
-            <div className="flex flex-col z-[1] lg:-translate-y-[132px] lg:left-0 lg:absolute w-full h-min rounded-[8px] lg:rounded-[15px] bg-secondary text-primary p-[30px] lg:p-[40px] max-w-[360px]">
+            <div className="flex flex-col z-[1] lg:-translate-y-[132px] lg:left-0 lg:absolute w-full h-min rounded-[6px] lg:rounded-[15px] bg-secondary text-primary p-[30px] lg:p-[40px] max-w-[360px]">
               {/* Subscription toggle button */}
               <div className="cursor-pointer rounded-full border border-primary p-1 flex relative ">
                 <div className="w-full">

@@ -37,7 +37,7 @@ export default function NavbarMobile() {
       style={{ display: hideNavbar ? "none" : "block" }}
       className={cn("fixed bottom-4 px-4 w-full z-50")}
     >
-      <Card className="lg:hidden rounded-[10px] border-none overflow-hidden shadow-[0px_9.5px_6.5px_0_rgba(0,0,0,0.2)]">
+      <Card className="lg:hidden rounded-[6px] border-none overflow-hidden shadow-[0px_9.5px_6.5px_0_rgba(0,0,0,0.2)]">
         <div
           className={cn(
             "transition-all overflow-hidden max-h-0",

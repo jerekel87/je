@@ -25,7 +25,7 @@ async function SectionOne() {
           <div className="w-full lg:max-w-[486px]">
             <div className="h-0 pb-[75.8%] relative">
               <iframe
-                className="w-full h-full rounded lg:rounded-[10px] absolute top-0 left-0"
+                className="w-full h-full rounded-[6px] lg:rounded-[10px] absolute top-0 left-0"
                 src="https://www.youtube.com/embed/NpEaa2P7qZI?si=8Dc3pjtkxOqg4XSZ"
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
