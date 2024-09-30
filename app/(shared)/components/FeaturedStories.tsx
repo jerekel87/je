@@ -27,11 +27,11 @@ function FeaturedStories({
             fill
             className="object-contain sm:transform-none scale-[1.6] -translate-y-[4px]"
           />
-          <div className="absolute w-full h-full flex flex-col justify-center items-center">
-            <div className="relative w-[100px] h-[25px] lg:w-[239px] lg:h-[52px] mx-auto">
+          <div className="absolute w-full h-full flex flex-col gap-[8px] lg:gap-0 justify-center items-center">
+            <div className="relative w-[120px] h-[25px] lg:w-[239px] lg:h-[52px] mx-auto">
               <Image
                 src="/assets/images/experience-the-same@3x.webp"
-                alt="Your industry peers"
+                alt="Experience the same"
                 fill
                 className="object-contain"
               />
