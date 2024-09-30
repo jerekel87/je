@@ -52,6 +52,7 @@ function FeaturedStories({
               text={review.reviewText}
               platformLogoUrl={urlForImage(review.reviewPlatformLogo)}
               platformName={review.reviewPlatformName}
+              images={review.images}
             />
           ))}
         </div>
@@ -72,6 +73,7 @@ function FeaturedStories({
                 text={review.reviewText}
                 platformLogoUrl={urlForImage(review.reviewPlatformLogo)}
                 platformName={review.reviewPlatformName}
+                images={review.images}
               />
             </SwiperSlide>
           ))}

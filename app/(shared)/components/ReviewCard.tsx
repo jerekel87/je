@@ -5,6 +5,12 @@ import ShowMoreText from "react-show-more-text";
 import { Card } from "./ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { generateAvatarInitials } from "../lib/utils";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { urlForImage } from "@/sanity/lib/image";
+import { Mousewheel } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/scrollbar";
 
 function ReviewCard({
   avatar,
@@ -14,6 +20,7 @@ function ReviewCard({
   text,
   platformLogoUrl,
   platformName,
+  images,
 }: {
   avatar?: string;
   reviewerName: string;
@@ -22,6 +29,7 @@ function ReviewCard({
   text?: ReactNode;
   platformLogoUrl?: string;
   platformName: string;
+  images?: any[];
 }) {
   return (
     <Card className="p-4 lg:p-[35px] rounded lg:rounded-[10px] shadow-[9.7px_10.1px_35px_0_rgba(0,0,0,0.08)] border-none h-max">
@@ -67,6 +75,30 @@ function ReviewCard({
         >
           {text}
         </ShowMoreText>
+
+        {images && images?.length > 0 && (
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={4}
+            className="mt-[32px]"
+            mousewheel
+            modules={[Mousewheel]}
+          >
+            {images?.map((image, i) => (
+              <SwiperSlide key={i}>
+                <div className="relative pb-[100%] border border-[#f0efed]">
+                  <Image
+                    src={urlForImage(image)}
+                    fill
+                    alt={platformName}
+                    className="object-contain"
+                    quality="100"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
       </div>
       <div className="border-t border-[#f0efed] pt-4 lg:pt-[35px] flex justify-between">
         <StarRating

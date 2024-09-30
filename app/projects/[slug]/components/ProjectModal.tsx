@@ -164,6 +164,7 @@ function ProjectModal({
                         firstReview.reviewPlatformLogo
                       )}
                       platformName={firstReview.reviewPlatformName}
+                      images={review.images}
                     />
                     <p className="text-center text-[15px] text-[#c7c6c4] mt-[23px]">
                       Maintaining a 5/5 Star rating with over 1,600+ reviews

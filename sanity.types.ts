@@ -474,6 +474,18 @@ export type Review = {
   rating?: number;
   reviewText?: string;
   reviewDate?: string;
+  images?: Array<{
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+    _key: string;
+  }>;
   reviewPlatform?: {
     _ref: string;
     _type: "reference";

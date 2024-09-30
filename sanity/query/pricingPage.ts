@@ -17,13 +17,7 @@ export async function getPricingPageSetting(): Promise<PricingPage> {
       mainImage
     },
     featuredStories[]->{
-      _id,
-      reviewerName,
-      reviewerInfo,
-      rating,
-      reviewText,
-      reviewDate,
-      avatar,
+      ...,
       "reviewPlatformLogo": reviewPlatform->logo,
       "reviewPlatformName": reviewPlatform->name
     },

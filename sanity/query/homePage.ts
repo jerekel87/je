@@ -8,13 +8,7 @@ export async function getHomePageSetting(): Promise<HomePage> {
     _id,
     articleLink,
     featuredStories[]->{
-      _id,
-      reviewerName,
-      reviewerInfo,
-      rating,
-      reviewText,
-      reviewDate,
-      avatar,
+      ...,
       "reviewPlatformLogo": reviewPlatform->logo,
       "reviewPlatformName": reviewPlatform->name
     },

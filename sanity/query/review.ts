@@ -38,25 +38,13 @@ export async function getReviews({
   }
 
   let query = `*[_type == "review" && _id > $lastId] | order(_createdAt ${sortByValue}) [0...$limit]{
-    _id,
-    reviewerName,
-    reviewerInfo,
-    rating,
-    reviewText,
-    reviewDate,
-    avatar,
+    ...,
     "reviewPlatformLogo": reviewPlatform->logo,
     "reviewPlatformName": reviewPlatform->name
   }`;
   if (platformId) {
     query = `*[_type == "review" && reviewPlatform._ref == $platformId && _id > $lastId] | order(_createdAt ${sortByValue}) [0...$limit]{
-        _id,
-        reviewerName,
-        reviewerInfo,
-        rating,
-        reviewText,
-        reviewDate,
-        avatar,
+        ...,
         "reviewPlatformLogo": reviewPlatform->logo,
         "reviewPlatformName": reviewPlatform->name
       }`;
@@ -78,8 +66,7 @@ export async function getReviewsPlatforms(): Promise<
   (ReviewPlatform & { logoUrl: string })[]
 > {
   let query = `*[_type == "reviewPlatform"]{
-      _id,
-      name,
+      ...,
       "logoUrl": logo.asset->url
     }`;
 
