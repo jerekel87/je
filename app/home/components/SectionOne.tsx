@@ -57,24 +57,24 @@ function SectionOne({ articleLink }: { articleLink: string }) {
               />
             </div>
           </div>
-          <div className="relative w-[212%] -mt-[8px] lg:mt-0 lg:-top-[27px] transform left-[50%] -translate-x-1/2 lg:w-full">
+          <div className="relative w-[212%] mt-0 lg:-top-[6px] transform left-[50%] -translate-x-1/2 lg:w-full">
             <Image
-              src="/assets/images/pickup.webp"
+              src="/assets/images/pickup-2.webp"
               width="1639"
               height="617"
               alt="Pickup"
-              className="relative w-[86%] transform left-1/2 -translate-x-1/2 z-[1]"
+              className="relative w-[60.6%] lg:w-[77.6%] transform left-1/2 -translate-x-1/2 z-[1]"
             />
             <Image
-              src="/assets/images/drop-shadow.webp"
+              src="/assets/images/pickup-dropshadow-2.webp"
               width="1920"
               height="247"
               alt="Pickup drop shadow"
-              className="absolute -bottom-[15.7%]"
+              className="absolute -bottom-[20.7%] left-[1%]"
             />
           </div>
 
-          <div className="text-xl lg:text-[41px] text-white font-portlin tracking-[0.5px] w-max mx-auto">
+          <div className="relative top-[10px] lg:-top-[36px] text-xl lg:text-[41px] text-white font-portlin tracking-[0.5px] w-max mx-auto">
             <p className="leading-none">MY HVAC GUY REVENUE INCREASED BY</p>
             <div className="flex items-center gap-[10px] lg:gap-[15px]">
               <p className="leading-none">218% SINCE REBRANDING</p>
@@ -97,7 +97,7 @@ function SectionOne({ articleLink }: { articleLink: string }) {
           </div>
         </div>
       </div>
-      <div className="h-[34px]" />
+      <div className="h-[34px] lg:hidden" />
     </section>
   );
 }
