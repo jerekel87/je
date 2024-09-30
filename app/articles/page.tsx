@@ -26,7 +26,7 @@ async function ArticlesPage({
       <MainHeader />
       <main>
         <Header />
-        <div className="relative pt-[30px] lg:pt-[140px] pb-[124px]">
+        <div className="relative pt-[30px] lg:pt-[106px] pb-[124px]">
           <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">
             <Image
               src="/assets/images/shape-7-copy-7.svg"
