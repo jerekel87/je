@@ -8,10 +8,13 @@ function Aside() {
         <h2 className="leading-none text-[20px] font-bold">
           Articles to Your Inbox
         </h2>
-        <p className="leading-none mt-[18px] text-[15px] text-center">
+        <p className="leading-snug mt-[12px] text-[15px] text-center">
           Get our article posts delivered to your email every week.
         </p>
-        <Button size="sm" className="mt-[30px] w-full max-w-[165px]">
+        <Button
+          size="sm"
+          className="mt-[24px] w-full max-w-[165px] font-mona-sans font-bold"
+        >
           Subscribe
         </Button>
       </div>
