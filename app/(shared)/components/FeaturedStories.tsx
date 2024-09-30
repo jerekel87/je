@@ -59,7 +59,7 @@ function FeaturedStories({
           loop
           spaceBetween={16}
           slidesPerView={1.2}
-          className="lg:rounded-[15px] lg:!hidden !overflow-visible"
+          className="lg:rounded-[15px] lg:!hidden !overflow-visible mt-[10px]"
         >
           {featuredStories.map((review, i) => (
             <SwiperSlide key={i}>
