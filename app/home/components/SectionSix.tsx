@@ -10,7 +10,7 @@ import Link from "next/link";
 function SectionSix({ sketchConcept }: { sketchConcept: any }) {
   return (
     <section className="relative py-[70px] lg:py-[140px] bg-primary static-background before:z-[1]">
-      <div className="absolute w-full h-[27px] lg:h-[37px] -top-[7px] z-[1]">
+      <div className="absolute w-full h-[27px] lg:h-[37px] -top-[7px] z-[1] static-background before:z-[1] before:h-[90%] before:top-[9%]">
         <Image
           src="/assets/images/shape-7-copy-11.svg"
           fill
