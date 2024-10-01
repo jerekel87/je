@@ -22,7 +22,7 @@ async function ArticlePage({ params }: { params: { slug: string } }) {
       <main className="container px-3 lg:max-w-[1146px] pb-[100px] lg:pb-[152px] pt-[40px] lg:pt-[80px]">
         <SectionOne article={article} />
         <div className="lg:flex lg:gap-[35px] lg:pl-[117px] mt-6 lg:mt-[58px]">
-          <div>
+          <div className="w-full">
             <SectionOneMedia article={article} />
 
             {(article.block?.title || article.block?.body) && (
