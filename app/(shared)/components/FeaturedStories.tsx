@@ -80,7 +80,7 @@ function FeaturedStories({
           ))}
         </Swiper>
 
-        <p className="text-xs leading-normal lg:text-lg mt-[30px] lg:mt-[40px] text-center text-[#53545c]">
+        <p className="relative z-[1] text-xs leading-normal lg:text-lg mt-[30px] lg:mt-[40px] text-center text-[#53545c]">
           At Jeremy Ellsworth Designs LLC, we are committed to your success.
           <br className="hidden lg:block" />
           We believe that our success lies in your success, and we are dedicated
