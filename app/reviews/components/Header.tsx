@@ -3,7 +3,7 @@ import Image from "next/image";
 function Header({ articleLink }: { articleLink: string }) {
   return (
     <header className="bg-[#FFDE09] pt-[30px] pb-4 lg:pt-[68px] lg:pb-0 relative static-background">
-      <div className="container relative text-primary">
+      <div className="container !pr-3 relative text-primary">
         <h1 className="text-[60px] lg:text-[100px] text-primary font-portlin tracking-[0.5px] leading-[.9]">
           INDUSTRY PEERS&apos; <br />
           STORIES
