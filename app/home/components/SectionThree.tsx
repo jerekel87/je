@@ -43,7 +43,7 @@ function SectionThreeItem({
               d="M11.5.313 23 20.312H0L11.5.313z"
             />
           </svg>
-          <span className="leading-none">{percentage}%</span>
+          <span className="leading-none relative top-[1px]">{percentage}%</span>
         </div>
         <h3 className="text-white text-[22px] lg:text-[35px] -translate-y-[2px] font-portlin tracking-[0.5px] leading-[.9]">
           {title}
