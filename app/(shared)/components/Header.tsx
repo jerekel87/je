@@ -67,7 +67,7 @@ function Header() {
 
           <div className="grow" />
 
-          <div className="mr-[32px] hidden lg:block">
+          <div className="mr-[32px] hidden lg:block mt-[6px]">
             <HeaderRating />
           </div>
 
