@@ -17,7 +17,7 @@ function FeaturedStories({
   })[];
 }) {
   return (
-    <section className="relative py-[53px] lg:pt-[80px] lg:pb-[80px]">
+    <section className="relative py-[53px] lg:pt-[80px] lg:pb-[80px] bg-[#f9f8f3] static-background-hard">
       <div className="w-full h-[690px] bg-[linear-gradient(transparent,#f7f5ef)] absolute z-[-1] bottom-0" />
       <div className="container px-3 mx-auto overflow-hidden lg:overflow-visible">
         <div className="relative h-[138px] lg:h-[250px] w-full">
@@ -43,17 +43,18 @@ function FeaturedStories({
         </div>
         <div className="hidden lg:grid grid-col-1 lg:grid-cols-3 gap-4 lg:gap-[30px] mt-4 lg:mt-0 lg:[&>*:nth-child(2)]:mt-[40px] lg:[&>*:nth-child(3)]:mt-[80px]">
           {featuredStories.map((review) => (
-            <ReviewCard
-              key={review._id}
-              avatar={urlForImage(review.avatar as any)}
-              reviewerName={review.reviewerName || ""}
-              reviewerInfo={review.reviewerInfo || ""}
-              rating={review.rating || 5}
-              text={review.reviewText}
-              platformLogoUrl={urlForImage(review.reviewPlatformLogo)}
-              platformName={review.reviewPlatformName}
-              images={review.images}
-            />
+            <div key={review._id} className="relative z-[1]">
+              <ReviewCard
+                avatar={urlForImage(review.avatar as any)}
+                reviewerName={review.reviewerName || ""}
+                reviewerInfo={review.reviewerInfo || ""}
+                rating={review.rating || 5}
+                text={review.reviewText}
+                platformLogoUrl={urlForImage(review.reviewPlatformLogo)}
+                platformName={review.reviewPlatformName}
+                images={review.images}
+              />
+            </div>
           ))}
         </div>
         <Swiper
@@ -86,7 +87,7 @@ function FeaturedStories({
           to helping you achieve it.
         </p>
       </div>
-      <div className="absolute w-full h-[27px] lg:h-[37px] -bottom-[6px] z-[1]">
+      <div className="absolute w-full h-[27px] lg:h-[37px] -bottom-[6px] z-[1] static-background-hard before:z-[1] before:h-[86%]">
         <Image
           src="/assets/images/shape-7-copy-14.svg"
           fill

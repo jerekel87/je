@@ -133,7 +133,7 @@ const categories = ["Creative", "Marketing", "Multimedia"];
 
 function SectionFour() {
   return (
-    <section className="bg-primary  py-[70px] lg:py-[140px]">
+    <section className="bg-primary relative py-[70px] lg:py-[140px] static-background-light">
       <div className="container px-3 mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-[30px] lg:gap-[100px]">
         <div>
           <div className="w-full h-0 pb-[100%] relative">

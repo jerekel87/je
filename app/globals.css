@@ -93,6 +93,16 @@
 /*  */
 
 /* Start | Static effect background */
+.static-background-light::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/assets/images/static-effect-old.png") 0 0;
+  opacity: 0.8;
+}
 .static-background::before {
   content: "";
   position: absolute;
@@ -100,8 +110,23 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: transparent url("/assets/images/static-effect.png") 0 0;
-  opacity: 0.8;
+  background: url("/assets/images/static-effect-old.png") 0 0;
+  opacity: 1;
+}
+.static-background-hard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    url("/assets/images/static-effect-old.png") 0 0,
+    url("/assets/images/static-effect-old.png") 0 0,
+    url("/assets/images/static-effect-old.png") 0 0,
+    url("/assets/images/static-effect-old.png") 0 0,
+    url("/assets/images/static-effect-old.png") 0 0;
+  opacity: 1;
 }
 .lg-static-background::before {
   content: "";
@@ -110,8 +135,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: transparent url("/assets/images/static-effect.png") 0 0;
-  opacity: 0.3;
+  background: transparent url("/assets/images/static-effect-old.png") 0 0;
+  opacity: 1;
 }
 @media only screen and (max-width: 1023px) {
   .lg-static-background::before {

@@ -92,7 +92,7 @@ function SectionThreeItemEmpty() {
 
 function SectionThree() {
   return (
-    <section className="bg-[#141423]  py-[70px] lg:py-[140px] striped-background static-background relative overflow-hidden">
+    <section className="bg-[#141423]  py-[70px] lg:py-[140px] striped-background static-background-light relative overflow-hidden">
       <div className="container px-3 mx-auto h-full relative z-[1]">
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-[120px]">
           <div>

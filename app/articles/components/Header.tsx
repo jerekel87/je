@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function Header() {
   return (
-    <header className="bg-[#00508f] pt-[30px] pb-4 lg:pt-[68px] lg:pb-0 relative">
+    <header className="bg-[#00508f] pt-[30px] pb-4 lg:pt-[68px] lg:pb-0 relative static-background">
       <div className="container relative text-white">
         <h1 className="text-[60px] lg:text-[100px] text-white font-portlin tracking-[0.5px] leading-[.9]">
           CURRATED <span className="text-[#fff500]">BRAND</span> <br /> ARTICLES

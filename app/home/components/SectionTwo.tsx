@@ -3,7 +3,7 @@ import Image from "next/image";
 function SectionTwo() {
   return (
     <section className="relative py-6 lg:py-[140px] pb-0 lg:pb-0">
-      <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">
+      <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px] static-background-hard before:z-[1] before:h-[86%] before:top-[5px]">
         <Image
           src="/assets/images/shape-7-copy-7-1.svg"
           fill

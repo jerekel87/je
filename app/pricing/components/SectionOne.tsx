@@ -65,10 +65,10 @@ import Image from "next/image";
 
 function SectionOne() {
   return (
-    <section className="relative py-6 pb-[50px] lg:py-[140px]">
-      <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">
+    <section className="relative bg-[#f9f8f3] py-6 pb-[50px] lg:py-[140px] static-background-hard">
+      <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px] static-background-hard before:z-[1] before:top-[12%] before:h-[86%]">
         <Image
-          src="/assets/images/shape-7-copy-7.svg"
+          src="/assets/images/shape-7-copy-7-1.svg"
           fill
           alt="Transition"
           className="object-cover"
@@ -89,7 +89,7 @@ function SectionOne() {
             </div>
           </div>
         </div>
-        <div className="lg:pl-[80px] mt-[28px] lg:mt-0 flex flex-col justify-center">
+        <div className="lg:pl-[80px] mt-[28px] lg:mt-0 flex flex-col justify-center relative z-[1]">
           <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.5px] leading-[0.9] text-balance">
             100% UNIQUE DESIGNS, EVERY TIME!
           </h1>
@@ -101,9 +101,9 @@ function SectionOne() {
           </p>
         </div>
       </div>
-      <div className="absolute w-full h-[27px] lg:h-[37px] -bottom-[6px] z-[1]">
+      <div className="absolute w-full h-[27px] lg:h-[37px] -bottom-[6px] z-[1] static-background-hard before:z-[1] before:h-[86%] before:top-[4%]">
         <Image
-          src="/assets/images/shape-7-copy-8.svg"
+          src="/assets/images/shape-7-copy-10-1.svg"
           fill
           alt="Transition"
           className="object-cover"

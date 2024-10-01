@@ -6,7 +6,7 @@ export const revalidate = 60;
 
 async function SectionFour({ projects }: { projects: any[] }) {
   return (
-    <section className="relative pt-[70px] lg:pt-[140px] bg-[#f9f8f3] static-background">
+    <section className="relative pt-[70px] lg:pt-[140px] bg-[#f9f8f3] static-background-hard">
       {/* <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">
         <Image
           src="/assets/images/shape-7-copy-7.svg"

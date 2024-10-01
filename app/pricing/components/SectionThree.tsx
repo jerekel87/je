@@ -3,16 +3,19 @@ import Image from "next/image";
 
 function SectionThree({ projects }: { projects: any[] }) {
   return (
-    <section id="package" className="relative pt-[70px] lg:pt-[140px]">
-      <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">
+    <section
+      id="package"
+      className="relative pt-[70px] lg:pt-[140px] bg-[#f9f8f3] static-background-hard"
+    >
+      <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px] static-background-hard before:z-[1] before:top-[12%] before:h-[86%]">
         <Image
-          src="/assets/images/shape-7-copy-7.svg"
+          src="/assets/images/shape-7-copy-7-1.svg"
           fill
           alt="Transition"
           className="object-cover"
         />
       </div>
-      <div className="container px-3 mx-auto">
+      <div className="container px-3 mx-auto relative z-[1]">
         <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.5px] leading-[0.9] text-balance">
           FEATURED PROJECTS
         </h1>

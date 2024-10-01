@@ -107,9 +107,9 @@ function SectionTwo({ sketchConcept }: { sketchConcept: any }) {
         backgroundImage:
           "linear-gradient(to top left, #0e9100, rgba(255,0,0,0), rgba(255,0,0,0), rgba(255,0,0,0))",
       }}
-      className="relative py-[70px] lg:py-[140px] bg-primary lg-static-background before:z-[1]"
+      className="relative py-[70px] lg:py-[140px] bg-primary static-background-light before:z-[1]"
     >
-      <div className="absolute w-full h-[27px] lg:h-[37px] -top-[7px] z-[1]">
+      <div className="absolute w-full h-[27px] lg:h-[37px] -top-[7px] z-[1] static-background-light before:z-[1]">
         <Image
           src="/assets/images/shape-7-copy-11.svg"
           fill

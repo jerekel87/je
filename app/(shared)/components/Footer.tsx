@@ -320,7 +320,7 @@ function Footer() {
           </div>
         </div>
         <div className="lg:border-t lg:border-[#252534] lg:mt-[88px]">
-          <div className="container px-3 text-[#666770] text-xs flex flex-col lg:flex-row text-center lg:text-left justify-between py-[40px]">
+          <div className="relative z-[1] container px-3 text-[#666770] text-xs flex flex-col lg:flex-row text-center lg:text-left justify-between py-[40px]">
             <span>
               © 2004-2024 Jeremy Ellsworth Designs LLC
               <br className="lg:hidden" /> All Rights Reserved

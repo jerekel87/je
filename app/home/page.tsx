@@ -17,7 +17,7 @@ async function HomePage() {
   return (
     <main>
       <SectionOne articleLink={homePageSetting?.articleLink || ""} />
-      <div className="relative static-background bg-[#f9f8f3]">
+      <div className="relative static-background-hard bg-[#f9f8f3]">
         <SectionTwo />
         <FeaturedStories
           featuredStories={homePageSetting.featuredStories as any[]}
