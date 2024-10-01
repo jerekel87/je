@@ -32,31 +32,6 @@ function ProjectModal({
         className="max-w-full h-svh  max-h-full bg-transparent border-none p-0 !rounded-none"
       >
         <div className="h-dvh w-full overflow-y-scroll">
-          {/* Floating buttons  */}
-          {/* <div className="hidden lg:block sticky z-[1] top-0 max-w-[900px] mx-auto">
-            <div className="absolute -right-[100px] top-[50svh] -translate-y-1/2 flex flex-col gap-[24px]">
-              <div className="flex flex-col items-center">
-                <ShareModal pathname={`projects/${project.slug?.current}`} />
-                <p className="mt-[10px] text-sm font-bold">Share</p>
-              </div>
-
-              <div className="flex flex-col items-center">
-                <CalComModal.Trigger>
-                  <div className="flex bg-primary items-center justify-center size-[70px] border-[1px] rounded-full border-muted">
-                    <Image
-                      src="/assets/images/telephone-stroke-rounded.svg"
-                      height="22"
-                      width="22"
-                      alt="telephone-stroke-rounded"
-                    />
-                  </div>
-                </CalComModal.Trigger>
-                <p className="mt-[10px] text-sm font-bold">Quote</p>
-              </div>
-            </div>
-          </div> */}
-          {/*  */}
-
           <div className="pt-[54px] pb-0 h-full relative w-full">
             <ModalCloseButton />
             {/* Separator */}
@@ -72,8 +47,8 @@ function ProjectModal({
 
             {/* Content */}
             <div className="relative min-h-svh bg-white">
-              <div className="max-w-[900px] mx-auto relative">
-                <div className="px-4 pt-[46px] lg:px-[54px]">
+              <div className="lg:max-w-[1122px] mx-auto relative">
+                <div className="px-4 pt-[46px] lg:px-[calc(117px+58px)]">
                   <div className="text-sm px-[12px] py-[10px] rounded-[5px] border border-foreground w-max font-medium leading-[.8]">
                     {project.industry.title}
                   </div>
@@ -88,9 +63,43 @@ function ProjectModal({
                     />
                   )}
                 </div>
-
-                <div className="px-3 relative">
-                  <div className="hidden lg:flex absolute -right-[100px] top-[50px] z-[1] flex-col gap-[24px]">
+                <div className="lg:flex gap-[35px] lg:pl-[117px] mt-6 lg:mt-[54px]">
+                  <div>
+                    <div className="relative px-3 lg:px-0">
+                      <Image
+                        src={urlForImage(project.mainImage as any)}
+                        width="900"
+                        height="900"
+                        alt={project.title || ""}
+                        className="rounded-[8px] lg:rounded-[10px]"
+                      />
+                    </div>
+                    {project.secondaryBody?.length && (
+                      <div className="px-4 lg:px-[54px] mt-[72px]">
+                        <PortableText
+                          className="text-sm leading-normal lg:text-lg text-muted-foreground [&_a]:underline [&_a]:text-blue-500"
+                          content={project.secondaryBody as any}
+                        />
+                      </div>
+                    )}
+                    {project.sliderImages && (
+                      <div className="mt-[50px] lg:mt-[70px]">
+                        <Carousel images={project.sliderImages as any} />
+                      </div>
+                    )}
+                    {project.secondaryImage && (
+                      <div className="px-3">
+                        <Image
+                          src={urlForImage(project.secondaryImage as any)}
+                          width="900"
+                          height="900"
+                          alt={project.secondaryImage?.alt || ""}
+                          className="rounded-[8px] lg:rounded-[10px] mt-[50px] lg:mt-[60px]"
+                        />
+                      </div>
+                    )}
+                  </div>
+                  <div className="sticky self-start hidden lg:flex top-[10px] pt-[40px] z-[1] flex-col gap-[24px]">
                     <div className="flex flex-col items-center">
                       <ShareModal
                         pathname={`projects/${project.slug?.current}`}
@@ -112,39 +121,7 @@ function ProjectModal({
                       <p className="mt-[10px] text-sm font-bold">Quote</p>
                     </div>
                   </div>
-
-                  <Image
-                    src={urlForImage(project.mainImage as any)}
-                    width="900"
-                    height="900"
-                    alt={project.title || ""}
-                    className="rounded-[8px] lg:rounded-[10px] mt-6 lg:mt-[54px]"
-                  />
                 </div>
-                {project.secondaryBody?.length && (
-                  <div className="px-4 lg:px-[54px] mt-[72px]">
-                    <PortableText
-                      className="text-sm leading-normal lg:text-lg text-muted-foreground [&_a]:underline [&_a]:text-blue-500"
-                      content={project.secondaryBody as any}
-                    />
-                  </div>
-                )}
-                {project.sliderImages && (
-                  <div className="mt-[50px] lg:mt-[70px]">
-                    <Carousel images={project.sliderImages as any} />
-                  </div>
-                )}
-                {project.secondaryImage && (
-                  <div className="px-3">
-                    <Image
-                      src={urlForImage(project.secondaryImage as any)}
-                      width="900"
-                      height="900"
-                      alt={project.secondaryImage?.alt || ""}
-                      className="rounded-[8px] lg:rounded-[10px] mt-[50px] lg:mt-[60px]"
-                    />
-                  </div>
-                )}
               </div>
 
               {firstReview && (

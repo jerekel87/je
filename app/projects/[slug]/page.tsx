@@ -9,11 +9,7 @@ async function Project({ params }: { params: { slug: string } }) {
 
   const project = await getProject({ slug });
 
-  return (
-    <>
-      <ProjectModal project={project} />
-    </>
-  );
+  return <ProjectModal project={project} />;
 }
 
 export default Project;
