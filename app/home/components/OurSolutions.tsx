@@ -85,7 +85,7 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
               value={String(i)}
               className="border-[#efefef] border-b-0 last:border-b data-[state=closed]:[&_*_button]:text-[#adadad]"
             >
-              <AccordionTrigger className="text-[30px] lg:h-[149px] border-t border-b-0 font-normal py-[24px] px-0 lg:!pl-0 leading-none !no-underline lg:text-[50px]">
+              <AccordionTrigger className="border-[#efefef] text-[30px] lg:h-[149px] border-t border-b-0 font-normal py-[28px] px-0 lg:!pl-0 leading-none !no-underline lg:text-[50px]">
                 <span className="font-portlin tracking-[0.5px] leading-none whitespace-nowrap w-[30%]">
                   {solution.name}
                 </span>
