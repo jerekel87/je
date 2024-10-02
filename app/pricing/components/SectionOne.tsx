@@ -89,7 +89,7 @@ function SectionOne() {
             </div>
           </div>
         </div>
-        <div className="lg:pl-[80px] mt-[28px] lg:mt-0 flex flex-col justify-center relative z-[1]">
+        <div className="lg:pl-[72px] mt-[28px] lg:mt-0 flex flex-col justify-center relative z-[1]">
           <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.5px] leading-[0.9] text-balance">
             100% UNIQUE DESIGNS, EVERY TIME!
           </h1>
