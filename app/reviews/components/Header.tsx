@@ -24,7 +24,7 @@ function Header({ articleLink }: { articleLink: string }) {
               className="object-contain"
             />
           </div>
-          <div className="w-full flex flex-col lg:flex-row lg:items-center lg:gap-[14px] border-t border-[#EDC500]">
+          <div className="w-full flex flex-col lg:flex-row lg:items-center lg:gap-[14px] border-t border-[#EDC500] relative z-[1]">
             <p className="text-primary text-xs lg:text-lg leading-normal font-bold pt-4 pb-1 lg:py-[32px]">
               Trinity Junk Removal Inc revenue increased by 186% since
               rebranding

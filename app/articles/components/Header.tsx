@@ -23,7 +23,7 @@ function Header() {
               className="object-contain"
             />
           </div>
-          <div className="w-full flex flex-col lg:flex-row lg:items-center lg:gap-[14px] border-t border-[#2463A7]">
+          <div className="w-full flex flex-col lg:flex-row lg:items-center lg:gap-[14px] border-t border-[#2463A7] relative z-[1]">
             <div className="flex lg:items-center gap-4 lg:gap-[24px]">
               <div className="hidden lg:block relative mt-4 lg:mt-0 h-[20px] lg:h-[38px] w-[41px] lg:w-[78px] shrink-0">
                 <Image

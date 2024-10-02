@@ -24,7 +24,7 @@ function Header({ articleLink }: { articleLink: string }) {
               className="object-contain"
             />
           </div>
-          <div className="w-full flex flex-col lg:flex-row lg:items-center lg:gap-[14px] border-t border-[#3D5FFF]">
+          <div className="w-full flex flex-col lg:flex-row lg:items-center lg:gap-[14px] border-t border-[#3D5FFF] relative z-[1]">
             <p className="text-white leading-normal text-xs lg:text-lg font-bold pt-4 pb-1 lg:py-[32px]">
               Hoffman Heating and Cooling revenue increased by 225% since
               rebranding

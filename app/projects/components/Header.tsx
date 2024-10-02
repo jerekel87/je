@@ -23,7 +23,7 @@ function Header({ articleLink }: { articleLink: string }) {
               className="object-contain"
             />
           </div>
-          <div className="w-full flex flex-col lg:flex-row lg:items-center lg:gap-[14px] border-t border-[#2bd06b]">
+          <div className="w-full flex flex-col lg:flex-row lg:items-center lg:gap-[14px] border-t border-[#2bd06b] relative z-[1]">
             <p className="text-white text-xs lg:text-lg leading-normal font-bold pt-4 pb-1 lg:py-[32px]">
               Copeland Home Services revenue increased by 200% since rebranding
             </p>

@@ -24,7 +24,7 @@ function Header({ articleLink }: { articleLink: string }) {
               className="object-contain"
             />
           </div>
-          <div className="w-full flex flex-col lg:flex-row lg:items-center lg:gap-[14px]  border-t border-[#f4312e]">
+          <div className="w-full flex flex-col lg:flex-row lg:items-center lg:gap-[14px]  border-t border-[#f4312e] relative z-[1]">
             <p className="text-white text-xs lg:text-lg leading-normal font-bold pt-4 pb-1 lg:py-[32px]">
               The Flash Electric revenue increased by 150% since rebranding
             </p>
