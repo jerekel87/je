@@ -17,7 +17,12 @@ function HeaderRating() {
     <div>
       <StarRating
         value={5}
-        text={<StarRating.Text>{formattedNumber}</StarRating.Text>}
+        text={
+          <StarRating.Text className="text-xs">
+            {formattedNumber}
+          </StarRating.Text>
+        }
+        ratingClass="max-w-[70px]"
       />
       <p className="text-[9.3px] lg:text-sm mt-[3px] leading-tight font-medium text-[#0d0c22]">
         Customer Satisfaction
