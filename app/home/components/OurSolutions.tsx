@@ -57,9 +57,9 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
   return (
     <section
       id="solutions"
-      className="relative pt-[53px] pb-[63px] lg:pt-[140px] lg:pb-[113px] static-background-our-solutions"
+      className="relative pt-[53px] pb-[63px] lg:pt-[140px] lg:pb-[113px]"
     >
-      <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px] static-background-our-solutions before:z-[1] before:top-[12%] before:h-[86%]">
+      <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px] before:z-[1] before:top-[12%] before:h-[86%]">
         <Image
           src="/assets/images/shape-7-copy-7.svg"
           fill
