@@ -14,7 +14,7 @@ function Carousel({ images }: { images: any[] }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
-    <div className="px-4">
+    <div className="px-4 lg:px-0">
       <Swiper
         loop={true}
         spaceBetween={10}

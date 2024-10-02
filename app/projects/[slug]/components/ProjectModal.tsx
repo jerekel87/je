@@ -88,7 +88,7 @@ function ProjectModal({
                       </div>
                     )}
                     {project.secondaryImage && (
-                      <div className="px-4">
+                      <div className="px-4 lg:px-0">
                         <Image
                           src={urlForImage(project.secondaryImage as any)}
                           width="900"
