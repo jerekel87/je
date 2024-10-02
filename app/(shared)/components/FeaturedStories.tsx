@@ -41,7 +41,7 @@ function FeaturedStories({
             </h1>
           </div>
         </div>
-        <div className="hidden lg:grid grid-col-1 lg:grid-cols-3 gap-4 lg:gap-[30px] mt-4 lg:mt-0 lg:[&>*:nth-child(2)]:mt-[40px] lg:[&>*:nth-child(3)]:mt-[80px]">
+        <div className="grid grid-col-1 lg:grid-cols-3 gap-4 lg:gap-[30px] mt-4 lg:mt-0 lg:[&>*:nth-child(2)]:mt-[40px] lg:[&>*:nth-child(3)]:mt-[80px]">
           {featuredStories.map((review) => (
             <div key={review._id} className="relative z-[1]">
               <ReviewCard
@@ -57,7 +57,7 @@ function FeaturedStories({
             </div>
           ))}
         </div>
-        <Swiper
+        {/* <Swiper
           loop
           spaceBetween={16}
           slidesPerView={1.2}
@@ -78,7 +78,7 @@ function FeaturedStories({
               />
             </SwiperSlide>
           ))}
-        </Swiper>
+        </Swiper> */}
 
         <p className="relative z-[1] text-xs leading-normal lg:text-lg mt-[30px] lg:mt-[40px] text-center text-[#53545c]">
           At Jeremy Ellsworth Designs LLC, we are committed to your success.

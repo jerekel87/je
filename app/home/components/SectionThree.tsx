@@ -4,9 +4,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/app/(shared)/components/ui/button";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/free-mode";
 
 function SectionThreeItem({
   imageUrl,
@@ -20,7 +17,7 @@ function SectionThreeItem({
   percentage: string;
 }) {
   return (
-    <div className="mb-[60px] lg:mb-[102px] lg:pl-[50px]">
+    <div className="mb-[40px] lg:mb-[102px] lg:pl-[50px]">
       <div className="relative w-full pb-[100%]">
         <Image
           src={imageUrl}
@@ -49,7 +46,7 @@ function SectionThreeItem({
           {title}
         </h3>
       </div>
-      <p className="text-sm lg:text-lg leading-normal mt-[25px] text-[#a7a7bc] max-w-[480px]">
+      <p className="text-sm lg:text-lg leading-normal mt-[18px] lg:mt-[25px] text-[#a7a7bc] max-w-[480px]">
         {description}
       </p>
     </div>
@@ -107,7 +104,7 @@ function SectionThree() {
               driving substantial growth for our clients. See how our creative
               strategies turned these businesses into industry leaders.
             </p>
-            <div className="hidden lg:block">
+            <div className="mt-[40px] lg:mt-0">
               <SectionThreeItem
                 imageUrl="/assets/images/layer-23@3x.webp"
                 title="ELITE CARPET CLEANING PROS"
@@ -126,7 +123,7 @@ function SectionThree() {
               />
             </div>
           </div>
-          <div className="mt-0 lg:mt-[272px] hidden lg:block">
+          <div className="mt-0 lg:mt-[272px]">
             <SectionThreeItem
               imageUrl="/assets/images/layer-22@3x.webp"
               title="THE FLASH ELECTRIC"
@@ -145,7 +142,7 @@ function SectionThree() {
             />
           </div>
         </div>
-        <Swiper
+        {/* <Swiper
           spaceBetween={16}
           slidesPerView={1.2}
           className="lg:rounded-[15px] mt-[45px] lg:!hidden !overflow-visible"
@@ -192,7 +189,7 @@ function SectionThree() {
               />
             </SwiperSlide>
           </SwiperSlide>
-        </Swiper>
+        </Swiper> */}
 
         <div className="w-full h-full flex flex-col justify-center items-center relative mt-[18px] lg:mt-0">
           <div className="relative w-[100px] h-[25px] lg:w-[200px] lg:h-[50px] mx-auto">
