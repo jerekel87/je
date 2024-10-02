@@ -19,7 +19,7 @@ function StarRating({ value, text }: { value: number; text?: ReactNode }) {
     <Link href="reviews" className="flex items-center">
       <div className="flex gap-[2.5px] items-center">
         <Rating
-          className="max-w-[70px] lg:max-w-[114px]"
+          className="max-w-[100px] lg:max-w-[114px]"
           radius="large"
           spaceInside="large"
           spaceBetween="small"
