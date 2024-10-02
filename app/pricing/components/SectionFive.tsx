@@ -151,7 +151,7 @@ const packages = [
     name: "Standard",
     packageItems: [
       "One request at a time",
-      "1 brand",
+      "One brand",
       "Infinite revisions",
       "Infinite design requests",
       "Infinite stock photos",
