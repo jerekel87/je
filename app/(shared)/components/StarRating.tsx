@@ -36,7 +36,7 @@ function StarRating({ value, text }: { value: number; text?: ReactNode }) {
 
 function Text(props: ComponentProps<"p">) {
   return (
-    <p className="text-[11.5px] lg:text-base lg:leading-none ml-1 lg:ml-[4px] leading-none font-bold">
+    <p className="text-sm mt-[2px] lg:text-base lg:leading-none ml-1 lg:ml-[4px] leading-none font-bold">
       {props.children}
     </p>
   );
