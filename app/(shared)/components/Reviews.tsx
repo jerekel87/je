@@ -36,7 +36,7 @@ async function Reviews({
               className="object-contain"
             />
           </div>
-          <h1 className="text-[50px] lg:text-[100px] text-center font-portlin tracking-[0.5px] leading-[.9] text-balance mt-[12px] lg:mt-[4px] pb-[28px]">
+          <h1 className="text-[50px] lg:text-[100px] text-center font-portlin tracking-[0.5px] leading-[.9] text-balance mt-[12px] lg:mt-[4px]">
             SUCCESS STORIES
           </h1>
           {subheader}
