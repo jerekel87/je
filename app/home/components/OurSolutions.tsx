@@ -27,7 +27,7 @@ function SolutionImagesMobile({ images }: { images: any[] }) {
 
   return (
     <div className="lg:hidden">
-      <ul className="grid grid-cols-2 gap-[15px] mt-[24px]">
+      <ul className="grid grid-cols-2 gap-3 mt-[24px]">
         {imagesToShow.map((image: any, i: number) => (
           <li key={i} className="relative pb-[82.5%] rounded-[5px]">
             <Image
@@ -78,7 +78,12 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
             tackle any job you have for us.
           </p>
         </div>
-        <Accordion type="single" collapsible className="w-full mt-[40px]">
+        <Accordion
+          type="single"
+          collapsible
+          className="w-full mt-[40px]"
+          defaultValue="1"
+        >
           {ourSolutions.map((solution, i) => (
             <AccordionItem
               key={i}
