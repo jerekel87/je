@@ -151,23 +151,25 @@ const packages = [
     name: "Standard",
     packageItems: [
       "One request at a time",
-      "Infinite brands",
+      "1 brand",
       "Infinite revisions",
       "Infinite design requests",
       "Infinite stock photos",
       "Pause or cancel anytime",
     ],
+    pricePerMonth: "$2999",
   },
   {
     name: "Shock",
     packageItems: [
-      "One request at a time",
+      "Two requests at a time",
       "Infinite brands",
       "Infinite revisions",
       "Infinite design requests",
       "Infinite stock photos",
       "Pause or cancel anytime",
     ],
+    pricePerMonth: "$4999",
   },
 ];
 
@@ -318,7 +320,7 @@ function SectionFive() {
               {/* Price */}
               <div className="mt-6 lg:mt-[34px] relative flex items-end gap-1">
                 <span className="text-[70px] lg:text-[80px] leading-none font-portlin tracking-[0.5px]">
-                  $4995
+                  {selectedPckg.pricePerMonth}
                 </span>
                 <div className="relative bottom-1 flex items-end gap-1 h-max">
                   <span className="text-[23px] leading-[1.4] font-portlin tracking-[0.5px]">
@@ -331,7 +333,7 @@ function SectionFive() {
               </div>
 
               <p className="mt-[20px] leading-snug text-[13px] lg:text-[15px]">
-                <strong>One requests at a time.</strong>
+                <strong>{selectedPckg.packageItems[0]}</strong>
                 <br />
                 Pause or cancel anytime for any reason.
               </p>
