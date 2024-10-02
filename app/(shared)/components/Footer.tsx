@@ -203,7 +203,7 @@ function Footer() {
       </div>
 
       <div className="bg-primary mt-[60px] lg:mt-[100px]">
-        <div className="container px-3 mx-auto relative">
+        <div className="container px-4 mx-auto relative">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="lg:pr-[203px]">
               <div className="relative size-[56px] lg:size-[65px] mx-auto lg:mx-0 ">
@@ -320,7 +320,7 @@ function Footer() {
           </div>
         </div>
         <div className="lg:border-t lg:border-[#252534] lg:mt-[88px]">
-          <div className="relative z-[1] container px-3 text-[#666770] text-xs flex flex-col lg:flex-row text-center lg:text-left justify-between py-[40px]">
+          <div className="relative z-[1] container px-4 text-[#666770] text-xs flex flex-col lg:flex-row text-center lg:text-left justify-between py-[40px]">
             <span>
               © 2004-2024 Jeremy Ellsworth Designs LLC
               <br className="lg:hidden" /> All Rights Reserved

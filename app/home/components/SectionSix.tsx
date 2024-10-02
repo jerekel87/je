@@ -18,7 +18,7 @@ function SectionSix({ sketchConcept }: { sketchConcept: any }) {
           className="object-cover"
         />
       </div>
-      <div className="container px-3 mx-auto relative z-[1] grid grid-cols-1 lg:grid-cols-2 gap-[38px] lg:gap-[100px] items-center">
+      <div className="container px-4 mx-auto relative z-[1] grid grid-cols-1 lg:grid-cols-2 gap-[38px] lg:gap-[100px] items-center">
         <div className="max-w-[466px] row-start-2 lg:row-start-auto">
           <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.5px] leading-[0.9] text-balance text-white">
             TRANSFORMING

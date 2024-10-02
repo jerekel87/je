@@ -85,7 +85,7 @@ function Projects({
       );
 
     return (
-      <div className="px-3 lg:px-0 grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-[30px] mt-[30px]">
+      <div className="px-4 lg:px-0 grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-[30px] mt-[30px]">
         {data?.map((projects: any[], i: number) =>
           projects.map((project) => {
             const src = urlForImage(project.mainImage as any);
@@ -120,7 +120,7 @@ function Projects({
           className="object-cover"
         />
       </div>
-      <div className="container px-3 lg:px-[30px]">
+      <div className="container px-4 lg:px-[30px]">
         <div className="flex flex-col gap-4 lg:flex-row justify-between lg:items-center">
           <h1 className="font-portlin leading-none tracking-[0.5px] text-3xl lg:text-[60px]">
             RECENT PROJECTS

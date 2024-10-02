@@ -12,7 +12,7 @@ async function SectionOne({ faqCategories }: { faqCategories: any[] }) {
           className="object-cover"
         />
       </div>
-      <div className="container px-3 mx-auto">
+      <div className="container px-4 mx-auto">
         <div className="mx-auto max-w-[791px]">
           <div className="relative w-[100px] h-[25px] lg:w-[200px] lg:h-[50px] mx-auto">
             <Image

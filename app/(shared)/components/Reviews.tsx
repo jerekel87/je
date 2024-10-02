@@ -26,7 +26,7 @@ async function Reviews({
           className="object-cover"
         />
       </div>
-      <div className="container px-3 mx-auto relative z-[1]">
+      <div className="container px-4 mx-auto relative z-[1]">
         <div className="mx-auto max-w-[800px]">
           <div className="relative w-[100px] h-[25px] lg:w-[200px] lg:h-[50px] mx-auto">
             <Image

@@ -189,7 +189,7 @@ function SectionFive() {
           className="object-cover"
         />
       </div>
-      <div className="container px-3 mx-auto">
+      <div className="container px-4 mx-auto">
         <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.5px] leading-[0.9] text-balance max-w-[630px]">
           IGNITE YOUR BRANDS POTENTIAL!
         </h1>

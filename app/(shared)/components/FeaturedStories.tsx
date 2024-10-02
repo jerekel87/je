@@ -19,7 +19,7 @@ function FeaturedStories({
   return (
     <section className="relative py-[53px] lg:pt-[80px] lg:pb-[80px] bg-[#f9f8f3] static-background-hard">
       <div className="w-full h-[690px] bg-[linear-gradient(transparent,#f7f5ef)] absolute z-[-1] bottom-0" />
-      <div className="container px-3 mx-auto overflow-hidden lg:overflow-visible">
+      <div className="container px-4 mx-auto overflow-hidden lg:overflow-visible">
         <div className="relative h-[138px] lg:h-[250px] w-full">
           <Image
             src="/assets/images/excellence.png"

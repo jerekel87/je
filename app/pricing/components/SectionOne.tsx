@@ -74,7 +74,7 @@ function SectionOne() {
           className="object-cover"
         />
       </div>
-      <div className="container px-3 mx-auto flex flex-col lg:flex-row">
+      <div className="container px-4 mx-auto flex flex-col lg:flex-row">
         <div className="shrink-0 lg:w-[688px]">
           <div className="w-full h-0 pb-[75.8%] relative rounded-[6px] lg:rounded-[10px] bg-black">
             <div className="w-full pb-[56.4%] absolute top-1/2 -translate-y-1/2">

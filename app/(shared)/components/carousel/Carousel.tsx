@@ -14,7 +14,7 @@ function Carousel({ images }: { images: any[] }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
-    <div className="px-3">
+    <div className="px-4">
       <Swiper
         loop={true}
         spaceBetween={10}
@@ -56,7 +56,7 @@ function Carousel({ images }: { images: any[] }) {
             spaceBetween: 15,
           },
         }}
-        className="mt-5 lg:mt-[30px] !px-3 lg:!px-[56px]"
+        className="mt-5 lg:mt-[30px] !px-4 lg:!px-[56px]"
       >
         {images.map((image, i) => (
           <SwiperSlide key={i} className="group cursor-pointer">

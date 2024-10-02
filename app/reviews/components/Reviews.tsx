@@ -101,13 +101,13 @@ function Reviews({
       </div>
       <div className="px-4 lg:px-0 mt-[30px] lg:mt-[46px]">
         {isLoadingReviews ? (
-          <div className="container px-3 py-[100px] flex justify-center">
+          <div className="container px-4 py-[100px] flex justify-center">
             <LoaderCircle className="animate-spin" />
           </div>
         ) : reviews && reviews.length ? (
           <ReviewsMasonry reviews={reviews} />
         ) : (
-          <p className="px-3 lg:px-0 text-xs lg:text-lg font-medium">
+          <p className="px-4 lg:px-0 text-xs lg:text-lg font-medium">
             NO RESULTS FOUND
           </p>
         )}

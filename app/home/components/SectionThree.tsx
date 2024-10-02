@@ -26,10 +26,10 @@ function SectionThreeItem({
           className="object-cover rounded-[6px] lg:rounded-[8px] absolute"
         />
       </div>
-      <div className="flex items-end gap-[10px] lg:gap-[15px] mt-[28px] lg:mt-[38px] max-w-[480px]">
-        <div className="flex items-center gap-1 h-[18px] lg:h-[30px] whitespace-nowrap self-start p-1 lg:p-[8px] text-xs lg:text-lg lg:leading-none font-bold leading-none rounded-[2px] lg:rounded-[5px] bg-secondary">
+      <div className="flex items-center gap-[10px] lg:gap-[15px] mt-[28px] lg:mt-[38px] max-w-[480px]">
+        <div className="flex items-center mt-[.8px] lg:mt-0 gap-1 h-[18px] lg:h-[30px] whitespace-nowrap self-start p-1 lg:p-[8px] text-[13px] lg:text-lg lg:leading-none font-bold leading-none rounded-[2px] lg:rounded-[5px] bg-secondary">
           <svg
-            className="w-[6px] h-[5px] lg:w-[11px] lg:h-[10px]"
+            className="w-[7px] h-[6px] lg:w-[11px] lg:h-[10px]"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 23 20"
             preserveAspectRatio="xMidYMid meet"
@@ -40,9 +40,11 @@ function SectionThreeItem({
               d="M11.5.313 23 20.312H0L11.5.313z"
             />
           </svg>
-          <span className="leading-none relative top-[1px]">{percentage}%</span>
+          <span className="leading-none relative top-[.8px]">
+            {percentage}%
+          </span>
         </div>
-        <h3 className="text-white text-[22px] lg:text-[35px] -translate-y-[2px] font-portlin tracking-[0.5px] leading-[.9]">
+        <h3 className="text-white text-[24px] lg:text-[35px] -translate-y-[2px] font-portlin tracking-[0.5px] leading-[.9]">
           {title}
         </h3>
       </div>
@@ -90,7 +92,7 @@ function SectionThreeItemEmpty() {
 function SectionThree() {
   return (
     <section className="bg-[#141423]  py-[70px] lg:py-[140px] striped-background static-background-light relative overflow-hidden">
-      <div className="container px-3 mx-auto h-full relative z-[1]">
+      <div className="container px-4 mx-auto h-full relative z-[1]">
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-[120px]">
           <div>
             <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.5px] leading-[0.9] text-balance text-white">

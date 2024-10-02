@@ -65,7 +65,7 @@ function ProjectModal({
                 </div>
                 <div className="lg:flex gap-[35px] lg:pl-[117px] mt-6 lg:mt-[54px]">
                   <div>
-                    <div className="relative px-3 lg:px-0">
+                    <div className="relative px-4 lg:px-0">
                       <Image
                         src={urlForImage(project.mainImage as any)}
                         width="900"
@@ -88,7 +88,7 @@ function ProjectModal({
                       </div>
                     )}
                     {project.secondaryImage && (
-                      <div className="px-3">
+                      <div className="px-4">
                         <Image
                           src={urlForImage(project.secondaryImage as any)}
                           width="900"

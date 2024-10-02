@@ -15,7 +15,7 @@ function SectionThree({ projects }: { projects: any[] }) {
           className="object-cover"
         />
       </div>
-      <div className="container px-3 mx-auto relative z-[1]">
+      <div className="container px-4 mx-auto relative z-[1]">
         <h1 className="text-[50px] lg:text-[100px] font-portlin tracking-[0.5px] leading-[0.9] text-balance">
           FEATURED PROJECTS
         </h1>

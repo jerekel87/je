@@ -155,7 +155,7 @@ function Articles({
       })}
 
       {isLoading && (
-        <div className="flex justify-center mt-[40px] lg:mt-0 lg:px-3">
+        <div className="flex justify-center mt-[40px] lg:mt-0 lg:px-4">
           <Loader className="size-4 lg:size-8 animate-spin text-muted-foreground" />
         </div>
       )}
