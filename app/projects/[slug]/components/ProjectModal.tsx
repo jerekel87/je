@@ -49,7 +49,7 @@ function ProjectModal({
             <div className="relative bg-white overflow-scroll h-full">
               <div className="lg:max-w-[1122px] mx-auto relative">
                 <div className="px-4 pt-[46px] lg:px-[calc(117px+58px)]">
-                  <div className="text-sm px-[12px] py-[10px] rounded-[5px] border border-foreground w-max font-medium leading-[.8]">
+                  <div className="text-xs lg:text-sm px-[12px] py-[10px] rounded-[5px] border border-foreground w-max font-medium leading-[.8]">
                     {project.industry.title}
                   </div>
 
