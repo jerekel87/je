@@ -19,7 +19,7 @@ async function SectionOne() {
           className="object-cover"
         />
       </div>
-      <div className="lg:container mx-auto">
+      <div className="lg:container lg:px-4 mx-auto">
         <div className="container px-4 lg:px-0 flex justify-between flex-col lg:flex-row gap-[30px]">
           <ReviewsData />
           <div className="w-full lg:max-w-[486px]">
