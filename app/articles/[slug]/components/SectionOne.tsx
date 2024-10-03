@@ -8,7 +8,7 @@ function SectionOneText({ article }: { article: Article }) {
         {article.title}
       </h1>
       <PortableText
-        className="lg:px-[calc(117px+58px)] mt-6 lg:mt-[40px] text-sm leading-[26px] lg:text-lg lg:leading-[30px] [&_a]:underline [&_a]:text-blue-500"
+        className="lg:px-[calc(117px+58px)] mt-6 lg:mt-[40px] text-[15px] leading-[26px] lg:text-lg lg:leading-[30px] [&_a]:underline [&_a]:text-blue-500"
         content={article.body as any}
       />
     </section>
