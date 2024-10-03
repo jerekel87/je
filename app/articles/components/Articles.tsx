@@ -110,7 +110,7 @@ function Articles({
                 </Link>
                 <PortableText
                   content={article.body as any}
-                  className="text-sm leading-normal text-muted-foreground lg:text-lg mt-4 lg:mt-[40px] line-clamp-3"
+                  className="text-sm leading-[26px] lg:text-lg lg:leading-[30px] mt-4 lg:mt-[40px] line-clamp-3"
                 />
               </article>
             );
@@ -145,7 +145,7 @@ function Articles({
                   </Link>
                 </header>
                 <PortableText
-                  className="text-sm lg:text-lg leading-normal mt-4 lg:mt-[26px] text-muted-foreground line-clamp-3 lg:line-clamp-2"
+                  className="text-sm leading-[26px] lg:text-lg lg:leading-[30px] mt-4 lg:mt-[26px] line-clamp-3 lg:line-clamp-2"
                   content={article.body as any}
                 />
               </div>
