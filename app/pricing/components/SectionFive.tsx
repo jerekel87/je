@@ -402,7 +402,7 @@ function SectionFive() {
           </div>
         </div>
 
-        <div className="w-full h-full flex flex-col justify-center items-center relative mt-6 lg:mt-[135px]">
+        <div className="w-full h-full flex flex-col justify-center items-center relative mt-[50px] lg:mt-[135px]">
           <div className="relative w-[100px] h-[25px] lg:w-[200px] lg:h-[50px] mx-auto">
             <Image
               src="/assets/images/custom-tailored@3x.webp"
@@ -411,18 +411,18 @@ function SectionFive() {
               className="object-contain"
             />
           </div>
-          <h1 className="text-[50px] lg:text-[100px] text-center font-portlin tracking-[0.5px] leading-[.9] text-balance mt-[10px] lg:mt-[4px] pb-[28px]">
+          <h1 className="text-[50px] lg:text-[100px] text-center font-portlin tracking-[0.5px] leading-[.9] text-balance mt-[10px] lg:mt-[4px]">
             BRAND SOLUTION
           </h1>
         </div>
-        <p className="text-sm leading-normal lg:text-lg mt-4 lg:mt-[25px] text-[#53545c] max-w-[480px] text-center mx-auto">
+        <p className="text-sm leading-normal lg:text-lg mt-[24px] lg:mt-[30px] text-[#53545c] max-w-[480px] text-center mx-auto">
           Interested in a tailored package designed specifically to your
           business?{" "}
           <strong className="text-primary">
             Schedule a call with us today
           </strong>
         </p>
-        <div className="flex justify-center mt-[30px]">
+        <div className="flex justify-center mt-[48px]">
           <CalComModal.Trigger className="w-full lg:w-auto">
             <Button
               variant="outline"
