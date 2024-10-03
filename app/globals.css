@@ -218,3 +218,22 @@ p:empty {
   }
 }
 /*  */
+
+/* Start | Project modal transition gradient */
+.transition-gradient::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  top: 4px;
+  height: 34px;
+  background: linear-gradient(white, white, transparent);
+}
+
+@media only screen and (min-width: 1024px) {
+  .transition-gradient::before {
+    height: 64px;
+  }
+}
+/* End */

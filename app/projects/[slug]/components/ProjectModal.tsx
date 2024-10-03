@@ -35,7 +35,7 @@ function ProjectModal({
           <div className="pt-[54px] pb-0 h-full relative w-full">
             <ModalCloseButton />
             {/* Separator */}
-            <div className="absolute w-full h-[27px] lg:h-[37px] top-[46px]">
+            <div className="absolute w-full h-[18px] lg:h-[37px] top-[46px] z-[1] transition-gradient">
               <Image
                 src="/assets/images/shape-7-copy-7.svg"
                 fill
@@ -46,7 +46,7 @@ function ProjectModal({
             {/*  */}
 
             {/* Content */}
-            <div className="relative min-h-svh bg-white overflow-scroll h-full">
+            <div className="relative bg-white overflow-scroll h-full">
               <div className="lg:max-w-[1122px] mx-auto relative">
                 <div className="px-4 pt-[46px] lg:px-[calc(117px+58px)]">
                   <div className="text-sm px-[12px] py-[10px] rounded-[5px] border border-foreground w-max font-medium leading-[.8]">
