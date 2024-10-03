@@ -120,7 +120,7 @@ function Projects({
           className="object-cover"
         />
       </div>
-      <div className="container px-4 lg:px-[30px]">
+      <div className="container px-4">
         <div className="flex flex-col gap-4 lg:flex-row justify-between lg:items-center">
           <h1 className="font-portlin uppercase leading-none tracking-[0.5px] text-3xl lg:text-[60px]">
             RECENT PROJECTS
@@ -131,7 +131,7 @@ function Projects({
           </div>
         </div>
       </div>
-      <div className="container px-0 lg:px-[30px]">
+      <div className="container px-0 lg:px-4">
         {render()}
 
         {hasMore && !isLoading && (
