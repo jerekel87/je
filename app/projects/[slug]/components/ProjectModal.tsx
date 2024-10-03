@@ -58,7 +58,7 @@ function ProjectModal({
                   </h1>
                   {project.body && (
                     <PortableText
-                      className="mt-[30px] text-[15px] leading-relaxed lg:text-xl lg:leading-relaxed text-muted-foreground [&_a]:underline [&_a]:text-blue-500"
+                      className="mt-[30px] text-[15px] leading-relaxed lg:text-lg lg:leading-relaxed text-muted-foreground [&_a]:underline [&_a]:text-blue-500"
                       content={project.body as any}
                     />
                   )}
@@ -77,7 +77,7 @@ function ProjectModal({
                     {project.secondaryBody?.length && (
                       <div className="px-4 lg:px-[54px] mt-[40px] lg:mt-[72px]">
                         <PortableText
-                          className="text-[15px] leading-relaxed lg:text-xl lg:leading-relaxed text-muted-foreground [&_a]:underline [&_a]:text-blue-500"
+                          className="text-[15px] leading-relaxed lg:text-lg lg:leading-relaxed text-muted-foreground [&_a]:underline [&_a]:text-blue-500"
                           content={project.secondaryBody as any}
                         />
                       </div>
