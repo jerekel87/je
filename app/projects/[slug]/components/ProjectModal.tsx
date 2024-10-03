@@ -83,7 +83,7 @@ function ProjectModal({
                       </div>
                     )}
                     {project.sliderImages && (
-                      <div className="mt-[50px] lg:mt-[70px]">
+                      <div className="mt-[50px] lg:mt-[70px] relative z-[0]">
                         <Carousel images={project.sliderImages as any} />
                       </div>
                     )}
