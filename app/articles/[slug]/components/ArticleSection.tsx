@@ -32,7 +32,7 @@ function ArticleSection({ articleSection }: { articleSection: any }) {
       {articleSection.body && (
         <PortableText
           content={articleSection.body}
-          className="lg:px-[58px] mt-6 lg:mt-[40px] text-muted-foreground text-sm leading-normal lg:text-lg"
+          className="lg:px-[58px] mt-6 lg:mt-[40px] text-muted-foreground text-[15px] leading-relaxed lg:text-xl lg:leading-relaxed"
         />
       )}
     </section>

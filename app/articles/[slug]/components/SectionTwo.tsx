@@ -17,7 +17,7 @@ function SectionTwo({ article }: { article: Article }) {
       {article.block?.body && (
         <PortableText
           content={article.block.body}
-          className="mt-6 lg:mt-[40px] text-muted-foreground leading-normal text-sm lg:text-lg"
+          className="mt-6 lg:mt-[40px] text-muted-foreground text-[15px] leading-relaxed lg:text-xl lg:leading-relaxed"
         />
       )}
 
