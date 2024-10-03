@@ -18,7 +18,7 @@
 //           className={twMerge("container lg:px-0", calculation && "lg:hidden")}
 //         >
 //           <div className="relative">
-//             <h1 className="text-[40px] lg:text-[100px] font-portlin tracking-[0.5px] leading-[0.9] text-balance">
+//             <h1 className="text-[40px] lg:text-[100px] font-portlin uppercase tracking-[0.5px] leading-[0.9] text-balance">
 //               REVENUE
 //               <br />
 //               CALCULATOR
@@ -126,12 +126,12 @@ function SectionTwo({ sketchConcept }: { sketchConcept: any }) {
         />
       </div>
       <div className="container px-4 mx-auto relative z-[1] grid grid-cols-1 lg:grid-cols-2 gap-[38px] lg:gap-[100px] items-center">
-        <h1 className="lg:hidden text-[50px] lg:text-[100px] font-portlin tracking-[0.5px] leading-[0.9] text-balance text-white">
+        <h1 className="lg:hidden text-[50px] lg:text-[100px] font-portlin uppercase tracking-[0.5px] leading-[0.9] text-balance text-white">
           FROM <span className="text-secondary">SKETCH</span> TO FULL COLOR
           <span className="text-secondary"> VECTOR</span> LOGO!
         </h1>
         <div className="max-w-[480px] row-start-3 lg:row-start-auto">
-          <h1 className="hidden lg:block text-[50px] lg:text-[100px] font-portlin tracking-[0.5px] leading-[0.9] text-balance text-white">
+          <h1 className="hidden lg:block text-[50px] lg:text-[100px] font-portlin uppercase tracking-[0.5px] leading-[0.9] text-balance text-white">
             FROM <span className="text-secondary">SKETCH</span>
             <br /> TO FULL COLOR
             <br />

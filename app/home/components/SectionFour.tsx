@@ -25,7 +25,7 @@ async function SectionFour({ projects }: { projects: any[] }) {
               className="object-contain"
             />
           </div>
-          <h1 className="text-[50px] lg:text-[100px] text-center font-portlin tracking-[0.5px] leading-[.9] text-balance mt-[12px] lg:mt-[22px]">
+          <h1 className="text-[50px] lg:text-[100px] text-center font-portlin uppercase tracking-[0.5px] leading-[.9] text-balance mt-[12px] lg:mt-[22px]">
             AWESOME PROJECTS
           </h1>
           <p className="text-sm leading-normal lg:text-lg mt-[30px] lg:mt-[40px] mb-[60px] lg:mb-[124px] text-center">

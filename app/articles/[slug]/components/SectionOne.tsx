@@ -4,7 +4,7 @@ import PortableText from "react-portable-text";
 function SectionOneText({ article }: { article: Article }) {
   return (
     <section>
-      <h1 className="lg:px-[calc(117px+58px)] font-portlin tracking-[0.5px] text-[40px] lg:text-[80px] leading-[.9]">
+      <h1 className="lg:px-[calc(117px+58px)] font-portlin uppercase tracking-[0.5px] text-[40px] lg:text-[80px] leading-[.9]">
         {article.title}
       </h1>
       <PortableText

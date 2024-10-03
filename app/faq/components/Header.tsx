@@ -4,7 +4,7 @@ function Header({ articleLink }: { articleLink: string }) {
   return (
     <header className="bg-[#e01120] pt-[30px] pb-4 lg:pt-[68px] lg:pb-0 relative static-background">
       <div className="container relative text-white">
-        <h1 className="text-[60px] lg:text-[100px] text-white font-portlin tracking-[0.5px] leading-[.9]">
+        <h1 className="text-[60px] lg:text-[100px] text-white font-portlin uppercase tracking-[0.5px] leading-[.9]">
           FREQUENTLY <span className="text-[#fff500]">ASKED</span> <br />
           QUESTIONS
         </h1>

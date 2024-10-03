@@ -6,7 +6,7 @@ async function Categories() {
 
   return (
     <div className="border-t border-input pt-[30px] mt-[40px]">
-      <h2 className="font-portlin tracking-[0.5px] text-[30px] leading-none">
+      <h2 className="font-portlin uppercase tracking-[0.5px] text-[30px] leading-none">
         CATEGORIES
       </h2>
       <ul className="flex flex-col gap-3 text-muted-foreground text-sm lg:text-base mt-4 lg:mt-[28px]">

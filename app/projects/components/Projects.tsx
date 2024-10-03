@@ -122,7 +122,7 @@ function Projects({
       </div>
       <div className="container px-4 lg:px-[30px]">
         <div className="flex flex-col gap-4 lg:flex-row justify-between lg:items-center">
-          <h1 className="font-portlin leading-none tracking-[0.5px] text-3xl lg:text-[60px]">
+          <h1 className="font-portlin uppercase leading-none tracking-[0.5px] text-3xl lg:text-[60px]">
             RECENT PROJECTS
           </h1>
           <div className="flex flex-col lg:flex-row gap-2 lg:gap-[30px]">

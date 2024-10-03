@@ -90,7 +90,7 @@ function Articles({
                     href={`/articles/${article.slug?.current}`}
                     className="lg:hover:underline"
                   >
-                    <h1 className="text-[40px] lg:text-[60px] font-portlin tracking-[0.5px] leading-[.92]">
+                    <h1 className="text-[40px] lg:text-[60px] font-portlin uppercase tracking-[0.5px] leading-[.92]">
                       {article.title}
                     </h1>
                   </Link>
@@ -139,7 +139,7 @@ function Articles({
                     href={`/articles/${article.slug?.current}`}
                     className="lg:hover:underline"
                   >
-                    <h2 className="text-[40px] font-portlin tracking-[0.5px] leading-[.92] lg:leading-[1.06] line-clamp-2">
+                    <h2 className="text-[40px] font-portlin uppercase tracking-[0.5px] leading-[.92] lg:leading-[1.06] line-clamp-2">
                       {article.title}
                     </h2>
                   </Link>

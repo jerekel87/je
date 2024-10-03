@@ -53,7 +53,7 @@ function ProjectModal({
                     {project.industry.title}
                   </div>
 
-                  <h1 className="text-[40px] lg:text-[80px] leading-[.8] font-portlin tracking-[0.5px] mt-[24px]">
+                  <h1 className="text-[40px] lg:text-[80px] leading-[.8] font-portlin uppercase tracking-[0.5px] mt-[24px]">
                     {project.title}
                   </h1>
                   {project.body && (
@@ -127,7 +127,7 @@ function ProjectModal({
               {firstReview && (
                 <section className="bg-[#f9f8f3] mt-[80px]">
                   <div className="mx-auto max-w-[900px] px-4 lg:px-[54px] pt-[44px] pb-[57px]">
-                    <h2 className="text-center pb-[26px] mb-4 w-max mx-auto text-[30px] lg:text-[60px] font-portlin tracking-[0.5px] -rotate-[4deg] origin-right leading-[.8]">
+                    <h2 className="text-center pb-[26px] mb-4 w-max mx-auto text-[30px] lg:text-[60px] font-portlin uppercase tracking-[0.5px] -rotate-[4deg] origin-right leading-[.8]">
                       CLIENT EXPERIENCE
                     </h2>
                     <ReviewCard
