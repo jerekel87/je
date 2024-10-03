@@ -61,7 +61,10 @@
 
 // export default SectionOne;
 
+"use client";
+
 import Image from "next/image";
+import ReactPlayer from "react-player";
 
 function SectionOne() {
   return (
@@ -78,14 +81,15 @@ function SectionOne() {
         <div className="shrink-0 lg:w-[688px]">
           <div className="w-full h-0 pb-[75.8%] relative rounded-[6px] lg:rounded-[10px] bg-black">
             <div className="w-full pb-[56.4%] absolute top-1/2 -translate-y-1/2">
-              <iframe
-                className="w-full h-full absolute top-0 left-0"
-                src="https://www.youtube.com/embed/bgtInTFNqCw?si=3ymi6XmUirRX5UZy"
-                title="Vector Logo Timelapse - Got Da Munchies?"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              ></iframe>
+              <ReactPlayer
+                width="100%"
+                height="100%"
+                style={{ position: "absolute", objectFit: "contain" }}
+                url="https://www.youtube.com/watch?v=bgtInTFNqCw"
+                controls
+                light="/assets/images/godamunchies-thumbnail.jpg"
+                playing
+              />
             </div>
           </div>
         </div>

@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import ReactPlayer from "react-player";
 
 function SectionTwo() {
   return (
@@ -15,13 +18,14 @@ function SectionTwo() {
         <div>
           <div className="w-full h-0 pb-[75.8%] relative rounded-[6px] lg:rounded-[10px] bg-black">
             <div className="w-full pb-[56.4%] absolute top-1/2 -translate-y-1/2">
-              <iframe
-                className="w-full h-full absolute top-0 left-0"
-                src="https://www.youtube.com/embed/BpuC_iyq0l8?si=OlMMryosVIVaaC-Q"
-                title="Igniting Creativity. Fueling Brands."
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
+              <ReactPlayer
+                width="100%"
+                height="100%"
+                style={{ position: "absolute", objectFit: "contain" }}
+                url="https://www.youtube.com/watch?v=BpuC_iyq0l8&ab_channel=JeremyEllsworthDesignsLLC"
+                controls
+                light="/assets/images/commercial-thumbnail.jpg"
+                playing
               />
             </div>
           </div>
