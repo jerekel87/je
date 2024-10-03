@@ -88,7 +88,7 @@ function SectionOne({ articleLink }: { articleLink: string }) {
               <div className="h-[1px] lg:h-[2px] w-4 lg:w-[32px] bg-white opacity-50 mt-[6px]" />
               <a
                 href={articleLink}
-                className="text-[#ffed00] leading-relaxed text-xs lg:text-sm font-medium font-mona-sans mt-[6px]"
+                className="text-[#ffed00] leading-relaxed text-xs lg:text-sm font-medium font-mona-sans mt-[6px] capitalize"
               >
                 Read Article
               </a>
