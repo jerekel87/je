@@ -31,7 +31,7 @@ function ProjectModal({
         hideCloseButton
         className="max-w-full h-svh  max-h-full bg-transparent border-none p-0 !rounded-none"
       >
-        <div className="h-dvh w-full overflow-y-scroll">
+        <div className="h-dvh w-full overflow-hidden">
           <div className="pt-[54px] pb-0 h-full relative w-full">
             <ModalCloseButton />
             {/* Separator */}
@@ -46,7 +46,7 @@ function ProjectModal({
             {/*  */}
 
             {/* Content */}
-            <div className="relative min-h-svh bg-white">
+            <div className="relative min-h-svh bg-white overflow-scroll h-full">
               <div className="lg:max-w-[1122px] mx-auto relative">
                 <div className="px-4 pt-[46px] lg:px-[calc(117px+58px)]">
                   <div className="text-sm px-[12px] py-[10px] rounded-[5px] border border-foreground w-max font-medium leading-[.8]">
