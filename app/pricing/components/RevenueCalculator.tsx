@@ -18,8 +18,8 @@ import { getProjectsIndustry } from "@/sanity/query/project";
 import { useCalculationStore } from "../useCalculationStore";
 import { Loader } from "lucide-react";
 import Link from "next/link";
-import CalComModal from "./CalComModal";
 import "../style.css";
+import CalComModal from "@/app/(shared)/components/CalComModal";
 
 type Inputs = {
   industry: string;
@@ -48,8 +48,10 @@ function RevenueCalculator() {
       const revenue = calculateRevenue({
         brandingStatus: data.brandingStatus,
         costOfBranding: 9_728,
-        currentAnnualRevenue: Number(data.currentAnnualRevenue),
-        goalAnnualRevenue: Number(data.goalAnnualRevenue),
+        currentAnnualRevenue: Number(
+          data.currentAnnualRevenue.replace(/,/g, "")
+        ),
+        goalAnnualRevenue: Number(data.goalAnnualRevenue.replace(/,/g, "")),
         percentageIncrease: Number(percentageIncrease),
       });
       setCalculation(revenue);
@@ -75,10 +77,24 @@ function RevenueCalculator() {
     </span>
   );
 
+  const formatNumberWithCommas = (value: string) => {
+    // Remove all non-digit characters
+    let formattedValue = value.replace(/\D/g, "");
+
+    // Add commas to the number
+    formattedValue = formattedValue.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    return formattedValue;
+  };
+
   const renderRecommendation = (random0or1: 0 | 1) => {
     const recommendation = {
       0: <InfinitePackageLink />,
-      1: <CalComModal />,
+      1: (
+        <CalComModal.Trigger className="font-bold border-b border-primary inline-block leading-none">
+          Schedule a call
+        </CalComModal.Trigger>
+      ),
     };
 
     return recommendation[random0or1];
@@ -95,10 +111,10 @@ function RevenueCalculator() {
       >
         {calculation && (
           <div className="rounded-[8px] bg-[#f9f8f3] px-4 py-5 lg:p-[74px] grow">
-            <h1 className="font-portlin text-xl lg:text-[40px] leading-none">
+            <h1 className="font-portlin uppercase tracking-[0.5px] text-xl lg:text-[40px] leading-none">
               ESTIMATED NEW ANNUAL REVENUE
             </h1>
-            <span className="font-portlin text-6xl lg:text-[120px] leading-[.5] mt-[30px] lg:mt-[42px] inline-block ">
+            <span className="font-portlin uppercase tracking-[0.5px] text-6xl lg:text-[120px] leading-[.5] mt-[30px] lg:mt-[42px] inline-block ">
               ${calculation.newAnnualRevenue.toLocaleString()}
             </span>
             <ul className="text-xs lg:text-lg mt-[30px] lg:mt-[40px] flex flex-col gap-2">
@@ -133,14 +149,14 @@ function RevenueCalculator() {
         )}
         <div className="w-full lg:max-w-[415px] rounded lg:rounded-[10px] flex flex-col gap-4 lg:gap-[20px]">
           <div>
-            <Controller
+            {/* <Controller
               name="industry"
               control={control}
               rules={{ required: "This field is required." }}
               render={({ field: { onChange } }) => (
                 <IndustrySelector onChange={onChange} className="lg:w-full" />
               )}
-            />
+            /> */}
             {errors.industry && (
               <p className="text-destructive mt-1 ml-1 font-medium text-sm">
                 {errors.industry.message}
@@ -149,18 +165,28 @@ function RevenueCalculator() {
           </div>
 
           <div>
-            <Input
-              required={false}
-              {...register("currentAnnualRevenue", {
-                required: "This field is required.",
-              })}
-              type="number"
-              placeholder="Current Annual Revenue"
-              leftSlot={
-                watch("currentAnnualRevenue") ? (
-                  <Input.LeftSlot>$</Input.LeftSlot>
-                ) : null
-              }
+            <Controller
+              name="currentAnnualRevenue"
+              control={control}
+              defaultValue=""
+              rules={{ required: "This field is required." }}
+              render={({ field }) => (
+                <Input
+                  required={false}
+                  id="currentAnnualRevenue"
+                  type="text"
+                  placeholder="Current Annual Revenue"
+                  {...field}
+                  onChange={(e) =>
+                    field.onChange(formatNumberWithCommas(e.target.value))
+                  }
+                  leftSlot={
+                    watch("currentAnnualRevenue") ? (
+                      <Input.LeftSlot>$</Input.LeftSlot>
+                    ) : null
+                  }
+                />
+              )}
             />
             {errors.currentAnnualRevenue && (
               <p className="text-destructive mt-1 ml-1 font-medium text-sm">
@@ -169,23 +195,38 @@ function RevenueCalculator() {
             )}
           </div>
           <div>
-            <Input
-              required={false}
-              {...register("goalAnnualRevenue", {
+            <Controller
+              name="goalAnnualRevenue"
+              control={control}
+              defaultValue=""
+              rules={{
                 validate: (value) => {
                   if (!value) return "This field is required.";
-                  if (Number(value) < Number(getValues().currentAnnualRevenue))
+                  if (
+                    Number(value.replace(/,/g, "")) <
+                    Number(getValues().currentAnnualRevenue.replace(/,/g, ""))
+                  )
                     return "Must be greater than current annual income.";
                   return true;
                 },
-              })}
-              type="number"
-              placeholder="Annual Revenue Goal"
-              leftSlot={
-                watch("goalAnnualRevenue") ? (
-                  <Input.LeftSlot>$</Input.LeftSlot>
-                ) : null
-              }
+              }}
+              render={({ field }) => (
+                <Input
+                  required={false}
+                  id="goalAnnualRevenue"
+                  type="text"
+                  placeholder="Annual Revenue Goal"
+                  {...field}
+                  onChange={(e) =>
+                    field.onChange(formatNumberWithCommas(e.target.value))
+                  }
+                  leftSlot={
+                    watch("goalAnnualRevenue") ? (
+                      <Input.LeftSlot>$</Input.LeftSlot>
+                    ) : null
+                  }
+                />
+              )}
             />
             {errors.goalAnnualRevenue && (
               <p className="text-destructive mt-1 ml-1 font-medium text-sm">

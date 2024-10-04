@@ -1,77 +1,91 @@
-import StarRating from "@/app/(shared)/components/StarRating";
-import { Button } from "@/app/(shared)/components/ui/button";
+import ProjectItem from "@/app/home/components/ProjectItem";
 import Image from "next/image";
-import { FaYoutube } from "react-icons/fa6";
-import { HiCheckCircle } from "react-icons/hi2";
-import { IoLogoYoutube } from "react-icons/io5";
 
-function SectionThree() {
+function SectionThree({ projects }: { projects: any[] }) {
   return (
-    <section id="package" className="relative py-[70px] lg:py-[140px]">
-      <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">
+    <section
+      id="package"
+      className="relative pt-[70px] lg:pt-[140px] bg-[#f9f8f3] static-background-hard"
+    >
+      <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px] static-background-hard before:z-[1] before:top-[12%] before:h-[86%]">
         <Image
-          src="/assets/images/shape-7-copy-7.svg"
+          src="/assets/images/shape-7-copy-7-1.svg"
           fill
           alt="Transition"
           className="object-cover"
         />
       </div>
-      <div className="container mx-auto">
-        <h1 className="text-[40px] lg:text-[100px] font-portlin leading-[0.9] text-balance">
-          INFINITE SOLUTION
+      <div className="container px-4 mx-auto relative z-[1]">
+        <h1 className="text-[50px] lg:text-[100px] font-portlin uppercase tracking-[0.5px] leading-[0.9] text-balance">
+          FEATURED PROJECTS
         </h1>
-        <p className="text-sm lg:text-lg mt-[30px] lg:mt-[40px] text-muted-foreground max-w-[769px]">
-          No contract, pause or cancel anytime with our Infinite Package. Forget
-          about employees and freelancers. Pause or cancel anytime!
+        <p className="text-sm leading-normal lg:text-lg mt-[30px] lg:mt-[40px]">
+          Dive into our world of vibrant, tailor-made designs. From wizards to
+          warriors, trees to tanks, we transform ideas into unforgettable visual
+          identities. <strong>Ready to stand out in your industry?</strong>{" "}
+          Let&apos;s create your next game-changing logo!
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 pt-[60px] lg:gap-[35px]">
+        {projects && (
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-[30px] mt-[30px] lg:mt-[54px]">
+            {projects.map((project, i) => (
+              <div
+                key={i}
+                className="flex overflow-hidden rounded-[6px] lg:rounded-[8px] last:hidden lg:last:flex"
+              >
+                <ProjectItem key={i} project={project} />
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* <div className="grid grid-cols-1 lg:grid-cols-3 pt-[60px] lg:gap-[35px]">
           <div className="pt-[40px] relative">
             <div className="bg-[#f5f5f5] rounded-[15px] w-full h-full relative">
               <div className="invisible rounded-[15px] w-full flex flex-col items-center px-[70px] py-[45px]">
-                <span className="text-[74px] font-portlin leading-[.9] text-white">
+                <span className="text-[74px] font-portlin uppercase tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin leading-[.9] text-white">
+                <span className="text-[74px] font-portlin uppercase tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin leading-[.9] text-white">
+                <span className="text-[74px] font-portlin uppercase tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin leading-[.9] text-white">
+                <span className="text-[74px] font-portlin uppercase tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin leading-[.9] text-white">
+                <span className="text-[74px] font-portlin uppercase tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin leading-[.9] text-white">
+                <span className="text-[74px] font-portlin uppercase tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin leading-[.9] text-white">
+                <span className="text-[74px] font-portlin uppercase tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
               </div>
               <div className="rounded-t-[15px] bg-gradient-to-b from-[#ff0000] h-[50%] w-full absolute top-0 left-0" />
               <div className="absolute rounded-[15px] top-0 left-0 z-[2] w-full flex flex-col items-center px-[70px] py-[45px]">
-                <span className="text-[74px] font-portlin leading-[.9] text-white">
+                <span className="text-[74px] font-portlin uppercase tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin leading-[.9] text-white">
+                <span className="text-[74px] font-portlin uppercase tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin leading-[.9] text-white">
+                <span className="text-[74px] font-portlin uppercase tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin leading-[.9] text-white">
+                <span className="text-[74px] font-portlin uppercase tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin leading-[.9] text-white">
+                <span className="text-[74px] font-portlin uppercase tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin leading-[.9] text-white">
+                <span className="text-[74px] font-portlin uppercase tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
-                <span className="text-[74px] font-portlin leading-[.9] text-white">
+                <span className="text-[74px] font-portlin uppercase tracking-[0.5px] leading-[.9] text-white">
                   BRANDING
                 </span>
               </div>
@@ -111,7 +125,7 @@ function SectionThree() {
                 <p className="rounded-full font-bold border px-4 py-1 border-[#fff500] text-white mt-[23px]">
                   Infinite Package
                 </p>
-                <span className="leading-[.9] mt-[46px] text-white text-[100px] font-portlin -rotate-[5deg]">
+                <span className="leading-[.9] mt-[46px] text-white text-[100px] font-portlin uppercase tracking-[0.5px] -rotate-[5deg]">
                   $9728
                 </span>
                 <span className="text-secondary -rotate-[5deg] mt-[10px] font-medium">
@@ -127,7 +141,7 @@ function SectionThree() {
               <div className="relative w-full h-full p-4">
                 <div className="lg:pr-[50px] lg:absolute h-full">
                   <div className="group z-1 relative has-[:checked]:h-max overflow-hidden lg:-translate-y-[35px] lg:ml-0 bg-secondary rounded-[15px] lg:h-[115%] p-6 lg:py-[66px] lg:px-[62px]">
-                    <h2 className="text-[40px] lg:text-[80px] leading-[.88] font-portlin">
+                    <h2 className="text-[40px] lg:text-[80px] leading-[.88] font-portlin uppercase tracking-[0.5px]">
                       INFINITE BRAND PACKAGE
                     </h2>
                     <ul className="flex max-h-[250px] group-has-[:checked]:max-h-full peer lg:max-h-full flex-col pb-[40px] gap-2 lg:gap-3 mt-[40px] lg:mt-[47px] text-xs lg:text-base font-medium">
@@ -215,7 +229,7 @@ function SectionThree() {
               className="object-contain"
             />
           </div>
-          <h2 className="text-[40px] lg:text-[100px] text-center font-portlin leading-[.9] text-balance mt-[12px] lg:mt-[22px]">
+          <h2 className="text-[40px] lg:text-[100px] text-center font-portlin uppercase tracking-[0.5px] leading-[.9] text-balance mt-[12px] lg:mt-[22px]">
             BRAND SOLUTION
           </h2>
           <p className="mx-auto text-center text-sm lg:text-lg mt-[30px] lg:mt-[40px] text-muted-foreground max-w-[460px]">
@@ -225,16 +239,16 @@ function SectionThree() {
           <div className="flex justify-center mt-[48px]">
             <Button variant="outline">SCHEDULE CALL</Button>
           </div>
-        </div>
+        </div> */}
       </div>
-      <div className="absolute w-full h-[27px] lg:h-[37px] -bottom-[6px]">
+      {/* <div className="absolute w-full h-[27px] lg:h-[37px] -bottom-[6px]">
         <Image
           src="/assets/images/shape-7-copy-8.svg"
           fill
           alt="Transition"
           className="object-cover"
         />
-      </div>
+      </div> */}
     </section>
   );
 }

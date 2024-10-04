@@ -1,13 +1,14 @@
 import Image from "next/image";
-
-import Articles from "./components/Articles";
 import Aside from "./components/Aside";
-import { getArticles } from "@/sanity/query/article";
+import Header from "./components/Header";
+import Articles from "./components/Articles";
 import Footer from "../(shared)/components/Footer";
 import MainHeader from "../(shared)/components/Header";
-import Header from "./components/Header";
-import { unstable_noStore as noStore } from "next/cache";
 import FakePurchase from "../(shared)/components/fake-purchase/FakePurchase";
+import { getArticles } from "@/sanity/query/article";
+import CategorySelector from "./components/CategorySelector";
+
+export const revalidate = 60;
 
 async function ArticlesPage({
   searchParams,
@@ -15,10 +16,9 @@ async function ArticlesPage({
   searchParams: { category: string };
 }) {
   const categorySlug = searchParams.category;
-  noStore();
   const articles = await getArticles({
-    limit: 9,
     categorySlug,
+    limit: 10,
   });
 
   return (
@@ -26,7 +26,7 @@ async function ArticlesPage({
       <MainHeader />
       <main>
         <Header />
-        <div className="relative pt-[70px] lg:pt-[140px] pb-[124px]">
+        <div className="relative pt-[30px] lg:pt-[106px] pb-[124px]">
           <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">
             <Image
               src="/assets/images/shape-7-copy-7.svg"
@@ -35,8 +35,11 @@ async function ArticlesPage({
               className="object-cover"
             />
           </div>
-          <div className="container px-4 mx-auto flex flex-col lg:flex-row justify-between gap-[60px]">
-            <Articles initialArticles={articles} />
+          <div className="container px-4 mx-auto flex flex-col lg:flex-row justify-between gap-[40px]">
+            <Articles
+              initialArticles={articles}
+              categorySelector={<CategorySelector />}
+            />
             <Aside />
           </div>
         </div>

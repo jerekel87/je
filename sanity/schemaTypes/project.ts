@@ -22,13 +22,28 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: "descriptionOne",
-      title: "Description One",
-      type: "blockContent",
+      name: "body",
+      title: "Body",
+      type: "array",
+      of: [
+        {
+          type: "block",
+          styles: [],
+          lists: [],
+          marks: {
+            decorators: [
+              {
+                title: "Bold",
+                value: "strong",
+              },
+            ],
+          },
+        },
+      ],
     }),
     defineField({
       name: "mainImage",
-      title: "Main image",
+      title: "Main Image",
       type: "image",
       options: {
         hotspot: true,
@@ -36,13 +51,28 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: "descriptionTwo",
-      title: "Description two",
-      type: "blockContent",
+      name: "secondaryBody",
+      title: "Secondary Body",
+      type: "array",
+      of: [
+        {
+          type: "block",
+          styles: [],
+          lists: [],
+          marks: {
+            decorators: [
+              {
+                title: "Bold",
+                value: "strong",
+              },
+            ],
+          },
+        },
+      ],
     }),
     defineField({
       name: "sliderImages",
-      title: "Slider images",
+      title: "Slider Images",
       type: "array",
       of: [
         {

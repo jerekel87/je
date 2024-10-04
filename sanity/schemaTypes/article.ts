@@ -23,18 +23,160 @@ export default defineType({
     }),
     defineField({
       name: "mainImage",
-      title: "Main image",
+      title: "Main Image",
       type: "image",
+      description:
+        "This will be used as thumbnail and main image of the article.",
       options: {
         hotspot: true,
       },
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "mainVideoLink",
+      title: "Main Video Link",
+      type: "url",
+      description: "This will override the image.",
+    }),
+    defineField({
       name: "body",
       title: "Body",
-      type: "blockContent",
-      validation: (Rule) => Rule.required(),
+      type: "array",
+      of: [
+        {
+          type: "block",
+          styles: [],
+          lists: [],
+          marks: {
+            decorators: [
+              {
+                title: "Bold",
+                value: "strong",
+              },
+            ],
+          },
+        },
+      ],
+    }),
+    defineField({
+      name: "block",
+      title: "Block",
+      type: "object",
+      fields: [
+        defineField({
+          name: "title",
+          title: "Title",
+          type: "string",
+        }),
+        defineField({
+          name: "body",
+          title: "Body",
+          type: "array",
+          of: [
+            {
+              type: "block",
+              styles: [],
+              lists: [],
+              marks: {
+                decorators: [
+                  {
+                    title: "Bold",
+                    value: "strong",
+                  },
+                ],
+              },
+            },
+          ],
+        }),
+        defineField({
+          name: "primaryButton",
+          type: "object",
+          title: "Primary Button",
+          fields: [
+            defineField({
+              name: "text",
+              title: "Text",
+              type: "string",
+            }),
+            defineField({
+              name: "isCalCom",
+              title: "Show Cal.com modal on click",
+              type: "boolean",
+            }),
+            defineField({
+              name: "link",
+              title: "Link",
+              type: "url",
+            }),
+          ],
+        }),
+        defineField({
+          name: "secondaryButton",
+          type: "object",
+          title: "Secondary Button",
+          fields: [
+            defineField({
+              name: "text",
+              title: "Text",
+              type: "string",
+            }),
+            defineField({
+              name: "isCalCom",
+              title: "Show Cal.com modal on click",
+              type: "boolean",
+            }),
+            defineField({
+              name: "link",
+              title: "Link",
+              type: "url",
+            }),
+          ],
+        }),
+      ],
+    }),
+    defineField({
+      name: "sections",
+      title: "Sections",
+      type: "array",
+      of: [
+        defineField({
+          name: "section",
+          title: "Section",
+          type: "object",
+          fields: [
+            defineField({
+              name: "image",
+              title: "Image",
+              type: "image",
+            }),
+            defineField({
+              name: "videoLink",
+              title: "Video Link",
+              type: "url",
+            }),
+            defineField({
+              name: "body",
+              title: "Body",
+              type: "array",
+              of: [
+                {
+                  type: "block",
+                  styles: [],
+                  lists: [],
+                  marks: {
+                    decorators: [
+                      {
+                        title: "Bold",
+                        value: "strong",
+                      },
+                    ],
+                  },
+                },
+              ],
+            }),
+          ],
+        }),
+      ],
     }),
     defineField({
       name: "category",

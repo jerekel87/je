@@ -3,19 +3,38 @@ import Header from "./components/Header";
 import Projects from "./components/Projects";
 import Footer from "../(shared)/components/Footer";
 import MainHeader from "../(shared)/components/Header";
+import Link from "next/link";
+import IndustrySelector from "./components/IndustrySelector";
 import { getProjects } from "@/sanity/query/project";
-import { unstable_noStore as noStore } from "next/cache";
+import { getProjectsPageSetting } from "@/sanity/query/projectsPage";
 
-async function ProjectsPage() {
-  noStore();
-  const projects = await getProjects({ limit: 2 });
+export const revalidate = 60;
+
+async function ProjectsPage({
+  searchParams,
+}: {
+  searchParams: { industry: string; sortBy: string };
+}) {
+  const industrySlug = searchParams.industry;
+  const sortBy = searchParams.sortBy;
+
+  const projects = await getProjects({
+    limit: 9,
+    industrySlug,
+    sortBy,
+  });
+
+  const projectsPageSetting = await getProjectsPageSetting();
 
   return (
     <>
       <MainHeader />
       <main>
-        <Header />
-        <Projects initialProjects={projects} />
+        <Header articleLink={projectsPageSetting?.articleLink || ""} />
+        <Projects
+          initialProjects={projects}
+          industrySelector={<IndustrySelector />}
+        />
         <Reviews
           subheader={
             <Reviews.Subheader>
@@ -25,7 +44,9 @@ async function ProjectsPage() {
             </Reviews.Subheader>
           }
           footerButton={
-            <Reviews.FooterButton>MORE STORIES</Reviews.FooterButton>
+            <Link href="/reviews" className="inline-block">
+              <Reviews.FooterButton>MORE STORIES</Reviews.FooterButton>
+            </Link>
           }
         />
       </main>

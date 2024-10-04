@@ -8,6 +8,13 @@ import article from "./schemaTypes/article";
 import articleCategory from "./schemaTypes/articleCategory";
 import { singletonTypes } from "@/sanity.config";
 import homePage from "./schemaTypes/homePage";
+import projectsPage from "./schemaTypes/projectsPage";
+import articlesPage from "./schemaTypes/articlesPage";
+import pricingPage from "./schemaTypes/pricingPage";
+import reviewsPage from "./schemaTypes/reviewsPage";
+import faqPage from "./schemaTypes/faqPage";
+import faqCategory from "./schemaTypes/faqCategory";
+import faq from "./schemaTypes/faq";
 
 export const schema: { types: SchemaTypeDefinition[]; templates: any } = {
   types: [
@@ -19,6 +26,13 @@ export const schema: { types: SchemaTypeDefinition[]; templates: any } = {
     articleCategory,
     blockContent,
     homePage,
+    projectsPage,
+    articlesPage,
+    pricingPage,
+    reviewsPage,
+    faqPage,
+    faq,
+    faqCategory,
   ],
   // Filter out singleton types from the global “New document” menu options
   templates: (templates: any[]) =>

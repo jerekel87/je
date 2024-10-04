@@ -1,120 +1,174 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
-import PortableText from "react-portable-text";
+import { PropsWithChildren, ReactNode } from "react";
 import { Button } from "@/app/(shared)/components/ui/button";
 import { Article } from "@/sanity.types";
 import { getArticles } from "@/sanity/query/article";
 import { urlForImage } from "@/sanity/lib/image";
-import { cn } from "@/app/(shared)/lib/utils";
+import { usePathname, useSearchParams } from "next/navigation";
+import { Loader } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import useSWRInfinite from "swr/infinite";
+import PortableText from "react-portable-text";
 
-function Articles({ initialArticles }: { initialArticles: Article[] }) {
-  const [articles, setArticles] = useState(initialArticles);
-  const initialLastId =
-    initialArticles.length >= 9
-      ? initialArticles[initialArticles.length - 1]._id
-      : "";
-  const [lastId, setLastId] = useState(initialLastId);
-  const [isLoadingMore, setIsLoadingMore] = useState(false);
+function Articles({
+  initialArticles,
+  categorySelector,
+}: PropsWithChildren<{
+  initialArticles: Article[];
+  categorySelector: ReactNode;
+}>) {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
-  const loadMore = async () => {
-    setIsLoadingMore(true);
-    try {
-      const articlesRes = await getArticles({ lastId });
-      setArticles([...articles, ...articlesRes]);
-      if (articlesRes.length > 0) {
-        setLastId(articlesRes[articlesRes.length - 1]._id);
-      } else {
-        setLastId("");
-      }
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setIsLoadingMore(false);
-    }
+  const categorySlug = searchParams.get("category") || undefined;
+
+  const getKey = (pageIndex: number, previousPageData: any) => {
+    // reached the end
+    if (previousPageData && previousPageData.length === 0) return null;
+
+    // first page, we don't have `previousPageData`
+    if (pageIndex === 0)
+      return [
+        `${pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ""}`,
+      ];
+
+    // add the cursor to the API endpoint
+    const lastCreatedAt =
+      previousPageData.length >= 1
+        ? previousPageData[previousPageData.length - 1]._createdAt
+        : "";
+
+    return [
+      `${pathname}?lastCreatedAt=${lastCreatedAt}&${searchParams.toString() ? `${searchParams.toString()}` : ""}`,
+      lastCreatedAt,
+    ];
   };
 
-  const firstArticle = articles[0];
+  const ARTICLES_LIMIT = 10;
+
+  const { data, isLoading, isValidating, size, setSize } = useSWRInfinite(
+    getKey,
+    ([url, lastCreatedAt]) => {
+      return getArticles({
+        categorySlug,
+        lastCreatedAt,
+        limit: ARTICLES_LIMIT,
+      });
+    },
+    {
+      fallbackData: [initialArticles],
+    }
+  );
+
+  const hasMore = data && data[data.length - 1]?.length >= ARTICLES_LIMIT;
+
+  const loadMore = async () => {
+    setSize(size + 1);
+  };
 
   return (
-    <section className="max-w-[790px]">
-      {firstArticle ? (
-        <article className="border-b border-muted pb-[45px]">
-          <header>
-            <Link
-              href={`/articles/${firstArticle.slug?.current}`}
-              className="hover:underline"
-            >
-              <h1 className="text-[40px] lg:text-[60px] font-portlin leading-[.92]">
-                {firstArticle.title}
-              </h1>
-            </Link>
-          </header>
-          <div className="w-full pb-[75%] relative mt-[40px] rounded-[8px] overflow-hidden">
-            <Image
-              src={urlForImage(firstArticle.mainImage as any)}
-              alt={firstArticle.title || ""}
-              fill
-              className="object-contain"
-            />
-          </div>
-          <p className="text-base text-muted-foreground lg:text-lg mt-4 lg:mt-[40px]">
-            Gone are the days of aesthetics trumping experience. Today, web
-            design is all about crafting immersive experiences that connect,
-            captivate, motivate, and delight.
-          </p>
-        </article>
-      ) : (
-        <p className="text-[40px] lg:text-[60px] font-portlin leading-[.9]">
-          No results found.
+    <section className="lg:max-w-[790px]">
+      <div className="lg:hidden">{categorySelector}</div>
+      {!isLoading && data?.[0]?.length === 0 && (
+        <p className="text-sm lg:text-lg text-center lg:px-4 text-muted-foreground mt-[60px] lg:mt-0">
+          NO RESULTS FOUND
         </p>
       )}
-      {articles.slice(1).map((article) => (
-        <article
-          key={article._id}
-          className="grid grid-cols-[1fr,2fr] lg:items-center gap-[10px] lg:gap-[38px] mt-4 lg:mt-[40px] border-b border-muted pb-4 lg:pb-[40px]"
-        >
-          <div className="w-full">
-            <div className="w-full pb-[75%] relative rounded-[8px] overflow-hidden">
-              <Image
-                src={urlForImage(article.mainImage as any)}
-                alt={article.title || ""}
-                fill
-                className="object-contain"
-              />
-            </div>
-          </div>
-          <div>
-            <header>
+
+      {data?.map((articles: any[], i: number) => {
+        return articles?.map((article, ii) => {
+          if (i === 0 && ii === 0)
+            return (
+              <article
+                key={article.id}
+                className="border-b border-muted pb-6 lg:pb-[45px] grid grid-cols-1"
+              >
+                <header className="row-start-2 lg:row-start-1 mt-4 lg:mt-0">
+                  <Link
+                    href={`/articles/${article.slug?.current}`}
+                    className="lg:hover:underline"
+                  >
+                    <h1 className="text-[40px] lg:text-[60px] font-portlin uppercase tracking-[0.5px] leading-[.92]">
+                      {article.title}
+                    </h1>
+                  </Link>
+                </header>
+                <Link
+                  href={`/articles/${article.slug?.current}`}
+                  className="hover:underline block"
+                >
+                  <div className="w-full pb-[75%] relative mt-8 lg:mt-[40px] rounded-[6px] lg:rounded-[8px] overflow-hidden">
+                    <Image
+                      src={urlForImage(article.mainImage as any)}
+                      alt={article.title || ""}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </Link>
+                <PortableText
+                  content={article.body as any}
+                  className="text-[15px] leading-[26px] lg:text-lg lg:leading-[30px] mt-4 lg:mt-[40px] line-clamp-3"
+                />
+              </article>
+            );
+          return (
+            <article
+              key={article._id}
+              className="grid grid-cols-1 lg:grid-cols-[1fr,2fr] lg:items-center gap-4 lg:gap-[38px] mt-6 lg:mt-[40px] border-b border-muted pb-6 lg:pb-[40px]"
+            >
               <Link
                 href={`/articles/${article.slug?.current}`}
-                className="hover:underline"
+                className="block w-full"
               >
-                <h2 className="text-base lg:text-[40px] font-portlin leading-[1.06] line-clamp-2">
-                  {article.title}
-                </h2>
+                <div className="w-full pb-[75%] relative rounded-[6px] lg:rounded-[8px] overflow-hidden">
+                  <Image
+                    src={urlForImage(article.mainImage as any)}
+                    alt={article.title || ""}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </Link>
-            </header>
-            <PortableText
-              className="leading-[1.6] text-xs lg:text-sm mt-[10px] lg:mt-[26px] text-muted-foreground line-clamp-2"
-              content={article.body as any}
-            />
-          </div>
-        </article>
-      ))}
 
-      {lastId && (
+              <div>
+                <header>
+                  <Link
+                    href={`/articles/${article.slug?.current}`}
+                    className="lg:hover:underline"
+                  >
+                    <h2 className="text-[40px] font-portlin uppercase tracking-[0.5px] leading-[.92] lg:leading-[1.06] line-clamp-2">
+                      {article.title}
+                    </h2>
+                  </Link>
+                </header>
+                <PortableText
+                  className="text-[15px] leading-[26px] lg:text-lg lg:leading-[30px] mt-4 lg:mt-[26px] line-clamp-3 lg:line-clamp-2"
+                  content={article.body as any}
+                />
+              </div>
+            </article>
+          );
+        });
+      })}
+
+      {isLoading && (
+        <div className="flex justify-center mt-[40px] lg:mt-0 lg:px-4">
+          <Loader className="size-4 lg:size-8 animate-spin text-muted-foreground" />
+        </div>
+      )}
+
+      {hasMore && !isLoading && (
         <div className="flex justify-center mt-[40px] lg:mt-[60px]">
-          <Button
-            variant="outline"
-            className={cn("mx-auto", isLoadingMore && "!border-none")}
-            onClick={loadMore}
-            disabled={isLoadingMore}
-          >
-            {isLoadingMore ? "Loading..." : "SHOW MORE"}
-          </Button>
+          {isValidating ? (
+            <Loader className="size-4 animate-spin text-muted-foreground" />
+          ) : (
+            <Button variant="outline" className="mx-auto" onClick={loadMore}>
+              SHOW MORE
+            </Button>
+          )}
         </div>
       )}
     </section>

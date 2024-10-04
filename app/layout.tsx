@@ -4,6 +4,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Slide, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import CalComModal from "./(shared)/components/CalComModal";
+import NavbarMobile from "./(shared)/components/NavbarMobile";
 
 const MonaSans = localFont({
   variable: "--font-mona-sans",
@@ -78,10 +80,11 @@ export default function RootLayout({
           position="bottom-left"
           transition={Slide}
           autoClose={10000}
-          pauseOnHover
           closeOnClick={false}
+          pauseOnHover={true}
           hideProgressBar={true}
           closeButton={false}
+          limit={1}
           style={{
             padding: 0,
             // @ts-ignore
@@ -90,6 +93,8 @@ export default function RootLayout({
             "--toastify-toast-left": "30px",
           }}
         />
+        <CalComModal />
+        <NavbarMobile />
       </body>
     </html>
   );

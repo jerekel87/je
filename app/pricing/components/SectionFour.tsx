@@ -133,39 +133,36 @@ const categories = ["Creative", "Marketing", "Multimedia"];
 
 function SectionFour() {
   return (
-    <section className="bg-primary  py-[70px] lg:py-[140px]">
-      <div className="container mx-auto h-full relative">
-        <h1 className="text-[40px] lg:text-[100px] font-portlin leading-[0.9] text-balance text-white">
-          <span className="text-secondary">FIVE-STAR</span> SOLUTIONS
-        </h1>
-
-        <p className="text-sm max-w-[546px] lg:text-lg mt-[30px] lg:mt-[40px] text-[#a7a7bc] mb-[60px] lg:mb-[124px]">
-          Here you can find many of the solutions we offer that are included in
-          your infinite solution package.
-        </p>
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-[100px]">
-          <ul className="justify-between lg:justify-normal text-white text-xl lg:text-[40px] font-portlin flex flex-row lg:flex-col lg:w-[360px]">
-            {categories.map((category) => (
-              <li
-                key={category}
-                className={twMerge(
-                  "px-4 lg:px-0 pb-4 lg:py-[22px] border-b-[3px] border-b-gray-400 border-opacity-[.2] leading-none hover:border-secondary",
-                  category === "Creative" && "border-secondary"
-                )}
-              >
-                {category}
-              </li>
-            ))}
-          </ul>
-          <ul className="columns-2 lg:columns-3 text-white gap-4 lg:gap-[100px] font-medium text-sm lg:text-lg w-full pt-2">
-            {solutions.map((solution) => (
-              <li key={solution.name}>
-                <a className="inline-block leading-[2.5] border-b-[2px] border-b-transparent hover:border-secondary">
-                  {solution.name}
-                </a>
-              </li>
-            ))}
-          </ul>
+    <section className="bg-primary relative py-[70px] lg:py-[140px] static-background-light">
+      <div className="container px-4 mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-[30px] lg:gap-[100px]">
+        <div>
+          <div className="w-full h-0 pb-[100%] relative">
+            <Image
+              src="/assets/images/exper-tech-environmental-copy@3x.png"
+              fill
+              alt="Unlock you brands personality"
+              className="shrink-0 object-contain w-full h-full"
+            />
+          </div>
+        </div>
+        <div>
+          <h1 className="text-[50px] lg:text-[100px] font-portlin uppercase tracking-[0.5px] leading-[0.9] text-balance text-white">
+            UNLOCK YOUR
+            <br className="hidden lg:block" /> BRANDS
+            <br className="hidden lg:block" />
+            <span className="text-secondary"> PERSONALITY!</span>
+          </h1>
+          <p className="text-sm leading-normal lg:text-lg mt-[30px] lg:mt-[40px] text-[#a7a7bc]">
+            Imagine your brand coming to life with a character as unique as your
+            business! Our talented team is ready create an unforgettable mascots
+            that resonate with your audience - whether you&apos;re aiming for
+            fun and quirky or sleek and professional.
+            <br />
+            <br />
+            <span className="text-white">
+              Let&apos;s add some personality to your brand today!
+            </span>
+          </p>
         </div>
       </div>
     </section>

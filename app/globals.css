@@ -81,6 +81,9 @@
 }
 
 /* React toastify custom style */
+.Toastify {
+  @apply hidden lg:block;
+}
 .Toastify__toast {
   @apply !p-0 !mb-0;
 }
@@ -88,3 +91,149 @@
   @apply !p-0;
 }
 /*  */
+
+/* Start | Static effect background */
+.static-background-light::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/assets/images/static-effect-old.png") 0 0;
+  opacity: 0.8;
+}
+.static-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/assets/images/static-effect-old.png") 0 0;
+  opacity: 1;
+}
+.static-background-our-solutions::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/assets/images/static-effect-our-sol.png") 0 0;
+  background-repeat: repeat;
+  background-size: 100px 100px;
+  opacity: 1;
+}
+.static-background-hard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/assets/images/static-effect-dirty-white.jpg") 0 0;
+  background-repeat: repeat;
+  background-size: 100px 100px;
+  opacity: 1;
+}
+.lg-static-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent url("/assets/images/static-effect-old.png") 0 0;
+  opacity: 1;
+}
+@media only screen and (max-width: 1023px) {
+  .lg-static-background::before {
+    display: none;
+  }
+}
+
+.striped-background {
+  width: 100%;
+  background-image: repeating-linear-gradient(
+    to right,
+    transparent 0px,
+    transparent 133px,
+    rgba(36, 36, 52, 0.5) 133px,
+    rgba(36, 36, 52, 0.5) 134px
+  );
+}
+
+@media only screen and (max-width: 1023px) {
+  .striped-background {
+    background-image: repeating-linear-gradient(
+      to right,
+      transparent 0px,
+      transparent 80px,
+      rgba(36, 36, 52, 0.5) 80px,
+      rgba(36, 36, 52, 0.5) 81px
+    );
+  }
+}
+/* End */
+
+/* Start | Beyond text background */
+.boosts-bg::before {
+  content: "";
+  display: inline-block;
+  background-image: url("/assets/images/boosts-bg.webp"); /* Add the image */
+  background-size: cover; /* or contain based on your needs */
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: -1;
+  width: 110%;
+  height: 106%;
+  left: -5%;
+  top: 3%;
+}
+/* End */
+
+/* Start | React player custom play button */
+.react-player__play-icon::before {
+  content: "";
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-image: url(/assets/images/yt-play-button.png);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-size: 100px 100px;
+  transform: translate(-50%, -50%);
+}
+/* End */
+
+/*  */
+p:empty {
+  height: 18px;
+}
+@media only screen and (max-width: 1023px) {
+  p:empty {
+    height: 24px;
+  }
+}
+/*  */
+
+/* Start | Project modal transition gradient */
+.transition-gradient::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  top: 4px;
+  height: 34px;
+  background: linear-gradient(white, white, transparent);
+}
+
+@media only screen and (min-width: 1024px) {
+  .transition-gradient::before {
+    height: 64px;
+  }
+}
+/* End */

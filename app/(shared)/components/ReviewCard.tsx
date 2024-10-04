@@ -1,9 +1,23 @@
-import { ReactNode } from "react";
+import { ReactNode, useRef } from "react";
 import StarRating from "./StarRating";
 import Image from "next/image";
 import ShowMoreText from "react-show-more-text";
+import {
+  ShowMore,
+  ShowMoreRef,
+  ShowMoreToggleLinesFn,
+} from "@re-dev/react-truncate";
 import { Card } from "./ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { generateAvatarInitials } from "../lib/utils";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { urlForImage } from "@/sanity/lib/image";
+import { Mousewheel } from "swiper/modules";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/scrollbar";
 
 function ReviewCard({
   avatar,
@@ -13,6 +27,7 @@ function ReviewCard({
   text,
   platformLogoUrl,
   platformName,
+  images,
 }: {
   avatar?: string;
   reviewerName: string;
@@ -21,13 +36,23 @@ function ReviewCard({
   text?: ReactNode;
   platformLogoUrl?: string;
   platformName: string;
+  images?: any[];
 }) {
+  // The Toggle method will be passed back through `useImperativeHandle`
+  const ref = useRef<ShowMoreRef>(null);
+
+  // Custom buttons can be expanded and collapsed through this method
+  const toggleLines: ShowMoreToggleLinesFn = (e) => {
+    ref.current?.toggleLines(e);
+  };
   return (
-    <Card className="p-4 lg:p-[35px] rounded lg:rounded-[10px] shadow-none">
+    <Card className="p-4 lg:p-[35px] rounded-[6px] lg:rounded-[10px] shadow-[9.7px_10.1px_35px_0_rgba(0,0,0,0.08)] border-none h-max">
       <div className="flex gap-2 lg:gap-[18px] items-center">
         <Avatar className="size-[40px] lg:size-[60px]">
           <AvatarImage src={avatar} alt={reviewerName} />
-          <AvatarFallback>JE</AvatarFallback>
+          <AvatarFallback>
+            {generateAvatarInitials(reviewerName)}
+          </AvatarFallback>
         </Avatar>
         <div>
           <div className="flex gap-1 lg:gap-[6px] items-center">
@@ -54,16 +79,59 @@ function ReviewCard({
           </p>
         </div>
       </div>
-      <div className="py-[30px] text-sm lg:text-[17px] leading-[1.65]">
-        <ShowMoreText
-          lines={2}
+      <div className="py-[30px] text-sm lg:text-[17px] leading-normal lg:leading-[1.65] w-full">
+        {/* <ShowMoreText
+          lines={4}
           more="More"
           less="Less"
-          anchorClass="underline"
+          anchorClass="underline cursor-pointer"
           truncatedEndingComponent={"... "}
         >
           {text}
-        </ShowMoreText>
+        </ShowMoreText> */}
+        <ShowMore
+          ref={ref}
+          lines={4}
+          more={
+            <button onClick={toggleLines}>
+              ... <span className="underline">More</span>
+            </button>
+          }
+          less={
+            <button onClick={toggleLines} className="underline">
+              {" "}
+              Less
+            </button>
+          }
+        >
+          {text}
+        </ShowMore>
+
+        {images && images?.length > 0 && (
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={4}
+            className="mt-[32px]"
+            mousewheel
+            modules={[Mousewheel]}
+          >
+            {images?.map((image, i) => (
+              <SwiperSlide key={i}>
+                <Zoom>
+                  <div className="relative pb-[100%] border border-[#f0efed]">
+                    <Image
+                      src={urlForImage(image)}
+                      fill
+                      alt={platformName}
+                      className="object-contain"
+                      quality="100"
+                    />
+                  </div>
+                </Zoom>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
       </div>
       <div className="border-t border-[#f0efed] pt-4 lg:pt-[35px] flex justify-between">
         <StarRating
@@ -71,7 +139,8 @@ function ReviewCard({
           text={<StarRating.Text>{rating}/5</StarRating.Text>}
         />
         {platformLogoUrl && (
-          <div className="relative h-auto max-h-[14px] w-[70px] lg:h-auto lg:max-h-[22px] lg:w-[86px]">
+          // <div className="relative h-auto max-h-[14px] w-[70px] lg:h-auto lg:max-h-[22px] lg:w-[86px]">
+          <div className="relative h-[21px] w-[86px]">
             <Image
               src={platformLogoUrl}
               fill

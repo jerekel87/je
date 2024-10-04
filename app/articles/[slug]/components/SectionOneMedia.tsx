@@ -1,37 +1,30 @@
 "use client";
 
-import { RxShare2 } from "react-icons/rx";
-import { RWebShare } from "react-web-share";
+import Image from "next/image";
+import ReactPlayer from "react-player";
+import { Article } from "@/sanity.types";
+import { urlForImage } from "@/sanity/lib/image";
 
-function SectionOneMedia() {
+function SectionOneMedia({ article }: { article: Article }) {
   return (
-    <div className="relative mt-[48px] lg:mt-[58px]">
-      <div className="w-full h-0 pb-[75.8%] relative">
-        <iframe
-          className="w-full h-full rounded lg:rounded-[10px] absolute top-0 left-0"
-          src="https://www.youtube.com/embed/NpEaa2P7qZI?si=8Dc3pjtkxOqg4XSZ"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
+    <div className="w-[100vw] -left-4 lg:left-0 lg:w-full h-0 pb-[75.8%] relative lg:rounded-[10px] bg-black overflow-hidden">
+      {article.mainVideoLink ? (
+        <div className="w-full pb-[56.4%] absolute top-1/2 -translate-y-1/2">
+          <ReactPlayer
+            width="100%"
+            height="100%"
+            style={{ position: "absolute", objectFit: "contain" }}
+            url="https://www.youtube.com/watch?v=LXb3EKWsInQ"
+          />
+        </div>
+      ) : (
+        <Image
+          src={urlForImage(article.mainImage as any)}
+          alt={article.title || ""}
+          fill
+          className="object-cover"
         />
-      </div>
-      <div className="hidden lg:block absolute -right-[105px] top-[40px]">
-        <RWebShare
-          data={{
-            text: "Like humans, flamingos make friends for life",
-            url: "https://on.natgeo.com/2zHaNup",
-            title: "Flamingos",
-          }}
-        >
-          <div className="flex flex-col items-center">
-            <button className="flex items-center justify-center size-[70px] border-[1px] rounded-full border-muted">
-              <RxShare2 className="size-[25px]" />
-            </button>
-            <p className="mt-[10px] text-sm font-bold">Share</p>
-          </div>
-        </RWebShare>
-      </div>
+      )}
     </div>
   );
 }

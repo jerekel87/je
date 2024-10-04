@@ -5,12 +5,14 @@ import { usePathname } from "next/navigation";
 
 function FooterTopBg() {
   const pathname = usePathname();
-  const isFAQPage = pathname.includes("faq");
-  const isArticlesPage = pathname.includes("articles");
-  const topBgColor = isFAQPage || isArticlesPage ? "#fff" : "#f9f8f3";
+  const isFAQPage = pathname.includes("/faq");
+  const isArticlesPage = pathname.includes("/articles");
+  const isPricingPage = pathname.includes("/pricing");
+  const topBgColor =
+    isFAQPage || isArticlesPage || isPricingPage ? "#fff" : "#f9f8f3";
   return (
     <div
-      className="h-[135px] lg:h-[235px] w-full relative"
+      className="h-[135px] lg:h-[235px] w-full relative static-background"
       style={{ backgroundColor: topBgColor }}
     >
       <div className="absolute w-full h-[27px] lg:h-[37px] -bottom-[6px] z-[2]">

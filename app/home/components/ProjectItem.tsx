@@ -1,15 +1,12 @@
 "use client";
 
 import React from "react";
-import { usePathname } from "next/navigation";
-import { urlForImage } from "@/sanity/lib/image";
-import { Project } from "@/sanity.types";
 import Image from "next/image";
 import Link from "next/link";
+import { Project } from "@/sanity.types";
+import { urlForImage } from "@/sanity/lib/image";
 
 function ProjectItem({ project }: { project: Project }) {
-  const pathname = usePathname();
-
   const src = urlForImage(project.mainImage as any);
   return (
     <Link

@@ -17,7 +17,8 @@ import {
 } from "react-share";
 import { toast } from "sonner";
 
-function ShareModal({ url }: { url: string }) {
+function ShareModal({ pathname }: { pathname: string }) {
+  const url = `${window.location.origin}/${pathname}`;
   const copy = () => {
     navigator.clipboard.writeText(url);
     toast("Link copied!");
@@ -25,7 +26,7 @@ function ShareModal({ url }: { url: string }) {
   return (
     <Dialog modal>
       <DialogTrigger asChild>
-        <button className="flex bg-white items-center justify-center size-[70px] border-[1px] rounded-full border-muted">
+        <button className="flex bg-white items-center justify-center size-[70px] border-[1px] rounded-full border-[#e2e2e2]">
           <Image
             src="/assets/images/share-05-solid-sharp.svg"
             height="22"
@@ -39,7 +40,7 @@ function ShareModal({ url }: { url: string }) {
         overlayClass="bg-transparent"
         hideCloseButton
       >
-        <p className="text-4xl lg:text-[40px] font-portlin">
+        <p className="text-4xl lg:text-[40px] font-portlin uppercase tracking-[0.5px]">
           SHARE THIS PROJECT
         </p>
         <div className="flex mt-[24px] gap-[10px]">

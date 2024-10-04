@@ -14,14 +14,14 @@ function Carousel({ images }: { images: any[] }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
-    <div>
+    <div className="px-4 lg:px-0">
       <Swiper
         loop={true}
         spaceBetween={10}
         navigation={true}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="lg:rounded-[15px]"
+        className="rounded-[10px] lg:rounded-[15px]"
       >
         {images.map((image, i) => (
           <SwiperSlide key={i} className="!w-full">
@@ -31,7 +31,7 @@ function Carousel({ images }: { images: any[] }) {
                 height="900"
                 width="900"
                 alt="Project title"
-                className="lg:rounded-[15px] absolute w-full h-full object-cover"
+                className="absolute w-full h-full object-cover"
                 quality={100}
               />
             </div>
@@ -56,7 +56,7 @@ function Carousel({ images }: { images: any[] }) {
             spaceBetween: 15,
           },
         }}
-        className="mt-5 lg:mt-[30px] !px-7 lg:!px-[56px]"
+        className="mt-5 lg:mt-[30px] !px-4 lg:!px-[56px]"
       >
         {images.map((image, i) => (
           <SwiperSlide key={i} className="group cursor-pointer">

@@ -16,6 +16,7 @@ import { getReviews } from "@/sanity/query/review";
 import { useState } from "react";
 import { REVIEWS_LIMIT } from "./SectionOne";
 import { LoaderCircle } from "lucide-react";
+import SortingSelector from "./SortingSelector";
 
 function Reviews({
   initialReviews,
@@ -33,6 +34,11 @@ function Reviews({
   const [lastId, setLastId] = useState(initialLastId);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
   const [isLoadingReviews, setIsLoadingReviews] = useState(false);
+
+  const [filter, setFilter] = useState({
+    sortBy: "Most Recent",
+    platformId: "",
+  });
 
   const loadMore = async () => {
     setIsLoadingMore(true);
@@ -53,6 +59,7 @@ function Reviews({
 
   const handlePlaformChange = async (value: string) => {
     setIsLoadingReviews(true);
+    setFilter((prevState) => ({ ...prevState, platformId: value }));
     try {
       const reviewsRes = await getReviews({
         platformId: value == "all" ? "" : value,
@@ -65,32 +72,47 @@ function Reviews({
     }
   };
 
+  const handleOrderChange = async (value: string) => {
+    setIsLoadingReviews(true);
+    setFilter((prevState) => ({ ...prevState, sortBy: value }));
+    try {
+      const projectsRes = await getReviews({
+        sortBy: value,
+        platformId: filter.platformId,
+      });
+      setReviews(projectsRes);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoadingReviews(false);
+    }
+  };
+
   return (
     <>
-      <div className="px-4 lg:px-0 flex justify-between flex-col lg:flex-row gap-4 mt-[80px] pt-[48px] border-t border-[#e8e7e6]">
-        <h1 className="text-[40px] lg:text-[60px] font-portlin">
+      <div className="px-4 lg:px-0 flex justify-between flex-col lg:flex-row gap-4 mt-[30px] lg:mt-[80px] pt-[30px] lg:pt-[48px] border-t border-[#e8e7e6]">
+        <h1 className="text-[40px] lg:text-[60px] leading-none font-portlin uppercase tracking-[0.5px]">
           SUCCESS STORIES
         </h1>
         <div className="flex flex-col lg:flex-row gap-2 lg:gap-[30px]">
           <PlatformSelector onChange={handlePlaformChange} />
-          <Select>
-            <SelectTrigger className="w-full lg:w-[282px]">
-              <SelectValue placeholder="Recent Reviews" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="apple">Apple</SelectItem>
-            </SelectContent>
-          </Select>
+          <SortingSelector onChange={handleOrderChange} />
         </div>
       </div>
-      <div className="px-4 lg:px-0 mt-[46px]">
+      <div className="px-4 lg:px-0 mt-[30px] lg:mt-[46px]">
         {isLoadingReviews ? (
-          <LoaderCircle className="animate-spin" />
-        ) : (
+          <div className="container px-4 py-[100px] flex justify-center">
+            <LoaderCircle className="animate-spin" />
+          </div>
+        ) : reviews && reviews.length ? (
           <ReviewsMasonry reviews={reviews} />
+        ) : (
+          <p className="px-4 lg:px-0 text-xs lg:text-lg font-medium">
+            NO RESULTS FOUND
+          </p>
         )}
       </div>
-      {lastId && (
+      {reviews && reviews.length >= 9 && lastId && (
         <div className="mx-auto max-w-[791px] text-center">
           <Button
             variant="outline"

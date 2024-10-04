@@ -15,32 +15,36 @@ export async function getReviews({
   platformId = "",
   lastId = "",
   limit = 9,
+  sortBy = "Most Recent",
 } = {}): Promise<
   (Review & {
     reviewPlatformLogo: any;
     reviewPlatformName: string;
   })[]
 > {
-  let query = `*[_type == "review" && _id > $lastId] | order(_createdAt desc) [0...$limit]{
-    _id,
-    reviewerName,
-    reviewerInfo,
-    rating,
-    reviewText,
-    reviewDate,
-    avatar,
+  let sortByValue = "desc";
+
+  switch (sortBy) {
+    case "Most Recent":
+      sortByValue = "desc";
+      break;
+    case "Oldest First":
+      sortByValue = "asc";
+      break;
+
+    default:
+      sortByValue = "desc";
+      break;
+  }
+
+  let query = `*[_type == "review" && _id > $lastId] | order(_createdAt ${sortByValue}) [0...$limit]{
+    ...,
     "reviewPlatformLogo": reviewPlatform->logo,
     "reviewPlatformName": reviewPlatform->name
   }`;
   if (platformId) {
-    query = `*[_type == "review" && reviewPlatform._ref == $platformId && _id > $lastId] | order(_createdAt desc) [0...$limit]{
-        _id,
-        reviewerName,
-        reviewerInfo,
-        rating,
-        reviewText,
-        reviewDate,
-        avatar,
+    query = `*[_type == "review" && reviewPlatform._ref == $platformId && _id > $lastId] | order(_createdAt ${sortByValue}) [0...$limit]{
+        ...,
         "reviewPlatformLogo": reviewPlatform->logo,
         "reviewPlatformName": reviewPlatform->name
       }`;
@@ -62,8 +66,7 @@ export async function getReviewsPlatforms(): Promise<
   (ReviewPlatform & { logoUrl: string })[]
 > {
   let query = `*[_type == "reviewPlatform"]{
-      _id,
-      name,
+      ...,
       "logoUrl": logo.asset->url
     }`;
 

@@ -6,14 +6,17 @@ import { toast } from "react-toastify";
 
 function FakePurchase() {
   useEffect(() => {
-    const handleClose = () => {
-      const nextPopupTime =
-        Math.floor(Math.random() * (30000 - 15000 + 1)) + 15000; // Random time between 15 to 30 seconds
-      setTimeout(showRandomPopup, nextPopupTime);
-    };
     const showRandomPopup = () => {
+      if (toast.isActive(1)) {
+        return;
+      }
       toast(<FakePurchasePopUp />, {
-        onClose: handleClose,
+        onClose: () => {
+          const nextPopupTime =
+            Math.floor(Math.random() * (30000 - 15000 + 1)) + 15000; // Random time between 15 to 30 seconds
+          setTimeout(showRandomPopup, nextPopupTime);
+        },
+        toastId: 1,
       });
     };
 

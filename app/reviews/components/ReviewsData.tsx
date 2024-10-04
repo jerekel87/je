@@ -1,7 +1,6 @@
 import StarRating from "@/app/(shared)/components/StarRating";
 import Image from "next/image";
 import { Progress } from "@/app/(shared)/components/ui/progress";
-import { unstable_noStore as noStore } from "next/cache";
 import { getReviewsCountByRating } from "@/sanity/query/review";
 
 type RatingValue = "1" | "2" | "3" | "4" | "5";
@@ -9,14 +8,40 @@ type RatingValue = "1" | "2" | "3" | "4" | "5";
 const percentage = (count: number, totalCount: number) =>
   (count * 100) / totalCount;
 
+export const revalidate = 60;
+
 async function ReviewsData() {
-  noStore();
   const reviewRatingCount = await getReviewsCountByRating();
 
   const total = Object.values(reviewRatingCount).reduce(
     (acc, currentValue) => acc + currentValue,
     0
   );
+
+  function calculateAverageRating(ratings: { [key: string]: number }): number {
+    let totalRatings = 0;
+    let totalUsers = 0;
+
+    // Loop through each rating and its count
+    for (const rating in ratings) {
+      const count = ratings[rating];
+      const numericRating = Number(rating);
+
+      // Sum up total rating values
+      totalRatings += numericRating * count;
+
+      // Sum up total users who submitted ratings
+      totalUsers += count;
+    }
+
+    // Avoid division by zero
+    const average = totalUsers === 0 ? 0 : totalRatings / totalUsers;
+
+    // Round off the average rating to the nearest whole number
+    return Math.round(average);
+  }
+
+  const averageRating = calculateAverageRating(reviewRatingCount);
 
   const renderBars = () => {
     return Object.keys(reviewRatingCount)
@@ -32,18 +57,21 @@ async function ReviewsData() {
   };
   return (
     <div>
-      <div className="flex gap-[22px] items-end">
-        <p className="text-[60px] lg:text-[80px] font-portlin leading-none">
+      <div className="flex gap-4 lg:gap-[22px] items-end">
+        <p className="text-[60px] lg:text-[80px] font-portlin uppercase tracking-[0.5px] leading-none">
           {total}
         </p>
         <div>
-          <StarRating value={5} text={<StarRating.Text>5/5</StarRating.Text>} />
-          <p className="leading-none pb-1 mt-[10px] lg:mt-[12px] text-xs lg:text-sm font-medium text-muted-foreground">
+          <StarRating
+            value={averageRating}
+            text={<StarRating.Text>{averageRating}/5</StarRating.Text>}
+          />
+          <p className="leading-none lg:leading-none pb-1 mt-[8px] lg:mt-[12px] text-xs lg:text-sm font-medium text-muted-foreground">
             Customer Satisfaction
           </p>
         </div>
       </div>
-      <div className="flex flex-col gap-4 lg:gap-[25px] mt-[40px]">
+      <div className="flex flex-col gap-4 lg:gap-[24px] mt-[40px]">
         {renderBars()}
       </div>
       <div className="flex items-center gap-[28px] mt-[40px]">
@@ -90,14 +118,16 @@ function Bar({
 }) {
   return (
     <div className="flex items-center gap-[18px]">
-      <span className="text-sm lg:text-base font-bold whitespace-nowrap">
+      <span className="text-sm lg:text-base font-bold whitespace-nowrap leading-none lg:leading-none">
         {rating} Star
       </span>
       <Progress
         value={percentage}
         className="w-full lg:w-[306px] h-[11px] rounded-[2px] bg-[#e8e7e6]"
       />
-      <span className="text-sm lg:text-base font-medium">({count})</span>
+      <span className="text-sm leading-none lg:leading-none lg:text-base font-medium">
+        ({count})
+      </span>
     </div>
   );
 }

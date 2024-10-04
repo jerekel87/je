@@ -1,3 +1,6 @@
+"use client";
+
+import CalComModal from "@/app/(shared)/components/CalComModal";
 import { Button } from "@/app/(shared)/components/ui/button";
 import Image from "next/image";
 
@@ -14,15 +17,19 @@ function SectionFive() {
       </div>
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
         <div className="text-center lg:text-left">
-          <h1 className="text-[40px] lg:text-[100px] font-portlin leading-[.9]">
+          <h1 className="text-[40px] lg:text-[80px] font-portlin uppercase tracking-[0.5px] leading-[.9]">
             FORGING FUTURE-READY BRANDS
           </h1>
-          <p className="text-sm lg:text-[17px] mt-[30px] lg:mt-[40px] lg max-w-[486px] text-pretty">
+          <p className="text-sm lg:text-[17px] mt-[24px] lg:mt-[28px] lg max-w-[486px] text-pretty leading-[1.53]">
             Stop customers from treating your business like a commodity because
             you look exactly like everyone else!
           </p>
         </div>
-        <Button className="mt-[30px] lg:mt-[0]">GET A QUOTE!</Button>
+        <CalComModal.Trigger>
+          <Button className="mt-[30px] lg:mt-[0] lg:px-[48px] min-w-[225px]">
+            GET A QUOTE!
+          </Button>
+        </CalComModal.Trigger>
       </div>
     </section>
   );
