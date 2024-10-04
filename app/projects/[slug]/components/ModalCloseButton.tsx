@@ -1,11 +1,10 @@
 "use client";
 
 import { X } from "lucide-react";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 function ModalCloseButton() {
   const router = useRouter();
-  const pathname = usePathname();
   return (
     <button
       onClick={router.back}
