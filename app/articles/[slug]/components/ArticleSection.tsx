@@ -9,7 +9,7 @@ function ArticleSection({ articleSection }: { articleSection: any }) {
   return (
     <section className="mt-[50px] lg:mt-[70px]">
       {(articleSection.videoLink || articleSection.image) && (
-        <div className="w-full h-0 pb-[75.8%] relative rounded-[6px] lg:rounded-[10px] bg-black">
+        <div className="w-full h-0 pb-[75.8%] relative rounded-[6px] lg:rounded-[10px] bg-black overflow-hidden">
           {articleSection.videoLink ? (
             <div className="w-full pb-[56.4%] absolute top-1/2 -translate-y-1/2">
               <ReactPlayer
