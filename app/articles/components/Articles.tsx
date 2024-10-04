@@ -82,7 +82,7 @@ function Articles({
           if (i === 0 && ii === 0)
             return (
               <article
-                key={article.id}
+                key={article._id}
                 className="border-b border-muted pb-6 lg:pb-[45px] grid grid-cols-1"
               >
                 <header className="row-start-2 lg:row-start-1 mt-4 lg:mt-0">
