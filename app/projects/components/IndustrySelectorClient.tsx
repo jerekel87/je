@@ -26,7 +26,7 @@ function IndustrySelectorClient({
     const params = new URLSearchParams(searchParams);
     params.set("industry", industry);
 
-    router.replace(`/projects?${params.toString()}`);
+    router.replace(`/projects?${params.toString()}`, { scroll: false });
   };
   return (
     <Select
