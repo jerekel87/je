@@ -1,16 +1,16 @@
 import Image from "next/image";
 import Reviews from "./Reviews";
 import ReviewsData from "./ReviewsData";
+import PlatformSelector from "./PlatformSelector";
 import { getReviews } from "@/sanity/query/review";
-
-export const REVIEWS_LIMIT = 9;
+import { Suspense } from "react";
 
 export const revalidate = 60;
 
 async function SectionOne() {
-  const reviews = await getReviews({ limit: REVIEWS_LIMIT });
+  const reviews = await getReviews({ limit: 9 });
   return (
-    <section className="relative pt-[24px] lg:pt-[140px] pb-[124px] bg-[#f9f8f3]">
+    <section className="relative pt-[24px] lg:pt-[140px] pb-[70px] lg:pb-[124px] bg-[#f9f8f3]">
       <div className="absolute w-full h-[27px] lg:h-[37px] -top-[6px]">
         <Image
           src="/assets/images/shape-7-copy-12.svg"
@@ -35,7 +35,12 @@ async function SectionOne() {
             </div>
           </div>
         </div>
-        <Reviews initialReviews={reviews} />
+        <Suspense>
+          <Reviews
+            initialReviews={reviews}
+            platformSelector={<PlatformSelector />}
+          />
+        </Suspense>
       </div>
     </section>
   );
