@@ -5,10 +5,20 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/app/(shared)/components/ui/select";
+import { useRouter, useSearchParams } from "next/navigation";
 
-function SortingSelector({ onChange }: { onChange: (value: string) => void }) {
+function SortingSelector() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const handleOrderChange = (sortBy: string) => {
+    const params = new URLSearchParams(searchParams);
+    params.set("sortBy", sortBy);
+
+    router.replace(`/reviews?${params.toString()}`, { scroll: false });
+  };
   return (
-    <Select onValueChange={onChange}>
+    <Select onValueChange={handleOrderChange}>
       <SelectTrigger className="w-full lg:w-[282px] text-[#53545c]">
         <SelectValue placeholder="Most recent" />
       </SelectTrigger>

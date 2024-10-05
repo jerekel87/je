@@ -74,7 +74,10 @@ function ReviewCard({
               {reviewerName}
             </p>
           </div>
-          <p className="text-xs lg:text-sm text-[#53545c] mt-1 lg:mt-[8px] leading-none">
+          <p
+            title={reviewerInfo}
+            className="text-xs lg:text-sm text-[#53545c] mt-1 lg:mt-[8px] leading-none line-clamp-1"
+          >
             {reviewerInfo}
           </p>
         </div>

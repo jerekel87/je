@@ -15,7 +15,7 @@ function SortingSelector() {
     const params = new URLSearchParams(searchParams);
     params.set("sortBy", sortBy);
 
-    router.replace(`/projects?${params.toString()}`);
+    router.replace(`/projects?${params.toString()}`, { scroll: false });
   };
   return (
     <Select

@@ -8,35 +8,31 @@ import {
   SelectValue,
 } from "@/app/(shared)/components/ui/select";
 import { cn } from "@/app/(shared)/lib/utils";
-import { Industry } from "@/sanity.types";
-import { useSearchParams } from "next/navigation";
-import { useRouter } from "next/navigation";
+import { ReviewPlatform } from "@/sanity.types";
+import { useRouter, useSearchParams } from "next/navigation";
 
-function IndustrySelectorClient({
+function PlatformSelectorClient({
   className,
   options,
 }: {
   className?: string;
-  options: Industry[];
+  options: ReviewPlatform[];
 }) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const handleIndustryChange = (industry: string) => {
+  const handlePlatformChange = (platformId: string) => {
     const params = new URLSearchParams(searchParams);
-    params.set("industry", industry);
+    params.set("platformId", platformId);
 
-    router.replace(`/projects?${params.toString()}`, { scroll: false });
+    router.replace(`/reviews?${params.toString()}`, { scroll: false });
   };
   return (
-    <Select
-      onValueChange={handleIndustryChange}
-      defaultValue={searchParams.get("industry") || ""}
-    >
+    <Select onValueChange={handlePlatformChange} defaultValue="all">
       <SelectTrigger
         className={cn("w-full lg:w-[282px] text-[#53545c]", className)}
       >
-        <SelectValue placeholder="Industry" />
+        <SelectValue />
       </SelectTrigger>
       <SelectContent
         ref={(ref) =>
@@ -46,18 +42,18 @@ function IndustrySelectorClient({
         className="max-h-[300px]"
       >
         <SelectItem
-          value="all"
           className="p-3 text-sm lg:text-lg w-[calc(100vw-40px)] lg:w-auto"
+          value="all"
         >
-          All
+          All Platforms
         </SelectItem>
-        {options.map((projectIndustry) => (
+        {options.map((reviewPlatform) => (
           <SelectItem
-            key={projectIndustry._id}
-            value={projectIndustry.slug?.current || ""}
             className="p-3 text-sm lg:text-lg w-[calc(100vw-40px)] lg:w-auto"
+            key={reviewPlatform._id}
+            value={reviewPlatform._id}
           >
-            {projectIndustry.title}
+            {reviewPlatform.name}
           </SelectItem>
         ))}
       </SelectContent>
@@ -65,4 +61,4 @@ function IndustrySelectorClient({
   );
 }
 
-export default IndustrySelectorClient;
+export default PlatformSelectorClient;
