@@ -8,15 +8,15 @@ import PortableText from "react-portable-text";
 function ArticleSection({ articleSection }: { articleSection: any }) {
   return (
     <section className="mt-[50px] lg:mt-[70px]">
-      <div className="w-full h-0 pb-[75.8%] relative">
-        <div className="w-full h-0 pb-[75.8%] relative rounded-[6px] lg:rounded-[10px] bg-black">
+      {(articleSection.videoLink || articleSection.image) && (
+        <div className="w-full h-0 pb-[75.8%] relative rounded-[6px] lg:rounded-[10px] bg-black overflow-hidden">
           {articleSection.videoLink ? (
             <div className="w-full pb-[56.4%] absolute top-1/2 -translate-y-1/2">
               <ReactPlayer
                 width="100%"
                 height="100%"
                 style={{ position: "absolute", objectFit: "contain" }}
-                url="https://www.youtube.com/watch?v=LXb3EKWsInQ"
+                url={articleSection.videoLink}
               />
             </div>
           ) : (
@@ -24,11 +24,12 @@ function ArticleSection({ articleSection }: { articleSection: any }) {
               src={urlForImage(articleSection.image as any)}
               alt=""
               fill
-              className="object-contain"
+              className="object-cover"
             />
           )}
         </div>
-      </div>
+      )}
+
       {articleSection.body && (
         <PortableText
           content={articleSection.body}

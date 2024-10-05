@@ -1,5 +1,4 @@
 import BlockA from "@/app/(shared)/components/BlockA";
-import { Article } from "@/sanity.types";
 
 function SectionFour() {
   return (

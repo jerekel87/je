@@ -9,7 +9,7 @@ function ProjectMarquee({ projects }: { projects: Project[] }) {
   return (
     <div>
       <Marquee loop={0} pauseOnClick pauseOnHover autoFill>
-        {projects.map((project, i) => (
+        {projects?.map((project, i) => (
           <div
             key={project._id + i}
             className="w-[200px] md:w-[350px] xl:w-[400px] shrink-0"

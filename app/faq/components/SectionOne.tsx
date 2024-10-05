@@ -32,7 +32,7 @@ async function SectionOne({ faqCategories }: { faqCategories: any[] }) {
         </div>
 
         <div className="flex flex-col gap-[70px]">
-          {faqCategories.map((faqCategory) => (
+          {faqCategories?.map((faqCategory) => (
             <Faqs key={faqCategory._id} faqCategory={faqCategory} />
           ))}
         </div>

@@ -42,7 +42,7 @@ function FeaturedStories({
           </div>
         </div>
         <div className="grid grid-col-1 lg:grid-cols-3 gap-4 lg:gap-[30px] mt-4 lg:mt-0 lg:[&>*:nth-child(2)]:mt-[40px] lg:[&>*:nth-child(3)]:mt-[80px]">
-          {featuredStories.map((review) => (
+          {featuredStories?.map((review) => (
             <div key={review._id} className="relative z-[1]">
               <ReviewCard
                 avatar={urlForImage(review.avatar as any)}
