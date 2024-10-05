@@ -20,13 +20,13 @@ async function HomePage() {
       <div className="relative static-background-hard bg-[#f9f8f3]">
         <SectionTwo />
         <FeaturedStories
-          featuredStories={homePageSetting.featuredStories as any[]}
+          featuredStories={homePageSetting?.featuredStories as any[]}
         />
       </div>
       <SectionThree />
-      <OurSolutions ourSolutions={homePageSetting.ourSolutions as any[]} />
-      <SectionFour projects={homePageSetting.projects as any[]} />
-      <SectionSix sketchConcept={homePageSetting.sketchConcept} />
+      <OurSolutions ourSolutions={homePageSetting?.ourSolutions as any[]} />
+      <SectionFour projects={homePageSetting?.projects as any[]} />
+      <SectionSix sketchConcept={homePageSetting?.sketchConcept} />
       <Reviews
         subheader={
           <Reviews.Subheader>

@@ -84,7 +84,7 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
           className="w-full mt-[40px]"
           defaultValue="1"
         >
-          {ourSolutions.map((solution, i) => (
+          {ourSolutions?.map((solution, i) => (
             <AccordionItem
               key={i}
               value={String(i)}

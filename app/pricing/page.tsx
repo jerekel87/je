@@ -16,10 +16,10 @@ async function PricingPage() {
     <main>
       <Header articleLink={pricingPageSetting?.articleLink || ""} />
       <SectionOne />
-      <SectionTwo sketchConcept={pricingPageSetting.sketchConcept} />
-      <SectionThree projects={pricingPageSetting.projects as any[]} />
+      <SectionTwo sketchConcept={pricingPageSetting?.sketchConcept} />
+      <SectionThree projects={pricingPageSetting?.projects as any[]} />
       <FeaturedStories
-        featuredStories={pricingPageSetting.featuredStories as any[]}
+        featuredStories={pricingPageSetting?.featuredStories as any[]}
       />
       <SectionFour />
       <SectionFive />

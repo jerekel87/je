@@ -10,7 +10,7 @@ async function FAQPage() {
   return (
     <main>
       <Header articleLink={faqPageSetting?.articleLink || ""} />
-      <SectionOne faqCategories={faqPageSetting.faqCategories as any[]} />
+      <SectionOne faqCategories={faqPageSetting?.faqCategories as any[]} />
     </main>
   );
 }
