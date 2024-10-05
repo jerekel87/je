@@ -617,7 +617,6 @@ export type Industry = {
   _rev: string;
   title?: string;
   slug?: Slug;
-  percentageIncrease?: number;
   description?: string;
 };
 

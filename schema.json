@@ -3772,13 +3772,6 @@
         },
         "optional": true
       },
-      "percentageIncrease": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "number"
-        },
-        "optional": true
-      },
       "description": {
         "type": "objectAttribute",
         "value": {
