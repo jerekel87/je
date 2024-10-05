@@ -222,7 +222,7 @@ p:empty {
 /* Start | Project modal transition gradient */
 .transition-gradient::before {
   content: "";
-  display: inline-block;
+  display: none;
   position: absolute;
   z-index: 1;
   width: 100%;
@@ -234,6 +234,7 @@ p:empty {
 @media only screen and (min-width: 1024px) {
   .transition-gradient::before {
     height: 64px;
+    display: inline-block;
   }
 }
 /* End */
