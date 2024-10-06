@@ -47,8 +47,8 @@ function ReviewCard({
   };
   return (
     <Card className="p-4 lg:p-[35px] rounded-[6px] lg:rounded-[10px] shadow-[9.7px_10.1px_35px_0_rgba(0,0,0,0.08)] border-none h-max">
-      <div className="flex gap-2 lg:gap-[18px] items-center">
-        <Avatar className="size-[40px] lg:size-[60px]">
+      <div className="flex gap-[10px] lg:gap-[18px] items-center">
+        <Avatar className="size-[50px] lg:size-[60px]">
           <AvatarImage src={avatar} alt={reviewerName} />
           <AvatarFallback>
             {generateAvatarInitials(reviewerName)}
@@ -59,7 +59,7 @@ function ReviewCard({
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
-              className="size-4 lg:size-[24px]"
+              className="size-[18px] lg:size-[23px]"
               color="#90e200"
               fill="none"
             >
@@ -76,7 +76,7 @@ function ReviewCard({
           </div>
           <p
             title={reviewerInfo}
-            className="text-xs lg:text-sm text-[#53545c] mt-1 lg:mt-[8px] leading-none line-clamp-1"
+            className="text-xs lg:text-sm text-[#53545c] mt-[6px] lg:mt-[4px] leading-none line-clamp-1"
           >
             {reviewerInfo}
           </p>

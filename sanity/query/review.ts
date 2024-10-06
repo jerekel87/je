@@ -78,11 +78,15 @@ export async function getReviews({
   }
 
   let query = `*[_type == "review" ${lastCreatedAt ? `&& _createdAt ${operator} $lastCreatedAt` : ""}] | order(_createdAt ${sortByValue}) [0...$limit]{
-    ...
+    ...,
+    "reviewPlatformLogo": reviewPlatform->logo,
+    "reviewPlatformName": reviewPlatform->name
   }`;
   if (platformId && platformId !== "all") {
     query = `*[_type == "review" && reviewPlatform._ref == $platformId ${lastCreatedAt ? `&& _createdAt ${operator} $lastCreatedAt` : ""}] | order(_createdAt ${sortByValue}) [0...$limit]{
-        ...
+        ...,
+        "reviewPlatformLogo": reviewPlatform->logo,
+        "reviewPlatformName": reviewPlatform->name
       }`;
   }
   return client.fetch(query, { lastCreatedAt, limit, platformId });
