@@ -130,7 +130,7 @@ function SectionThree() {
             />
             <SectionThreeItem
               imageUrl="/assets/images/layer-25@3x.webp"
-              title="SLAPSHOTS AIR"
+              title="My HVAC Guy"
               description="Transforming My HVAC Guy with a complete brand overhaul. From logo to truck wrap, our designs didn't just turn heads—they cranked up revenue by a cool 218%."
               percentage="140"
             />
