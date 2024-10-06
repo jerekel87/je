@@ -110,17 +110,13 @@ function SectionThree() {
               <SectionThreeItem
                 imageUrl="/assets/images/layer-23@3x.webp"
                 title="ELITE CARPET CLEANING PROS"
-                description="Taking Martika’s Food Truck brand to the next level with a 
-              logo that not only stands out but speaks directly to their 
-              customer base."
+                description="Elevating Elite Carpet Cleaning Pros with strategic branding that resonates. Our designs didn't just refresh their look—they turbocharged their revenue, proving the power of visual impact."
                 percentage="225"
               />
               <SectionThreeItem
                 imageUrl="/assets/images/layer-6@3x.webp"
-                title="BIG SPRINT BUILDERS, CO."
-                description="Take your company to new heights, imagine the endless
-                possibilities or missed opportunities because you’re
-                lacking proper branding for your business."
+                title="BIG SPRING BUILDERS, CO."
+                description="Elevating Big Spring Builders with a sleek, professional rebrand. Our design didn't just build their image—it constructed a sturdy 180% revenue increase."
                 percentage="180"
               />
             </div>
@@ -129,17 +125,13 @@ function SectionThree() {
             <SectionThreeItem
               imageUrl="/assets/images/layer-22@3x.webp"
               title="THE FLASH ELECTRIC"
-              description="Taking Martika’s Food Truck brand to the next level with a 
-              logo that not only stands out but speaks directly to their 
-              customer base."
+              description="Supercharging The Flash Electric with a heroic rebrand. Our electrifying design didn't just catch eyes—it amplified their revenue by 150%, proving the power of standout visuals."
               percentage="150"
             />
             <SectionThreeItem
               imageUrl="/assets/images/layer-25@3x.webp"
               title="SLAPSHOTS AIR"
-              description="Taking Martika’s Food Truck brand to the next level with a 
-              logo that not only stands out but speaks directly to their 
-              customer base."
+              description="Transforming My HVAC Guy with a complete brand overhaul. From logo to truck wrap, our designs didn't just turn heads—they cranked up revenue by a cool 218%."
               percentage="140"
             />
           </div>
