@@ -42,10 +42,10 @@ function ArticleModal({ article }: { article: Article }) {
                   <h1 className="text-[40px] lg:text-[80px] leading-[.9] font-portlin uppercase tracking-[0.5px] lg:mt-[24px]">
                     {article.title}
                   </h1>
-                  {article.body && (
+                  {article.subtitle && (
                     <PortableText
                       className="mt-[30px] text-[15px] leading-[26px] lg:text-lg lg:leading-[30px] [&_a]:underline [&_a]:text-blue-500"
-                      content={article.body as any}
+                      content={article.subtitle as any}
                     />
                   )}
                 </div>
@@ -59,6 +59,12 @@ function ArticleModal({ article }: { article: Article }) {
                         alt={article.title || ""}
                       />
                     </div>
+                    {article.body && (
+                      <PortableText
+                        className="mt-6 lg:mt-[44px] text-[15px] lg:px-[58px] leading-[26px] lg:text-lg lg:leading-[30px] [&_a]:underline [&_a]:text-blue-500"
+                        content={article.body as any}
+                      />
+                    )}
                     {/* {(article.block?.title || article.block?.body) && (
                       <SectionTwo article={article} />
                     )} */}

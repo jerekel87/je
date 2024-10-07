@@ -144,10 +144,12 @@ function Articles({
                     </h2>
                   </Link>
                 </header>
-                <PortableText
-                  className="text-[15px] leading-[26px] lg:text-lg lg:leading-[30px] mt-4 lg:mt-[26px] line-clamp-3 lg:line-clamp-2"
-                  content={article.body as any}
-                />
+                {article.subtitle && (
+                  <PortableText
+                    className="text-[15px] leading-[26px] lg:text-lg lg:leading-[30px] mt-4 lg:mt-[26px] line-clamp-3 lg:line-clamp-2"
+                    content={article.subtitle as any}
+                  />
+                )}
               </div>
             </article>
           );
