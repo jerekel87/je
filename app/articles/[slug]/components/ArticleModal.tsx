@@ -45,7 +45,7 @@ function ArticleModal({ article }: { article: Article }) {
                   </h1>
                   {article.body && (
                     <PortableText
-                      className="mt-[30px] text-[15px] leading-[26px] lg:text-lg lg:leading-[30px] text-muted-foreground [&_a]:underline [&_a]:text-blue-500"
+                      className="mt-[30px] text-[15px] leading-[26px] lg:text-lg lg:leading-[30px] [&_a]:underline [&_a]:text-blue-500"
                       content={article.body as any}
                     />
                   )}
@@ -60,9 +60,9 @@ function ArticleModal({ article }: { article: Article }) {
                         alt={article.title || ""}
                       />
                     </div>
-                    {(article.block?.title || article.block?.body) && (
+                    {/* {(article.block?.title || article.block?.body) && (
                       <SectionTwo article={article} />
-                    )}
+                    )} */}
                     {article.sections?.map((articleSection: any, i: number) => (
                       <ArticleSection key={i} articleSection={articleSection} />
                     ))}

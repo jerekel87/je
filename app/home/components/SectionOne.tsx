@@ -7,7 +7,7 @@ function SectionOne({ articleLink }: { articleLink: string }) {
     <section className="bg-[#164dcc] relative overflow-hidden static-background">
       <div className="z-[1] relative">
         <div className="hidden z-[1] lg:flex items-center gap-[32px] top-1/2 rotate-90 w-max -right-[134px] absolute">
-          <span className="text-white font-portlin uppercase tracking-[0.5px] text-[28px]">
+          <span className="text-white font-portlin uppercase tracking-[0.5px] text-[40px] leading-[0.7]">
             CONNECT
           </span>
           <span className="w-[58px] h-[2px] bg-white" />
