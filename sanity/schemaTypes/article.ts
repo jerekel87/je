@@ -179,5 +179,11 @@ export default defineType({
       to: { type: "articleCategory" },
       validation: (Rule) => Rule.required(),
     }),
+    defineField({
+      name: "hashtags",
+      title: "Hashtags",
+      type: "array",
+      of: [{ type: "reference", to: { type: "articleHashtag" } }],
+    }),
   ],
 });
