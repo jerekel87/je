@@ -27,23 +27,25 @@ function FakePurchasePopUp() {
 
   const router = useRouter();
 
-  const randomNum = Math.floor(Math.random() * 3) + 1;
+  const randomNum = Math.floor(Math.random() * 2) + 1;
 
   const renderLink = (randomNum: number) => {
     switch (randomNum) {
-      case 1:
-        return (
-          <p className="text-xs leading-none">
-            Purchased <span className="underline font-bold">VIP Package</span>
-          </p>
-        );
+      // case 1:
+      //   return (
+      //     <p className="text-xs leading-none">
+      //       Purchased <span className="underline font-bold">VIP Package</span>
+      //     </p>
+      //   );
 
-      case 2:
+      case 1:
         return (
           <CalComModal.Trigger className="text-xs leading-none underline font-bold">
             Schedule a call
           </CalComModal.Trigger>
         );
+      case 2:
+        return <p className="text-xs leading-none">Requested a quote</p>;
 
       default:
         return <p className="text-xs leading-none">Requested a quote</p>;
@@ -51,7 +53,7 @@ function FakePurchasePopUp() {
   };
 
   const handleClick = (randomNum: number) => {
-    if (randomNum === 1 || randomNum == 3) {
+    if (randomNum === 2) {
       router.push("/pricing");
     }
   };
