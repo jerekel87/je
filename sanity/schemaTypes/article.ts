@@ -12,6 +12,26 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "subtitle",
+      title: "Subtitle",
+      type: "array",
+      of: [
+        {
+          type: "block",
+          styles: [],
+          lists: [],
+          marks: {
+            decorators: [
+              {
+                title: "Bold",
+                value: "strong",
+              },
+            ],
+          },
+        },
+      ],
+    }),
+    defineField({
       name: "slug",
       title: "Slug",
       type: "slug",
