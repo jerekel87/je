@@ -1,7 +1,6 @@
 import { ReactNode, useRef } from "react";
 import StarRating from "./StarRating";
 import Image from "next/image";
-import ShowMoreText from "react-show-more-text";
 import {
   ShowMore,
   ShowMoreRef,
