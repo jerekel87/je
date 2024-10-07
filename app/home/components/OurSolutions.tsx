@@ -125,12 +125,11 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
                     >
                       {solution.images.map((image: any, i: number) => (
                         <SwiperSlide key={i}>
-                          <Zoom zoomImg={{ src: urlForImage(image) }}>
+                          <Zoom>
                             <div className="relative pb-[82.5%] rounded-[6px]">
                               <Image
                                 src={urlForImage(image)}
-                                height="132"
-                                width="160"
+                                fill
                                 alt={solution.name}
                                 className="lg:rounded-[8px] absolute w-full h-full object-cover"
                                 quality={100}
