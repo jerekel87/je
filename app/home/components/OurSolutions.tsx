@@ -17,6 +17,8 @@ import { Button } from "@/app/(shared)/components/ui/button";
 import { useRef, useState } from "react";
 import PortableText from "react-portable-text";
 import CalComModal from "@/app/(shared)/components/CalComModal";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 
 function SolutionImagesMobile({ images }: { images: any[] }) {
   const [isShowMore, setIsShowMore] = useState(false);
@@ -29,15 +31,17 @@ function SolutionImagesMobile({ images }: { images: any[] }) {
     <div className="lg:hidden">
       <ul className="grid grid-cols-2 gap-3 mt-[24px]">
         {imagesToShow.map((image: any, i: number) => (
-          <li key={i} className="relative pb-[82.5%] rounded-[5px]">
-            <Image
-              src={urlForImage(image)}
-              fill
-              alt="Solution image"
-              className="rounded-[6px] w-full h-full object-cover"
-              quality={100}
-            />
-          </li>
+          <Zoom key={i}>
+            <li className="relative pb-[82.5%] rounded-[5px]">
+              <Image
+                src={urlForImage(image)}
+                fill
+                alt="Solution image"
+                className="rounded-[6px] w-full h-full object-cover"
+                quality={100}
+              />
+            </li>
+          </Zoom>
         ))}
       </ul>
       <Button
@@ -121,16 +125,18 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
                     >
                       {solution.images.map((image: any, i: number) => (
                         <SwiperSlide key={i}>
-                          <div className="relative pb-[82.5%] rounded-[6px]">
-                            <Image
-                              src={urlForImage(image)}
-                              height="132"
-                              width="160"
-                              alt={solution.name}
-                              className="lg:rounded-[8px] absolute w-full h-full object-cover"
-                              quality={100}
-                            />
-                          </div>
+                          <Zoom>
+                            <div className="relative pb-[82.5%] rounded-[6px]">
+                              <Image
+                                src={urlForImage(image)}
+                                height="132"
+                                width="160"
+                                alt={solution.name}
+                                className="lg:rounded-[8px] absolute w-full h-full object-cover"
+                                quality={100}
+                              />
+                            </div>
+                          </Zoom>
                         </SwiperSlide>
                       ))}
                     </Swiper>
