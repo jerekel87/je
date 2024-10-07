@@ -15,6 +15,7 @@ import reviewsPage from "./schemaTypes/reviewsPage";
 import faqPage from "./schemaTypes/faqPage";
 import faqCategory from "./schemaTypes/faqCategory";
 import faq from "./schemaTypes/faq";
+import articleHashtag from "./schemaTypes/articleHashtag";
 
 export const schema: { types: SchemaTypeDefinition[]; templates: any } = {
   types: [
@@ -24,6 +25,7 @@ export const schema: { types: SchemaTypeDefinition[]; templates: any } = {
     reviewPlatform,
     article,
     articleCategory,
+    articleHashtag,
     blockContent,
     homePage,
     projectsPage,
