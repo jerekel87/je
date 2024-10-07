@@ -31,7 +31,7 @@ function SolutionImagesMobile({ images }: { images: any[] }) {
     <div className="lg:hidden">
       <ul className="grid grid-cols-2 gap-3 mt-[24px]">
         {imagesToShow.map((image: any, i: number) => (
-          <Zoom key={i}>
+          <Zoom key={i} zoomImg={{ src: urlForImage(image) }}>
             <li className="relative pb-[82.5%] rounded-[5px]">
               <Image
                 src={urlForImage(image)}
