@@ -8,7 +8,6 @@ import PortableText from "react-portable-text";
 import ShareModal from "@/app/(shared)/components/ShareModal";
 import BlockA from "@/app/(shared)/components/BlockA";
 import ModalCloseButton from "@/app/projects/[slug]/components/ModalCloseButton";
-import SectionTwo from "./SectionTwo";
 import ArticleSection from "./ArticleSection";
 
 function ArticleModal({ article }: { article: Article }) {
