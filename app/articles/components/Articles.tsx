@@ -104,7 +104,7 @@ function Articles({
                       src={urlForImage(article.mainImage as any)}
                       alt={article.title || ""}
                       fill
-                      className="object-contain"
+                      className="object-cover"
                     />
                   </div>
                 </Link>
@@ -128,7 +128,7 @@ function Articles({
                     src={urlForImage(article.mainImage as any)}
                     alt={article.title || ""}
                     fill
-                    className="object-contain"
+                    className="object-cover"
                   />
                 </div>
               </Link>
