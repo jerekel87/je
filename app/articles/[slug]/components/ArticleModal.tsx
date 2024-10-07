@@ -21,7 +21,7 @@ function ArticleModal({ article }: { article: Article }) {
           <div className="pt-[54px] pb-0 h-full relative w-full">
             <ModalCloseButton />
             {/* Separator */}
-            <div className="absolute w-full h-[18px] lg:h-[37px] top-[46px] z-[1] transition-gradient">
+            <div className="absolute w-full h-[18px] lg:h-[37px] top-[46px] z-[1]">
               <Image
                 src="/assets/images/shape-7-copy-7.svg"
                 fill
