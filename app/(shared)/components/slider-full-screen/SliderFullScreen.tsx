@@ -28,6 +28,7 @@ export function SliderFullScreen({
       <DialogContent
         hideCloseButton
         overlayClass="bg-[rgba(255,255,255,0.8)]"
+        onClick={() => setIsOpen(false)}
         className="px-0 max-w-full w-dvw h-dvh !rounded-none ring-0 outline-none bg-transparent"
       >
         <button
@@ -61,6 +62,7 @@ export function SliderFullScreen({
             <SwiperSlide key={i}>
               <div className="w-full h-full grid place-items-center">
                 <img
+                  onClick={(e) => e.stopPropagation()}
                   src={urlForImage(image)}
                   alt="Image"
                   className="w-auto max-w-full lg:max-w-[800px] 2xl:max-w-[900px] h-auto max-h-dvh object-contain lg:rounded-[10px] overflow-hidden"
