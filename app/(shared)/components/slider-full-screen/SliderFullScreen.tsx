@@ -27,7 +27,7 @@ export function SliderFullScreen({
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent
         hideCloseButton
-        overlayClass="bg-[rgba(255,255,255,0.8)]"
+        overlayClass="bg-[rgba(255,255,255,0.9)]"
         onClick={() => setIsOpen(false)}
         className="px-0 max-w-full w-dvw h-dvh !rounded-none ring-0 outline-none bg-transparent"
       >
