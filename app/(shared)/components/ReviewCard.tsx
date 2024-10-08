@@ -132,7 +132,7 @@ function ReviewCard({
               <SwiperSlide key={i}>
                 <div
                   onClick={() => handleImageClick(i)}
-                  className="relative pb-[100%] border border-[#f0efed]"
+                  className="relative pb-[100%] border border-[#f0efed] cursor-zoom-in"
                 >
                   <Image
                     src={urlForImage(image)}
