@@ -13,7 +13,7 @@
 .slider-full-screen-nav > .swiper-button-prev::before,
 .slider-full-screen-nav > .swiper-button-next::before {
   content: "";
-  @apply bg-white rounded-full size-[55px] hover:bg-muted;
+  @apply bg-white rounded-full size-[55px] hover:bg-muted shadow-sm border border-muted;
 }
 .slider-full-screen-nav > .swiper-button-prev::after {
   content: "";

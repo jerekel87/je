@@ -1,12 +1,13 @@
 "use client";
 
+import "swiper/css";
+import "swiper/css/navigation";
+import "./style.css";
 import { Dispatch, SetStateAction, useRef } from "react";
 import { Dialog, DialogContent } from "../ui/dialog";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Thumbs } from "swiper/modules";
 import { urlForImage } from "@/sanity/lib/image";
-import "./style.css";
-import Image from "next/image";
 
 export function SliderFullScreen({
   isOpen,
@@ -59,11 +60,8 @@ export function SliderFullScreen({
           {images?.map((image: any, i: number) => (
             <SwiperSlide key={i}>
               <div className="w-full h-full grid place-items-center">
-                <Image
-                  quality={100}
+                <img
                   src={urlForImage(image)}
-                  height={1500}
-                  width={1500}
                   alt="Image"
                   className="w-auto max-w-full lg:max-w-[800px] 2xl:max-w-[900px] h-auto max-h-dvh object-contain lg:rounded-[10px] overflow-hidden"
                 />
@@ -71,8 +69,8 @@ export function SliderFullScreen({
             </SwiperSlide>
           ))}
         </Swiper>
-        {images && images.length > 4 && (
-          <div className="slider-full-screen-nav absolute top-1/2 w-full">
+        {images && images.length > 1 && (
+          <div className="wow slider-full-screen-nav absolute top-1/2">
             <button
               className="swiper-button-prev"
               onClick={() => swiperRef.current?.slidePrev()}

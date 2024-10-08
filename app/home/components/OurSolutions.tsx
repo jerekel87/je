@@ -15,11 +15,11 @@ import {
   AccordionTrigger,
 } from "@/app/(shared)/components/ui/accordion";
 import { Button } from "@/app/(shared)/components/ui/button";
-import { Dispatch, SetStateAction, useRef, useState } from "react";
-import PortableText from "react-portable-text";
-import CalComModal from "@/app/(shared)/components/CalComModal";
+import { useRef, useState } from "react";
 import { Thumbs } from "swiper/modules";
 import { SliderFullScreen } from "@/app/(shared)/components/slider-full-screen/SliderFullScreen";
+import PortableText from "react-portable-text";
+import CalComModal from "@/app/(shared)/components/CalComModal";
 
 function SolutionImagesMobile({ images }: { images: any[] }) {
   const [isShowMore, setIsShowMore] = useState(false);
