@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Thumbs } from "swiper/modules";
 import { urlForImage } from "@/sanity/lib/image";
 import "./style.css";
+import Image from "next/image";
 
 export function SliderFullScreen({
   isOpen,
@@ -58,8 +59,11 @@ export function SliderFullScreen({
           {images?.map((image: any, i: number) => (
             <SwiperSlide key={i}>
               <div className="w-full h-full grid place-items-center">
-                <img
+                <Image
+                  quality={100}
                   src={urlForImage(image)}
+                  height={1500}
+                  width={1500}
                   alt="Image"
                   className="w-auto max-w-full lg:max-w-[800px] 2xl:max-w-[900px] h-auto max-h-dvh object-contain lg:rounded-[10px] overflow-hidden"
                 />

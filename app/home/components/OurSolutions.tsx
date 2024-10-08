@@ -40,6 +40,7 @@ function SolutionImagesMobile({ images }: { images: any[] }) {
         <ul className="grid grid-cols-2 gap-3 mt-[24px]">
           {imagesToShow.map((image: any, i: number) => (
             <li
+              key={i}
               onClick={() => handleImageClick(i)}
               className="relative pb-[82.5%] rounded-[5px]"
             >
