@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
 import "../style.css";
+import "react-medium-image-zoom/dist/styles.css";
 import {
   Accordion,
   AccordionContent,
@@ -15,24 +16,34 @@ import {
 } from "@/app/(shared)/components/ui/accordion";
 import { Button } from "@/app/(shared)/components/ui/button";
 import { useRef, useState } from "react";
+import { Thumbs } from "swiper/modules";
+import { SliderFullScreen } from "@/app/(shared)/components/slider-full-screen/SliderFullScreen";
 import PortableText from "react-portable-text";
 import CalComModal from "@/app/(shared)/components/CalComModal";
-import Zoom from "react-medium-image-zoom";
-import "react-medium-image-zoom/dist/styles.css";
 
 function SolutionImagesMobile({ images }: { images: any[] }) {
   const [isShowMore, setIsShowMore] = useState(false);
+  const [isOpenSliderFullScreen, setIsOpenSliderFullScreen] = useState(false);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const toggleShowMore = () => {
     setIsShowMore((prevState) => !prevState);
+  };
+  const handleImageClick = (slideIndex: number) => {
+    setCurrentSlideIndex(slideIndex);
+    setIsOpenSliderFullScreen(true);
   };
   const imagesToShow = isShowMore ? images : images.slice(0, 4);
 
   return (
-    <div className="lg:hidden">
-      <ul className="grid grid-cols-2 gap-3 mt-[24px]">
-        {imagesToShow.map((image: any, i: number) => (
-          <Zoom key={i} zoomImg={{ src: urlForImage(image) }}>
-            <li className="relative pb-[82.5%] rounded-[5px]">
+    <>
+      <div className="lg:hidden">
+        <ul className="grid grid-cols-2 gap-3 mt-[24px]">
+          {imagesToShow.map((image: any, i: number) => (
+            <li
+              key={i}
+              onClick={() => handleImageClick(i)}
+              className="relative pb-[82.5%] rounded-[5px]"
+            >
               <Image
                 src={urlForImage(image)}
                 fill
@@ -41,22 +52,35 @@ function SolutionImagesMobile({ images }: { images: any[] }) {
                 quality={100}
               />
             </li>
-          </Zoom>
-        ))}
-      </ul>
-      <Button
-        onClick={toggleShowMore}
-        variant="ghost"
-        className="w-full my-[18px]"
-      >
-        {isShowMore ? "SHOW LESS" : "SHOW MORE"}
-      </Button>
-    </div>
+          ))}
+        </ul>
+        <Button
+          onClick={toggleShowMore}
+          variant="ghost"
+          className="w-full my-[18px]"
+        >
+          {isShowMore ? "SHOW LESS" : "SHOW MORE"}
+        </Button>
+      </div>
+      <SliderFullScreen
+        isOpen={isOpenSliderFullScreen}
+        setIsOpen={setIsOpenSliderFullScreen}
+        images={images}
+        currentIndex={currentSlideIndex}
+      />
+    </>
   );
 }
 
 function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
   const swiperRef = useRef<any>();
+  const [isOpenSliderFullScreen, setIsOpenSliderFullScreen] = useState(false);
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const handleImageClick = (slideIndex: number) => {
+    setIsOpenSliderFullScreen(true);
+    setCurrentSlideIndex(slideIndex);
+  };
 
   return (
     <section
@@ -115,27 +139,32 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
                 {solution.images && (
                   <div className="relative hidden lg:block">
                     <Swiper
+                      onSwiper={setThumbsSwiper as any}
                       loop
                       spaceBetween={22}
                       slidesPerView={4}
                       onBeforeInit={(swiper) => {
                         swiperRef.current = swiper;
                       }}
+                      modules={[Thumbs]}
                       className="w-full"
                     >
                       {solution.images.map((image: any, i: number) => (
                         <SwiperSlide key={i}>
-                          <Zoom>
-                            <div className="relative pb-[82.5%] rounded-[6px]">
-                              <Image
-                                src={urlForImage(image)}
-                                fill
-                                alt={solution.name}
-                                className="lg:rounded-[8px] absolute w-full h-full object-cover"
-                                quality={100}
-                              />
-                            </div>
-                          </Zoom>
+                          {/* <Zoom> */}
+                          <div
+                            onClick={() => handleImageClick(i)}
+                            className="relative pb-[82.5%] rounded-[6px] cursor-zoom-in"
+                          >
+                            <Image
+                              src={urlForImage(image)}
+                              fill
+                              alt={solution.name}
+                              className="lg:rounded-[8px] absolute w-full h-full object-cover"
+                              quality={100}
+                            />
+                          </div>
+                          {/* </Zoom> */}
                         </SwiperSlide>
                       ))}
                     </Swiper>
@@ -156,6 +185,13 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
                 {solution.images && (
                   <SolutionImagesMobile images={solution.images} />
                 )}
+                <SliderFullScreen
+                  isOpen={isOpenSliderFullScreen}
+                  setIsOpen={setIsOpenSliderFullScreen}
+                  images={solution.images}
+                  thumbsSwiper={thumbsSwiper}
+                  currentIndex={currentSlideIndex}
+                />
                 <div className="lg:flex lg:gap-[122px] lg:justify-between lg:items-center  lg:mt-[52px]">
                   {solution.content && (
                     <PortableText
