@@ -1,4 +1,4 @@
-import { ReactNode, useRef } from "react";
+import { ReactNode, useRef, useState } from "react";
 import StarRating from "./StarRating";
 import Image from "next/image";
 import {
@@ -11,8 +11,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { generateAvatarInitials } from "../lib/utils";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { urlForImage } from "@/sanity/lib/image";
-import { Mousewheel } from "swiper/modules";
-import Zoom from "react-medium-image-zoom";
+import { Mousewheel, Thumbs } from "swiper/modules";
+import { SliderFullScreen } from "./slider-full-screen/SliderFullScreen";
 import "react-medium-image-zoom/dist/styles.css";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -43,6 +43,15 @@ function ReviewCard({
   // Custom buttons can be expanded and collapsed through this method
   const toggleLines: ShowMoreToggleLinesFn = (e) => {
     ref.current?.toggleLines(e);
+  };
+
+  const [isOpenSliderFullScreen, setIsOpenSliderFullScreen] = useState(false);
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+
+  const handleImageClick = (slideIndex: number) => {
+    setIsOpenSliderFullScreen(true);
+    setCurrentSlideIndex(slideIndex);
   };
   return (
     <Card className="p-4 lg:p-[35px] rounded-[6px] lg:rounded-[10px] shadow-[9.7px_10.1px_35px_0_rgba(0,0,0,0.08)] border-none h-max">
@@ -111,29 +120,39 @@ function ReviewCard({
 
         {images && images?.length > 0 && (
           <Swiper
+            onSwiper={setThumbsSwiper as any}
+            loop
+            modules={[Thumbs, Mousewheel]}
             spaceBetween={10}
             slidesPerView={4}
             className="mt-[32px]"
             mousewheel
-            modules={[Mousewheel]}
           >
             {images?.map((image, i) => (
               <SwiperSlide key={i}>
-                <Zoom>
-                  <div className="relative pb-[100%] border border-[#f0efed]">
-                    <Image
-                      src={urlForImage(image)}
-                      fill
-                      alt={platformName}
-                      className="object-contain"
-                      quality="100"
-                    />
-                  </div>
-                </Zoom>
+                <div
+                  onClick={() => handleImageClick(i)}
+                  className="relative pb-[100%] border border-[#f0efed]"
+                >
+                  <Image
+                    src={urlForImage(image)}
+                    fill
+                    alt={platformName}
+                    className="object-contain"
+                    quality="100"
+                  />
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
         )}
+        <SliderFullScreen
+          isOpen={isOpenSliderFullScreen}
+          setIsOpen={setIsOpenSliderFullScreen}
+          images={images as any[]}
+          thumbsSwiper={thumbsSwiper}
+          currentIndex={currentSlideIndex}
+        />
       </div>
       <div className="border-t border-[#f0efed] pt-4 lg:pt-[35px] flex justify-between">
         <StarRating
