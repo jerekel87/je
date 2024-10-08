@@ -27,7 +27,7 @@ export function SliderFullScreen({
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent
         hideCloseButton
-        overlayClass="bg-[rgba(255,255,255,0.9)]"
+        overlayClass="bg-[rgba(255,255,255,1)]"
         onClick={() => setIsOpen(false)}
         className="px-0 max-w-full w-dvw h-dvh !rounded-none ring-0 outline-none bg-transparent"
       >
@@ -75,11 +75,17 @@ export function SliderFullScreen({
           <div className="wow slider-full-screen-nav absolute top-1/2">
             <button
               className="swiper-button-prev"
-              onClick={() => swiperRef.current?.slidePrev()}
+              onClick={(e) => {
+                e.stopPropagation();
+                swiperRef.current?.slidePrev();
+              }}
             ></button>
             <button
               className="swiper-button-next"
-              onClick={() => swiperRef.current?.slideNext()}
+              onClick={(e) => {
+                e.stopPropagation();
+                swiperRef.current?.slideNext();
+              }}
             ></button>
           </div>
         )}
