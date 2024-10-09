@@ -45,19 +45,25 @@ export default function NavbarMobile() {
           )}
         >
           <nav className="flex flex-col gap-[1px] bg-[#efefef] overflow-auto h-[60dvh]">
-            {navList.map((navItem, i) => (
-              <Link
-                key={i}
-                onClick={handleNavItemClick}
-                href={navItem.url}
-                className={cn(
-                  "text-[#adadad] bg-white text-[30px] font-portlin uppercase tracking-[0.5px] px-6 h-full flex items-center",
-                  pathname.includes(navItem.url) && "text-primary"
-                )}
-              >
-                {navItem.name}
-              </Link>
-            ))}
+            {navList.map((navItem, i) => {
+              let isActive = pathname.includes(navItem.url);
+              if (navItem.url === "/") {
+                isActive = pathname === "/" && navItem.url === "/";
+              }
+              return (
+                <Link
+                  key={i}
+                  onClick={handleNavItemClick}
+                  href={navItem.url}
+                  className={cn(
+                    "text-[#adadad] bg-white text-[30px] font-portlin uppercase tracking-[0.5px] px-6 h-full flex items-center",
+                    isActive && "text-primary"
+                  )}
+                >
+                  {navItem.name}
+                </Link>
+              );
+            })}
           </nav>
           <div className="relative">
             <div className="absolute w-full h-[8px] -top-[5px] z-[1]">
@@ -108,7 +114,7 @@ export default function NavbarMobile() {
           </div>
         </div>
         <div className="flex p-4 pr-0 items-center">
-          <Link href="/home" className="mr-[11px]">
+          <Link href="/" className="mr-[11px]">
             <div className="relative size-[45px]">
               <Image
                 src="/assets/images/je-logo.png"

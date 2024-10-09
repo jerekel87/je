@@ -18,7 +18,7 @@ function Footer() {
       <li>
         <Link
           className="text-[#7e7f88] text-sm text-center lg:text-left inline-block w-full lg:text-base"
-          href="/home"
+          href="/"
         >
           Home
         </Link>

@@ -11,7 +11,7 @@ import CalComModal from "./CalComModal";
 export const navList = [
   {
     name: "Home",
-    url: "/home",
+    url: "/",
   },
   {
     name: "Projects",
@@ -19,7 +19,7 @@ export const navList = [
   },
   {
     name: "Solutions",
-    url: "/home#solutions",
+    url: "/#solutions",
   },
   {
     name: "Brand Package",
@@ -44,7 +44,7 @@ function Header() {
           <div className="lg:hidden mr-4">
             <Hamburger toggled={isOpen} toggle={setOpen} color="#141424" />
           </div>
-          <Link href="/home">
+          <Link href="/">
             <div className="relative size-[50px] lg:size-[65px] mr-[45px]">
               <Image
                 src="/assets/images/je-logo.png"
@@ -57,7 +57,7 @@ function Header() {
 
           <nav className="lg:flex gap-[45px] hidden">
             {navList
-              .filter((i) => i.url !== "/home")
+              .filter((i) => i.url !== "/")
               .map((navItem, i) => (
                 <Link key={i} href={navItem.url} className="font-medium">
                   {navItem.name}
