@@ -8,6 +8,7 @@ import CalComModal from "./(shared)/components/CalComModal";
 import NavbarMobile from "./(shared)/components/NavbarMobile";
 import IntercomMessenger from "./(shared)/components/IntercomMessenger";
 import Script from "next/script";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 const MonaSans = localFont({
   variable: "--font-mona-sans",
@@ -69,6 +70,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="GTM-PZFW2MLS" />
+      <GoogleAnalytics gaId="G-PBHNXEKEYG" />
       <body
         className={`${MonaSans.variable} ${Portlin.variable} ${GuthenBlootsPersonalUse.variable} font-mona-sans`}
       >

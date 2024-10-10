@@ -8,7 +8,7 @@ import PortableText from "react-portable-text";
 import ShareModal from "@/app/(shared)/components/ShareModal";
 import BlockA from "@/app/(shared)/components/BlockA";
 import ModalCloseButton from "@/app/projects/[slug]/components/ModalCloseButton";
-import ArticleSection from "./ArticleSection";
+import ArticleBlock from "./ArticleBlock";
 
 function ArticleModal({ article }: { article: Article }) {
   return (
@@ -61,15 +61,25 @@ function ArticleModal({ article }: { article: Article }) {
                     </div>
                     {article.body && (
                       <PortableText
-                        className="mt-6 lg:mt-[44px] text-[15px] lg:px-[58px] leading-[26px] lg:text-lg lg:leading-[30px] [&_a]:underline [&_a]:text-blue-500"
+                        className="article-body mt-6 lg:mt-[44px] text-[15px] leading-[26px] lg:text-lg lg:leading-[30px] [&_a]:underline [&_a]:text-blue-500"
                         content={article.body as any}
+                        serializers={{
+                          image: (image: any) => (
+                            <img
+                              src={urlForImage(image)}
+                              alt={image.alt || "Image"}
+                              style={{ maxWidth: "100%", height: "auto" }}
+                              className="rounded-[6px] lg:rounded-[10px]"
+                            />
+                          ),
+                        }}
                       />
                     )}
                     {/* {(article.block?.title || article.block?.body) && (
                       <SectionTwo article={article} />
                     )} */}
-                    {article.sections?.map((articleSection: any, i: number) => (
-                      <ArticleSection key={i} articleSection={articleSection} />
+                    {article.blocks?.map((articleBlock: any, i: number) => (
+                      <ArticleBlock key={i} articleBlock={articleBlock} />
                     ))}
                     {/* <SectionFour /> */}
                     {/* {project.secondaryBody?.length && (
