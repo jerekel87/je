@@ -265,3 +265,14 @@ p:empty {
   @apply ml-4 pl-4 lg:px-[calc(58px+16px)];
 }
 /* End */
+
+/* Start | Disable intercom on mobile */
+.intercom-lightweight-app {
+  @apply !hidden;
+}
+@media only screen and (min-width: 1024px) {
+  .intercom-lightweight-app {
+    @apply !block;
+  }
+}
+/* End */
