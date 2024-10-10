@@ -242,13 +242,13 @@ p:empty {
 /* Start | Custom portable text  */
 
 .article-body h1 {
-  @apply text-4xl font-bold lg:px-[58px];
+  @apply text-3xl lg:text-4xl font-bold lg:px-[58px];
 }
 .article-body h2 {
-  @apply text-3xl font-bold lg:px-[58px];
+  @apply text-2xl lg:text-3xl font-bold lg:px-[58px];
 }
 .article-body h3 {
-  @apply text-2xl font-bold lg:px-[58px];
+  @apply text-xl lg:text-2xl font-bold lg:px-[58px];
 }
 .article-body p {
   @apply lg:px-[58px];
@@ -256,18 +256,12 @@ p:empty {
 
 .article-body ul {
   list-style-type: disc; /* or circle, square, etc. */
-  margin-left: 16px;
-  padding-left: 16px;
-  @apply lg:px-[calc(58px+16px)];
+  @apply ml-4 pl-4 lg:px-[calc(58px+16px)];
 }
 
 .article-body ol {
   list-style-type: decimal; /* or lower-alpha, upper-roman, etc. */
-  margin-left: 16px;
-  padding-left: 16px;
-  @apply lg:px-[calc(58px+16px)];
-}
-@media only screen and (min-width: 1024px) {
-}
 
+  @apply ml-4 pl-4 lg:px-[calc(58px+16px)];
+}
 /* End */
