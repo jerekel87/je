@@ -266,13 +266,11 @@ p:empty {
 }
 /* End */
 
-/* Start | Disable intercom on mobile */
-.intercom-lightweight-app {
-  @apply !hidden;
-}
-@media only screen and (min-width: 1024px) {
-  .intercom-lightweight-app {
-    @apply !block;
+/* Start | Hide intercom on mobile */
+@media only screen and (max-width: 1023px) {
+  [class*="intercom"] {
+    /* Add your styles here */
+    display: none !important;
   }
 }
 /* End */
