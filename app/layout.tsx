@@ -59,8 +59,9 @@ const Portlin = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "JE",
-  description: "",
+  title: "Jedesigns",
+  description:
+    "Enhance your digital presence with our specialized services: custom web, app, and landing page design and development; strategic marketing management; engaging content and blog copywriting; dynamic social media management; and professional video editing with compelling thumbnail designs. Let us help you connect with your audience and achieve your goals through impactful digital solutions.",
 };
 
 export default function RootLayout({
