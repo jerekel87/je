@@ -50,10 +50,60 @@
 import React from "react";
 import ArticleModal from "./components/ArticleModal";
 import { getArticle } from "@/sanity/query/article";
+import { blockContentToPlainText } from "react-portable-text";
+import { urlForImage } from "@/sanity/lib/image";
+import { Article } from "@/sanity.types";
+import { Metadata } from "next";
 
 export const revalidate = 60;
 
-async function Article({ params }: { params: { slug: string } }) {
+type PageProps = {
+  params: {
+    slug: string;
+  };
+};
+
+// Function to generate metadata dynamically
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const article: Article = await getArticle({ slug: params.slug });
+
+  return {
+    title: article.title,
+    description:
+      article.subtitle && article.subtitle.length > 0
+        ? blockContentToPlainText(article.subtitle as [any])
+        : "",
+    openGraph: {
+      title: article.title,
+      description:
+        article.subtitle && article.subtitle.length > 0
+          ? blockContentToPlainText(article.subtitle as [any])
+          : "",
+      images: [
+        {
+          url: urlForImage(article.mainImage as any),
+          width: 1200,
+          height: 630,
+        },
+      ],
+      url: `/articles/${article.slug?.current}`,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description:
+        article.subtitle && article.subtitle.length > 0
+          ? blockContentToPlainText(article.subtitle as [any])
+          : "",
+      images: [urlForImage(article.mainImage as any)],
+    },
+  };
+}
+
+async function ArticlePage({ params }: { params: { slug: string } }) {
   const { slug } = params;
 
   const article = await getArticle({ slug });
@@ -61,4 +111,4 @@ async function Article({ params }: { params: { slug: string } }) {
   return <ArticleModal article={article} />;
 }
 
-export default Article;
+export default ArticlePage;
