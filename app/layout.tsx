@@ -59,11 +59,12 @@ const Portlin = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "JE Designs",
+  title: "JE Designs: Innovative Branding & Impactful Vehicle Wraps",
   description:
     "Elevate your brand with our comprehensive creative solutions. We specialize in crafting eye-catching logos, developing cohesive brand identities, and designing head-turning vehicle wraps that make your business stand out on the streets. Our expert team also delivers stunning visual assets, from marketing materials to digital graphics, ensuring your brand shines across all platforms. Transform your vision into reality and leave a lasting impression with our innovative design services tailored to your unique business needs.",
   openGraph: {
-    title: "JE Designs",
+    title:
+      "Ignite Your Brand with Innovative Branding & Vehicle Wraps by JE Designs",
     description:
       "Elevate your brand with our comprehensive creative solutions. We specialize in crafting eye-catching logos, developing cohesive brand identities, and designing head-turning vehicle wraps that make your business stand out on the streets. Our expert team also delivers stunning visual assets, from marketing materials to digital graphics, ensuring your brand shines across all platforms. Transform your vision into reality and leave a lasting impression with our innovative design services tailored to your unique business needs.",
     url: "https://jedesigns.com", // Replace with your website URL
@@ -80,7 +81,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@jnellsworth_", // Replace with your Twitter handle
-    title: "JE Designs",
+    title:
+      "Ignite Your Brand with Innovative Branding & Vehicle Wraps by JE Designs",
     description:
       "Elevate your brand with our comprehensive creative solutions. We specialize in crafting eye-catching logos, developing cohesive brand identities, and designing head-turning vehicle wraps that make your business stand out on the streets. Our expert team also delivers stunning visual assets, from marketing materials to digital graphics, ensuring your brand shines across all platforms. Transform your vision into reality and leave a lasting impression with our innovative design services tailored to your unique business needs.",
     images: ["/assets/images/je-logo.png"],
