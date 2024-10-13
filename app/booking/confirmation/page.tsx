@@ -86,7 +86,7 @@ function ConfirmationPage() {
         <h1 className="font-portlin text-center text-5xl lg:text-[90px] uppercase mt-[12px] lg:mt-[24px] leading-none lg:leading-none">
           CONFIRMED BOOKING
         </h1>
-        <p className="text-base lg:text-lg lg:text-center mt-[24px] lg:mt-[40px] max-w-[710px]">
+        <p className="text-base lg:text-lg text-center mt-[24px] lg:mt-[40px] max-w-[710px]">
           <strong className="font-semibold">
             Thanks {firstName}! We&apos;ve sent an email with further
             instructions/details about the scheduled call to {email}.
