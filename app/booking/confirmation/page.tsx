@@ -42,7 +42,7 @@ function ConfirmationPage() {
   }
 
   return (
-    <>
+    <div className="relative">
       <Script id="facebook-pixel" strategy="afterInteractive">
         {`
           !function(f,b,e,v,n,t,s)
@@ -73,17 +73,17 @@ function ConfirmationPage() {
           className="object-cover"
         />
       </div>
-      <main className="container px-4 pt-[34px] lg:pt-[54px] flex lg:items-center flex-col">
+      <main className="container min-h-dvh px-4 pt-[34px] lg:pt-[54px] flex lg:items-center flex-col">
         <Image
           src="/assets/images/confirmation-banner.webp"
           alt=""
           width="1060"
           height="434"
         />
-        <p className="font-portlin text-[24px] lg:text-[40px] mt-[40px] lg:mt-[64px]">
+        <p className="font-portlin text-center lg:text-left uppercase text-[24px] lg:text-[40px] mt-[40px] lg:mt-[64px]">
           {formattedStartTime}
         </p>
-        <h1 className="font-portlin text-5xl lg:text-[90px] uppercase mt-[12px] lg:mt-[24px] leading-none lg:leading-none">
+        <h1 className="font-portlin text-center text-5xl lg:text-[90px] uppercase mt-[12px] lg:mt-[24px] leading-none lg:leading-none">
           CONFIRMED BOOKING
         </h1>
         <p className="text-base lg:text-lg lg:text-center mt-[24px] lg:mt-[40px] max-w-[710px]">
@@ -102,13 +102,14 @@ function ConfirmationPage() {
             CLOSE PAGE
           </Button>
         </Link>
-        <p className="text-xs lg:text-sm mt-[110px] pb-[18px] lg:pb-[30px]">
+        <div className="grow" />
+        <p className="text-xs text-center lg:text-sm mt-[110px] pb-[40px] lg:pb-[60px]">
           © 2004-2024
           <br className="lg:hidden" /> Jeremy Ellsworth Designs LLC All Rights
           Reserved
         </p>
       </main>
-      <div className="absolute w-full h-[27px] lg:h-[37px]">
+      <div className="absolute w-full h-[27px] lg:h-[37px] bottom-0">
         <Image
           src="/assets/images/transition-bot-confirmation.svg"
           fill
@@ -116,7 +117,7 @@ function ConfirmationPage() {
           className="object-cover"
         />
       </div>
-    </>
+    </div>
   );
 }
 
