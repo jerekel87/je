@@ -123,7 +123,7 @@ function Footer() {
           </a>
         </CalComModal.Trigger>
         <address className="mt-[26px] lg:mt-[20px] leading-[1.56] text-[#7e7f88] text-sm text-center lg:text-left inline-block w-full lg:text-base">
-          PO Box 7643 Belmont, NH USA
+          Belmont, New Hampshire <br /> United States of America
         </address>
       </li>
     </ul>
@@ -245,12 +245,16 @@ function Footer() {
                     alt="Better Business Bureau Accredited"
                     className="shrink-0 object-contain"
                   />
-
-                  <p className="text-white text-center  lg:text-left font-portlin uppercase tracking-[0.5px] text-sm lg:text-[17px] leading-[1.09] font-medium">
-                    NEW HAMPSHIRE
-                    <br /> REGISTERED
-                    <span className="lg:hidden">LLC BUSINESS</span>
-                  </p>
+                  <a
+                    href="https://www.nhcompanyregistry.com/companies/jeremy-ellsworth-designs-llc/"
+                    target="_blank"
+                  >
+                    <p className="text-white text-center  lg:text-left font-portlin uppercase tracking-[0.5px] text-sm lg:text-[17px] leading-[1.09] font-medium">
+                      NEW HAMPSHIRE
+                      <br /> REGISTERED
+                      <span className="lg:hidden">LLC BUSINESS</span>
+                    </p>
+                  </a>
                 </div>
               </div>
             </div>
