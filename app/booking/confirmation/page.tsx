@@ -1,9 +1,9 @@
 "use client";
 
-import ConfettiEffect from "@/app/(shared)/components/ConfettiEffect";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
+import Confetti from "react-confetti-boom";
 import { Button } from "@/app/(shared)/components/ui/button";
 import { useSearchParams } from "next/navigation";
 
@@ -84,11 +84,11 @@ function ConfirmationPage() {
         <p className="font-portlin text-center lg:text-left uppercase text-[24px] lg:text-[40px] mt-[40px] lg:mt-[64px]">
           {formattedStartTime}
         </p>
-        <ConfettiEffect>
-          <h1 className="font-portlin text-center text-5xl lg:text-[90px] uppercase mt-[12px] lg:mt-[24px] leading-none lg:leading-none">
-            CONFIRMED BOOKING
-          </h1>
-        </ConfettiEffect>
+
+        <h1 className="font-portlin text-center text-5xl lg:text-[90px] uppercase mt-[12px] lg:mt-[24px] leading-none lg:leading-none">
+          CONFIRMED BOOKING
+        </h1>
+
         <p className="text-base lg:text-lg text-center mt-[24px] lg:mt-[40px] max-w-[710px]">
           <strong className="font-semibold">
             Thanks {firstName}! We&apos;ve sent an email with further
@@ -111,6 +111,12 @@ function ConfirmationPage() {
           <br className="lg:hidden" /> Jeremy Ellsworth Designs LLC All Rights
           Reserved
         </p>
+        <Confetti
+          mode="boom"
+          particleCount={300}
+          effectCount={999999999}
+          effectInterval={10000}
+        />
       </main>
       <div className="absolute w-full h-[27px] lg:h-[37px] bottom-0">
         <Image
