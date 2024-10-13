@@ -39,7 +39,7 @@ function Header() {
   const [isOpen, setOpen] = useState(false);
   return (
     <>
-      <header className="hidden lg:block fixed top-0 z-10 bg-white w-full shadow-[0px_9.5px_6.5px_0_rgba(0,0,0,0.05)]">
+      <header className="hidden lg:block fixed top-0 z-10 bg-white w-full shadow-[-0.9px_0.5px_2.5px_0_rgba(0,0,0,0.1)]">
         <div className="flex items-center container mx-auto lg:py-[17px] py-3 px-4">
           <div className="lg:hidden mr-4">
             <Hamburger toggled={isOpen} toggle={setOpen} color="#141424" />
