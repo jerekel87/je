@@ -3,13 +3,11 @@
 import { ComponentProps, useEffect } from "react";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { Dialog, DialogContent } from "@/app/(shared)/components/ui/dialog";
-import { useRouter } from "next/navigation";
 import { cn } from "../lib/utils";
 import useCalComStore from "../store/useCalComStore";
 
 export default function CalComModal() {
   const { isOpen, close } = useCalComStore();
-  const router = useRouter();
   const handleOpenChange = (open: boolean) => {
     if (!open) {
       close();
@@ -31,10 +29,10 @@ export default function CalComModal() {
         },
         layout: "month_view",
       });
-      cal("on", {
-        action: "bookingSuccessful",
-        callback: () => router.push("/booking/confirmation"),
-      });
+      // cal("on", {
+      //   action: "bookingSuccessful",
+      //   callback: () => router.push("/booking/confirmation"),
+      // });
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
