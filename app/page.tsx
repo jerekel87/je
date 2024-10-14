@@ -13,8 +13,14 @@ import "./home/style.css";
 import Header from "./(shared)/components/Header";
 import Footer from "./(shared)/components/Footer";
 import FakePurchase from "./(shared)/components/fake-purchase/FakePurchase";
+import { Metadata } from "next";
 
 export const revalidate = 60;
+
+export const metadata: Metadata = {
+  title:
+    "Branding Without Boundaries & Forward-thinking Vehicle Wrap Designs - JE Designs",
+};
 
 async function HomePage() {
   const homePageSetting = await getHomePageSetting();

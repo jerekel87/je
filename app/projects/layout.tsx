@@ -2,16 +2,7 @@ import { Metadata } from "next";
 import FakePurchase from "../(shared)/components/fake-purchase/FakePurchase";
 
 export const metadata: Metadata = {
-  title:
-    "Projects | Branding Without Boundaries & Forward-thinking Vehicle Wrap Designs",
-  openGraph: {
-    title:
-      "Projects | Branding Without Boundaries & Forward-thinking Vehicle Wrap Designs",
-  },
-  twitter: {
-    title:
-      "Projects | Branding Without Boundaries & Forward-thinking Vehicle Wrap Designs",
-  },
+  title: "Projects",
 };
 
 export default function ProjectsLayout({
