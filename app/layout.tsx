@@ -70,14 +70,14 @@ export const metadata: Metadata = {
       "Elevate your brand with our comprehensive creative solutions. We specialize in crafting eye-catching logos, developing cohesive brand identities, and designing head-turning vehicle wraps that make your business stand out on the streets. Our expert team also delivers stunning visual assets, from marketing materials to digital graphics, ensuring your brand shines across all platforms. Transform your vision into reality and leave a lasting impression with our innovative design services tailored to your unique business needs.",
     siteName: "JE Designs",
     url: "https://jedesigns.com", // Replace with your website URL
-    images: [
-      {
-        url: "/assets/images/je-logo.png",
-        width: 1200,
-        height: 630,
-        alt: "JE Designs Logo",
-      },
-    ],
+    // images: [
+    //   {
+    //     url: "/assets/images/je-logo.png",
+    //     width: 1200,
+    //     height: 630,
+    //     alt: "JE Designs Logo",
+    //   },
+    // ],
     locale: "en_US",
     type: "website",
   },
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
       "Branding Without Boundaries & Forward-thinking Vehicle Wrap Designs",
     description:
       "Elevate your brand with our comprehensive creative solutions. We specialize in crafting eye-catching logos, developing cohesive brand identities, and designing head-turning vehicle wraps that make your business stand out on the streets. Our expert team also delivers stunning visual assets, from marketing materials to digital graphics, ensuring your brand shines across all platforms. Transform your vision into reality and leave a lasting impression with our innovative design services tailored to your unique business needs.",
-    images: ["/assets/images/je-logo.png"],
+    // images: ["/assets/images/je-logo.png"],
   },
 };
 
