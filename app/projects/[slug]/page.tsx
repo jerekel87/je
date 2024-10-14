@@ -1,10 +1,11 @@
 import React from "react";
 import ProjectModal from "./components/ProjectModal";
-import { getProject } from "@/sanity/query/project";
+import { getProject, getProjects } from "@/sanity/query/project";
 import { Metadata } from "next";
 import { Project } from "@/sanity.types";
 import { blockContentToPlainText } from "react-portable-text";
 import { urlForImage } from "@/sanity/lib/image";
+import { notFound } from "next/navigation";
 
 export const revalidate = 60;
 
@@ -13,6 +14,13 @@ type PageProps = {
     slug: string;
   };
 };
+
+export async function generateStaticParams() {
+  const projects = await getProjects({
+    limit: 100,
+  });
+  return projects.map((p) => p.slug?.current);
+}
 
 // Function to generate metadata dynamically
 export async function generateMetadata({
@@ -61,6 +69,8 @@ async function ProjectPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
 
   const project = await getProject({ slug });
+
+  if (!project) return notFound();
 
   return <ProjectModal project={project} />;
 }

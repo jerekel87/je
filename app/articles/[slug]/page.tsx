@@ -49,11 +49,12 @@
 
 import React from "react";
 import ArticleModal from "./components/ArticleModal";
-import { getArticle } from "@/sanity/query/article";
+import { getArticle, getArticles } from "@/sanity/query/article";
 import { blockContentToPlainText } from "react-portable-text";
 import { urlForImage } from "@/sanity/lib/image";
 import { Article } from "@/sanity.types";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 export const revalidate = 60;
 
@@ -62,6 +63,13 @@ type PageProps = {
     slug: string;
   };
 };
+
+export async function generateStaticParams() {
+  const articles = await getArticles({
+    limit: 100,
+  });
+  return articles.map((p) => p.slug?.current);
+}
 
 // Function to generate metadata dynamically
 export async function generateMetadata({
@@ -110,6 +118,8 @@ async function ArticlePage({ params }: { params: { slug: string } }) {
   const { slug } = params;
 
   const article = await getArticle({ slug });
+
+  if (!article) return notFound();
 
   return <ArticleModal article={article} />;
 }
