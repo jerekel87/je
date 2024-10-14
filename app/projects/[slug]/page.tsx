@@ -17,8 +17,10 @@ type PageProps = {
 // Function to generate metadata dynamically
 export async function generateMetadata({
   params,
-}: PageProps): Promise<Metadata> {
+}: PageProps): Promise<Metadata | undefined> {
   const project: Project = await getProject({ slug: params.slug });
+
+  if (!project) return;
 
   return {
     title: project.title,
@@ -39,7 +41,8 @@ export async function generateMetadata({
           height: 630,
         },
       ],
-      url: `/projects/${project.slug?.current}`,
+      locale: "en_US",
+      url: `https://jedesigns.com/projects/${project.slug?.current}`,
       type: "article",
     },
     twitter: {
