@@ -13,13 +13,50 @@ import "./home/style.css";
 import Header from "./(shared)/components/Header";
 import Footer from "./(shared)/components/Footer";
 import FakePurchase from "./(shared)/components/fake-purchase/FakePurchase";
+import { Metadata } from "next";
+import { Organization, WithContext } from "schema-dts";
+import Script from "next/script";
 
 export const revalidate = 60;
+
+export const metadata: Metadata = {
+  title: "Branding Without Boundaries & Forward-thinking Vehicle Wrap Designs",
+  description:
+    "Elevate your brand with our comprehensive creative solutions. We specialize in crafting eye-catching logos, developing cohesive brand identities, and designing head-turning vehicle wraps that make your business stand out on the streets. Our expert team also delivers stunning visual assets, from marketing materials to digital graphics, ensuring your brand shines across all platforms. Transform your vision into reality and leave a lasting impression with our innovative design services tailored to your unique business needs.",
+};
+
+const structuredData: WithContext<Organization> = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Jeremy Ellsworth Designs",
+  url: "https://www.jedesigns.com",
+  logo: "https://jedesigns.com/assets/images/je-logo.png",
+  description:
+    "Elevate your brand with our comprehensive creative solutions. We specialize in crafting eye-catching logos, developing cohesive brand identities, and designing head-turning vehicle wraps that make your business stand out on the streets. Our expert team also delivers stunning visual assets, from marketing materials to digital graphics, ensuring your brand shines across all platforms. Transform your vision into reality and leave a lasting impression with our innovative design services tailored to your unique business needs.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "25 Cherry Street",
+    addressLocality: "Belmont",
+    addressRegion: "NH",
+    postalCode: "03220",
+    addressCountry: "US",
+  },
+  sameAs: [
+    "https://www.facebook.com/jnellsworth",
+    "https://www.x.com/jnellsworth_",
+    "https://www.instagram.com/jnellsworth",
+  ],
+};
 
 async function HomePage() {
   const homePageSetting = await getHomePageSetting();
   return (
     <>
+      <Script
+        id="home"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <Header />
       <main>
         <SectionOne articleLink={homePageSetting?.articleLink || ""} />

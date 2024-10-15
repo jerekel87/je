@@ -1,6 +1,11 @@
+import { Metadata } from "next";
 import Footer from "../(shared)/components/Footer";
 import Header from "../(shared)/components/Header";
 import FakePurchase from "../(shared)/components/fake-purchase/FakePurchase";
+
+export const metadata: Metadata = {
+  title: "Pricing",
+};
 
 export default function PricingLayout({
   children,

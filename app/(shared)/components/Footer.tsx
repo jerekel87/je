@@ -87,7 +87,7 @@ function Footer() {
       <li>
         <a
           className="text-[#7e7f88] text-sm text-center lg:text-left inline-block w-full lg:text-base"
-          href="http://www.x.com/jnellsworth_"
+          href="https://www.x.com/jnellsworth_"
         >
           Twitter/X
         </a>
