@@ -7,6 +7,9 @@ import MainHeader from "../(shared)/components/Header";
 import FakePurchase from "../(shared)/components/fake-purchase/FakePurchase";
 import { getArticles } from "@/sanity/query/article";
 import CategorySelector from "./components/CategorySelector";
+import { CollectionPage, WithContext } from "schema-dts";
+import { blockContentToPlainText } from "react-portable-text";
+import Script from "next/script";
 
 export const revalidate = 60;
 
@@ -21,8 +24,36 @@ async function ArticlesPage({
     limit: 10,
   });
 
+  const structuredData: WithContext<CollectionPage> = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Jeremy Ellsworth Designs - Articles",
+    url: "https://www.jedesigns.com/articles",
+    description:
+      "Read our latest articles on branding, graphic design, vehicle wraps, and more.",
+    hasPart: articles?.map((article) => ({
+      "@type": "Article",
+      name: article.title,
+      headline: article.title,
+      author: {
+        "@type": "Person",
+        name: "Jeremy Ellsworth",
+      },
+      datePublished: article._createdAt,
+      url: `https://www.jedesigns.com/articles/${article.slug?.current}`,
+      description:
+        article.body && article.body.length > 0
+          ? blockContentToPlainText(article.body as [any])
+          : "",
+    })),
+  };
   return (
     <>
+      <Script
+        id="articles"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <MainHeader />
       <main>
         <Header />

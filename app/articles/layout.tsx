@@ -3,6 +3,8 @@ import FakePurchase from "../(shared)/components/fake-purchase/FakePurchase";
 
 export const metadata: Metadata = {
   title: "Articles",
+  description:
+    "Read our latest articles on branding, graphic design, vehicle wraps, and more.",
 };
 
 export default function ArticlesLayout({

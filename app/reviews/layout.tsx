@@ -5,6 +5,8 @@ import FakePurchase from "../(shared)/components/fake-purchase/FakePurchase";
 
 export const metadata: Metadata = {
   title: "Reviews",
+  description:
+    "Read what our customers have to say about our graphic design services, including logo design, vehicle wraps, and more.",
 };
 
 export default function ReviewsLayout({

@@ -4,9 +4,13 @@ import Projects from "./components/Projects";
 import Footer from "../(shared)/components/Footer";
 import MainHeader from "../(shared)/components/Header";
 import Link from "next/link";
+import Script from "next/script";
 import IndustrySelector from "./components/IndustrySelector";
 import { getProjects } from "@/sanity/query/project";
 import { getProjectsPageSetting } from "@/sanity/query/projectsPage";
+import { urlForImage } from "@/sanity/lib/image";
+import { CollectionPage, WithContext } from "schema-dts";
+import { blockContentToPlainText } from "react-portable-text";
 
 export const revalidate = 60;
 
@@ -26,8 +30,37 @@ async function ProjectsPage({
 
   const projectsPageSetting = await getProjectsPageSetting();
 
+  const structuredData: WithContext<CollectionPage> = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Jeremy Ellsworth Designs - Projects",
+    description:
+      "Explore a collection of creative works, including logo designs and vehicle wraps.",
+    url: "https://www.jedesigns.com/projects",
+    hasPart: projects?.map((project) => ({
+      "@type": "VisualArtwork",
+      name: project.title,
+      creator: {
+        "@type": "Person",
+        name: "Jeremy Ellsworth",
+      },
+      image: urlForImage(project.mainImage as any),
+      artform: "Artwork",
+      artMedium: "Digital",
+      description:
+        project.body && project.body.length > 0
+          ? blockContentToPlainText(project.body as [any])
+          : "",
+    })),
+  };
+
   return (
     <>
+      <Script
+        id="projects"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <MainHeader />
       <main>
         <Header articleLink={projectsPageSetting?.articleLink || ""} />

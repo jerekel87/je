@@ -52,9 +52,11 @@ import ArticleModal from "./components/ArticleModal";
 import { getArticle, getArticles } from "@/sanity/query/article";
 import { blockContentToPlainText } from "react-portable-text";
 import { urlForImage } from "@/sanity/lib/image";
-import { Article } from "@/sanity.types";
+import { Article as ArticleType } from "@/sanity.types";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Script from "next/script";
+import { Article, WithContext } from "schema-dts";
 
 export const revalidate = 60;
 
@@ -75,7 +77,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata | undefined> {
-  const article: Article = await getArticle({ slug: params.slug });
+  const article: ArticleType = await getArticle({ slug: params.slug });
 
   if (!article) return;
 
@@ -120,8 +122,41 @@ async function ArticlePage({ params }: { params: { slug: string } }) {
   const article = await getArticle({ slug });
 
   if (!article) return notFound();
+  const structuredData: WithContext<Article> = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://www.jedesigns.com/articles/${article.slug?.current}`,
+    },
+    name: article.title,
+    headline: article.title,
+    url: `https://www.jedesigns.com/articles/${article.slug?.current}`,
+    description:
+      article.subtitle && article.subtitle.length > 0
+        ? blockContentToPlainText(article.subtitle as [any])
+        : "",
+    image: urlForImage(article.mainImage as any),
+    author: {
+      "@type": "Person",
+      name: "Jeremy Ellsworth",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Jeremy Ellsworth Designs",
+    },
+  };
 
-  return <ArticleModal article={article} />;
+  return (
+    <>
+      <Script
+        id="project"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <ArticleModal article={article} />;
+    </>
+  );
 }
 
 export default ArticlePage;
