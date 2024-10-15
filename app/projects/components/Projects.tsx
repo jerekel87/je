@@ -71,12 +71,12 @@ function Projects({
   };
 
   const render = () => {
-    if (isLoading)
-      return (
-        <div className="flex justify-center lg:justify-start mt-[60px] lg:mt-[100px]">
-          <Loader className="size-4 lg:size-8 animate-spin text-muted-foreground" />
-        </div>
-      );
+    // if (isLoading)
+    //   return (
+    //     <div className="flex justify-center lg:justify-start mt-[60px] lg:mt-[100px]">
+    //       <Loader className="size-4 lg:size-8 animate-spin text-muted-foreground" />
+    //     </div>
+    //   );
     if (data?.[0]?.length === 0)
       return (
         <p className="text-sm lg:text-lg text-center lg:text-left text-muted-foreground mt-[60px] lg:mt-[100px]">
@@ -134,7 +134,7 @@ function Projects({
       <div className="container px-0 lg:px-4">
         {render()}
 
-        {hasMore && !isLoading && (
+        {hasMore && (
           <div className="flex justify-center mt-[40px] lg:mt-[60px]">
             {isValidating ? (
               <Loader className="size-4 animate-spin text-muted-foreground" />
