@@ -1,8 +1,9 @@
 "use server";
 
+import { Faq } from "@/sanity.types";
 import { client } from "../lib/client";
 
-export async function getFaqs({ categoryId = "" } = {}): Promise<any[]> {
+export async function getFaqs({ categoryId = "" } = {}): Promise<Faq[]> {
   let query = `*[_type == "faq"] | order(_createdAt asc){
     _id,
     question,

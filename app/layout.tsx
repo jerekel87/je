@@ -1,14 +1,15 @@
+/* eslint-disable jsx-a11y/alt-text */
 import type { Metadata } from "next";
 import { Toaster } from "./(shared)/components/ui/sonner";
-import localFont from "next/font/local";
-import "./globals.css";
-import { Slide, ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import CalComModal from "./(shared)/components/CalComModal";
-import NavbarMobile from "./(shared)/components/NavbarMobile";
-import IntercomMessenger from "./(shared)/components/IntercomMessenger";
-import Script from "next/script";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import { Slide, ToastContainer } from "react-toastify";
+import IntercomMessenger from "./(shared)/components/IntercomMessenger";
+import NavbarMobile from "./(shared)/components/NavbarMobile";
+import CalComModal from "./(shared)/components/CalComModal";
+import localFont from "next/font/local";
+import Script from "next/script";
+import "react-toastify/dist/ReactToastify.css";
+import "./globals.css";
 
 const MonaSans = localFont({
   variable: "--font-mona-sans",
@@ -59,7 +60,11 @@ const Portlin = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Branding Without Boundaries & Forward-thinking Vehicle Wrap Designs",
+  metadataBase: new URL("https://jedesigns.com"),
+  title: {
+    template: "%s - JE Designs",
+    default: "JE Designs",
+  },
   description:
     "Elevate your brand with our comprehensive creative solutions. We specialize in crafting eye-catching logos, developing cohesive brand identities, and designing head-turning vehicle wraps that make your business stand out on the streets. Our expert team also delivers stunning visual assets, from marketing materials to digital graphics, ensuring your brand shines across all platforms. Transform your vision into reality and leave a lasting impression with our innovative design services tailored to your unique business needs.",
   openGraph: {
@@ -67,15 +72,17 @@ export const metadata: Metadata = {
       "Branding Without Boundaries & Forward-thinking Vehicle Wrap Designs",
     description:
       "Elevate your brand with our comprehensive creative solutions. We specialize in crafting eye-catching logos, developing cohesive brand identities, and designing head-turning vehicle wraps that make your business stand out on the streets. Our expert team also delivers stunning visual assets, from marketing materials to digital graphics, ensuring your brand shines across all platforms. Transform your vision into reality and leave a lasting impression with our innovative design services tailored to your unique business needs.",
+    siteName: "JE Designs",
     url: "https://jedesigns.com", // Replace with your website URL
     images: [
       {
-        url: "/assets/images/je-logo.png",
+        url: "https://jedesigns.com/assets/images/je-banner.png",
         width: 1200,
         height: 630,
         alt: "JE Designs Logo",
       },
     ],
+    locale: "en_US",
     type: "website",
   },
   twitter: {
@@ -85,7 +92,7 @@ export const metadata: Metadata = {
       "Branding Without Boundaries & Forward-thinking Vehicle Wrap Designs",
     description:
       "Elevate your brand with our comprehensive creative solutions. We specialize in crafting eye-catching logos, developing cohesive brand identities, and designing head-turning vehicle wraps that make your business stand out on the streets. Our expert team also delivers stunning visual assets, from marketing materials to digital graphics, ensuring your brand shines across all platforms. Transform your vision into reality and leave a lasting impression with our innovative design services tailored to your unique business needs.",
-    images: ["/assets/images/je-logo.png"],
+    images: ["https://jedesigns.com/assets/images/je-banner.png"],
   },
 };
 
