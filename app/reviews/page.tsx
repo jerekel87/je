@@ -27,7 +27,7 @@ async function ReviewsPage() {
       },
       reviewRating: {
         "@type": "Rating",
-        ratingValue: review.rating,
+        ratingValue: String(review.rating),
         bestRating: "5",
       },
       author: {
