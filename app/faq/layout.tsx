@@ -5,6 +5,8 @@ import FakePurchase from "../(shared)/components/fake-purchase/FakePurchase";
 
 export const metadata: Metadata = {
   title: "FAQ",
+  description:
+    "Find answers to commonly asked questions about our graphic design services, including logo design, vehicle wraps, pricing, and more.",
 };
 
 export default function FAQLayout({ children }: { children: React.ReactNode }) {
