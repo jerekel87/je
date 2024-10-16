@@ -70,6 +70,7 @@ function SectionOne({ articleLink }: { articleLink: string }) {
               width="1639"
               height="617"
               alt="Pickup"
+              priority
               className="relative w-[75.3%] transform left-1/2 -translate-x-1/2 z-[1]"
             />
             <Image
