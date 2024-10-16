@@ -4,7 +4,7 @@ import Header from "../(shared)/components/Header";
 import FakePurchase from "../(shared)/components/fake-purchase/FakePurchase";
 
 export const metadata: Metadata = {
-  title: "Pricing",
+  title: "Creative Brand Package",
 };
 
 export default function PricingLayout({
