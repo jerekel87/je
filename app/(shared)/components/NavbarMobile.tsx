@@ -16,6 +16,7 @@ import { usePathname } from "next/navigation";
 export default function NavbarMobile() {
   const [isOpen, setOpen] = useState(false);
   const [{ y }] = useWindowScroll();
+  const pathname = usePathname();
 
   const windowMaxScroll =
     typeof window !== "undefined"
@@ -26,7 +27,7 @@ export default function NavbarMobile() {
   let hideNavbar = (y || 0) >= windowMaxScroll - 100;
   if (typeof window === "undefined") hideNavbar = false;
 
-  const pathname = usePathname();
+  if (pathname.includes("/booking/confirmation")) hideNavbar = true;
 
   const handleNavItemClick = () => {
     setOpen(false);

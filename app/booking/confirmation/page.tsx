@@ -43,7 +43,10 @@ function ConfirmationPage() {
   }
 
   return (
-    <div className="relative">
+    <div
+      className="relative"
+      style={{ background: "linear-gradient(#fff700,transparent 40%)" }}
+    >
       <Script id="facebook-pixel" strategy="afterInteractive">
         {`
           !function(f,b,e,v,n,t,s)
@@ -74,28 +77,35 @@ function ConfirmationPage() {
           className="object-cover"
         />
       </div>
-      <main className="container min-h-dvh px-4 pt-[34px] lg:pt-[54px] flex lg:items-center flex-col">
+      <main className="container min-h-dvh px-4 pt-[34px] lg:pt-[54px] flex items-center flex-col">
         <Image
           src="/assets/images/confirmation-banner.webp"
           alt=""
           width="1060"
           height="434"
         />
-        <p className="font-portlin text-center lg:text-left uppercase text-[24px] lg:text-[40px] mt-[40px] lg:mt-[64px]">
-          {formattedStartTime}
-        </p>
+        <div className="flex gap-2 lg:gap-[12px] w-max mt-[40px] lg:mt-[64px] rounded-full bg-primary text-white px-[6px] py-[5px]  lg:px-[12px] lg:py-[10px] pr-4 lg:pr-[34px]">
+          <Image
+            src="/assets/images/check@3x.webp"
+            height="42"
+            width="42"
+            alt="Check"
+            className="shrink-0 object-contain size-[20px] lg:size-[42px]"
+          />
+          <p className="font-portlin text-center leading-none uppercase text-lg lg:text-[37px] lg:mt-[1px]">
+            {formattedStartTime}
+          </p>
+        </div>
 
-        <h1 className="font-portlin text-center text-5xl lg:text-[90px] uppercase mt-[12px] lg:mt-[24px] leading-none lg:leading-none">
-          CONFIRMED BOOKING
+        <h1 className="font-portlin text-center text-5xl lg:text-[90px] uppercase mt-[8px] lg:mt-[18px] leading-none lg:leading-none">
+          CONFIRMED BOOKING!
         </h1>
 
-        <p className="text-base lg:text-lg text-center mt-[24px] lg:mt-[40px] max-w-[710px]">
-          <strong className="font-semibold">
-            Thanks {firstName}! We&apos;ve sent an email with further
-            instructions/details about the scheduled call to {email}.
-          </strong>{" "}
-          We look forward to our call with you and hope to bring your brand
-          vision to life.
+        <p className="text-base lg:text-lg text-center mt-[24px] lg:mt-[30px] max-w-[748px]">
+          <strong>Thanks {firstName}!</strong> We&apos;ve sent an email with
+          further instructions/details about the scheduled call to{" "}
+          <strong>{email}</strong>. We look forward to our call with you and
+          hope to bring your brand vision to life.
         </p>
         <Link href="/" className="w-full lg:w-max">
           <Button
