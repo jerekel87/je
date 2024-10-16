@@ -14,7 +14,7 @@ export const revalidate = 60;
 const structuredData: WithContext<Service> = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Jeremy Ellsworth Designs Services",
+  name: "Jeremy Ellsworth Designs - Services",
   url: "https://www.jedesigns.com/pricing",
   logo: "https://jedesigns.com/assets/images/je-logo.png",
   description:
