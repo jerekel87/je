@@ -102,7 +102,7 @@
   height: 100%;
   background: url("/assets/images/static-effect-old.png") 0 0;
   background-repeat: repeat;
-  background-size: 250px 250px;
+  background-size: 150px 150px;
   opacity: 0.8;
 }
 .static-background::before {
@@ -114,7 +114,7 @@
   height: 100%;
   background: url("/assets/images/static-effect-old.png") 0 0;
   background-repeat: repeat;
-  background-size: 250px 250px;
+  background-size: 150px 150px;
   opacity: 1;
 }
 .static-background-our-solutions::before {
