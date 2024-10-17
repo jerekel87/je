@@ -22,7 +22,10 @@ function SortingSelector() {
       onValueChange={handleOrderChange}
       defaultValue={searchParams.get("sortBy") || ""}
     >
-      <SelectTrigger className="w-full lg:w-[282px] text-[#53545c]">
+      <SelectTrigger
+        aria-label="Open sort options"
+        className="w-full lg:w-[282px] text-[#53545c]"
+      >
         <SelectValue placeholder="Most recent" />
       </SelectTrigger>
       <SelectContent>
