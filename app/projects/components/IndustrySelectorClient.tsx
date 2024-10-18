@@ -34,6 +34,7 @@ function IndustrySelectorClient({
       defaultValue={searchParams.get("industry") || ""}
     >
       <SelectTrigger
+        aria-label="Open industry options"
         className={cn("w-full lg:w-[282px] text-[#53545c]", className)}
       >
         <SelectValue placeholder="Industry" />

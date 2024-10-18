@@ -171,10 +171,12 @@ function OurSolutions({ ourSolutions }: { ourSolutions: any[] }) {
                     {solution.images && solution.images.length > 4 && (
                       <div className="our-solution-nav absolute top-1/2 w-full">
                         <button
+                          aria-label="Previous"
                           className="swiper-button-prev"
                           onClick={() => swiperRef.current?.slidePrev()}
                         ></button>
                         <button
+                          aria-label="Next"
                           className="swiper-button-next"
                           onClick={() => swiperRef.current?.slideNext()}
                         ></button>

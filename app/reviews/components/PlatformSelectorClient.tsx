@@ -30,6 +30,7 @@ function PlatformSelectorClient({
   return (
     <Select onValueChange={handlePlatformChange} defaultValue="all">
       <SelectTrigger
+        aria-label="Open platform options"
         className={cn("w-full lg:w-[282px] text-[#53545c]", className)}
       >
         <SelectValue />
