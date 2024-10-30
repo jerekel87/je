@@ -5,12 +5,13 @@ import { client } from "../lib/client";
 
 export async function getProjects({
   industrySlug = "",
+  lastOrderRank = "",
   lastCreatedAt = "",
   limit = 9,
-  sortBy = "Most Recent",
+  sortBy = "",
 } = {}): Promise<Project[]> {
-  let sortByValue = "desc";
-  let operator = "<";
+  let sortByValue = "";
+  let operator = "";
 
   switch (sortBy) {
     case "Most Recent":
@@ -22,16 +23,32 @@ export async function getProjects({
       operator = ">";
       break;
   }
-
-  let query = `*[_type == "project" ${lastCreatedAt ? `&& _createdAt ${operator} $lastCreatedAt` : ""}] | order(_createdAt ${sortByValue}) [0...$limit]{
+  let query = `*[_type == "project" ${lastOrderRank ? `&& orderRank > $lastOrderRank` : ""}] | order(orderRank) [0...$limit]{
     ...
   }`;
   if (industrySlug && industrySlug !== "all") {
-    query = `*[_type == "project" && industry->slug.current == $industrySlug ${lastCreatedAt ? `&& _createdAt ${operator} $lastCreatedAt` : ""}] | order(_createdAt ${sortByValue}) [0...$limit]{
+    query = `*[_type == "project" && industry->slug.current == $industrySlug ${lastOrderRank ? `&& orderRank > $lastOrderRank` : ""}] | order(orderRank) [0...$limit]{
         ...
       }`;
   }
-  return client.fetch(query, { lastCreatedAt, limit, industrySlug });
+
+  if (sortByValue !== "") {
+    query = `*[_type == "project" ${lastCreatedAt ? `&& _createdAt ${operator} $lastCreatedAt` : ""}] | order(_createdAt ${sortByValue}) [0...$limit]{
+      ...
+    }`;
+    if (industrySlug && industrySlug !== "all") {
+      query = `*[_type == "project" && industry->slug.current == $industrySlug ${lastCreatedAt ? `&& _createdAt ${operator} $lastCreatedAt` : ""}] | order(_createdAt ${sortByValue}) [0...$limit]{
+          ...
+        }`;
+    }
+  }
+
+  return client.fetch(query, {
+    lastOrderRank,
+    lastCreatedAt,
+    limit,
+    industrySlug,
+  });
 }
 
 export async function getProject({ slug }: { slug: string }): Promise<
