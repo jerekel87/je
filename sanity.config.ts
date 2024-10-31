@@ -7,6 +7,7 @@
 import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
+import { orderableDocumentListDeskItem } from "@sanity/orderable-document-list";
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
 import { apiVersion, dataset, projectId } from "./sanity/env";
@@ -26,12 +27,18 @@ export default defineConfig({
   schema,
   plugins: [
     structureTool({
-      structure: (S) =>
+      structure: (S, context) =>
         S.list()
           .title("Content")
           .items([
             // Regular document types
-            S.documentTypeListItem("project").title("Projects"),
+            // S.documentTypeListItem("project").title("Projects"),
+            orderableDocumentListDeskItem({
+              type: "project",
+              title: "Projects",
+              S,
+              context,
+            }),
             S.documentTypeListItem("industry").title("Project Industries"),
             S.documentTypeListItem("review").title("Reviews"),
             S.documentTypeListItem("reviewPlatform").title("Review Platforms"),

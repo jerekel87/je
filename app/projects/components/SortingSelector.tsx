@@ -26,7 +26,7 @@ function SortingSelector() {
         aria-label="Open sort options"
         className="w-full lg:w-[282px] text-[#53545c]"
       >
-        <SelectValue placeholder="Most recent" />
+        <SelectValue placeholder="Sort by" />
       </SelectTrigger>
       <SelectContent>
         <SelectItem

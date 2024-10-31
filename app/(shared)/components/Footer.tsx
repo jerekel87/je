@@ -129,7 +129,7 @@ function Footer() {
     </ul>
   );
   return (
-    <footer className="relative static-background">
+    <footer className="relative static-background before:!bottom-0 lg:before:h-[79%] xl:before:h-[80%] before:top-auto">
       <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 sm:size-[800px] xl:size-[908px] mx-auto top-[122px]">
         <Image
           src="/assets/images/footer-circular.webp"
