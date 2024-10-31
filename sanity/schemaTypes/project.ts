@@ -1,3 +1,4 @@
+import { orderRankField } from "@sanity/orderable-document-list";
 import { defineField, defineType } from "sanity";
 
 export default defineType({
@@ -118,6 +119,7 @@ export default defineType({
       type: "array",
       of: [{ type: "reference", to: { type: "review" } }],
     }),
+    orderRankField({ type: "project" }),
   ],
 
   //   preview: {

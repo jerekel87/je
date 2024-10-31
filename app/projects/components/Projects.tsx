@@ -41,9 +41,15 @@ function Projects({
         ? previousPageData[previousPageData.length - 1]._createdAt
         : "";
 
+    const lastOrderRank =
+      previousPageData.length >= 1
+        ? previousPageData[previousPageData.length - 1].orderRank
+        : "";
+
     return [
-      `${pathname}?lastCreatedAt=${lastCreatedAt}&${searchParams.toString() ? `${searchParams.toString()}` : ""}`,
+      `${pathname}?lastOrderRank=${lastOrderRank}&lastCreatedAt=${lastCreatedAt}&${searchParams.toString() ? `${searchParams.toString()}` : ""}`,
       lastCreatedAt,
+      lastOrderRank,
     ];
   };
 
@@ -51,11 +57,12 @@ function Projects({
 
   const { data, isLoading, isValidating, size, setSize } = useSWRInfinite(
     getKey,
-    ([url, lastCreatedAt]) => {
+    ([url, lastCreatedAt, lastOrderRank]) => {
       return getProjects({
         industrySlug,
         sortBy,
         lastCreatedAt,
+        lastOrderRank,
         limit: PROJECTS_LIMIT,
       });
     },
