@@ -23,7 +23,7 @@ async function ProjectsPage({
   const sortBy = searchParams.sortBy;
 
   const projects = await getProjects({
-    limit: 9,
+    limit: 18,
     industrySlug,
     sortBy,
   });

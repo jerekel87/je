@@ -53,7 +53,7 @@ function Projects({
     ];
   };
 
-  const PROJECTS_LIMIT = 9;
+  const PROJECTS_LIMIT = 18;
 
   const { data, isLoading, isValidating, size, setSize } = useSWRInfinite(
     getKey,
