@@ -47,3 +47,12 @@
   }
 }
 /* End */
+
+/* Start | Social links responsive right alignment */
+@media only screen and (min-width: 2560px) {
+  .social-links {
+    right: calc(calc(calc(100vw - 2560px) / 2) - 160px);
+  }
+}
+
+/* End */
