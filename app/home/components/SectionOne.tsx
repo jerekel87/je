@@ -7,7 +7,7 @@ function SectionOne({ articleLink }: { articleLink: string }) {
     <section className="relative overflow-hidden">
       <div className="w-full max-w-[2560px] left-1/2 -translate-x-1/2 absolute h-full">
         <Image
-          src="/assets/images/hero-bg-je-min.jpg"
+          src="/assets/images/homepage-banner.jpg"
           width="2560"
           height="1114"
           alt="Home page banner"
@@ -81,7 +81,6 @@ function SectionOne({ articleLink }: { articleLink: string }) {
               width="1397"
               height="635"
               alt="Pickup"
-              priority
               className="relative w-[75.3%] transform left-1/2 -translate-x-1/2 z-[1]"
             />
             <Image
