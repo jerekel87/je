@@ -4,9 +4,20 @@ import "../style.css";
 
 function SectionOne({ articleLink }: { articleLink: string }) {
   return (
-    <section className="bg-[#164dcc] relative overflow-hidden static-background">
-      <div className="z-[1] relative">
-        <div className="hidden z-[1] lg:flex items-center gap-[32px] top-1/2 rotate-90 w-max -right-[134px] absolute">
+    <section className="relative overflow-hidden">
+      <div className="w-full max-w-[2560px] left-1/2 -translate-x-1/2 absolute h-full">
+        <Image
+          src="/assets/images/hero-bg-je-min.jpg"
+          width="2560"
+          height="1114"
+          alt="Home page banner"
+          priority
+          quality="100"
+          className="h-full object-cover"
+        />
+      </div>
+      <div className="w-full h-auto top-0 left-0 relative">
+        <div className="hidden lg:flex items-center gap-[32px] top-1/2 rotate-90 w-max -right-[145px] absolute social-links z-[2]">
           <span className="text-white font-portlin uppercase tracking-[0.5px] text-[40px] leading-[0.7]">
             CONNECT
           </span>
@@ -57,16 +68,16 @@ function SectionOne({ articleLink }: { articleLink: string }) {
               />
             </div>
           </div>
-          <div className="relative w-[212%] mt-0 lg:-top-[6px] transform left-[50%] -translate-x-1/2 lg:w-full">
-            <Image
+          <div className="relative w-[212%] mt-0 lg:-top-[26px] transform left-[50%] -translate-x-1/2 lg:w-full">
+            {/* <Image
               src="/assets/images/truck-lightblue-2.png"
               width="1397"
               height="635"
               alt="background"
               className="absolute w-[75.3%] -left-[3%] -top-[6%]"
-            />
+            /> */}
             <Image
-              src="/assets/images/pickup-2.webp"
+              src="/assets/images/pickup-3.webp"
               width="1397"
               height="635"
               alt="Pickup"
@@ -74,7 +85,7 @@ function SectionOne({ articleLink }: { articleLink: string }) {
               className="relative w-[75.3%] transform left-1/2 -translate-x-1/2 z-[1]"
             />
             <Image
-              src="/assets/images/pickup-dropshadow-2.webp"
+              src="/assets/images/pickup-dropshadow-3.webp"
               width="1920"
               height="247"
               alt="Pickup drop shadow"
@@ -82,10 +93,10 @@ function SectionOne({ articleLink }: { articleLink: string }) {
             />
           </div>
 
-          <div className="relative -top-[12px] lg:-top-[36px] text-xl lg:text-[41px] text-white font-portlin uppercase tracking-[0.5px] w-max mx-auto">
-            <p className="leading-none">MY HVAC GUY REVENUE INCREASED BY</p>
+          <div className="relative -top-[12px] lg:-top-[58px] text-xl lg:text-[41px] text-white font-portlin uppercase tracking-[0.5px] w-max mx-auto">
+            <p className="leading-none">Salty Soft wash revenue increased</p>
             <div className="flex items-center gap-[10px] lg:gap-[15px]">
-              <p className="leading-none">218% SINCE REBRANDING</p>
+              <p className="leading-none">275% since rebranding</p>
               <div className="h-[1px] lg:h-[2px] w-4 lg:w-[32px] bg-white opacity-50 mt-[6px]" />
               <a
                 href={articleLink}
