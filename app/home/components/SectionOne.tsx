@@ -48,7 +48,7 @@ function SectionOne({ articleLink }: { articleLink: string }) {
         </div>
         <div className="container mx-auto lg:max-w-[1920px] h-full relative px-0 lg:px-[2rem]">
           <div className="relative w-max mx-auto">
-            <h1 className="text-[78.8px] md:text-[108px] xl:text-[178px] font-portlin uppercase tracking-[0.5px] leading-[.84] text-center transform -rotate-[5deg] pt-[30px] lg:pt-[74px] w-max">
+            <h1 className="text-[78.8px] md:text-[108px] xl:text-[178px] font-portlin uppercase tracking-[0.5px] leading-[.84] text-center transform -rotate-[5deg] pt-[30px] lg:pt-[58px] w-max">
               <span className="text-white">IGNITING </span>
               <br className="lg:hidden" />
               <span className="text-secondary">CREATIVITY</span>
@@ -68,7 +68,7 @@ function SectionOne({ articleLink }: { articleLink: string }) {
               />
             </div>
           </div>
-          <div className="relative w-[212%] mt-0 lg:-top-[26px] transform left-[50%] -translate-x-1/2 lg:w-full">
+          <div className="relative w-[212%] mt-0 lg:-top-[6px] transform left-[50%] -translate-x-1/2 lg:w-full">
             {/* <Image
               src="/assets/images/truck-lightblue-2.png"
               width="1397"
@@ -93,7 +93,7 @@ function SectionOne({ articleLink }: { articleLink: string }) {
             />
           </div>
 
-          <div className="relative -top-[12px] lg:-top-[58px] text-xl lg:text-[41px] text-white font-portlin uppercase tracking-[0.5px] w-max mx-auto">
+          <div className="relative -top-[12px] lg:-top-[42px] text-xl lg:text-[41px] text-white font-portlin uppercase tracking-[0.5px] w-max mx-auto">
             <p className="leading-none">Salty Soft wash revenue increased</p>
             <div className="flex items-center gap-[10px] lg:gap-[15px]">
               <p className="leading-none">275% since rebranding</p>
